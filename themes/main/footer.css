@@ -1,0 +1,68 @@
+#footer {
+background-color: #1DCAC0;
+margin-top: 30px;
+}
+#footer-pat {
+background: url('../../img/footer/texture.png') top left repeat;
+}
+#header-end {
+position: relative;
+width: 100%;
+overflow: hidden;
+}
+#footer-top {
+background: url('../../img/footer/footer-top.png') top left repeat-x;
+width: 100%;
+height: 18px;
+}
+#footer-bot {
+height: 300px;
+width: 820px;
+padding: 20px 0px 20px 0px;
+margin: auto;
+}
+
+#footer-bot ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#footer-bot ul li {
+	float: left;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#footer-bot ul li ul {
+	margin: 0px 30px;
+	padding: 0px;
+}
+
+#footer-bot ul li ul a {
+	color: #C10000;
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+#footer-bot ul li ul a:hover {
+	text-decoration: underline;
+}
+
+#footer-bot ul li ul:first-child {
+	line-height: 30px;
+}
+
+#footer-bot ul li ul li {
+	float: none;
+	border: none;
+	list-style-type:circle;
+	list-style-position:inside;
+}
+
+#footer-bot ul li ul li:first-child{
+	list-style-type:none;
+}
+
+

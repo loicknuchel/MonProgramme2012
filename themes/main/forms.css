@@ -1,0 +1,295 @@
+/*----------------------------
+	Forms styles
+-----------------------------*/
+
+input[type="text"] {
+	width: 220px;
+	text-align: left;
+	background: #585555;
+	padding: 4px 31px 4px 10px;
+	border: 1px solid black;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	color: #888;
+}
+
+input[type="text"].FV_length {
+	width: 196px;
+	padding: 4px 34px 4px 10px;
+}
+
+.FV_error{
+	background: #775555 !important;
+}
+
+textarea {
+	display: inline;
+	width: 515px;
+	height: 70px;
+	text-align: left;
+	background: #585555;
+	padding: 4px 0 4px 10px;
+	border: 1px solid black;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	color: #888;
+	//overflow-y: hidden;
+}
+
+span.text_leave_char{
+	display: inline-block;
+	width: 26px;
+	text-align: right;
+	padding: 4px 2px;
+	margin-right: -20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-size: 12px;
+	color: #777;
+	background: #585555;
+	position: relative;
+	top: -5px;
+	left: -35px;
+}
+
+span.area_leave_char{
+	display: inline-block;
+	width: 26px;
+	text-align: right;
+	padding: 2px 2px;
+	margin-right: -20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-size: 12px;
+	color: #777;
+	background: #585555;
+	//background: red;
+	position: relative;
+	top: -6px;
+	left: -35px;
+}
+
+input[type="checkbox"] {
+	margin-bottom: 11px;
+	margin-left: 10px;
+}
+
+form label {
+	line-height: 35px;
+	margin-left: 7px;
+}
+
+select{
+	background: #585555;
+	border: 1px solid black;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #888;
+}
+
+a.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+	background: #EEE;
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, .2) 0%, rgba(0, 0, 0, .2) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255, 255, 255, .2)), color-stop(100%,rgba(0, 0, 0, .2)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0%,rgba(0, 0, 0, .2) 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, .2) 0%,rgba(0, 0, 0, .2) 100%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, .2) 0%,rgba(0, 0, 0, .2) 100%);
+	background: linear-gradient(top, rgba(255, 255, 255, .2) 0%,rgba(0, 0, 0, .2) 100%);
+	border: 1px solid #AAA;
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	padding: 4px 12px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #444;
+	display: inline-block;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0 1px rgba(255, 255, 255, .75);
+	cursor: pointer;
+	margin-bottom: 20px;
+	line-height: 21px;
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+	color: #222;
+	background: #DDD;
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, .3) 0%, rgba(0, 0, 0, .3) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255, 255, 255, .3)), color-stop(100%,rgba(0, 0, 0, .3)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, .3) 0%,rgba(0, 0, 0, .3) 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, .3) 0%,rgba(0, 0, 0, .3) 100%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, .3) 0%,rgba(0, 0, 0, .3) 100%);
+	background: linear-gradient(top, rgba(255, 255, 255, .3) 0%,rgba(0, 0, 0, .3) 100%);
+	border: 1px solid #888;
+	border-top: 1px solid #AAA;
+	border-left: 1px solid #AAA;
+}
+a.button:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
+	border: 1px solid #666;
+	background: #CCC;
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, .35) 0%, rgba(10, 10, 10, .4) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255, 255, 255, .35)), color-stop(100%,rgba(10, 10, 10, .4)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, .35) 0%,rgba(10, 10, 10, .4) 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, .35) 0%,rgba(10, 10, 10, .4) 100%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, .35) 0%,rgba(10, 10, 10, .4) 100%);
+	background: linear-gradient(top, rgba(255, 255, 255, .35) 0%,rgba(10, 10, 10, .4) 100%);
+}
+
+form .red {
+	color:	#F5410F;
+}
+
+/******************************************************
+ * SPECIFIC CSS
+******************************************************/
+
+/* COMMENTAIRES */
+.leave_comment{
+	width: 600px;
+	margin: auto;
+	margin-top: 30px;
+}
+
+/* CITATIONS */
+.new_quote{
+	width: 600px;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.new_quote .disclaimer {
+	padding: 15px;
+	font-family: 'KaratulaNormal', Arial, sans-serif;
+	font-size: 22px;
+	text-align: center;
+	margin-top: -20px;
+}
+
+.new_quote form{
+	width: 550px;
+	margin: auto;
+}
+
+.new_quote .textareaquote{
+	display: block;
+	width: 515px;
+	text-align: left;
+	background: white;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 20px;
+	border: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.new_quote .textareaquote textarea{
+	display: block;
+	width: 475px;
+	height: 95px;
+	text-align: left;
+	color: #4F4F4F;
+	background: white;
+	border: none;
+	margin: 0px;
+	padding: 20px;
+	font-size: 22px;
+	-webkit-border-radius: 5px 5px 0px 0px; /*topleft, topright, bottomright, bottomleft*/
+	-moz-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.new_quote .textareaquote .area_leave_char{
+	display: block;
+	width: 505px;
+	height: 18px;
+	text-align: right;
+	margin: 0px;
+	padding: 0px;
+	padding-right: 10px;
+	padding-top: 2px;
+	font-size: 12px;
+	color: #777;
+	position: static;
+	background: #eee;
+	background: -webkit-linear-gradient(top, #EEE, #CCC);
+	background: -moz-linear-gradient(top, #EEE, #CCC);
+	background: -linear-gradient(top, #EEE, #CCC);
+	-webkit-border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.new_quote .important_data textarea[name="expl"] {
+	width: 520px;
+	height: 220px;
+}
+
+.new_quote .create_category {
+	margin: 5px 0px -5px 0px;
+}
+
+.new_quote .show_facultative_data {
+	width: 200px;
+	background: white;
+	padding: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.new_quote .facultative_data {
+	display: none;
+	width: 545px;
+	background: white;
+	padding: 10px;
+	position: relative;
+	top: -5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.new_quote .facultative_data input{
+	margin-bottom: 15px;
+}
+
+.new_quote .facultative_data p, .new_quote .important_data p {
+	font-style: italic;
+}
+
+/* SELECTIONS */
+.new_selection{
+	margin-top: 20px;
+	margin-bottom: -15px;
+	margin-left: -50px;
+	text-align: center;
+}
+
+.new_selection button{
+	position: relative;
+	top: -4px;
+}
+
+.new_selection form{
+	display: inline-block;
+	visibility: hidden;
+	position: relative;
+	left: 50px;
+	top: 4px;
+}
+
+
+
+

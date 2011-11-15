@@ -1,0 +1,38 @@
+
+
+version 1.x :
+date : ??
+version api : 1.1
+version bdd : 1.2
+TODO :
+	- modifier l'api pour ajouter différents types de commentaires
+	- modifier l'api pour permettre la modification de certains champs
+logs : 
+	- [bdd] ajout d'une table history pour tracer les maj de champs
+	- [bdd] généricité des commentaires avec l'ajout du champ : elt_type
+	- [bdd] modification de l'architecture bdd : 1 table pr tous les services
+	- correction bug liens dans l'envoi de notification (mail)
+	- ajout de serviceUrl et apiUrl dans $usr
+	- ouverture du classement lastcomment dans l'api
+	- ajout du menu lastcomment dans mp2012
+	
+	
+version 1.0.1 :
+date : 04/09/2011 à 01h23
+version bdd : 1.1
+logs :
+	- changement de la partie admin de croudquotes vers mp2012
+	- ajout d'une partie de statistiques dans l'admin
+	- schéma de bdd mis dans le dossier docs
+	- passage de la bdd de 1.0 en 1.1
+	- ajout de la fonctionnalité de suivi de citations
+	- ajout de la reconnaissance de la version de bdd
+	
+	
+version 1.0 :
+date : 30/08/2011 à 18h
+version bdd : 1.0
+logs :
+	- C'est la première publication. Le site comporte les fonctionnalités minimales.
+	
+	

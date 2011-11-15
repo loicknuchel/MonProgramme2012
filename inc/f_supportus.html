@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<style>
+		#fancybox-outer, #fancybox-wrap, #fancybox-content {
+			//background: none;
+			//border: none;
+		}
+		#fancybox-content .text {
+			padding: 10px;
+		}
+		#fancybox-content h1 {
+			text-align: center;
+		}
+		#fancybox-content p {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="text">
+		<h1>Vous souhaitez nous soutenir ?</h1>
+		<p>
+			Ce site est avant tout un espace collaboratif. Son intérêt, sa réussite de même que son envergure dépendent donc directement du nombre ainsi que de l'activité des visiteurs.<br/>
+			Le meilleur moyen pour aider ce projet est donc de le faire vivre et de le faire connaitre à un maximum de personnes.<br/>
+			Nous vous encourageons donc fortement à transmettre l'envie de s'informer et de faire bouger les choses autour de vous.
+		</p>
+		<p>
+			Prenez aussi le temps de visiter les sites mis en lien dans le pied de page, ils y ont été placés pour faire connaître les autres initiatives qui cherchent à changer les choses et des axes de réflexion innovants et révolutionnaires.
+			Vous pouvez, vous aussi, <a href="#" class="footer_link">suggérer des liens</a> à ajouter dans ce pied de page.
+		</p>
+		<p>
+			Le site étant en perpétuelle évolution (au niveau du contenu, des fonctionnalités, du design, de la facilité de navigation, etc.) vos retours et vos impressions sont primordiaux pour sa progression.<br/>
+			Si vous avez des idées de projets, d'améliorations ou qui rentrent dans le cadre des objectifs de ce site, nous serons ravis de discuter avec vous à leurs propos.
+		</p>
+		<p>
+			Pour ceux qui en ont l'envie et les compétences, vous pouvez participer au développement de ce site, développer un nouveau support à partir de l'API ou démarrer un nouveau projet à partir des sources de ce dernier.<br/>
+			Pour le moment, <a href="#" class="demande_sources">les sources sont disponibles sur demande</a>.
+		</p>
+		<p>
+			Pour plus d'informations sur le site, qui se trouve derrière et quels en sont les objectifs, nous vous invitons à visiter le <a href="/info/faq.php">FAQ</a>
+		</p>
+	</div>
+	
+	
+	<script>
+		$(function(){
+			$('.footer_link').toggleContactable('contactable', 'Suggestion de nouveau lien pour le pied de page');
+			$('.demande_sources').toggleContactable('contactable', 'Demande de communication des sources');
+		});
+	</script>
+	
+</body>
+</html>

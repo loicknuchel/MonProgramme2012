@@ -1,0 +1,166 @@
+
+.comment_pages{
+	margin:auto;
+	width: 200px;
+	padding: 10px;
+}
+
+.comment_pages .cur_page{
+	border: grey solid 1px;
+	padding: 2px;
+	color: white;
+	background: #C10000;
+	border-radius: 4px;
+}
+
+.comment_pages .page{
+	border: grey solid 1px;
+	padding: 2px;
+	color: black;
+	background: white;
+	border-radius: 4px;
+}
+
+.comment_pages .page a{
+	text-decoration: none;
+}
+
+.comment_pages .page:hover{
+	text-decoration: underline;
+}
+
+.comments{
+	width: 750px;
+	margin: auto;
+	border: #ccc 1px solid;
+	background: white;
+	border-radius: 5px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.comments .comment{
+	border-top: #ccc 1px solid;
+	padding: 5px;
+	margin-bottom: 15px;
+}
+
+.comments .comment:first-child{
+	border-top: none;
+}
+
+.comments .comment .comment_header{
+	margin-left: 10px;
+	margin-bottom: 8px;
+}
+
+.comments .comment .comment_header .comment_no{
+	display: none;
+}
+
+.comments .comment .comment_header .comment_pseudo, .comments .comment .comment_header .comment_pseudo a{
+	font-weight: bold;
+	color: #C10000;
+}
+
+.comments .comment .comment_header .comment_pseudo a{
+	font-style: italic;
+}
+
+.comments .comment .comment_header .comment_date{
+	color: #999;
+	font-size: 11px;
+}
+
+.comments .comment .comment_header .reponse{
+	display: none;
+	float: right;
+	margin-right: 7px;
+	position: relative;
+	top: -2px;
+}
+
+.comments .comment .comment_header .reponse:hover{
+	
+}
+
+.comments .comment .comment_header .reponse img{
+	height: 18px;
+}
+
+.comments .comment .comment_header .comment_vote{
+	float: right;
+}
+
+.comments .comment .comment_header .comment_vote .thumb_up{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	padding: 1px 0px 1px 2px;
+	background: url('../../img/comments/thumb_up.png') no-repeat;
+}
+
+.comments .comment .comment_header .comment_vote .thumb_down{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	padding: 1px 0px 1px 2px;
+	background: url('../../img/comments/thumb_down.png') no-repeat;
+}
+
+.comments .comment .comment_header .comment_vote .val{
+	font-size: 80%;
+	color: gray;
+	position: relative;
+	top: -5px;
+}
+
+.comments .comment .comment_header .comment_report{
+	display: none;
+	float: right;
+	margin-top: 2px;
+}
+
+.comments .comment .comment_header .comment_report img{
+	width: 20px;
+}
+
+.comments .comment .comment_text{
+	text-indent: 20px;
+	margin-left: 5px;
+	margin-right: 20px;
+}
+
+.comments .comment .comment_text .quoted_comment{
+	text-indent: 5px;
+	border: 1px dashed #858A90;
+	background: #EAF1FA url('../../img/comments/cite.png') 5px 5px no-repeat;
+	margin: 0px 10px;
+	padding: 5px 5px 5px 35px;
+}
+
+.comments .comment .reported_comment {
+	font-style: italic;
+	color: grey;
+}
+
+
+.comment_pager{
+	font-family: "Trebuchet MS", "Segoe UI", trebuchet, helvetica, arial, geneva, sans-serif;
+	color:#424242;
+	text-align:center;
+	font-size: 12px;
+	margin: 15px 0;
+}
+.comment_pager a, .comment_pager a:visited {
+	color:#ff3100;
+	padding:0 4px;
+	text-decoration:none;
+}
+.comment_pager span {
+	color:#888;
+	padding:0 4px;
+	text-decoration:none;
+}
+.comment_pager a:hover {
+	text-decoration:underline;
+}

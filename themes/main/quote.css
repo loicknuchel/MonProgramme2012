@@ -1,0 +1,246 @@
+
+.quote{
+	margin: 30px 0 40px 0;
+}
+
+.quote .quote_header{
+	background: white;
+	text-align: right;
+	font-size: 12px;
+	padding: 3px;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.quote .quote_header a{
+	text-decoration: none;
+}
+
+.quote .quote_header a:hover{
+	text-decoration: underline;
+}
+
+.quote .quote_header .quote_number{
+	margin-right: 5px;
+	font-size: 14px;
+}
+
+.quote .quote_header .options {
+	width: 21px;
+	height: 15px;
+	margin-right: 5px;
+	margin-bottom: -3px;
+	display: inline-block;
+	border: 1px solid white;
+	position: relative; /*--Declare X and Y axis base--*/
+	background: url('../../img/quote/options_15.png') center top no-repeat;
+	z-index: 100;
+}
+
+.quote .quote_header .options:hover {
+	background: url('../../img/quote/options_15.png') center bottom no-repeat;
+}
+
+.quote .quote_header .options.selected {
+	border: 1px solid #ccc;
+	border-bottom: 1px solid #eee;
+	background: #eee url('../../img/quote/options_15.png') center bottom no-repeat;
+	-webkit-border-radius: 5px 5px0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.quote .quote_header .options ul {
+	display: none;
+	list-style: none;
+	position: absolute;
+	left: -130px;
+	top: 15px;
+	background: #eee;
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 150px;
+	-webkit-border-radius: 5px 0px 5px 5px;
+	-moz-border-radius: 5px 0px 5px 5px;
+	border-radius: 5px 0px 5px 5px;
+	border: 1px solid #ccc;
+}
+
+.quote .quote_header .options ul li:first-child, .quote .quote_header .options ul li:first-child a {
+	-webkit-border-radius: 5px 0px 0px 0px;
+	-moz-border-radius: 5px 0px 0px 0px;
+	border-radius: 5px 0px 0px 0px;
+}
+
+.quote .quote_header .options ul li:last-child, .quote .quote_header .options ul li:last-child a {
+	-webkit-border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.quote .quote_header .options ul li {
+	margin: 0;
+	padding: 0;
+	clear: both;
+	width: 150px;
+	text-align: left;
+}
+
+.quote .quote_header .options ul li a {
+	float: left;
+	width: 140px;
+	background: #eee;
+	padding: 2px 0px;
+	padding-left: 10px;
+}
+
+.quote .quote_header .options ul li a:hover {
+	background: #ddd; 
+}
+
+.quote .quote_block{
+	border-radius: 0px 0px 5px 5px; /*topleft, topright, bottomright, bottomleft*/
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.quote .quote_block .quote_content{
+	background: white;
+	padding: 20px;
+	padding-top: 5px;
+	padding-bottom: 25px;
+}
+
+.quote .quote_block .quote_content .quote_text{
+	font-size: 22px;
+}
+
+.quote .quote_block .quote_content .quote_desc{
+	border-top: 1px solid #ddd;
+	margin-top: 8px;
+	padding-top: 15px;
+}
+
+.quote .quote_block .quote_content .quote_social{
+	float: right;
+}
+
+.quote .quote_block .quote_content .quote_social .twitter img{
+	width: 19px;
+}
+
+.quote .quote_block .quote_meta{
+	height: 20px;
+	font-size: 12px;
+	padding: 0px;
+	padding-top: 3px;
+	background:	#eee;
+	background: -webkit-linear-gradient(top, #eee, #ccc);
+	background:	   -moz-linear-gradient(top, #eee, #ccc);
+	background:		   -linear-gradient(top, #eee, #ccc);
+	border-radius: 0px 0px 5px 5px;
+}
+
+.quote .quote_block .quote_meta .quote_actions{
+	
+}
+
+.quote .quote_block .quote_meta .quote_actions ul{
+	float: left;
+}
+
+.quote .quote_block .quote_meta .quote_actions li{
+	display: inline;
+	margin-right: 15px;
+}
+
+.quote .quote_block .quote_meta .quote_actions .category img{
+	visibility: hidden;
+	height: 12px;
+	margin-top: 2px;
+	margin-bottom: -2px;
+	margin-left: 2px;
+}
+
+.quote .quote_block .quote_meta a{
+	text-decoration: none;
+}
+
+.quote .quote_block .quote_meta a:hover{
+	text-decoration: underline;
+}
+/*
+.quote .quote_block .quote_meta .quote_actions .thumb_up{
+	display: inline-block;
+	width: 16px;
+	height: 18px;
+	margin-bottom: -4px;
+	background: url(../img/thumb_up_off2.png) no-repeat;
+}
+
+.quote .quote_block .quote_meta .quote_actions .thumb_up:hover{
+	display: inline-block;
+	width: 16px;
+	height: 18px;
+	margin-bottom: -4px;
+	background: url(../img/thumb_up_light2.png) no-repeat;
+}
+
+.quote .quote_block .quote_meta .quote_actions .thumb_down{
+	display: inline-block;
+	width: 16px;
+	height: 18px;
+	margin-bottom: -4px;
+	background: url(../img/thumb_down_off2.png) no-repeat;
+}
+
+.quote .quote_block .quote_meta .quote_actions .thumb_down:hover{
+	display: inline-block;
+	width: 16px;
+	height: 18px;
+	margin-bottom: -4px;
+	background: url(../img/thumb_down_light2.png) no-repeat;
+}
+*/
+.quote .quote_block .quote_meta .more{
+	float: right;
+	margin-right: 15px;
+}
+
+.quote .quote_block .quote_expand{
+	display: none;
+	padding: 10px;
+	background: #ccc;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.quote .quote_block .quote_expand a {
+	font-style: italic;
+	text-decoration: none;
+	border-bottom: 1px dashed #FBFBCB;
+}
+
+
+
+
+
+.quote_pager{
+	font-family: "Trebuchet MS", "Segoe UI", trebuchet, helvetica, arial, geneva, sans-serif;
+	color:#424242;
+	text-align:center;
+	font-size: 12px;
+}
+.quote_pager a, .quote_pager a:visited {
+	color:#ff3100;
+	padding:0 4px;
+	text-decoration:none;
+}
+.quote_pager span {
+	color:#888;
+	padding:0 4px;
+	text-decoration:none;
+}
+.quote_pager a:hover {
+	text-decoration:underline;
+}
+
+

@@ -1,0 +1,11 @@
+MonProgramme2012 se base sur CourdQuotes.
+Il a été conçu en étant placé sur le même serveur et peut donc accéder directement aux fonctions de l'API (sans passer par un appel).
+
+Installer MonProgramme2012 sur son serveur :
+	1) copiez MonProgramme2012 et CourdQuotes sur votre serveur
+	2) créez une base de donnée (fichier courdquotes/bdd/schema.sql) 
+		- Pensez à vérifier que le préfix des tables soit compatible avec le fichier courdquotes/private_datas/filtre_fonc.php
+		- Remplissez le fichier courdquotes/private_datas/env-db.php pour qu'il puisse se connecter à votre base de données
+	3) configurez le fichier monprogramme2012/inc/server_link.php
+		- mettez les valeurs correctes aux variavles suivies de TODO (lien de MonProgramme2012 vers CroudQuotes, url de l'API et clé pour l'API)
+	4) pour les feedback, allez dans le fichier /monprogramme2012/js/libs/contactable.1.3/mail.php et modifiez l'adresse de destination (ligne 24)
