@@ -39,7 +39,7 @@ function post_new_selection(html_block, meth){
 	
 	function call_success(obj){
 		if(obj != null && obj['status']['code'] == 200){
-			displayInfo('info', s_selection.saved);
+			displayInfo('success', s_selection.saved);
 			html_block.find('form .text_input').val('');
 			empty_selection("selection");
 			window.location.replace('selection.php?sel='+obj['response']['selection']['id']);

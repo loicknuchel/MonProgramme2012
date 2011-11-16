@@ -66,7 +66,7 @@ function comment_vote(vote, this_parent, meth){
 	
 	function call_success(obj){
 		if(obj != null && obj['status']['code'] == 200){
-			displayInfo('info', s_ajax.vote.success);
+			displayInfo('success', s_ajax.vote.success);
 			html_vote_value.html(eval(html_vote_value.html()) + op);
 		}
 		else{
@@ -113,7 +113,7 @@ function comment_report(html_comment_header){
 	
 	function call_success(obj){
 		if(obj != null && obj['status']['code'] == 200){
-			displayInfo('info', s_ajax.report.success);
+			displayInfo('success', s_ajax.report.success);
 			if(obj['response']['action'] == 'deleted'){
 				html_comment_header.find('.comment_vote').fadeOut();
 				html_comment_header.find('.comment_report').fadeOut();

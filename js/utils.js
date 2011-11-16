@@ -1,9 +1,9 @@
 function displayInfo(type, text){
 	if(type == 'warning' || type == 'error' || type == 'debug'){
-		$('#info').html(text).delay(500).slideDown().delay(4000).slideUp();
+		$('#info').removeClass().addClass(type).html(text).delay(500).slideDown().delay(4000).slideUp();
 	}
-	else if(type == 'info'){
-		$('#info').html(text).delay(500).slideDown().delay(2500).slideUp();
+	else if(type == 'info' || type == 'success'){
+		$('#info').removeClass().addClass(type).html(text).delay(500).slideDown().delay(2500).slideUp();
 	}
 	else if(type == 'else'){
 		return false;

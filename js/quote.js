@@ -102,7 +102,7 @@ function quote_vote(vote, html_quote, meth){
 	
 	function call_success(obj){
 		if(obj != null && obj['status']['code'] == 200){
-			displayInfo('info', s_ajax.vote.success);
+			displayInfo('success', s_ajax.vote.success);
 			html_vote_value.html(eval(html_vote_value.html()) + 1);
 		}
 		else{
@@ -148,7 +148,7 @@ function quote_report(html_quote, meth){
 	
 	function call_success(obj){
 		if(obj != null && obj['status']['code'] == 200){
-			displayInfo('info', s_ajax.report.success);
+			displayInfo('success', s_ajax.report.success);
 			if(obj['response']['action'] == 'deleted'){
 				quote_delete_selection(html_quote);
 				html_quote.slideUp();
@@ -249,7 +249,7 @@ function quote_add_selection(html_quote){
 				set_selection_no(no_sel+1);
 			}
 			
-			displayInfo('info', s_quote.selection.saved);
+			displayInfo('success', s_quote.selection.saved);
 		}
 		else{
 			displayInfo('warning', s_quote.selection.alreadySaved);
@@ -280,7 +280,7 @@ function quote_delete_selection(html_quote){
 			change_to_unselected(html_quote);
 			set_selection_no(selection.quote.length);
 			
-			displayInfo('info', s_quote.selection.unsaved);
+			displayInfo('success', s_quote.selection.unsaved);
 		}
 		else{
 			displayInfo('warning', s_quote.selection.notSaved);
@@ -373,7 +373,7 @@ function quote_add_to_favoris(html_quote){
 				set_favoris_link();
 			}
 			
-			displayInfo('info', s_quote.favoris.saved);
+			displayInfo('success', s_quote.favoris.saved);
 		}
 		else{
 			displayInfo('warning', s_quote.favoris.alreadySaved);
@@ -403,7 +403,7 @@ function quote_delete_to_favoris(html_quote){
 			change_to_outfavoris(html_quote);
 			set_favoris_link();
 			
-			displayInfo('info', s_quote.favoris.unsaved);
+			displayInfo('success', s_quote.favoris.unsaved);
 		}
 		else{
 			displayInfo('warning', s_quote.favoris.notSaved);
