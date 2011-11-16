@@ -80,33 +80,33 @@ function generateCommentPager($nbPages, $current, $baseUrl){
 	
 	$html = '<div class="comment_pager">';
 	// previous
-	if($current == 1){$html .= '<span>< Précédent</span> | ';}
-	else{$prev = $current-1; $html .= '<a href="'.$baseUrl.''.$prev.'#comment_block">< Précédent</a> | ';}
+	if($current == 1){$html .= '<span>< Précédent</span> <b></b> ';}
+	else{$prev = $current-1; $html .= '<a href="'.$baseUrl.''.$prev.'#comment_block">< Précédent</a> <b></b> ';}
 	
 	// first
 	if($current - $widthPager - 1 == 1){
-		$html .= '<a href="'.$baseUrl.'1#comment_block">1</a> | ';
+		$html .= '<a href="'.$baseUrl.'1#comment_block">1</a> <b></b> ';
 	}
 	else if($current - $widthPager > 1){
-		$html .= '<a href="'.$baseUrl.'1#comment_block">1</a> | ... | ';
+		$html .= '<a href="'.$baseUrl.'1#comment_block">1</a> <b></b> ... <b></b> ';
 	}
 	
 	// middle
 	for($i=$current-$widthPager; $i<=$current+$widthPager; $i++){
 		if($i == $current){
-			$html .= '<strong class="med">'.$i.'</strong> | ';
+			$html .= '<strong class="med">'.$i.'</strong> <b></b> ';
 		}
 		else if($i > 0 && $i <= $nbPages){
-			$html .= '<a href="'.$baseUrl.''.$i.'#comment_block">'.$i.'</a> | ';
+			$html .= '<a href="'.$baseUrl.''.$i.'#comment_block">'.$i.'</a> <b></b> ';
 		}
 	}
 	
 	// last
 	if($current + $widthPager + 1 == $nbPages){
-		$html .= '<a href="'.$baseUrl.''.$nbPages.'#comment_block">'.$nbPages.'</a> | ';
+		$html .= '<a href="'.$baseUrl.''.$nbPages.'#comment_block">'.$nbPages.'</a> <b></b> ';
 	}
 	else if($current + $widthPager < $nbPages){
-		$html .= '... | <a href="'.$baseUrl.''.$nbPages.'#comment_block">'.$nbPages.'</a> | ';
+		$html .= '... <b></b> <a href="'.$baseUrl.''.$nbPages.'#comment_block">'.$nbPages.'</a> <b></b> ';
 	}
 	
 	// next
