@@ -1,7 +1,6 @@
 <?php
 	$rel_to_root = '../';
 	include $rel_to_root.'inc/server_link.php';
-	include $rel_to_root.'inc/conventions.php';
 	
 	$commentResult = sendCommentForm($usr, $server_path);
 	

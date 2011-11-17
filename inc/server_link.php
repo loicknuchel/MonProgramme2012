@@ -63,6 +63,8 @@
 		</script>';
 	}
 	
+	include_once $rel_to_root.'inc/antispam.php';
+	include_once $rel_to_root.'inc/conventions.php';
 	include_once $rel_to_root.'inc/utils.php';
 	include_once $rel_to_root.'inc/head.php';
 	include_once $rel_to_root.'inc/header.php';
