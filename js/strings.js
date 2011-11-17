@@ -22,6 +22,7 @@ s_contactable_subjects.ask_private_key = 'Demande de clé privé pour "Mon Progr
 var s_form_verification = new Object();
 s_form_verification.field = 'Le champ';
 s_form_verification.required = 'doit etre rempli !';
+s_form_verification.mustbemail = 'doit etre un mail valide !';
 s_form_verification.lessthan = 'doit contenir moins de';
 s_form_verification.stringunit = 'caractères !';
 

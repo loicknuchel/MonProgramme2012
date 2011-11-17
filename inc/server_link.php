@@ -5,14 +5,21 @@
 	$private_keys['monprogramme2012'] 	= '4739040f4981a4aa9973043f63e5e5ef4312d8f1';
 	$private_keys['themaps12'] 			= '7f0a84b7946b290c1aac7a2c6bc6b2f13787a4a1';
 	
-	$status_site 						= "DEV";							// TODO : mettre DEV ou PROD																<= ICI
+	$status_site 						= "LOCAL";							// TODO : mettre LOCAL, DEV ou PROD															<= ICI
+	$bdd_site							= "test";							// TODO : mettre test, monprogramme2012 ou themaps12										<= ICI
 	
 	$usr = null;
-	if($status_site == "DEV"){
+	if($status_site == "LOCAL"){
+		$server_path = $rel_to_root.'../lkws_croudquotes/';					// TODO : lien de la page courante vers la racine de CroudQuotes							<= ICI
+		$usr['site_url'] = 'http://localhost/lkws_monprogramme2012/';		// TODO : url du site																		<= ICI
+		$usr['api_url'] = 'http://localhost/lkws_croudquotes/api/1.0/';		// TODO : url de l'API 																		<= ICI
+		$usr['key'] = $private_keys[$bdd_site];								// TODO : clé pour se connecter à l'API														<= ICI
+	}
+	else if($status_site == "DEV"){
 		$server_path = $rel_to_root.'../lkws_croudquotes/';					// TODO : lien de la page courante vers la racine de CroudQuotes							<= ICI
 		$usr['site_url'] = 'http://dev.lkws.fr/lkws_monprogramme2012/';		// TODO : url du site																		<= ICI
 		$usr['api_url'] = 'http://dev.lkws.fr/lkws_croudquotes/api/1.0/';	// TODO : url de l'API 																		<= ICI
-		$usr['key'] = $private_keys['test'];								// TODO : clé pour se connecter à l'API														<= ICI
+		$usr['key'] = $private_keys[$bdd_site];								// TODO : clé pour se connecter à l'API														<= ICI
 	}
 	else if($status_site == "PROD"){
 		$server_path = $rel_to_root.'../lkws_croudquotes/';					// TODO : lien de la page courante vers la racine de CroudQuotes							<= ICI

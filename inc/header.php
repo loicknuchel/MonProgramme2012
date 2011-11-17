@@ -35,7 +35,7 @@ function generateHeader($rel_to_root = './'){
 				-->
 				<div class="disclaimer" style="bottom: 0px; right: 10px; font-size: 10px;">
 					<span style="font-style: italic;">"Le monde ne sera pas détruit par ceux qui font le mal,<br/>
-					mais par ceux qui les regardent sans rien faire."</span><br/>
+					<span onclick="displayInfo(\'info\', \'Voici le message...\');">mais</span> <span onclick="displayInfo(\'success\', \'Voici le message...\');">par</span> <span onclick="displayInfo(\'warning\', \'Voici le message...\');">ceux</span> <span onclick="displayInfo(\'error\', \'Voici le message...\');">qui</span> <span onclick="displayInfo(\'debug\', \'Voici le message...\');">les</span> regardent sans rien faire."</span><br/>
 					<a href="http://www.maphilo.net/citations_albert-einstein-147.html" target="_blanck" style="float: right;">Einstein</a> 
 				</div>
 				<h1><a href="'.$rel_to_root.'">Mon Programme 2012</a></h1>

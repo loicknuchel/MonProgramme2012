@@ -49,68 +49,100 @@
 <body>
 	<div class="text" id="newForm">
 		<form>
-			Suivre la proposition #<input type="text" name="quote_id" id="quote_id" placeholder="id" class="FV_required" /> et recevoir une notification par mail pour :<br/>
+			Suivre la proposition #<input type="text" name="quote_id" id="quote_id" placeholder="id" /> et recevoir une notification des nouveaux commentaires par mail<br/>
 			<div class="elts">
-				<input type="checkbox" name="new_comments" id="new_comments" checked="checked" /><label for="new_comments">les nouveaux commentaires</label><br/>
-				<!--<input type="checkbox" name="new_votes" id="new_votes" /><label for="new_votes">les nouveaux votes</label><br/>
+				<!--<input type="checkbox" name="new_comments" id="new_comments" checked="checked" /><label for="new_comments">les nouveaux commentaires</label><br/>
+				<input type="checkbox" name="new_votes" id="new_votes" /><label for="new_votes">les nouveaux votes</label><br/>
 				<input type="checkbox" name="new_reports" id="new_reports" /><label for="new_reports">les nouveaux signalements</label><br/> height: 25px à ajouter par ligne sur la fancybox... -->
 			</div>
 			Votre mail : <input type="text" name="mail" id="mail" placeholder="toto@exemple.com" class="FV_required FV_mail" /><br/>
-			<button type="submit" class="styled_button grey">Confirmer suivi</button>
+			<button type="submit" class="send">Confirmer le suivi</button> ou 
+			<button type="submit" class="see">Voir vos suivis</button>
 		</form>
 	</div>
 	
 	
 	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-	<script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
+	<script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.7.js"%3E%3C/script%3E'))</script>
 	
 	<script src="js/utils.js"></script>
 	<script src="js/form_verification.js"></script>
 	
 	<script>
 		$(function(){
-			FV_Form_Verification('#newForm ');
+			$('#newForm form .send').click(function(){
+				var quote_id_field = $('#newForm form #quote_id');
+				var mail_field = $('#newForm form #mail');
+				var sendForm = true;
+				if(quote_id_field.val() == '' || quote_id_field.val() == null){
+					alert(s_form_verification.field+' "'+quote_id_field.attr('placeholder')+'" '+s_form_verification.required);
+					quote_id_field.addClass('FV_error');
+					quote_id_field.next().addClass('FV_error');
+					sendForm = false;
+				}
+				if(mail_field.val() == '' || mail_field.val() == null){
+					alert(s_form_verification.field+' "'+mail_field.attr('placeholder')+'" '+s_form_verification.required);
+					mail_field.addClass('FV_error');
+					mail_field.next().addClass('FV_error');
+					sendForm = false;
+				}
+				
+				if(sendForm == true){
+					var quote_id = quote_id_field.val();
+					var mail = mail_field.val();
+					if(quote_id != '' && mail != ''){
+						sendSuiviQuote(quote_id, mail, meth);
+					}
+				}
+				return false;
+			});
 			
-			$('#newForm form').submit(function(){
-				var quote_id = $(this).find('#quote_id').val();
-				var mail = $(this).find('#mail').val();
-				if($(this).find('#new_comments').attr('checked') == true){var new_coms = 1;}
-				else{var new_coms = 0;}
-				if(quote_id != '' && mail != ''){
-					sendSuivi(quote_id, mail, new_coms, meth);
+			$('#newForm form .see').click(function(){
+				var mail_field = $('#newForm form #mail');
+				var sendForm = true;
+				if(mail_field.val() == '' || mail_field.val() == null){
+					alert(s_form_verification.field+' "'+mail_field.attr('placeholder')+'" '+s_form_verification.required);
+					mail_field.addClass('FV_error');
+					mail_field.next().addClass('FV_error');
+					sendForm = false;
+				}
+				
+				if(sendForm == true){
+					var mail = mail_field.val();
+					if(mail != ''){
+						displaySuivis(mail, meth);
+					}
 				}
 				return false;
 			});
 			
 			
-			function sendSuivi(quote_id, mail, new_coms, meth){
+			
+			function sendSuiviQuote(quote_id, mail, meth){
 				if(meth == 'local'){
 					var url = base_url+'suivi.php';
-					$.post(url, { quoteid: quote_id, mail: mail, newcomments: new_coms, key: api_key, noheaders: 1 },
+					$.post(url, { mail: mail, type: 'quote', id: quote_id, action: 'follow', key: api_key, noheaders: 1 },
 					function(data) {
-						successCall(jQuery.parseJSON(data), quote_id, mail, new_coms);
+						successCall(jQuery.parseJSON(data), quote_id, mail);
 					});
 				}
 				else{
-					var url = base_url+'suivi.php?quoteid='+quote_id+'&mail='+mail+'&newcomments='+new_coms+'&key='+api_key+'&noheaders=1&meth=post&format=jsonp&callback=?';
+					var url = base_url+'suivi.php?mail='+mail+'&type=quote&id='+quote_id+'&action=follow&key='+api_key+'&noheaders=1&meth=post&format=jsonp&callback=?';
 					$.ajax({
 						url: url,
 						success: function(data) {
-							successCall(data, quote_id, mail, new_coms);
+							successCall(data, quote_id, mail);
 						},
 						dataType: 'jsonp'
 					});
 				}
 				
-				function successCall(obj, quote_id, mail, new_coms){
+				function successCall(obj, quote_id, mail){
 					if(obj != null && obj['status']['code'] == 200){
-						displayInfo('info', "Votre suivi a été pris en compte.");
-						if(new_coms == 1){ var phrase = 'Votre demande de suivi a été prise en compte.'; }
-						else{ var phrase = 'Votre demande d\'arrêt de suivi a été prise en compte.'; }
-						$('#newForm').html(phrase+'<br/>La liste des propositions que vous suivez est ici : <a href="#" class="suivis">Vos suivis</a><br/><br/>Vous pouvez fermer cette fenêtre.');
+						displayInfo('success', "Votre suivi a été pris en compte.");
+						$('#newForm').html('Votre demande de suivi a été prise en compte.<br/>La liste des éléments que vous suivez est ici : <a href="#" class="suivis">Vos suivis</a><br/><br/>Vous pouvez fermer cette fenêtre.');
 						$('.suivis').click(function(){
-							displaySuivis(mail);
+							displaySuivis(mail, meth);
 						});
 						$('#newForm').css('margin', '30px');
 					}
@@ -125,7 +157,7 @@
 				return false;
 			}
 			
-			function displaySuivis(mail){
+			function displaySuivis(mail, meth){
 				if(meth == 'local'){
 					var url = base_url+'suivi.php';
 					$.get(url, { mail: mail, key: api_key, noheaders: 1 },
@@ -146,9 +178,30 @@
 				
 				function successCall(obj){
 					if(obj != null && obj['status']['code'] == 200){
-						var page = 'L\'adresse "'+obj['response']['mail']+'" est abonnée aux propositions :<ul>';
-						for(var i=0; i<obj['response']['suivis'].length; i++){
-							page += '<li>proposition <a href="./quote.php?id='+obj['response']['suivis'][i]['quote_id']+'">#'+obj['response']['suivis'][i]['quote_id']+'</a></li>';
+						var page = 'L\'adresse "'+obj['response']['mail']+'" est abonnée à ces éléments :<ul>';
+						if(obj['response']['suivis']['site'] != null){
+							page += '<li>Mises a jour du site</li>';
+						}
+						if(obj['response']['suivis']['page'] != null){
+							page += '<li>Pages :<ul>';
+							for(var i=0; i<obj['response']['suivis']['page'].length; i++){
+								page += '<li><a href="./page.php?id='+obj['response']['suivis']['page'][i]+'">page '+obj['response']['suivis']['page'][i]+'</a></li>';
+							}
+							page += '</ul></li>';
+						}
+						if(obj['response']['suivis']['quote'] != null){
+							page += '<li>Propositions :<ul>';
+							for(var i=0; i<obj['response']['suivis']['quote'].length; i++){
+								page += '<li>proposition <a href="./quote.php?id='+obj['response']['suivis']['quote'][i]+'">#'+obj['response']['suivis']['quote'][i]+'</a></li>';
+							}
+							page += '</ul></li>';
+						}
+						if(obj['response']['suivis']['comment'] != null){
+							page += '<li>Commentaires :<ul>';
+							for(var i=0; i<obj['response']['suivis']['comment'].length; i++){
+								page += '<li>commentaire '+obj['response']['suivis']['comment'][i]+'</li>';
+							}
+							page += '</ul></li>';
 						}
 						page += '</ul>';
 						

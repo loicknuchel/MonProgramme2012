@@ -4,8 +4,7 @@ function generateScriptsJs($rel_to_root = './'){
 	$html = '
 	<div id="contactable" class="FV_contactable"></div>
 	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-	<script>!window.jQuery && document.write(unescape(\'%3Cscript src="'.$rel_to_root.'js/libs/jquery-1.5.1.min.js"%3E%3C/script%3E\'))</script>
+	<script>!window.jQuery && document.write(unescape(\'%3Cscript src="'.$rel_to_root.'js/libs/jquery-1.7.min.js"%3E%3C/script%3E\'))</script>
 	
 	<script src="'.$rel_to_root.'js/libs/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 	<script src="'.$rel_to_root.'js/libs/contactable.1.3/jquery.validate.pack.js"></script>
@@ -20,6 +19,7 @@ function generateScriptsJs($rel_to_root = './'){
 	<script src="'.$rel_to_root.'js/menu.js"></script>
 	<script src="'.$rel_to_root.'js/quote.js"></script>
 	<script src="'.$rel_to_root.'js/comment.js"></script>
+	<script src="'.$rel_to_root.'js/footer.js"></script>
 	<script src="'.$rel_to_root.'js/selection.js"></script>
 	<script src="'.$rel_to_root.'js/script.js"></script>
 	

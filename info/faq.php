@@ -265,6 +265,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 				$key_param['name'] = 'key'; 			$key_param['status'] = 'requis'; 			$key_param['use'] = "clé, publique ou privée, donnant accès à un service de l'API.";
 				$quoteidget_param['name'] = 'quoteid'; 	$quoteidget_param['status'] = 'requis'; 	$quoteidget_param['use'] = "Id de la citation souhaitée. Peut aussi prendre la valeur <span class=\"val\">random</span> pour une citation au hasard.";
 				$type_param['name'] = 'type';			$type_param['status'] = 'requis';			$type_param['use'] = "Valeurs possibles : <span class=\"val\">quote</span> ou <span class=\"val\">page</span>. désigne le type de ressource voulu.";
+				$typesuivi_param['name'] = 'type';		$typesuivi_param['status'] = 'requis';		$typesuivi_param['use'] = "Valeurs possibles : <span class=\"val\">quote</span>, <span class=\"val\">page</span> ou <span class=\"val\">site</span>. désigne le type de ressource voulu.";
 				$id_param['name'] = 'id'; 				$id_param['status'] = 'requis'; 			$id_param['use'] = "Id de la ressource souhaitée.";
 				$p_comment_param['name'] = 'p'; 		$p_comment_param['status'] = 'optionnel'; 	$p_comment_param['use'] = "Numéro de la page de commentaires.";
 				$p_quote_param['name'] = 'p'; 			$p_quote_param['status'] = 'optionnel'; 	$p_quote_param['use'] = "Numéro de la page de citations.";
@@ -298,7 +299,8 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 /*29*/			$newcat_param['name'] = 'cat';				$newcat_param['status'] = 'requis';				$newcat_param['use'] = "Nom de la nouvelle catégorie à créer.";
 				
 				$mailsuivi_param['name'] = 'mail'; 			$mailsuivi_param['status'] = 'requis';			$mailsuivi_param['use'] = "Adresse mail où sont envoyés les mails du suivi.";
-				$newcomments_param['name'] = 'newcomments'; $newcomments_param['status'] = 'requis'; 		$newcomments_param['use'] = "Booléen (0 ou 1) indiquant si l'adresse mail sera informée ou pas de l'arrivée de nouveaux commentaires sur la citation.";
+				$suiviaction_param['name'] = 'action'; 		$suiviaction_param['status'] = 'requis'; 		$suiviaction_param['use'] = "Valeurs possibles : <span class=\"val\">follow</span> ou <span class=\"val\">unfollow</span>. Indique l'action qui doit être effetuée lors de cet appel.";
+				/*to delete*/$newcomments_param['name'] = 'newcomments'; $newcomments_param['status'] = 'requis'; 		$newcomments_param['use'] = "Booléen (0 ou 1) indiquant si l'adresse mail sera informée ou pas de l'arrivée de nouveaux commentaires sur la citation.";
 				
 				// pour tous
 				$noheaders_param['name'] = 'noheaders'; $noheaders_param['status'] = 'optionnel';	$noheaders_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Cela permet que les headers ne soient pas envoyés s'ils l'ont déjà été.";
@@ -517,7 +519,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					$ressource= null; $params = null; $sample = null;
-					$ressource['ressource'] = 'comment.php?key={key}&type={type}&id={quoteid}&comment={comment}&pub={publisher}';
+					$ressource['ressource'] = 'comment.php?key={key}&type={type}&id={id}&comment={comment}&pub={publisher}';
 					$ressource['use'] = "Ajoute un nouveau commentaire à la ressource désignée par son type et son id. Retourne l'id du nouveau commentaire si l'ajout a réussi.";
 					$params[0] = $key_param;
 					$params[1] = $type_param;
@@ -687,20 +689,21 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					$params[4] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'suivi.php?key='.$APIdatas['public_key_test'].'&mail=toto@example.com';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"mail":"toto@example.com","suivis":[{"quote_id":"1","new_comments":"1"<span class="comment">1: action suivie; 0: action non suivie</span>},{"quote_id":"2","new_comments":"1"}],"total_suivis":2},"info":{"remaining_queries":39,"next_restart":50}}';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"mail":"toto@example.com","suivis":{"page":[2],"quote":[1,3,12,24,31,57]},"total_suivis":7},"info":{"remaining_queries":39,"next_restart":60}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					
 					$ressource= null; $params = null; $sample = null;
-					$ressource['ressource'] = 'suivi.php?key={key}&mail={mail}&amp;quoteid={quoteid}&newcomments={1|0}';
-					$ressource['use'] = "Crée ou met a jour le suivi de la citation identifiée par l'adresse mail fournie.";
+					$ressource['ressource'] = 'suivi.php?key={key}&mail={mail}&type={type}&id={id}&action={action}';
+					$ressource['use'] = "Crée ou met a jour le suivi par l'adresse mail d'une ressource désignée par son type et son id.";
 					$params[0] = $key_param;
 					$params[1] = $mailsuivi_param;
-					$params[2] = $quoteid_param;
-					$params[3] = $newcomments_param;
-					$params[4] = $noheaders_param;
-					$params[5] = $format_param;
-					$params[6] = $callback_param;
+					$params[2] = $typesuivi_param;
+					$params[3] = $id_param;
+					$params[4] = $suiviaction_param;
+					$params[5] = $noheaders_param;
+					$params[6] = $format_param;
+					$params[7] = $callback_param;
 					$sample['methode'] = 'POST';
 					$sample['requete'] = $APIdatas['base_url'].'suivi.php?key='.$APIdatas['public_key_test'].'&mail=toto@example.com&amp;quoteid=1&newcomments=1';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"info":{"remaining_queries":39,"next_restart":60}}';
@@ -784,7 +787,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 	
 	<div id="contactable" class="FV_contactable"></div>
 	
-	<script src="../js/libs/jquery-1.5.1.min.js"></script>
+	<script src="../js/libs/jquery-1.7.min.js"></script>
 	<script src="../js/libs/contactable.1.3/jquery.validate.pack.js"></script>
 	<script src="../js/libs/contactable.1.3/jquery.contactable.js"></script>
 	<script src="../js/strings.js"></script>

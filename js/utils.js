@@ -3,7 +3,7 @@ function displayInfo(type, text){
 		$('#info').removeClass().addClass(type).html(text).delay(500).slideDown().delay(4000).slideUp();
 	}
 	else if(type == 'info' || type == 'success'){
-		$('#info').removeClass().addClass(type).html(text).delay(500).slideDown().delay(2500).slideUp();
+		$('#info').removeClass().addClass(type).html(text).delay(500).slideDown().delay(4000).slideUp();
 	}
 	else if(type == 'else'){
 		return false;
@@ -25,6 +25,14 @@ function in_array(array, value){
 		if(array[key] == value){
 			return true;
 		}
+	}
+	return false;
+}
+
+function checkEmail(mail) {
+	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if (filter.test(mail)) {
+		return true;
 	}
 	return false;
 }

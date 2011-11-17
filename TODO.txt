@@ -1,0 +1,10 @@
+
+1)
+Mettre en place un système d'inscriptions pour :
+	- organiser des rencontres-débat
+	- suivre le site
+	
+=> généraliser la table suivi_quote
+
+2)
+Ajouter dans la partie admin la suppression réelle des quotes et commentaires (et toutes les actions qui vont bien)

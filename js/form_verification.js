@@ -80,11 +80,16 @@ function FV_Form_Verification(inner_html){
 			
 		});
 		
-		$(this).find('.FV_site').each(function(){
-			
+		$(this).find('.FV_mail').each(function(){
+			if($(this).val() != '' && checkEmail($(this).val()) == false){
+				alert(s_form_verification.field+' "'+$(this).attr('placeholder')+'" '+s_form_verification.mustbemail);
+				$(this).addClass('FV_error');
+				$(this).next().addClass('FV_error');
+				sendForm = false;
+			}
 		});
 		
-		$(this).find('.FV_mail').each(function(){
+		$(this).find('.FV_site').each(function(){
 			
 		});
 		

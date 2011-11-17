@@ -105,6 +105,8 @@ function suivi_quote_fancybox(rel_to_root){
 }
 
 function open_new_quote_category_fancybox(html_quote){
+	// sert a proposer une nouvelle catégorie pour une quote
+	// non utilisé pour le moment
 	var quote_id = eval(html_quote.find('.quote_header .quote_number a span').html());
 	
 	$.fancybox({

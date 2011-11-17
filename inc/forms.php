@@ -15,11 +15,12 @@ function sendCommentForm(&$usr, $server_path){
 		$json = json_decode($commentJson, true);
 		
 		
-		if(isset($_POST['suivi']) && $_POST['suivi'] == true && $_POST['type'] == 'quote'){
+		if(isset($_POST['suivi']) && $_POST['suivi'] == true){
 			$suivi_params = null;
 			$suivi_params['mail'] = isset($_POST['mail']) ? $_POST['mail'] : null;
-			$suivi_params['quoteid'] = isset($_POST['id']) ? $_POST['id'] : null;
-			$suivi_params['newcomments'] = 1;
+			$suivi_params['type'] = isset($_POST['type']) ? $_POST['type'] : null;
+			$suivi_params['id'] = isset($_POST['id']) ? $_POST['id'] : null;
+			$suivi_params['action'] = 'follow';
 			$suivi_params['noheaders'] = 1;
 			apiUpdateSuivi($usr, $suivi_params, $server_path);
 		}
@@ -51,15 +52,15 @@ function generateCommentForm($usr, $server_path, $postResult, $actionPage, $type
 	}
 	
 	$html = '<div class="leave_comment" id="leave_comment">
-		<form method="POST" action="'.$actionPage.'" class="FV_comment">
+		<form method="POST" action="'.$actionPage.'#comment_block" class="FV_comment">
 			<input type="hidden" name="type" value="'.$type.'" />
 			<input type="hidden" name="id" value="'.$id.'" />
 			<input class="FV_required FV_length" type="text" name="pseudo" placeholder="Pseudo" value="'.$pseudo.'" maxsize="'.$app['params']['size']['publisher'].'" /><br/>
-			<input class="FV_length" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
+			<input class="FV_mail FV_length" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
 			<input class="FV_length" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>
-			<textarea class="FV_required FV_length" name="comment" placeholder="Votre réaction" maxsize="'.$app['params']['size']['comment'].'">'.$comment.'</textarea><br/>';
-			if($type == 'quote'){$html .= '<input type="checkbox" name="suivi" id="suivi" /><label for="suivi">Recevoir une notification de réponse aux commentaires par email</label><br/>';}
-			$html .= '<div style="text-align: center;"><input type="submit" value="Réagir !"/></div>
+			<textarea class="FV_required FV_length" name="comment" placeholder="Votre réaction" maxsize="'.$app['params']['size']['comment'].'">'.$comment.'</textarea><br/>
+			<input type="checkbox" name="suivi" id="suivi" /><label for="suivi">Recevoir une notification de réponse aux commentaires par email</label><br/>
+			<div style="text-align: center;"><input type="submit" value="Réagir !"/></div>
 			<div class="clearfix"></div>
 		</form>
 	</div>';
@@ -167,7 +168,7 @@ function generateQuoteForm($usr, $server_path, $postResult, $categories){
 				<p>Quelques informations sur vous (si elles sont pertinentes pour la proposition) :</p>
 				<textarea class="FV_length" name="pubinfo" placeholder="Informations pertinentes sur vous..." maxsize="'.$app['params']['size']['publisher_info'].'">'.$pubinfo.'</textarea><br/>
 				<p>Votre adresse mail (elle ne sera communiquée sous aucun prétexte mais pourra servir à prouver que vous êtes bien l\'auteur de la proposition et à regrouper toutes vos propositions) :</p>
-				<input class="FV_length" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
+				<input class="FV_length FV_mail" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
 				<p>Votre site web (ou un site web que vous appréciez) :</p>
 				<input class="FV_length" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>
 			</div>

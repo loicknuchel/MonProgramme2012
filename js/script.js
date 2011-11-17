@@ -1,5 +1,6 @@
 $(function(){
 	dropdown_menu();
+	footer_actions();
 	
 	// effectue les actions sur les citations (quote.js)
 	quote_actions();
@@ -17,7 +18,7 @@ $(function(){
 	FV_Form_Verification('');
 	fill_forms();
 	
-	// affiche le formulaire d'envoi pour une nouvelle sélection
+	// affiche le formulaire d'envoi pour une nouvelle sélection (selection.js)
 	$('.new_selection a').click(function(){
 		show_selection_form($(this).parent(), meth);
 		return false;

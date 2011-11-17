@@ -1,13 +1,13 @@
 <?php
 	$rel_to_root = '../';
-	include '../inc/server_link.php';
-	include '../inc/conventions.php';
+	include $rel_to_root.'inc/server_link.php';
+	include $rel_to_root.'inc/conventions.php';
 	
 	$commentResult = sendCommentForm($usr, $server_path);
 	
 	$params = null;
 	$params['type'] = 'page';
-	$params['id'] = $pageId['projet'];
+	$params['id'] = $pageId['projet']['id'];
 	$params['p'] = isset($_GET['p']) ? $_GET['p'] : null;
 	$params['noheaders'] = 1;
 	$json = apiGetCommentsByTypeId($usr, $params, $server_path);
@@ -70,12 +70,12 @@
 				}
 				
 				$lastPage = isset($total_comment_pages) ? $total_comment_pages+1 : 1;
-				echo generateCommentForm($usr, $server_path, $commentResult, 'projet.php?p='.$lastPage, 'page', $pageId['projet']);
+				echo generateCommentForm($usr, $server_path, $commentResult, 'projet.php?p='.$lastPage, 'page', $pageId['projet']['id']);
 			?>
 		</div>
 	</div>
 	
-	<?php echo generateFooter(); ?>
+	<?php echo generateFooter($rel_to_root); ?>
 	
 	<?php echo generateScriptsJs($rel_to_root); ?>
 	
