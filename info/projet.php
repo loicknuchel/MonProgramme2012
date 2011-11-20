@@ -26,33 +26,59 @@
 	<div id="main">
 		<div class="wrapper">
 			<div class="article">
-				<h1>Quel constat ?</h1>
+				<h1 class="first">Quel constat ?</h1>
 				<p>
-					Depuis que je m'intéresse à la politique et aussi loin que j'ai pu remonter, je constate que les problèmes sont toujours les mêmes, que les hommes et femmes politiques proposent toujours les mêmes solutions,
-					et que la situation n'évolue pas. 
+					Depuis que je m'intéresse à la politique et aussi loin que j'ai pu remonter, je constate que <span>les problèmes sont toujours les mêmes</span>, 
+					que les hommes et femmes politiques proposent <span>toujours les mêmes solutions</span>,
+					et que la situation <span>n'évolue pas</span>. Au fur et à mesure de mes investigations dans plusieurs domaines, j'ai pu me rendre compte que des solutions existaient et qu'elles avaient déjà fait leur preuves pour certaines.
 				</p>
 				<p>
-					Je constate aussi que notre système politique ne permet pas que nous soyons acteurs de la politique.
-					En effet, l'élection fait en sorte que nous n'ayons le choix qu'entre deux partis politiques (le PS et l'UMP actuellement).
+					Pour moi, le problème de notre système est que l'on <span>ne parle pas des vrais problèmes</span>. Que l'on s'occupe des cas particuliers mais qu'on laisse l'état général se dégrader. 
+					Les politiques de tous bords se combattent sur des détails sans prendre de recul (volontairement?) pour adresser les problèmes globaux et essentiels.
 				</p>
 				
 				<h1>Pour quelle solution ?</h1>
+				<p>
+					Je pense que la solution à cette situation de déni de réalité est que chaque citoyen <span>réinvestisse le champ politique</span>. 
+					Bien sur, <info title="Vote tous les 5 ans, pas de référendum populaires, professionnalisation de la politique">tout a été fait pour nous dégouter</info> et
+					nous faire croire que l'on ne peut rien changer à notre petit niveau. 
+					Cela permet aux politiques d'agir en toute liberté sans être sérieusement remis en question.
+				</p>
+				<p>
+					C'est donc l'objet de ce site : permettre à chacun de <span>s'exprimer et découvrir les opinions</span> des autres. 
+					J'espère de cette manière que les discussions feront ressortir les sujets les plus importants et amèneront des propositions et des expérimentations de solutions.
+				</p>
+				<p>
+					J'ai moi même des idées pour changer les choses en profondeur, à commencer par une sérieuse modification de notre processus de pris de décision collective (gouvernement et institutions) 
+					et une clarification et réattribution des rôles de chacun des acteurs.
+					La partie économique et monétaire me parrait, elle aussi, essentielle car c'est l'un des grands pouvoir actuel. 
+					Je n'ai pas encore eu le temps d'écrire des articles pour étailler mes propos et présenter les solutions que j'envisage mais je prévois de le faire rapidement.
+				</p>
+				<p>
+					Vous l'aurez compris, ce site souhaite privilégier la <span>réflexion de fond sur les sujets essentiels</span>. C'est pourquoi je tiens à ce qu'il ne soit pas mis en relation avec l'actualité politique.
+				</p>
 				
-				
-				<h1>Pourquoi ce site ?</h1>
-				<h2>Le constat</h2>
-				<p>Depuis plus de 30 ans, nos dirigeants politiques, de gauche comme de droite, font preuve d’une <span><a href="">irresponsabilité accablante</a></span>, quel que soit le domaine : économie, éducation, sécurité, etc. </p>
-				<p>Ils ne se comportent plus comme des hommes et des femmes investis, censés diriger le pays dans l’intérêt collectif, mais comme des <span>marchands de voix.</span> </p>
-				<p>De ce fait, à chaque élection, des millions de citoyens sont <span>résignés</span> à voter <span>sans aucune conviction</span>, parce qu’il faut bien remplir “son devoir civique”. La situation <span>se dégrade ainsi de plus en plus</span>, dans tous les domaines, quel que soit le “camp” politique qui se trouve aux responsabilités. </p>
-				<p>Aujourd’hui, la crise financière, qui a été entièrement provoquée par les banques (<a href="">qui ont cru bon de jouer à un gigantesque casino mondial avec notre argent, pour gagner toujours plus</a>), nous met littéralement à genoux. </p>
-				<p>Et nos dirigeants politiques, de gauche comme de droite, après avoir renfloué en 2008 ces banques avec l’argent public, n’ont qu’une solution à proposer : recommencer en faisant payer les contribuables que nous sommes, encore et toujours plus, plutôt que les véritables responsables, qui continueront ainsi à engranger des bénéfices et autres bonus aussi indécents que scandaleux. </p>
-				<p>Ainsi, sous prétexte que les banques seraient le “moteur de l’économie” (quel moteur, en passant...), elles pourraient être à l’origine des pratiques les plus abjectes, en toute impunité... </p>
-				<p>Partout dans le monde, récemment aux Etats-Unis (les indignés de Wall- Street), pourtant mère patrie du capitalisme pur et dur, les citoyens se révoltent, ne supportant plus de payer à la place des véritables responsables. </p>
-				<p>D’autres problèmes graves apparaissent également plus que jamais, dans les domaines cités plus haut : éducation, sécurité, mais aussi découlant de la gestion calamiteuse de l’Etat dans nombre de secteurs. Sans compter les innombrables scandales politico-financiers... </p>
-				<p>Pour rejeter cette pratique de la politique totalement archaïque et d’un autre âge, pour ne pas dire qu’elle relève tout simplement de la monarchie, il serait normal que le vote blanc soit comptabilisé dans les suffrages exprimés, car après tout, il s’agit bien d’une expression aussi légitime qu’une autre, mais les politiques le refusent obstinément (on comprend aisément pourquoi...) </p>
-				<p>Les démarches, tout à fait louables, engagées récemment par Bruno Gaccio et Marie Naudet (”Blanc, c’est pas nul”), même s’il semblerait qu’elles puissent aboutir à une loi, ne changeraient en rien la situation, étant donné que les votes blancs n’entreraient pas dans les suffrages exprimés, et ne provoqueraient pas de blocage en cas de votes blancs massifs. </p>
-				<p>En outre, cette loi n’entrerait pas en vigueur pour la prochaine élection présidentielle...</p>
-				<h6>Loic Knuchel</h6>
+				<h1>C'est bien beau mais, quoi faire ?</h1>
+				<p>
+					C'est là où les choses deviennent difficiles. N'ayant pas de pouvoir, il est difficile de faire vraiment changer les choses.<br/>
+					Heureusement, il arrive toujours un moment de basculement, où les personnes détenant le pouvoir deviennent plus fragiles et où il devient possible de changer le système en profondeur.
+					Si nous nous sommes <span>préalablements mis d'accord</span> et que nous savons ce vers quoi nous souhaitons aller, 
+					ce changement peut se faire de manière pacifique et surtout amener vers une organisation mûrement réfléchie et bien plus adaptée à nos souhaits.
+					Mais c'est avant qu'il faut savoir ce que l'on souhaite, sinon, le moment venu, il sera difficile de se faire entendre et de créer un consensus.
+				</p>
+				<p>
+					Il est donc très important de <span>diffuser dès maintenant vos idées</span> et de débattre autours de vous.<br/>
+					Il est très important de politiser un maximum de personnes, non pas pour qu'elles aillent voter blanc ou noir 
+					mais pour qu'elles commencent à réfléchir sérieusement à quelle alternative serait la plus souhaitable !<br/>
+					Il est essentiel que les gens prennent concience que les choses risquent de changer et il faut qu'ils soient préparés et sachent ce qu'ils veulent avant que ce moment arrive.
+				</p>
+				<p>
+					<br/>
+					<span>Soyez tous candidats,<br/>
+					proposez tous un programme,<br/>
+					parlez autours de vous<br/>
+					et devenez le moteur d'un nouveau système à votre image !<span>
+				</p>
 			</div>
 			<?php
 				
