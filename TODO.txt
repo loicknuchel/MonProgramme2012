@@ -7,9 +7,12 @@ Mettre en place un système d'inscriptions pour :
 Ajouter dans la partie admin la suppression réelle des quotes et commentaires (et toutes les actions qui vont bien)
 
 3)
-améliorer les pages category.php, local_selection.php et selection.php
+Ajouter des pages pour présenter mes solutions ou mettre des liens vers mon blog...
 
 4)
+améliorer les pages category.php, local_selection.php et selection.php
+
+5)
 améliorer les pages d'erreur (404.php et 403.php)
 
 

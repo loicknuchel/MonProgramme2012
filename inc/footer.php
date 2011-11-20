@@ -63,7 +63,7 @@ function generateFooter($rel_to_root = './'){
 						<h3>
 							<a href="http://twitter.com/share" 
 								class="twitter-share-button" 
-								data-text="#mp2012 Construisez et partagez votre programme électoral 2012" 
+								data-text="Construisez et partagez votre programme électoral pour 2012 #mp2012 #fr2012" 
 								data-count="horizontal" 
 								data-via="monprogramme" 
 								data-url="http://monprogramme2012.lkws.fr/" 
