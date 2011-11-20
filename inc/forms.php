@@ -70,7 +70,7 @@ function generateCommentForm($usr, $server_path, $postResult, $actionPage, $type
 			<input class="FV_length" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>
 			<textarea class="FV_required FV_length" name="comment" placeholder="Votre réaction" maxsize="'.$app['params']['size']['comment'].'">'.$comment.'</textarea><br/>
 			<input type="checkbox" name="suivi" id="suivi" /><label for="suivi">Recevoir une notification de réponse aux commentaires par email</label><br/>
-			<span style="font-weight: bold;">Question Anti-spam :</span> '.$antiSpam['ask'].' <input class="FV_required" name="antiSpamRep" placeholder="Anti-Spam" /><br/><br/>
+			<span style="font-weight: bold;">Anti-spam :</span> '.$antiSpam['ask'].' <input class="FV_required" name="antiSpamRep" placeholder="Anti-Spam" /><br/><br/>
 			<div style="text-align: center;"><input type="submit" value="Réagir !"/></div>
 			<div class="clearfix"></div>
 		</form>
@@ -114,7 +114,7 @@ function sendQuoteForm(&$usr, $server_path){
 	return null;
 }
 
-function generateQuoteForm($usr, $server_path, $postResult, $categories){
+function generateQuoteForm($usr, $server_path, $postResult, $categories, $rel_to_root = './'){
 	$params = null;
 	$params['noheaders'] = 1;
 	$params_json = apiGetParams($usr, $params, $server_path);
@@ -173,7 +173,7 @@ function generateQuoteForm($usr, $server_path, $postResult, $categories){
 						}
 					}
 				$html .= '</select>
-				<a href="#"><img class="create_category" src="./img/forms/new_category.png" title="Créer un nouveau sujet" /></a>
+				<a href="#"><img class="create_category" src="'.$rel_to_root.'themes/main/img/forms/new_category.png" title="Créer un nouveau sujet" /></a>
 			</div>
 			<br/>
 			<div class="show_facultative_data"><a href="#"><script>document.write(s_form.new_quote.show_facultative_fields);</script></a></div>
@@ -194,7 +194,7 @@ function generateQuoteForm($usr, $server_path, $postResult, $categories){
 				<input class="FV_length" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>
 			</div>
 			<input type="checkbox" name="suivi" id="suivi" /><label for="suivi">Recevoir une notification de commentaires par email</label><br/>
-			<span style="font-weight: bold;">Question Anti-spam :</span> '.$antiSpam['ask'].' <input class="FV_required" name="antiSpamRep" placeholder="Anti-Spam" /><br/><br/>
+			<span style="font-weight: bold;">Anti-spam :</span> '.$antiSpam['ask'].' <input class="FV_required" name="antiSpamRep" placeholder="Anti-Spam" /><br/><br/>
 			<div style="text-align: center;"><input type="submit" value="Envoyer" /></div>
 		</form>
 	</div>';

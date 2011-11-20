@@ -16,7 +16,7 @@
 		<header id="main">
 			<div class="content">
 				<section id="intro">
-					<img src="../img/logo.gif" style="height: 150px; float: left; margin-top: 0px;" />
+					<img src="../themes/main/img/logo.gif" style="height: 150px; float: left; margin-top: 0px;" />
 					<h2>Mon Programme 2012</h2>
 					<h3>
 						Ce site regroupe des <span>propositions de réformes</span> et des <span>sujets de débat</span> en vue de la campagne présidentielle 2012.<br/>

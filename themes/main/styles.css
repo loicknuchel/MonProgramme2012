@@ -1,6 +1,6 @@
 
-@import url('../../fonts/AfterShokRegular/stylesheet.css');
-@import url('../../fonts/KaratulaNormal/stylesheet.css');
+@import url('./fonts/AfterShokRegular/stylesheet.css');
+@import url('./fonts/KaratulaNormal/stylesheet.css');
 
 @import url('article.css');
 @import url('quote.css');
@@ -102,7 +102,7 @@ body{
 	font-family: Arial, sans-serif;
 	color: #4F4F4F;
 	font-size: 14px;
-	background: url('../../img/bg.jpg');
+	background: url('./img/bg.jpg');
 }
 
 .wrapper{
@@ -129,25 +129,25 @@ body{
 
 #info.info {
 	color: #00529B;
-	background: #BDE5F8 url('../../img/notifications/info.png') no-repeat 7px 3px;
+	background: #BDE5F8 url('./img/notifications/info.png') no-repeat 7px 3px;
 	border: 1px solid #00529B;
 	border-top: none;
 }
 #info.success {
 	color: #4F8A10;
-	background: #DFF2BF url('../../img/notifications/success.png') no-repeat 7px 3px;
+	background: #DFF2BF url('./img/notifications/success.png') no-repeat 7px 3px;
 	border: 1px solid #4F8A10;
 	border-top: none;
 }
 #info.warning {
 	color: #9F6000;
-	background: #FEEFB3 url('../../img/notifications/warning.png') no-repeat 7px 3px;
+	background: #FEEFB3 url('./img/notifications/warning.png') no-repeat 7px 3px;
 	border: 1px solid #9F6000;
 	border-top: none;
 }
 #info.error {
 	color: #D8000C;
-	background: #FFBABA url('../../img/notifications/error.png') no-repeat 7px 3px;
+	background: #FFBABA url('./img/notifications/error.png') no-repeat 7px 3px;
 	border: 1px solid #D8000C;
 	border-top: none;
 }

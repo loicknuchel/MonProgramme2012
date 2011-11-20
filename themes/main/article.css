@@ -7,7 +7,11 @@
 }
 
 .article h1{
+	margin-top: 25px;
 	font-size: 28px;
+}
+.article h1.first{
+	margin-top: 0px;
 }
 
 .article h2{
@@ -21,6 +25,7 @@
 
 .article p{
 	margin: 12px 0 12px 0;
+	line-height: 18px;
 }
 
 .article p span, .article p span a{
@@ -33,4 +38,17 @@
 
 .article a:hover{
 	color: #036;
+}
+
+.article dl {
+	margin-left: 20px;
+}
+
+.article dl dt {
+	padding: 5px;
+	padding-top: 15px;
+}
+
+.article dl dt {
+	font-weight: bold;
 }

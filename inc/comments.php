@@ -34,10 +34,10 @@ function generateComment($comment, $rel_to_root = './'){
 				<span class="val">(<span>'.$vote.'</span>)</span>
 			</div>
 			<div class="reponse">
-				<a href="#" title="répondre à ce commentaire"><img src="'.$rel_to_root.'img/comments/citer.gif" /></a>
+				<a href="#" title="répondre à ce commentaire"><img src="'.$rel_to_root.'themes/main/img/comments/citer.gif" /></a>
 			</div>
 			<div class="clear"></div>
-			<div class="comment_report"><a href="#" title="signaler ce commentaire"><img src="'.$rel_to_root.'img/comments/report.png" /></a></div>';
+			<div class="comment_report"><a href="#" title="signaler ce commentaire"><img src="'.$rel_to_root.'themes/main/img/comments/report.png" /></a></div>';
 		}
 		$html .= '</div>
 		<div class="comment_text">'.$text.'</div>

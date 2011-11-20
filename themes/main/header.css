@@ -1,6 +1,6 @@
 #header {
 	position: relative;
-	background: #ddd url('../../img/header/header_bg.gif') repeat-x;
+	background: #ddd url('./img/header/header_bg.gif') repeat-x;
 }
 #header .title {
 	height: 120px;
@@ -36,7 +36,7 @@ ul.topnav {
 	width: 920px;
 	background: #222;
 	font-size: 1.2em;
-	background: url('../../img/header/topnav_bg.gif') repeat-x;
+	background: url('./img/header/topnav_bg.gif') repeat-x;
 }
 ul.topnav li {
 	float: left;
@@ -52,14 +52,14 @@ ul.topnav li a{
 	float: left;
 }
 ul.topnav li a:hover{
-	background: url('../../img/header/topnav_hover.gif') no-repeat center top;
+	background: url('./img/header/topnav_hover.gif') no-repeat center top;
 }
 ul.topnav li span { /*--Drop down trigger styles--*/
 	margin-top: 3px;
 	width: 17px;
 	height: 35px;
 	float: left;
-	background: url('../../img/header/subnav_btn.gif') no-repeat center top;
+	background: url('./img/header/subnav_btn.gif') no-repeat center top;
 }
 ul.topnav li span.subhover {background-position: center bottom; cursor: pointer;} /*--Hover effect for trigger--*/
 ul.topnav li ul.subnav {
@@ -88,11 +88,11 @@ ul.topnav li ul.subnav li{
 html ul.topnav li ul.subnav li a {
 	float: left;
 	width: 145px;
-	background: #333 url('../../img/header/dropdown_linkbg.gif') no-repeat 10px center;
+	background: #333 url('./img/header/dropdown_linkbg.gif') no-repeat 10px center;
 	padding-left: 20px;
 }
 html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
-	background: #222 url('../../img/header/dropdown_linkbg.gif') no-repeat 10px center; 
+	background: #222 url('./img/header/dropdown_linkbg.gif') no-repeat 10px center; 
 }
 #header .topnav li.favoris {
 	display: none;
@@ -106,5 +106,5 @@ html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
 }
 #header .topnav li.selection a:hover {
 	text-decoration: underline;
-	background: url('../../img/header/topnav_bg.gif') repeat-x;
+	background: url('./img/header/topnav_bg.gif') repeat-x;
 }

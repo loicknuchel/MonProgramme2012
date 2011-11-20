@@ -16,12 +16,16 @@ function generateFooter($rel_to_root = './'){
 						<dt>Actions citoyennes</dt>
 						<dd><a target="_blanck" href="http://www.nosdeputes.fr/" title="Recensement des députés et de leurs activités parlementaires.">Nos Députés</a></dd>
 						<dd><a target="_blanck" href="http://www.nossenateurs.fr/" title="Recensement des sénateurs et de leurs activités.">Nos Sénateurs</a></dd>
-						<dd><a target="_blanck" href="http://www.regardscitoyens.org/" title="Association ayant pour but de regrouper des informations sur nos institutions.">Regards Citoyens</a></dd>
 						<dd><a target="_blanck" href="http://memopol2.lqdn.fr/" title="Recensement des députés européens et de leurs activités.">Political Memory</a></dd>
-						<dd><a target="_blanck" href="http://mon-depute.fr/" title="Informations sur les députés">Mon Député</a></dd>
 						<dd><a target="_blanck" href="http://politique.slate.fr/" title="Annuaire des personnalités qui feront les élections en 2012.">Wikipol</a></dd>
 						<dd><a target="_blanck" href="http://www.2012memepaspeur.net/" title="Un site \'je veux\'/\'je ne veux pas\' sur les élections 2012.">2012 même pas peur !</a></dd>
+						<!--
+						<dd><a target="_blanck" href="http://www.regardscitoyens.org/" title="Association ayant pour but de regrouper des informations sur nos institutions.">Regards Citoyens</a></dd>
+						<dd><a target="_blanck" href="http://mon-depute.fr/" title="Informations sur les députés">Mon Député</a></dd>
 						<dd><a target="_blanck" href="http://politiko.fr/" title="Site de débat sur la primaire du PS">Politiko</a></dd>
+						-->
+						<dd>...</dd>
+						<dd><a href="'.$rel_to_root.'info/actions.php">Et beaucoup d\'autres</a></dd>
 					</dl>
 					<dl class="tight">
 						<dt>Penseurs</dt>
@@ -47,7 +51,8 @@ function generateFooter($rel_to_root = './'){
 						-->
 						<dd><a href="'.$rel_to_root.'info/projet.php">Objectifs du site</a></dd>
 						<dd class="deep"><a href="'.$rel_to_root.'info/faq.php">FAQ</a></dd>
-						<dt>Sites similaires</dt>
+						<dt>Sites de citations</dt>
+						<dd><a target="_blanck" href="http://pourquoijevoteoupas.eu/">Pourquoi Je Vote Ou Pas</a></dd>
 						<dd><a target="_blanck" href="http://pourquoijepirate.fr/">Pourquoi Je Pirate</a></dd>
 						<dd><a target="_blanck" href="http://www.paspeurdhadopi.fr/">Pas Peur D\'HADOPI</a></dd>
 					</dl>
@@ -162,7 +167,7 @@ $html = '<div id="footer">
 	margin-top: 30px;
 }
 #footer-pat {
-	background: url('../../img/footer/texture.png') top left repeat;
+	background: url('./img/footer/texture.png') top left repeat;
 }
 #header-end {
 	position: relative;
@@ -170,7 +175,7 @@ $html = '<div id="footer">
 	overflow: hidden;
 }
 #footer-top {
-	background: url('../../img/footer/footer-top.png') top left repeat-x;
+	background: url('./img/footer/footer-top.png') top left repeat-x;
 	width: 100%;
 	height: 18px;
 }
@@ -301,7 +306,7 @@ $html = '<div id="footerWrapper">
 ****************************************************************** CSS FOOTER  ******************************************************************
 *************************************************************************************************************************************************
 #footerWrapper {
-    background: url(../../img/footer/bgFooter.jpg) center top repeat-x;
+    background: url(./img/footer/bgFooter.jpg) center top repeat-x;
     height: 400px;
     min-width: 946px;
 	margin-top: 50px;
@@ -309,7 +314,7 @@ $html = '<div id="footerWrapper">
 #footer {
     margin: 0 auto;
     position: relative;
-    background: url(../../img/footer/bgLines.png) no-repeat;
+    background: url(./img/footer/bgLines.png) no-repeat;
     padding: 35px 20px 0;
     width: 906px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -332,7 +337,7 @@ $html = '<div id="footerWrapper">
     line-height: 1.5em;
 }
 #footer dl {
-    background: url(../../img/footer/borderFooter.gif) repeat-y;
+    background: url(./img/footer/borderFooter.gif) repeat-y;
     float: left;
     padding-left: 18px;
     width: 145px;
@@ -385,17 +390,17 @@ $html = '<div id="footerWrapper">
     color: #8c8a8a;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
-    background: url(../../img/footer/bgFormMailList.png) no-repeat;
+    background: url(./img/footer/bgFormMailList.png) no-repeat;
     border: none;
     height: 17px;
     padding: 8px;
     width: 183px;
 }
 #formMailListEmail:focus {
-    background: url(../../img/footer/bgFormMailList.png) 0 -33px no-repeat;
+    background: url(./img/footer/bgFormMailList.png) 0 -33px no-repeat;
 }
 #formMailListSubmit {
-    background: url(../../img/footer/buttonFormMailList.png) no-repeat;
+    background: url(./img/footer/buttonFormMailList.png) no-repeat;
     border: none;
     cursor: pointer;
     height: 21px;
@@ -405,7 +410,7 @@ $html = '<div id="footerWrapper">
 	vertical-align: baseline;
 }
 #formMailListSubmit:hover {
-    background: url(../../img/footer/buttonFormMailList.png) 0 -21px no-repeat;
+    background: url(./img/footer/buttonFormMailList.png) 0 -21px no-repeat;
 }
 #footerSub {
     clear: left;

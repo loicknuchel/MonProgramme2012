@@ -1,6 +1,6 @@
 
 #footerWrapper {
-    background: url(../../img/footer/bgFooter.jpg) center top repeat-x;
+    background: url('./img/footer/bgFooter.jpg') center top repeat-x;
     height: 400px;
     min-width: 946px;
 	margin-top: 50px;
@@ -8,7 +8,7 @@
 #footer {
     margin: 0 auto;
     position: relative;
-    background: url(../../img/footer/bgLines.png) no-repeat;
+    background: url('./img/footer/bgLines.png') no-repeat;
     padding: 35px 20px 0;
     width: 906px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -31,7 +31,7 @@
     line-height: 1.5em;
 }
 #footer dl {
-    background: url(../../img/footer/borderFooter.gif) repeat-y;
+    background: url('./img/footer/borderFooter.gif') repeat-y;
     float: left;
     padding-left: 18px;
     width: 145px;
@@ -84,17 +84,17 @@
     color: #8c8a8a;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
-    background: url(../../img/footer/bgFormMailList.png) no-repeat;
+    background: url('./img/footer/bgFormMailList.png') no-repeat;
     border: none;
     height: 17px;
     padding: 8px;
     width: 183px;
 }
 #formMailListEmail:focus {
-    background: url(../../img/footer/bgFormMailList.png) 0 -33px no-repeat;
+    background: url('./img/footer/bgFormMailList.png') 0 -33px no-repeat;
 }
 #formMailListSubmit {
-    background: url(../../img/footer/buttonFormMailList.png) no-repeat;
+    background: url('./img/footer/buttonFormMailList.png') no-repeat;
     border: none;
     cursor: pointer;
     height: 21px;
@@ -104,7 +104,7 @@
 	vertical-align: baseline;
 }
 #formMailListSubmit:hover {
-    background: url(../../img/footer/buttonFormMailList.png) 0 -21px no-repeat;
+    background: url('./img/footer/buttonFormMailList.png') 0 -21px no-repeat;
 }
 #footerSub {
     clear: left;

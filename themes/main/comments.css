@@ -96,7 +96,7 @@
 	width: 16px;
 	height: 16px;
 	padding: 1px 0px 1px 2px;
-	background: url('../../img/comments/thumb_up.png') no-repeat;
+	background: url('./img/comments/thumb_up.png') no-repeat;
 }
 
 .comments .comment .comment_header .comment_vote .thumb_down{
@@ -104,7 +104,7 @@
 	width: 16px;
 	height: 16px;
 	padding: 1px 0px 1px 2px;
-	background: url('../../img/comments/thumb_down.png') no-repeat;
+	background: url('./img/comments/thumb_down.png') no-repeat;
 }
 
 .comments .comment .comment_header .comment_vote .val{
@@ -133,7 +133,7 @@
 .comments .comment .comment_text .quoted_comment{
 	text-indent: 5px;
 	border: 1px dashed #858A90;
-	background: #EAF1FA url('../../img/comments/cite.png') 5px 5px no-repeat;
+	background: #EAF1FA url('./img/comments/cite.png') 5px 5px no-repeat;
 	margin: 0px 10px;
 	padding: 5px 5px 5px 35px;
 }

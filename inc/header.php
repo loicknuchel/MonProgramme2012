@@ -2,7 +2,7 @@
 
 function generateHeader($rel_to_root = './'){
 	$html = '
-	<a href="#" class="supportus"><img src="'.$rel_to_root.'img/header/supportus.png" style="position: absolute; top: 0; right: 0; z-index: 1000;" /></a>
+	<a href="#" class="supportus"><img src="'.$rel_to_root.'themes/main/img/header/supportus.png" style="position: absolute; top: 0; right: 0; z-index: 1000;" /></a>
 	<div id="info">C\'est la classe info...</div>
 	
 	<div id="header">

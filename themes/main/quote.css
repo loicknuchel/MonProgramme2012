@@ -36,27 +36,20 @@
 	margin-right: 5px;
 	margin-bottom: -3px;
 	display: inline-block;
-	/*border: 1px solid white;
-	background: url('../../img/quote/options_15.png') center top no-repeat;*/
 	border: 1px solid #EFEFEF;
-	background: #EFEFEF url('../../img/quote/options_15.png') center top no-repeat;
-	/**/
+	background: #EFEFEF url('./img/quote/options_15.png') center top no-repeat;
 	position: relative; /*--Declare X and Y axis base--*/
 	z-index: 100;
 }
 
 .quote .quote_header .options:hover {
-	background: url('../../img/quote/options_15.png') center bottom no-repeat;
+	background: url('./img/quote/options_15.png') center bottom no-repeat;
 }
 
 .quote .quote_header .options.selected {
-	/*border: 1px solid #ccc;
-	border-bottom: 1px solid #eee;
-	background: #eee url('../../img/quote/options_15.png') center bottom no-repeat;*/
 	border: 1px solid #ccc;
 	border-bottom: 1px solid #eee;
-	background: #EFEFEF url('../../img/quote/options_15.png') center bottom no-repeat;
-	/**/
+	background: #EFEFEF url('./img/quote/options_15.png') center bottom no-repeat;
 	-webkit-border-radius: 5px 5px0px 0px;
 	-moz-border-radius: 5px 5px 0px 0px;
 	border-radius: 5px 5px 0px 0px;
@@ -117,9 +110,7 @@
 }
 
 .quote .quote_block .quote_content{
-	/*background: white;*/
 	background: #EFEFEF;
-	/**/
 	padding: 20px;
 	padding-top: 5px;
 	padding-bottom: 25px;
@@ -263,7 +254,7 @@
 }*/
 /* Pager vdm */
 .quote_pager a, .quote_pager a:visited {
-	background: url(http://betacie.cachefly.net/fmylife/images/glass.png) repeat-x 0 50%;
+	background: url('./img/quote/glass.png') repeat-x 0 50%;
 	background-color: #CCD9F0;
 	-moz-box-shadow: 0 1px 1px #A6B1C0;
 	-webkit-box-shadow: 0 1px 1px #A6B1C0;

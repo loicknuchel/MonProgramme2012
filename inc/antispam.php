@@ -19,7 +19,7 @@ function checkAntiSpamAnswer($id, $answer){
 // private
 function getAntiSpam(){
 	$antiSpam = null;
-	$antiSpam['maxIndex'] = 49;
+	$antiSpam['maxIndex'] = 59;
 	/*
 	$antiSpam[0]['ask'] = '';
 	$antiSpam[0]['answer'] = '';
@@ -51,7 +51,7 @@ function getAntiSpam(){
 	$antiSpam[2]['answer'] = 'bleu';
 	$antiSpam[3]['ask'] = 'De quelle couleur est le sang ?';
 	$antiSpam[3]['answer'] = 'rouge';
-	$antiSpam[4]['ask'] = 'De quelle couleur est une bannane ?';
+	$antiSpam[4]['ask'] = 'De quelle couleur est une banane ?';
 	$antiSpam[4]['answer'] = 'jaune';
 	$antiSpam[5]['ask'] = 'De quelle couleur est le goudron ?';
 	$antiSpam[5]['answer'] = 'noir';
@@ -91,7 +91,7 @@ function getAntiSpam(){
 	$antiSpam[21]['answer'] = 'non';
 	$antiSpam[22]['ask'] = 'Le PS est-il un parti politique ?';
 	$antiSpam[22]['answer'] = 'oui';
-	$antiSpam[23]['ask'] = 'Les enfants peuvent-ils plus grands que les adultes ?';
+	$antiSpam[23]['ask'] = 'Les enfants sont-ils plus grands que les adultes ?';
 	$antiSpam[23]['answer'] = 'non';
 	$antiSpam[24]['ask'] = 'L\'UMP est-il un parti politique ?';
 	$antiSpam[24]['answer'] = 'oui';
@@ -103,16 +103,16 @@ function getAntiSpam(){
 	$antiSpam[27]['answer'] = 'non';
 	$antiSpam[28]['ask'] = 'Y a-t-il des escaliers dans un immeuble ?';
 	$antiSpam[28]['answer'] = 'oui';
-	$antiSpam[29]['ask'] = 'Es-ce que le feu ça mouille ?';
+	$antiSpam[29]['ask'] = 'Est-ce que le feu ça mouille ?';
 	$antiSpam[29]['answer'] = 'non';
 	
 	$antiSpam[30]['ask'] = 'La réponse est kilucru';
 	$antiSpam[30]['answer'] = 'kilucru';
-	$antiSpam[31]['ask'] = 'Veillez saisir le mot ordinateur';
+	$antiSpam[31]['ask'] = 'Veuillez saisir le mot ordinateur';
 	$antiSpam[31]['answer'] = 'ordinateur';
 	$antiSpam[32]['ask'] = 'Ecrivez chaise';
 	$antiSpam[32]['answer'] = 'chaise';
-	$antiSpam[33]['ask'] = 'Veillez écrire imprimante s\'il vous plait';
+	$antiSpam[33]['ask'] = 'Veuillez écrire imprimante s\'il vous plait';
 	$antiSpam[33]['answer'] = 'imprimante';
 	$antiSpam[34]['ask'] = 'Inscrivez les lettres mplsteek';
 	$antiSpam[34]['answer'] = 'mplsteek';
@@ -122,7 +122,7 @@ function getAntiSpam(){
 	$antiSpam[36]['answer'] = 'lunette';
 	$antiSpam[37]['ask'] = 'Ecrivez lampe';
 	$antiSpam[37]['answer'] = 'lampe';
-	$antiSpam[38]['ask'] = 'Veillez écrire mobilette s\'il vous plait';
+	$antiSpam[38]['ask'] = 'Veuillez écrire mobilette s\'il vous plait';
 	$antiSpam[38]['answer'] = 'mobilette';
 	$antiSpam[39]['ask'] = 'Inscrivez les lettres hyehdls';
 	$antiSpam[39]['answer'] = 'hyehdls';
@@ -143,10 +143,31 @@ function getAntiSpam(){
 	$antiSpam[46]['answer'] = 'vert';
 	$antiSpam[47]['ask'] = 'De quelle couleur est un cheval blanc ?';
 	$antiSpam[47]['answer'] = 'blanc';
-	$antiSpam[48]['ask'] = 'De quelle couleur est un style rouge ?';
+	$antiSpam[48]['ask'] = 'De quelle couleur est un stylo rouge ?';
 	$antiSpam[48]['answer'] = 'rouge';
 	$antiSpam[49]['ask'] = 'De quelle couleur est un chat noir ?';
 	$antiSpam[49]['answer'] = 'noir';
+	
+	$antiSpam[50]['ask'] = '0 * 5236 + 5 = ';
+	$antiSpam[50]['answer'] = '5';
+	$antiSpam[51]['ask'] = '125 * 53 * 0 = ';
+	$antiSpam[51]['answer'] = '0';
+	$antiSpam[52]['ask'] = '45 - 45 + 9 = ';
+	$antiSpam[52]['answer'] = '9';
+	$antiSpam[53]['ask'] = '9 - (3 * 3) + 2 = ';
+	$antiSpam[53]['answer'] = '2';
+	$antiSpam[54]['ask'] = '(2 * 6) - 2 = ';
+	$antiSpam[54]['answer'] = '10';
+	$antiSpam[55]['ask'] = '10 * 10 = ';
+	$antiSpam[55]['answer'] = '100';
+	$antiSpam[56]['ask'] = '5860 / 10 = ';
+	$antiSpam[56]['answer'] = '586';
+	$antiSpam[57]['ask'] = '42 + 42 = ';
+	$antiSpam[57]['answer'] = '84';
+	$antiSpam[58]['ask'] = '7 + 7 - 7 = ';
+	$antiSpam[58]['answer'] = '7';
+	$antiSpam[59]['ask'] = '69 - 9 = ';
+	$antiSpam[59]['answer'] = '60';
 	
 	return $antiSpam;
 }

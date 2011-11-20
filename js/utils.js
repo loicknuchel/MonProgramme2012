@@ -1,9 +1,8 @@
 function displayInfo(type, text){
-	if(type == 'warning' || type == 'error' || type == 'debug'){
-		$('#info').removeClass().addClass(type).html(text).delay(500).slideDown().delay(4000).slideUp();
-	}
-	else if(type == 'info' || type == 'success'){
-		$('#info').removeClass().addClass(type).html(text).delay(500).slideDown().delay(4000).slideUp();
+	if(type == 'warning' || type == 'error' || type == 'debug' || type == 'info' || type == 'success'){
+		$('#info').removeClass().addClass(type).html(text).delay(500).slideDown().click(function(event){
+			$(this).hide();
+		}).delay(5000).slideUp();
 	}
 	else if(type == 'else'){
 		return false;
