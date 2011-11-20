@@ -3,9 +3,25 @@ Il a été conçu en étant placé sur le même serveur et peut donc accéder di
 
 Installer MonProgramme2012 sur son serveur :
 	1) copiez MonProgramme2012 et CourdQuotes sur votre serveur
-	2) créez une base de donnée (fichier courdquotes/bdd/schema.sql) 
+	2) créez une base de donnée (fichier croudquotes/docs/bdd/bdd_1.2.sql) 
 		- Pensez à vérifier que le préfix des tables soit compatible avec le fichier courdquotes/private_datas/filtre_fonc.php
 		- Remplissez le fichier courdquotes/private_datas/env-db.php pour qu'il puisse se connecter à votre base de données
 	3) configurez le fichier monprogramme2012/inc/server_link.php
 		- mettez les valeurs correctes aux variavles suivies de TODO (lien de MonProgramme2012 vers CroudQuotes, url de l'API et clé pour l'API)
 	4) pour les feedback, allez dans le fichier /monprogramme2012/js/libs/contactable.1.3/mail.php et modifiez l'adresse de destination (ligne 24)
+
+
+-----------------------------------------------------------------------------------------------------
+MonProgramme2012 est un site web permettant de proposer et débattre de réformes politiques.
+Il n'est pas un site fonctionnant seul. Il s'appuie sur CroudQuotes (https://github.com/loicknuchel/CroudQuotes) et son API.
+De plus, ces deux sites étant installés sur le même serveur, j'ai pris la liberté de bypasser l'API pour des questions d'optimisation de chargement.
+
+Soit vous installez MonProgramme2012 et CroudQuotes ensembles sur votre serveur en mettant les deux répertoires racines au même endroit.
+Soit vous devrez d'abord modifier les bypass effectués pour pouvoir vous connecter sur un service CroudQuotes distant.
+
+Etapes de la mise en place :
+	1) téléchargez le code source PHP et copiez le sur votre serveur
+	2) si vous utilisez CroudQuotes sur votre serveur, installez le maintenant : https://github.com/loicknuchel/CroudQuotes
+	3) configurez les fichier monprogramme2012/inc/server_link.php avec les liens nécessaires
+	4) pour les feedbacks, allez dans le fichier /monprogramme2012/js/libs/contactable.1.3/mail.php et modifiez l'adresse de destination (ligne 24)
+	5) Votre site web est prêt !!!
