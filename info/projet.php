@@ -4,9 +4,12 @@
 	
 	$commentResult = sendCommentForm($usr, $server_path);
 	
+	$page = 'projet.php';
+	$page_id = $pageId['projet']['id'];
+	
 	$params = null;
 	$params['type'] = 'page';
-	$params['id'] = $pageId['projet']['id'];
+	$params['id'] = $page_id;
 	$params['p'] = isset($_GET['p']) ? $_GET['p'] : null;
 	$params['noheaders'] = 1;
 	$json = apiGetCommentsByTypeId($usr, $params, $server_path);
@@ -88,14 +91,13 @@
 					$total_comment_pages = isset($result['response']['total_comment_pages']) ? $result['response']['total_comment_pages'] : null;
 					$current_comment_page = isset($result['response']['current_comment_page']) ? $result['response']['current_comment_page'] : null;
 					
-					if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, 'projet.php?p='); }
+					if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, $page.'?p='); }
 					echo generateCommentsBlock($comments, $rel_to_root);
-					if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, 'projet.php?p='); }
-					
+					if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, $page.'?p='); }
 				}
 				
 				$lastPage = isset($total_comment_pages) ? $total_comment_pages+1 : 1;
-				echo generateCommentForm($usr, $server_path, $commentResult, 'projet.php?p='.$lastPage, 'page', $pageId['projet']['id']);
+				echo generateCommentForm($usr, $server_path, $commentResult, $page.'?p='.$lastPage, 'page', $page_id);
 			?>
 		</div>
 	</div>
@@ -105,7 +107,6 @@
 	<?php echo generateScriptsJs($rel_to_root); ?>
 	
 	<?php
-		/*
 		if(isset($commentResult)){
 			if($commentResult['status']['code'] == 200){
 				echo '<script>displayInfo("commentaire enregistré");</script>';
@@ -114,7 +115,6 @@
 				echo '<script>displayInfo("Erreur ('.$commentResult['status']['code'].') lors de la sauvegarde du commentaire");</script>';
 			}
 		}
-		*/
 	?>
 </body>
 </html>

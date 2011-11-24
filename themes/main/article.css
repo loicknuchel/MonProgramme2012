@@ -41,7 +41,7 @@
 }
 
 .article dl {
-	margin-left: 20px;
+	margin: 0px 20px;
 }
 
 .article dl dt {
@@ -51,4 +51,8 @@
 
 .article dl dt {
 	font-weight: bold;
+}
+
+.article dl dd {
+	line-height: 18px;
 }

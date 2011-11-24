@@ -8,29 +8,32 @@
 	$status_site 						= "LOCAL";							// TODO : mettre LOCAL, DEV ou PROD															<= ICI
 	$bdd_site							= "test";							// TODO : mettre test, monprogramme2012 ou themaps12										<= ICI
 	
+	
+	
 	$usr = null;
+	$api_rel_path = 'api/1.0/';												// 		chemin relatif de la racine de CroudQuotes vers l'API
 	if($status_site == "LOCAL"){
-		$server_path = $rel_to_root.'../lkws_croudquotes/';					// TODO : lien de la page courante vers la racine de CroudQuotes							<= ICI
-		$usr['site_url'] = 'http://localhost/lkws_monprogramme2012/';		// TODO : url du site																		<= ICI
-		$usr['api_url'] = 'http://localhost/lkws_croudquotes/api/1.0/';		// TODO : url de l'API 																		<= ICI
-		$usr['key'] = $private_keys[$bdd_site];								// TODO : clé pour se connecter à l'API														<= ICI
+		$server_path = $rel_to_root.'../lkws_croudquotes/';					// lien de la page courante vers la racine de CroudQuotes
+		$server_uri = 'http://localhost/lkws_croudquotes/';					// url du serveur
+		$usr['site_url'] = 'http://localhost/lkws_monprogramme2012/';		// url du site
+		$usr['key'] = $private_keys[$bdd_site];								// clé pour se connecter à l'API
 	}
 	else if($status_site == "DEV"){
-		$server_path = $rel_to_root.'../lkws_croudquotes/';					// TODO : lien de la page courante vers la racine de CroudQuotes							<= ICI
-		$usr['site_url'] = 'http://dev.lkws.fr/lkws_monprogramme2012/';		// TODO : url du site																		<= ICI
-		$usr['api_url'] = 'http://dev.lkws.fr/lkws_croudquotes/api/1.0/';	// TODO : url de l'API 																		<= ICI
-		$usr['key'] = $private_keys[$bdd_site];								// TODO : clé pour se connecter à l'API														<= ICI
+		$server_path = $rel_to_root.'../lkws_croudquotes/';					// lien de la page courante vers la racine de CroudQuotes
+		$server_uri = 'http://dev.lkws.fr/lkws_croudquotes/';				// url du serveur
+		$usr['site_url'] = 'http://dev.lkws.fr/lkws_monprogramme2012/';		// url du site
+		$usr['key'] = $private_keys[$bdd_site];								// clé pour se connecter à l'API
 	}
 	else if($status_site == "PROD"){
-		$server_path = $rel_to_root.'../lkws_croudquotes/';					// TODO : lien de la page courante vers la racine de CroudQuotes							<= ICI
-		$usr['site_url'] = 'http://monprogramme2012.lkws.fr/';				// TODO : url du site																		<= ICI
-		$usr['api_url'] = 'http://croudquotes.lkws.fr/api/1.0/';			// TODO : url de l'API 																		<= ICI
-		$usr['key'] = $private_keys['monprogramme2012'];					// TODO : clé pour se connecter à l'API														<= ICI
+		$server_path = $rel_to_root.'../lkws_croudquotes/';					// lien de la page courante vers la racine de CroudQuotes
+		$server_uri = 'http://croudquotes.lkws.fr/';						// url du serveur
+		$usr['site_url'] = 'http://monprogramme2012.lkws.fr/';				// url du site
+		$usr['key'] = $private_keys['monprogramme2012'];					// clé pour se connecter à l'API
 	}
 	unset($private_keys);
-	
-	$api_rel_path = 'api/1.0/';												// 		chemin relatif de la racine de CroudQuotes vers l'API
-	$api_path = $server_path.$api_rel_path;									// 		lien de la page courante vers l'API
+	$usr['api_url'] = $server_uri.$api_rel_path;							// url de l'API
+											
+	$api_path = $server_path.$api_rel_path;									// lien de la page courante vers l'API
 	$rel = $server_path;
 	include_once $server_path.'filtres/filtre.php';
 	include_once $server_path.'api/fonc/getCategory.php';

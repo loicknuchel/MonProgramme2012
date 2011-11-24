@@ -1,19 +1,14 @@
 
-1)
-Mettre en place un système d'inscriptions pour :
+- Mettre en place un système d'inscriptions pour :
 	- organiser des rencontres-débat
 
-2)
-Ajouter dans la partie admin la suppression réelle des quotes et commentaires (et toutes les actions qui vont bien)
+- Ajouter des pages pour présenter mes solutions ou mettre des liens vers mon blog...
 
-3)
-Ajouter des pages pour présenter mes solutions ou mettre des liens vers mon blog...
+- permettre de modifier les description et les citations et suivre les modifs avec l'historique
 
-4)
-améliorer les pages category.php, local_selection.php et selection.php
+- améliorer les pages category.php, local_selection.php et selection.php
 
-5)
-améliorer les pages d'erreur (404.php et 403.php)
+- améliorer les pages d'erreur (404.php et 403.php)
 
 
 
