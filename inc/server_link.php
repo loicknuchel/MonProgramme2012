@@ -42,6 +42,7 @@
 	include_once $server_path.'api/fonc/getQuoteList.php';
 	include_once $server_path.'api/fonc/getParams.php';
 	include_once $server_path.'api/fonc/getSelection.php';
+	include_once $server_path.'api/fonc/getSuivi.php';
 	include_once $server_path.'api/fonc/postComment.php';
 	include_once $server_path.'api/fonc/postQuote.php';
 	include_once $server_path.'api/fonc/postSuivi.php';

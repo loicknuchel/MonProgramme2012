@@ -14,9 +14,9 @@
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 70%;
     line-height: 1.6em;
+    text-shadow: 0 1px 0 #fff;
     -moz-text-shadow: 0 1px 0 #fff;
     -webkit-text-shadow: 0 1px 0 #fff;
-    text-shadow: 0 1px 0 #fff;
 }
 #footer legend, #footer dt {
     color: #8c8a8a;

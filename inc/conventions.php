@@ -9,7 +9,10 @@ $pageId['actions']['link'] = 'info/actions.php';
 $pageId['actions']['title'] = 'Actions citoyennes';
 $pageId['mots']['id'] = 3;
 $pageId['mots']['link'] = 'info/combat_de_mots.php';
-$pageId['mots']['title'] = 'COmbat de mots';
+$pageId['mots']['title'] = 'Combat de mots';
+$pageId['event']['id'] = 4;
+$pageId['event']['link'] = 'info/events.php';
+$pageId['event']['title'] = 'Evènements organisés';
 
 
 ?>

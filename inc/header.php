@@ -56,8 +56,9 @@ function generateHeader($rel_to_root = './'){
 				<!--<li><a href="'.$rel_to_root.'allselections.php">Sélections</a></li>-->
 				<li><a href="'.$rel_to_root.'new.php">Nouvelle proposition</a></li>
 				<li><a href="'.$rel_to_root.'info/projet.php">Le projet</a></li>
+				<li><a href="'.$rel_to_root.'info/events.php">Evènements</a></li>
 				<li>
-					<a href="#" class="topnavtitle">Pages</a>
+					<a href="#" class="topnavtitle">Articles</a>
 					<ul class="subnav">
 						<li><a href="'.$rel_to_root.'info/combat_de_mots.php">Combat de mots</a></li>
 					</ul>

@@ -52,10 +52,10 @@
 	<?php
 		if(isset($commentResult)){
 			if($commentResult['status']['code'] == 200){
-				echo '<script>displayInfo("commentaire enregistré");</script>';
+				echo '<script>displayInfo("success", "commentaire enregistré");</script>';
 			}
 			else{
-				echo '<script>displayInfo("Erreur ('.$commentResult['status']['code'].') lors de la sauvegarde du commentaire");</script>';
+				echo '<script>displayInfo("error", "Erreur ('.$commentResult['status']['code'].') lors de la sauvegarde du commentaire");</script>';
 			}
 		}
 	?>

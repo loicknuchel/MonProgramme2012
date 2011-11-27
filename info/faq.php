@@ -233,7 +233,11 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 				}
 				
 				function indentJson($json){
-					return str_replace(',', ',<br/>', str_replace('{', '{<div class="indent">', str_replace('}', '</div>}', $json)));
+					return str_replace(',', ',<br/>', 
+							str_replace('[', '[<div class="indent">', 
+								str_replace(']', '</div>]', 
+									str_replace('{', '{<div class="indent">', 
+										str_replace('}', '</div>}', $json)))));
 				}
 				
 				function generateSample($sample){
@@ -265,7 +269,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 				$key_param['name'] = 'key'; 			$key_param['status'] = 'requis'; 			$key_param['use'] = "clé, publique ou privée, donnant accès à un service de l'API.";
 				$quoteidget_param['name'] = 'quoteid'; 	$quoteidget_param['status'] = 'requis'; 	$quoteidget_param['use'] = "Id de la citation souhaitée. Peut aussi prendre la valeur <span class=\"val\">random</span> pour une citation au hasard.";
 				$type_param['name'] = 'type';			$type_param['status'] = 'requis';			$type_param['use'] = "Valeurs possibles : <span class=\"val\">quote</span> ou <span class=\"val\">page</span>. désigne le type de ressource voulu.";
-				$typesuivi_param['name'] = 'type';		$typesuivi_param['status'] = 'requis';		$typesuivi_param['use'] = "Valeurs possibles : <span class=\"val\">quote</span>, <span class=\"val\">page</span> ou <span class=\"val\">site</span>. désigne le type de ressource voulu.";
+				$typesuivi_param['name'] = 'type';		$typesuivi_param['status'] = 'requis';		$typesuivi_param['use'] = "Valeurs possibles : <span class=\"val\">quote</span>, <span class=\"val\">page</span>, <span class=\"val\">site</span> ou <span class=\"val\">event</span>. désigne le type de ressource voulu.";
 				$id_param['name'] = 'id'; 				$id_param['status'] = 'requis'; 			$id_param['use'] = "Id de la ressource souhaitée.";
 				$p_comment_param['name'] = 'p'; 		$p_comment_param['status'] = 'optionnel'; 	$p_comment_param['use'] = "Numéro de la page de commentaires.";
 				$p_quote_param['name'] = 'p'; 			$p_quote_param['status'] = 'optionnel'; 	$p_quote_param['use'] = "Numéro de la page de citations.";
@@ -293,6 +297,8 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 				$vote_param['name'] = 'vote'; 				$vote_param['status'] = 'requis';				$vote_param['use'] = "Valeurs possibles : <span class=\"val\">up</span> ou <span class=\"val\">down</span>. Indique le sens du vote voulu.";
 /*24*/			$report_param['name'] = 'report'; 			$report_param['status'] = 'requis';				$report_param['use'] = "Unique valeur : <span class=\"val\">1</span>.";
 				$cause_param['name'] = 'cause'; 			$cause_param['status'] = 'optionnel';			$cause_param['use'] = "Texte servant à préciser les raisons de la signalisation.";
+				$name_param['name'] = 'info'; 				$name_param['status'] = 'optionnel';			$name_param['use'] = "Champ servant a communiquer le nom de la personne qui demande le suivit.";
+				$info_param['name'] = 'info'; 				$info_param['status'] = 'optionnel';			$info_param['use'] = "Champ servant a communiquer des inforations supplémentaires sur la personne qui demande le suivit.";
 				$comment_param['name'] = 'comment'; 		$comment_param['status'] = 'requis';			$comment_param['use'] = "Contenu du nouveau commentaire.";
 				$commentid_param['name'] = 'commentid'; 	$commentid_param['status'] = 'requis';			$commentid_param['use'] = "Identifie un commentaire avec son id (entier).";
 				$newsel_param['name'] = 'sel';				$newsel_param['status'] = 'optionnel';			$newsel_param['use'] = "Permet de donner un nom à la sélection à créer.";
@@ -694,6 +700,21 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					
 					
 					$ressource= null; $params = null; $sample = null;
+					$ressource['ressource'] = 'suivi.php?key={key}&type={type}&id={id}';
+					$ressource['use'] = "Retourne la liste des mails qui suivent la ressource donnée.";
+					$params[0] = $key_param;
+					$params[1] = $typesuivi_param;
+					$params[2] = $id_param;
+					$params[3] = $noheaders_param;
+					$params[4] = $format_param;
+					$params[5] = $callback_param;
+					$sample['methode'] = 'GET';
+					$sample['requete'] = $APIdatas['base_url'].'suivi.php?key='.$APIdatas['public_key_test'].'&type=quote&id=3';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"elt":"event","id":"1","suivi":[{"name":"loic","info":"Informaticien et intéressé par la politique"},{"name":"toto","info":"artiste"},{"name":"yohan","info":""}],"total_suivis":7},"info":{"remaining_queries":39,"next_restart":60}}';
+					echo generateAPIRessource($ressource, $params, $sample);
+					
+					
+					$ressource= null; $params = null; $sample = null;
 					$ressource['ressource'] = 'suivi.php?key={key}&mail={mail}&type={type}&id={id}&action={action}';
 					$ressource['use'] = "Crée ou met a jour le suivi par l'adresse mail d'une ressource désignée par son type et son id.";
 					$params[0] = $key_param;
@@ -701,9 +722,11 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					$params[2] = $typesuivi_param;
 					$params[3] = $id_param;
 					$params[4] = $suiviaction_param;
-					$params[5] = $noheaders_param;
-					$params[6] = $format_param;
-					$params[7] = $callback_param;
+					$params[5] = $name_param;
+					$params[6] = $info_param;
+					$params[7] = $noheaders_param;
+					$params[8] = $format_param;
+					$params[9] = $callback_param;
 					$sample['methode'] = 'POST';
 					$sample['requete'] = $APIdatas['base_url'].'suivi.php?key='.$APIdatas['public_key_test'].'&mail=toto@example.com&amp;quoteid=1&newcomments=1';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"info":{"remaining_queries":39,"next_restart":60}}';

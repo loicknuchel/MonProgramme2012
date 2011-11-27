@@ -4,6 +4,10 @@
 
 - Ajouter des pages pour présenter mes solutions ou mettre des liens vers mon blog...
 
+- ajouter des tables pour faire des sondages (sondage, sondage_options, sondage_answers)
+
+- signer une pétition pour chaque citation
+
 - permettre de modifier les description et les citations et suivre les modifs avec l'historique
 
 - améliorer les pages category.php, local_selection.php et selection.php
