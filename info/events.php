@@ -46,7 +46,7 @@
 				</p>
 			</div>
 			
-			<div class="article">
+			<div class="article event">
 				<h1 class="first">Premier contact</h1>
 				<p>
 					<?php
@@ -100,13 +100,13 @@
 					$total_comment_pages = isset($result['response']['total_comment_pages']) ? $result['response']['total_comment_pages'] : null;
 					$current_comment_page = isset($result['response']['current_comment_page']) ? $result['response']['current_comment_page'] : null;
 					
-					if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, $page.'?p='); }
+					if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, $page.'?p=', '#comment_block'); }
 					echo generateCommentsBlock($comments, $rel_to_root);
-					if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, $page.'?p='); }
+					if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, $page.'?p=', '#comment_block'); }
 				}
 				
 				$lastPage = isset($total_comment_pages) ? $total_comment_pages+1 : 1;
-				echo generateCommentForm($usr, $server_path, $commentResult, $page.'?p='.$lastPage, 'page', $page_id);
+				echo generateCommentForm($usr, $server_path, $commentResult, $page.'?p='.$lastPage, '#comment_block', 'page', $page_id);
 			?>
 		</div>
 	</div>

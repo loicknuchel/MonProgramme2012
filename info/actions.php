@@ -96,6 +96,11 @@
 							Site créé par <a target="_blanck" href="http://www.colibris-lemouvement.org/colibris/notre-mission">l'association Colibris</a>.
 						</dd>
 						
+						<dt><a target="_blanck" href="http://www.mon-programme-presidentiel.com/">www.mon-programme-presidentiel.com</a></dt>
+						<dd>
+							Un site ayant un but très proche de celui-ci. Il vous propose d'écrire vous même votre programme et de le soumettre aux vote des internautes.
+						</dd>
+						
 						<dt><a target="_blanck" href="http://politiko.fr/">politiko.fr</a></dt>
 						<dd>
 							Site d'actualité politique.
@@ -107,6 +112,10 @@
 				<h2>Sites engagés politiquement</h2>
 				<p>
 					<dl>
+						<dt><a target="_blanck" href="http://www.le-message.org">www.le-message.org</a></dt>
+						<dd>
+							Site prônant la création d'une assemblée constituante tirée au sort.
+						</dd>
 						<dt><a target="_blanck" href="http://www.nevotezpas.fr">www.nevotezpas.fr</a></dt>
 						<dd>
 							Site défendant le vote blanc. Créé par <a target="_blanck" href="http://www.nevotezpas.fr/qui.php">Philippe Martin</a>.
@@ -132,13 +141,13 @@
 					$total_comment_pages = isset($result['response']['total_comment_pages']) ? $result['response']['total_comment_pages'] : null;
 					$current_comment_page = isset($result['response']['current_comment_page']) ? $result['response']['current_comment_page'] : null;
 					
-					if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, $page.'?p='); }
+					if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, $page.'?p=', '#comment_block'); }
 					echo generateCommentsBlock($comments, $rel_to_root);
-					if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, $page.'?p='); }
+					if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, $page.'?p=', '#comment_block'); }
 				}
 				
 				$lastPage = isset($total_comment_pages) ? $total_comment_pages+1 : 1;
-				echo generateCommentForm($usr, $server_path, $commentResult, $page.'?p='.$lastPage, 'page', $page_id);
+				echo generateCommentForm($usr, $server_path, $commentResult, $page.'?p='.$lastPage, '#comment_block', 'page', $page_id);
 			?>
 		</div>
 	</div>

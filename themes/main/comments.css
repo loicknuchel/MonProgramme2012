@@ -1,34 +1,4 @@
 
-.comment_pages{
-	margin:auto;
-	width: 200px;
-	padding: 10px;
-}
-
-.comment_pages .cur_page{
-	border: grey solid 1px;
-	padding: 2px;
-	color: white;
-	background: #C10000;
-	border-radius: 4px;
-}
-
-.comment_pages .page{
-	border: grey solid 1px;
-	padding: 2px;
-	color: black;
-	background: white;
-	border-radius: 4px;
-}
-
-.comment_pages .page a{
-	text-decoration: none;
-}
-
-.comment_pages .page:hover{
-	text-decoration: underline;
-}
-
 .comments{
 	width: 750px;
 	margin: auto;
@@ -144,12 +114,16 @@
 }
 
 
+
+
+
 .comment_pager{
 	font-family: "Trebuchet MS", "Segoe UI", trebuchet, helvetica, arial, geneva, sans-serif;
 	color:#424242;
 	text-align:center;
 	font-size: 12px;
 	margin: 15px 0;
+	padding: 10px 0 0 0;
 }
 .comment_pager span {
 	color:#888;

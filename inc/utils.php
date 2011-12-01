@@ -2,12 +2,12 @@
 
 function twittFormat($quote, $link){
 	$twitt = str_replace('#', "%23", str_replace('"', "'", $quote));
-	$max = 140 - strlen('#mp2012 http://mp2012.lkws.fr/?q=54 ');
+	$max = 140 - strlen('#fr2012 #mp2012 http://mp2012.lkws.fr/?q=54 ');
 	if(strlen($twitt) >= $max){
 		$twitt = substr($twitt, 0, $max);
 		$twitt .= '...';
 	}
-	$twitt = $twitt.' '.$link.' %23mp2012';
+	$twitt = $twitt.' '.$link.' %23fr2012 %23mp2012';
 	return $twitt;
 }
 

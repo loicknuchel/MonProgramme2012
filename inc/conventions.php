@@ -13,6 +13,9 @@ $pageId['mots']['title'] = 'Combat de mots';
 $pageId['event']['id'] = 4;
 $pageId['event']['link'] = 'info/events.php';
 $pageId['event']['title'] = 'Evènements organisés';
+$pageId['chat']['id'] = 5;
+$pageId['chat']['link'] = 'info/discutions.php';
+$pageId['chat']['title'] = 'Le chat';
 
 
 ?>

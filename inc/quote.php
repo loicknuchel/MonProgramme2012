@@ -53,7 +53,8 @@ function generateQuoteBlock($quote, $editable = false){
 						<ul>
 							<li class="select"><script>document.write(s_quote.selection.item.notselected);</script></li>
 							<li><a href="#" class="thumb_up">(+)</a> <span class="val_up">'.$quote['up'].'</span> / <a href="#" class="thumb_down">(-)</a> <span class="val_down">'.$quote['down'].'</span></li>
-							<li><a href="quote.php?id='.$quote['id'].'">'.$quote['total_comments'].' réaction'.$accordReaction.'</a></li>
+							<li><a href="quote.php?id='.$quote['id'].'#commentContainer">'.$quote['total_comments'].' réaction'.$accordReaction.'</a></li>
+							<li><a href="quote.php?id='.$quote['id'].'#petitionContainer">'.$quote['total_signatures'].' signtaires</a></li>
 							<li class="category">'.$category.'</li>
 						</ul>
 					</div>

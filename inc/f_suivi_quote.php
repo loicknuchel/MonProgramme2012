@@ -183,25 +183,28 @@
 							page += '<li>Mises a jour du site</li>';
 						}
 						if(obj['response']['suivis']['page'] != null){
-							page += '<li>Pages :<ul>';
+							page += '<li>Pages : ';
 							for(var i=0; i<obj['response']['suivis']['page'].length; i++){
-								page += '<li><a href="./page.php?id='+obj['response']['suivis']['page'][i]+'">page '+obj['response']['suivis']['page'][i]+'</a></li>';
+								if(i != 0){page += ', ';}
+								page += '<a href="./page.php?id='+obj['response']['suivis']['page'][i]+'">page '+obj['response']['suivis']['quote'][i]+'</a>';
 							}
-							page += '</ul></li>';
+							page += '</li>';
 						}
 						if(obj['response']['suivis']['quote'] != null){
-							page += '<li>Propositions :<ul>';
+							page += '<li>Propositions : ';
 							for(var i=0; i<obj['response']['suivis']['quote'].length; i++){
-								page += '<li>proposition <a href="./quote.php?id='+obj['response']['suivis']['quote'][i]+'">#'+obj['response']['suivis']['quote'][i]+'</a></li>';
+								if(i != 0){page += ', ';}
+								page += '<a href="./quote.php?id='+obj['response']['suivis']['quote'][i]+'">#'+obj['response']['suivis']['quote'][i]+'</a>';
 							}
-							page += '</ul></li>';
+							page += '</li>';
 						}
 						if(obj['response']['suivis']['comment'] != null){
-							page += '<li>Commentaires :<ul>';
+							page += '<li>Commentaires : ';
 							for(var i=0; i<obj['response']['suivis']['comment'].length; i++){
-								page += '<li>commentaire '+obj['response']['suivis']['comment'][i]+'</li>';
+								if(i != 0){page += ', ';}
+								page += obj['response']['suivis']['comment'][i];
 							}
-							page += '</ul></li>';
+							page += '</li>';
 						}
 						page += '</ul>';
 						

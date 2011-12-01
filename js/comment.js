@@ -71,7 +71,7 @@ function comment_vote(vote, this_parent, meth){
 		}
 		else{
 			if(obj != null && obj['status']['code'] == 406){
-				displayInfo('error', s_ajax.vote.err_406);
+				displayInfo('info', s_ajax.vote.err_406);
 			}
 			else{
 				var errno = '';

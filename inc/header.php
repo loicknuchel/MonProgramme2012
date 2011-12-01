@@ -64,7 +64,7 @@ function generateHeader($rel_to_root = './'){
 					</ul>
 					<span></span>
 				</li>
-				<!--<li><a href="'.$rel_to_root.'info/discutions.php">Discutions</a></li>-->
+				<!--<li><a href="'.$rel_to_root.'info/discutions.php">Chat</a></li>-->
 				<li><a href="'.$rel_to_root.'info/faq.php">F.A.Q.</a></li>
 				<li class="selection"><a href="#">&#9733; <div></div></a></li>
 			</ul>

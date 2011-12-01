@@ -9,6 +9,9 @@ function generateScriptsJs($rel_to_root = './'){
 	<script src="'.$rel_to_root.'js/libs/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 	<script src="'.$rel_to_root.'js/libs/contactable.1.3/jquery.validate.pack.js"></script>
 	<script src="'.$rel_to_root.'js/libs/contactable.1.3/jquery.contactable.js"></script>
+	<script src="'.$rel_to_root.'js/libs/jquery.scrollTo-1.4.2-min.js"></script>
+	<script src="'.$rel_to_root.'js/libs/jquery.localscroll-1.2.7-min.js"></script>
+	<script src="'.$rel_to_root.'js/libs/jquery.serialScroll-1.2.2-min.js"></script>
 	
 	<script src="'.$rel_to_root.'js/fancybox.js"></script>
 	<script src="'.$rel_to_root.'js/contactable.js"></script>
@@ -19,6 +22,7 @@ function generateScriptsJs($rel_to_root = './'){
 	<script src="'.$rel_to_root.'js/menu.js"></script>
 	<script src="'.$rel_to_root.'js/quote.js"></script>
 	<script src="'.$rel_to_root.'js/comment.js"></script>
+	<script src="'.$rel_to_root.'js/comment_slider.js"></script>
 	<script src="'.$rel_to_root.'js/footer.js"></script>
 	<script src="'.$rel_to_root.'js/selection.js"></script>
 	<script src="'.$rel_to_root.'js/script.js"></script>

@@ -217,6 +217,15 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 				<p>Les données sont renvoyées par l'API au <em>format JSON</em> avec un encodage en <em>UTF8</em>.</p>
 
 				<h2 id="-API_ressources">API ressources</h2>
+				<ul>
+					<li><a href="#-API_ressources-quotes">Citations</a></li>
+					<li><a href="#-API_ressources-comments">Commentaires</a></li>
+					<li><a href="#-API_ressources-categories">Catégories</a></li>
+					<li><a href="#-API_ressources-selections">Sélections</a></li>
+					<li><a href="#-API_ressources-suivi">Suivi d'éléments</a></li>
+					<li><a href="#-API_ressources-petition">Signer des éléments</a></li>
+					<li><a href="#-API_ressources-parameters">Paramètres</a></li>
+				</ul>
 				<?php
 				function generateParameters($params){
 					$html = '<div class="parameters">
@@ -266,20 +275,25 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 				?>
 				<?php
 				// GET
-				$key_param['name'] = 'key'; 			$key_param['status'] = 'requis'; 			$key_param['use'] = "clé, publique ou privée, donnant accès à un service de l'API.";
-				$quoteidget_param['name'] = 'quoteid'; 	$quoteidget_param['status'] = 'requis'; 	$quoteidget_param['use'] = "Id de la citation souhaitée. Peut aussi prendre la valeur <span class=\"val\">random</span> pour une citation au hasard.";
-				$type_param['name'] = 'type';			$type_param['status'] = 'requis';			$type_param['use'] = "Valeurs possibles : <span class=\"val\">quote</span> ou <span class=\"val\">page</span>. désigne le type de ressource voulu.";
-				$typesuivi_param['name'] = 'type';		$typesuivi_param['status'] = 'requis';		$typesuivi_param['use'] = "Valeurs possibles : <span class=\"val\">quote</span>, <span class=\"val\">page</span>, <span class=\"val\">site</span> ou <span class=\"val\">event</span>. désigne le type de ressource voulu.";
-				$id_param['name'] = 'id'; 				$id_param['status'] = 'requis'; 			$id_param['use'] = "Id de la ressource souhaitée.";
-				$p_comment_param['name'] = 'p'; 		$p_comment_param['status'] = 'optionnel'; 	$p_comment_param['use'] = "Numéro de la page de commentaires.";
-				$p_quote_param['name'] = 'p'; 			$p_quote_param['status'] = 'optionnel'; 	$p_quote_param['use'] = "Numéro de la page de citations.";
-/*4*/			$p_selection_param['name'] = 'p'; 		$p_selection_param['status'] = 'optionnel'; $p_selection_param['use'] = "Numéro de la page de sélections.";
-				$p_category_param['name'] = 'p'; 		$p_category_param['status'] = 'optionnel';	$p_category_param['use'] = "Numéro de la page de catégories.";
-				$nocomment_param['name'] = 'nocomment';	$nocomment_param['status'] = 'optionnel';	$nocomment_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Les commentaires ne seront pas dans la réponse (pour alléger le trafic réseau).";
-				$orderlist_param['name'] = 'list';		$orderlist_param['status'] = 'requis';		$orderlist_param['use'] = "Valeurs possibles : <span class=\"val\">top</span> (votes), <span class=\"val\">topcomment</span> (nombre de commentaires), <span class=\"val\">lasts</span> (date de publication). Les citations sont classées de manière décroissante selon les différents critères.";
-				$cat_param['name'] = 'cat';				$cat_param['status'] = 'requis';			$cat_param['use'] = "Identifie une catégorie. Prend la valeur de l'id ou du nom de la catégorie.";
-/*9*/			$sel_param['name'] = 'sel';				$sel_param['status'] = 'requis';			$sel_param['use'] = "Identifie une sélection. Prend la valeur de l'id ou du nom de la sélection.";
-				$quoteids_param['name'] = 'quoteids';	$quoteids_param['status'] = 'requis';		$quoteids_param['use'] = "Fourni la liste de citations à partir de leurs id. Chaque id est un entier et est séparé des autres par un '/'.";
+				$key_param['name'] = 'key'; 				$key_param['status'] = 'requis'; 			$key_param['use'] = "clé, publique ou privée, donnant accès à un service de l'API.";
+				$quoteidget_param['name'] = 'quoteid'; 		$quoteidget_param['status'] = 'requis'; 	$quoteidget_param['use'] = "Id de la citation souhaitée. Peut aussi prendre la valeur <span class=\"val\">random</span> pour une citation au hasard.";
+				$type_param['name'] = 'type';				$type_param['status'] = 'requis';			$type_param['use'] = "Valeurs possibles : <span class=\"val\">quote</span> ou <span class=\"val\">page</span>. désigne le type de ressource voulu.";
+				$typesuivi_param['name'] = 'type';			$typesuivi_param['status'] = 'requis';		$typesuivi_param['use'] = "Valeurs possibles : <span class=\"val\">quote</span>, <span class=\"val\">page</span>, <span class=\"val\">site</span> ou <span class=\"val\">event</span>. Désigne le type de ressource voulu.";
+				$typesign_param['name'] = 'type';			$typesign_param['status'] = 'requis';		$typesign_param['use'] = "Valeurs possibles : <span class=\"val\">quote</span> ou <span class=\"val\">site</span>. Désigne le type de ressource voulu.";
+				$id_param['name'] = 'id'; 					$id_param['status'] = 'requis'; 			$id_param['use'] = "Id de la ressource souhaitée.";
+				$pc_comment_param['name'] = 'pc'; 			$pc_comment_param['status'] = 'optionnel'; 	$pc_comment_param['use'] = "Numéro de la page de commentaires.";
+				$pp_comment_param['name'] = 'pp'; 			$pp_comment_param['status'] = 'optionnel'; 	$pp_comment_param['use'] = "Numéro de la page de la pétition.";
+				$p_comment_param['name'] = 'p'; 			$p_comment_param['status'] = 'optionnel'; 	$p_comment_param['use'] = "Numéro de la page de commentaires.";
+				$p_quote_param['name'] = 'p'; 				$p_quote_param['status'] = 'optionnel'; 	$p_quote_param['use'] = "Numéro de la page de citations.";
+/*4*/			$p_selection_param['name'] = 'p'; 			$p_selection_param['status'] = 'optionnel'; $p_selection_param['use'] = "Numéro de la page de sélections.";
+				$p_category_param['name'] = 'p'; 			$p_category_param['status'] = 'optionnel';	$p_category_param['use'] = "Numéro de la page de catégories.";
+				$p_petition_param['name'] = 'p'; 			$p_petition_param['status'] = 'optionnel';	$p_petition_param['use'] = "Numéro de la page de pétition.";
+				$nocomment_param['name'] = 'nocomment';		$nocomment_param['status'] = 'optionnel';	$nocomment_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Les commentaires ne seront pas dans la réponse (pour alléger le trafic réseau).";
+				$nopetition_param['name'] = 'nopetition';	$nopetition_param['status'] = 'optionnel';	$nopetition_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. La pétition ne sera pas dans la réponse (pour alléger le trafic réseau).";
+				$orderlist_param['name'] = 'list';			$orderlist_param['status'] = 'requis';		$orderlist_param['use'] = "Valeurs possibles : <span class=\"val\">top</span> (votes), <span class=\"val\">topcomment</span> (nombre de commentaires), <span class=\"val\">lasts</span> (date de publication). Les citations sont classées de manière décroissante selon les différents critères.";
+				$cat_param['name'] = 'cat';					$cat_param['status'] = 'requis';			$cat_param['use'] = "Identifie une catégorie. Prend la valeur de l'id ou du nom de la catégorie.";
+/*9*/			$sel_param['name'] = 'sel';					$sel_param['status'] = 'requis';			$sel_param['use'] = "Identifie une sélection. Prend la valeur de l'id ou du nom de la sélection.";
+				$quoteids_param['name'] = 'quoteids';		$quoteids_param['status'] = 'requis';		$quoteids_param['use'] = "Fourni la liste de citations à partir de leurs id. Chaque id est un entier et est séparé des autres par un '/'.";
 				
 				// POST
 				$quote_param['name'] = 'quote'; 			$quote_param['status'] = 'requis';				$quote_param['use'] = "Contenu de la nouvelle citation.";
@@ -305,8 +319,17 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 /*29*/			$newcat_param['name'] = 'cat';				$newcat_param['status'] = 'requis';				$newcat_param['use'] = "Nom de la nouvelle catégorie à créer.";
 				
 				$mailsuivi_param['name'] = 'mail'; 			$mailsuivi_param['status'] = 'requis';			$mailsuivi_param['use'] = "Adresse mail où sont envoyés les mails du suivi.";
+				$mailsign_param['name'] = 'mail'; 			$mailsign_param['status'] = 'requis';			$mailsign_param['use'] = "Adresse mail qui signe la pétition. Nécessaire pour recevoir le code de validation de la signature.";
 				$suiviaction_param['name'] = 'action'; 		$suiviaction_param['status'] = 'requis'; 		$suiviaction_param['use'] = "Valeurs possibles : <span class=\"val\">follow</span> ou <span class=\"val\">unfollow</span>. Indique l'action qui doit être effetuée lors de cet appel.";
 				/*to delete*/$newcomments_param['name'] = 'newcomments'; $newcomments_param['status'] = 'requis'; 		$newcomments_param['use'] = "Booléen (0 ou 1) indiquant si l'adresse mail sera informée ou pas de l'arrivée de nouveaux commentaires sur la citation.";
+				
+				$confirm_param['name'] = 'confirm'; 		$confirm_param['status'] = 'requis';			$confirm_param['use'] = "Clé de confirmation de la signature (hash sha1)";
+				$prenom_param['name'] = 'prenom'; 			$prenom_param['status'] = 'requis';				$prenom_param['use'] = "Prenom de la personnes souhaitant signer la pétition";
+				$nom_param['name'] = 'nom'; 				$nom_param['status'] = 'requis';				$nom_param['use'] = "Nom de la personnes souhaitant signer la pétition";
+				$genre_param['name'] = 'genre'; 			$genre_param['status'] = 'optionnel';			$genre_param['use'] = "Valeurs possibles : <span class=\"val\">Mr</span>, <span class=\"val\">Mme</span> ou <span class=\"val\">Mlle</span>. Genre de la personnes souhaitant signer la pétition";
+				$profession_param['name'] = 'profession'; 	$profession_param['status'] = 'optionnel';		$profession_param['use'] = "Profession de la personnes souhaitant signer la pétition";
+				$zipcode_param['name'] = 'zipcode'; 		$zipcode_param['status'] = 'optionnel';			$zipcode_param['use'] = "Code postal de la personnes souhaitant signer la pétition";
+				$message_param['name'] = 'message'; 		$message_param['status'] = 'optionnel';			$message_param['use'] = "Message complémentaire à la signature";
 				
 				// pour tous
 				$noheaders_param['name'] = 'noheaders'; $noheaders_param['status'] = 'optionnel';	$noheaders_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Cela permet que les headers ne soient pas envoyés s'ils l'ont déjà été.";
@@ -321,7 +344,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					echo '<table class="API_ressources" id="-API_ressources-quotes">
 					<tr class="title">
 						<td colspan="2">
-							<h1>Citations</h1> <a href="#-API_ressources-comments">next</a>
+							<h1>Citations</h1> <a href="#-API_ressources-comments">next</a> <a href="#-API_ressources">top</a>
 						</td>
 					</tr>
 					<tr style="display: none;">
@@ -333,14 +356,16 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					$ressource['use'] = "Retourne la citation identifiée avec l'id passé en paramètre ainsi que les informations s'y rapportant (commentaires, auteur, etc.).";
 					$params[0] = $key_param;		// 0
 					$params[1] = $quoteidget_param;
-					$params[2] = $p_comment_param;
-					$params[3] = $nocomment_param;
-					$params[4] = $noheaders_param;
-					$params[5] = $format_param;
-					$params[6] = $callback_param;
+					$params[2] = $pc_comment_param;
+					$params[3] = $pp_comment_param;
+					$params[4] = $nocomment_param;
+					$params[5] = $nopetition_param;
+					$params[6] = $noheaders_param;
+					$params[7] = $format_param;
+					$params[8] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'quote.php?key='.$APIdatas['public_key_test'].'&amp;quoteid=1';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"id":10,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Un accident de barbecue m a conduit aux urgences. Pour brûlure ? Non. Pour crise de rire tellement puissante que je me suis empalé la joue avec le bâton de ma brochette","source":"","context":"","explanation":"","author":"Anonyme","publisher":"","publisher_info":"","site":"","category":"vdm","category_id":"2","up":1,"down":1,"total_comments":3,"comments":[{"id":52,"post_timestamp":"1312036","post_date":"09/08/2011 à 22:12","publisher":"audrey","site":"","comment":"é\'r\"tr\"t","up":0,"down":0,"reported":0},{"id":53,"post_timestamp":"1312036","post_date":"09/08/2011 à 22:14","publisher":"hh","site":"","comment":"[quote]é\'r\"tr\"t[/quote]","up":0,"down":0,"reported":0},{"id":54,"post_timestamp":"1312036","post_date":"09/08/2011 à 22:14","publisher":"gogo","site":"","comment":"Ce commentaire a été modéré.","up":0,"down":0,"reported":1}],"nbcomments":3,"size_comment_page":20,"current_comment_page":1,"total_comment_pages":1},"info":{"remaining_queries":39,"next_restart":60}}';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"id":2,"post_timestamp":1312036074,"post_date":"30/07/2011 à 16:27","quote":"\"Connexion à réseau non identifié (Nom du réseau: dlink)\"","source":"","context":"","explanation":"","author":"georges","publisher":"","publisher_info":"","site":"","category":"geek","category_id":3,"up":6,"down":1,"total_comments":24,"total_signatures":2,"comments":[{"id":120,"post_timestamp":1321534716,"post_date":"17/11/2011 à 13:58","publisher":"toto","site":"","comment":"qsd","up":0,"down":0,"reported":0},{"id":133,"post_timestamp":1322438577,"post_date":"28/11/2011 à 01:02","publisher":"toto","site":"","comment":"mon comment","up":0,"down":0,"reported":0}],"nbcomments":2,"size_comment_page":20,"current_comment_page":2,"total_comment_pages":2,"signatures":[{"no":2,"post_date":"01/12/2011 à 16:40","genre":"Mme","prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"75000","message":"Bonjour"},{"no":1,"post_date":"01/12/2011 à 16:33","genre":"","prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""}],"nbsignatures":2,"size_petition_page":40,"current_petition_page":1,"total_petition_pages":1},"info":{"remaining_queries":35,"next_restart":8}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					
@@ -484,7 +509,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					<table class="API_ressources" id="-API_ressources-comments">
 					<tr class="title">
 						<td colspan="2">
-							<h1>Commentaires</h1> <a href="#-API_ressources-categories">next</a>
+							<h1>Commentaires</h1> <a href="#-API_ressources-categories">next</a> <a href="#-API_ressources">top</a>
 						</td>
 					</tr>
 					<tr style="display: none;">
@@ -582,7 +607,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					<table class="API_ressources" id="-API_ressources-categories">
 					<tr class="title">
 						<td colspan="2">
-							<h1>Catégories</h1> <a href="#-API_ressources-selections">next</a>
+							<h1>Catégories</h1> <a href="#-API_ressources-selections">next</a> <a href="#-API_ressources">top</a>
 						</td>
 					</tr>
 					<tr style="display: none;">
@@ -623,7 +648,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					<table class="API_ressources" id="-API_ressources-selections">
 					<tr class="title">
 						<td colspan="2">
-							<h1>Sélections</h1> <a href="#-API_ressources-parameters">next</a>
+							<h1>Sélections</h1> <a href="#-API_ressources-suivi">next</a> <a href="#-API_ressources">top</a>
 						</td>
 					</tr>
 					<tr style="display: none;">
@@ -662,28 +687,15 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					
 					
 					echo '</table>
-					<table class="API_ressources" id="-API_ressources-parameters">
+					<table class="API_ressources" id="-API_ressources-suivi">
 					<tr class="title">
 						<td colspan="2">
-							<h1>Paramètres</h1>
+							<h1>Suivi d\'éléments</h1> <a href="#-API_ressources-petition">next</a> <a href="#-API_ressources">top</a>
 						</td>
 					</tr>
 					<tr style="display: none;">
 						<td colspan="2"></td>
 					</tr>';
-					
-					$ressource= null; $params = null; $sample = null;
-					$ressource['ressource'] = 'params.php?key={key}';
-					$ressource['use'] = "Retourne l'ensembles des paramètres de configuration de l'application.";
-					$params[0] = $key_param;
-					$params[1] = $noheaders_param;
-					$params[2] = $format_param;
-					$params[3] = $callback_param;
-					$sample['methode'] = 'GET';
-					$sample['requete'] = $APIdatas['base_url'].'params.php?key='.$APIdatas['public_key_test'].'';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"textMaxSize":{"quote":"140","comment":"2048","source":"256","context":"1024","explanation":"1024","author":"56","publisher":"56","publisher_info":"1024","mail":"140","site":"256","category":"56","selection":"56","tag":"56"}},"info":{"remaining_queries":39,"next_restart":60}}';
-					echo generateAPIRessource($ressource, $params, $sample);
-					
 					
 					$ressource= null; $params = null; $sample = null;
 					$ressource['ressource'] = 'suivi.php?key={key}&mail={mail}';
@@ -731,6 +743,96 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					$sample['requete'] = $APIdatas['base_url'].'suivi.php?key='.$APIdatas['public_key_test'].'&mail=toto@example.com&amp;quoteid=1&newcomments=1';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"info":{"remaining_queries":39,"next_restart":60}}';
 					echo generateAPIRessource($ressource, $params, $sample);
+					
+					
+					echo '</table>
+					<table class="API_ressources" id="-API_ressources-petition">
+					<tr class="title">
+						<td colspan="2">
+							<h1>Signer des éléments</h1> <a href="#-API_ressources-parameters">next</a> <a href="#-API_ressources">top</a>
+						</td>
+					</tr>
+					<tr style="display: none;">
+						<td colspan="2"></td>
+					</tr>';
+					
+					$ressource= null; $params = null; $sample = null;
+					$ressource['ressource'] = 'petition.php?key={key}&type={type}&id={id}';
+					$ressource['use'] = "Retourne la liste des signataires de l'élément indiqué.";
+					$params[0] = $key_param;
+					$params[1] = $typesign_param;
+					$params[2] = $id_param;
+					$params[3] = $p_petition_param;
+					$params[4] = $noheaders_param;
+					$params[5] = $format_param;
+					$params[6] = $callback_param;
+					$sample['methode'] = 'GET';
+					$sample['requete'] = $APIdatas['base_url'].'petition.php?key='.$APIdatas['public_key_test'].'&type=quote&id=3';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"elt":"quote","id":3,"petition":[{"no":1,"post_date":"01/12/2011 à 16:33","genre":"","prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""},{"no":1,"post_date":"01/12/2011 à 16:40","genre":"Mme","prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"","message":"Bonjour"}],"nbsignatures":2,"size_petition_page":40,"current_petition_page":1,"total_petition_pages":1},"info":{"remaining_queries":39,"next_restart":42}}';
+					echo generateAPIRessource($ressource, $params, $sample);
+					
+					
+					$ressource= null; $params = null; $sample = null;
+					$ressource['ressource'] = 'petition.php?key={key}&type={type}&id={id}&mail={mail}&prenom={prenom}&nom={nom}';
+					$ressource['use'] = "Permet de signer la pétition pour l'élément indiqué.";
+					$params[0] = $key_param;
+					$params[1] = $typesign_param;
+					$params[2] = $id_param;
+					$params[3] = $mailsign_param;
+					$params[4] = $prenom_param;
+					$params[5] = $nom_param;
+					$params[6] = $genre_param;
+					$params[7] = $site_param;
+					$params[8] = $profession_param;
+					$params[9] = $zipcode_param;
+					$params[10] = $message_param;
+					$params[11] = $noheaders_param;
+					$params[12] = $format_param;
+					$params[13] = $callback_param;
+					$sample['methode'] = 'POST';
+					$sample['requete'] = $APIdatas['base_url'].'petition.php?key='.$APIdatas['public_key_test'].'&type=quote&id=3&mail=toto@example.com&prenom=toto&nom=dupont';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"info":{"remaining_queries":39,"next_restart":60}}';
+					echo generateAPIRessource($ressource, $params, $sample);
+					
+					
+					$ressource= null; $params = null; $sample = null;
+					$ressource['ressource'] = 'petition.php?key={key}&confirm={validation_key}';
+					$ressource['use'] = "Confirme une signature avec le code reçu (nécessaire pour qu'elle soit validée)";
+					$params[0] = $key_param;
+					$params[1] = $confirm_param;
+					$params[2] = $noheaders_param;
+					$params[3] = $format_param;
+					$params[4] = $callback_param;
+					$sample['methode'] = 'POST';
+					$sample['requete'] = $APIdatas['base_url'].'petition.php?key='.$APIdatas['public_key_test'].'&confirm=???';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"info":{"remaining_queries":39,"next_restart":60}}';
+					echo generateAPIRessource($ressource, $params, $sample);
+					
+					
+					
+					echo '</table>
+					<table class="API_ressources" id="-API_ressources-parameters">
+					<tr class="title">
+						<td colspan="2">
+							<h1>Paramètres</h1> <a href="#-API_ressources">top</a>
+						</td>
+					</tr>
+					<tr style="display: none;">
+						<td colspan="2"></td>
+					</tr>';
+					
+					$ressource= null; $params = null; $sample = null;
+					$ressource['ressource'] = 'params.php?key={key}';
+					$ressource['use'] = "Retourne l'ensembles des paramètres de configuration de l'application.";
+					$params[0] = $key_param;
+					$params[1] = $noheaders_param;
+					$params[2] = $format_param;
+					$params[3] = $callback_param;
+					$sample['methode'] = 'GET';
+					$sample['requete'] = $APIdatas['base_url'].'params.php?key='.$APIdatas['public_key_test'].'';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"textMaxSize":{"quote":"140","comment":"2048","source":"256","context":"1024","explanation":"1024","author":"56","publisher":"56","publisher_info":"1024","mail":"140","site":"256","category":"56","selection":"56","tag":"56"}},"info":{"remaining_queries":39,"next_restart":60}}';
+					echo generateAPIRessource($ressource, $params, $sample);
+					
 					
 					echo '</table>';
 				?>

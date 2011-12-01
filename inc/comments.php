@@ -3,7 +3,7 @@
 function generateCommentsBlock($comments, $rel_to_root = './'){
 	$html = '<div class="comments" id="comment_block">';
 		foreach($comments as $key => $comment){
-			$html .=  generateComment($comment, $rel_to_root);
+			$html .= generateComment($comment, $rel_to_root);
 		}
 	$html .= '</div>';
 	return $html;
@@ -75,20 +75,20 @@ function generateCommentPages($commentDatas){
 	}
 }*/
 
-function generateCommentPager($nbPages, $current, $baseUrl){
+function generateCommentPager($nbPages, $current, $baseUrl, $anchor){
 	$widthPager = 4;
 	
 	$html = '<div class="comment_pager">';
 	// previous
 	if($current == 1){$html .= '<span>< Précédent</span> <b></b> ';}
-	else{$prev = $current-1; $html .= '<a href="'.$baseUrl.''.$prev.'#comment_block">< Précédent</a> <b></b> ';}
+	else{$prev = $current-1; $html .= '<a href="'.$baseUrl.''.$prev.$anchor.'">< Précédent</a> <b></b> ';}
 	
 	// first
 	if($current - $widthPager - 1 == 1){
-		$html .= '<a href="'.$baseUrl.'1#comment_block">1</a> <b></b> ';
+		$html .= '<a href="'.$baseUrl.'1'.$anchor.'">1</a> <b></b> ';
 	}
 	else if($current - $widthPager > 1){
-		$html .= '<a href="'.$baseUrl.'1#comment_block">1</a> <b></b> ... <b></b> ';
+		$html .= '<a href="'.$baseUrl.'1'.$anchor.'">1</a> <b></b> ... <b></b> ';
 	}
 	
 	// middle
@@ -97,21 +97,21 @@ function generateCommentPager($nbPages, $current, $baseUrl){
 			$html .= '<strong class="med">'.$i.'</strong> <b></b> ';
 		}
 		else if($i > 0 && $i <= $nbPages){
-			$html .= '<a href="'.$baseUrl.''.$i.'#comment_block">'.$i.'</a> <b></b> ';
+			$html .= '<a href="'.$baseUrl.''.$i.$anchor.'">'.$i.'</a> <b></b> ';
 		}
 	}
 	
 	// last
 	if($current + $widthPager + 1 == $nbPages){
-		$html .= '<a href="'.$baseUrl.''.$nbPages.'#comment_block">'.$nbPages.'</a> <b></b> ';
+		$html .= '<a href="'.$baseUrl.''.$nbPages.$anchor.'">'.$nbPages.'</a> <b></b> ';
 	}
 	else if($current + $widthPager < $nbPages){
-		$html .= '... <b></b> <a href="'.$baseUrl.''.$nbPages.'#comment_block">'.$nbPages.'</a> <b></b> ';
+		$html .= '... <b></b> <a href="'.$baseUrl.''.$nbPages.$anchor.'">'.$nbPages.'</a> <b></b> ';
 	}
 	
 	// next
 	if($current == $nbPages){$html .= '<span>Suivant ></span>';}
-	else{$next = $current+1; $html .= '<a href="'.$baseUrl.''.$next.'#comment_block">Suivant ></a>';}
+	else{$next = $current+1; $html .= '<a href="'.$baseUrl.''.$next.$anchor.'">Suivant ></a>';}
 	
 	$html .= '</div>';
 	return $html;

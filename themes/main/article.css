@@ -61,12 +61,30 @@
 
 
 
+.event  h1.first {
+	display: block;
+	position: relative;
+	left: -44px;
+	padding: 0 44px 4px;
+	margin: -10px 0px -25px 0px;
+	background: url('./img/divers/ribbon.png') no-repeat 0 0;
+	height: 58px;
+	font: bold 14px/30px 'Droid Sans';
+	color: white;
+	line-height: 48px;
+	text-transform: uppercase;
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+	text-decoration: none;
+}
 
-.article .formEvent {
+
+
+
+.event .formEvent {
     float: left;
     width: 225px;
 }
-.article .formEvent fieldset {
+.event .formEvent fieldset {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 70%;
     line-height: 1.6em;
@@ -74,17 +92,17 @@
     -moz-text-shadow: 0 1px 0 #fff;
     -webkit-text-shadow: 0 1px 0 #fff;
 }
-.article .formEvent legend {
+.event .formEvent legend {
     margin-bottom: 5px;
 }
-.article .formEvent div {
+.event .formEvent div {
     margin-bottom: 15px;
 }
-.article .formEvent label {
+.event .formEvent label {
     position: absolute;
     top: -999em;
 }
-.article label, .article input[type="text"] {
+.event .formEvent label, .event .formEvent input[type="text"] {
     color: #8c8a8a;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
@@ -94,10 +112,10 @@
     padding: 8px;
     width: 183px;
 }
-.article label:focus, .article input[type="text"]:focus {
+.event .formEvent label:focus, .event .formEvent input[type="text"]:focus {
     background: url('./img/footer/bgFormMailList.png') 0 -33px no-repeat;
 }
-.article .presents table td {
+.event .formEvent .presents table td {
 	padding: 1px 3px;
 }
 

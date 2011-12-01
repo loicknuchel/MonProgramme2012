@@ -1,4 +1,4 @@
-$(function(){
+$(document).ready(function () {
 	dropdown_menu();
 	footer_actions();
 	
@@ -7,6 +7,9 @@ $(function(){
 	
 	// effectue les actions sur les commentaires (comment.js)
 	comment_actions();
+	
+	// s'occupe du slider des commentaires (comment_slider.js)
+	comment_slider();
 	
 	// génère les fancyboxes (fancybox.js)
 	set_fancyboxes(rel_to_root);
