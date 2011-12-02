@@ -1,5 +1,13 @@
 
-- signer une pétition pour chaque citation : ajouter la fonctionnalité à l'API et mettre en place un formulaire...
+- ajouter une barre représentant les votes sur les citations
+
+- ajouter un champ "avis" aux commentaires (pour ou contre la citation) et le représenter par une pastille devant le pseudo
+
+- proposer de voter dans les formulaires de commentaires et de pétition
+
+- ajouter un champ "age" dans les pétitions
+
+- améliorer le formulaire de pétition : mettre les champs genre, age et code postal dans des champs avancés (cf http://gwt.google.com/samples/Showcase/Showcase.html#!CwDisclosurePanel)
 
 - Ajouter des pages pour présenter mes solutions ou mettre des liens vers mon blog...
 

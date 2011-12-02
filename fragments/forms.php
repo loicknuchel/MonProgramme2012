@@ -257,6 +257,14 @@ function generatePetitionForm($usr, $server_path, $postResult, $actionPage, $anc
 	$captchaError = '';
 	if(isset($postResult) && $postResult['status']['code'] == 200){
 		$genre = null;$prenom = null;$nom = null;$mail = null;$site = null;$profession = null;$zipcode = null;$sign_message = null;
+		$genre = isset($_POST['genre']) ? $_POST['genre'] : null;
+		$prenom = isset($_POST['prenom']) ? $_POST['prenom'] : null;
+		$nom = isset($_POST['nom']) ? $_POST['nom'] : null;
+		$mail = isset($_POST['mail']) ? $_POST['mail'] : null;
+		$site = isset($_POST['site']) ? $_POST['site'] : null;
+		$profession = isset($_POST['profession']) ? $_POST['profession'] : null;
+		$zipcode = isset($_POST['zipcode']) ? $_POST['zipcode'] : null;
+		$sign_message = isset($_POST['sign_message']) ? $_POST['sign_message'] : null;
 	}
 	else{
 		if(isset($postResult) && $postResult == 500){$captchaError = '<div style="border: #C00 1px solid; background: #FEE; padding: 10px;">Erreur dans la captcha antispam !!</div><br/>';}

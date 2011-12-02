@@ -95,7 +95,8 @@
 		}
 		if(isset($petitionResult)){
 			if($petitionResult['status']['code'] == 200){ echo '<script>displayInfo("success", "signature enregistrée");</script>'; }
-			else if($petitionResult != 500){ echo '<script>displayInfo("error", "Erreur ('.$petitionResult['status']['code'].') lors de l\'enregistrement de votre signature");</script>'; }
+			else if($petitionResult == 500){ echo '<script>displayInfo("info", "Vous avez déjà signé cette pétition !");</script>'; }
+			else{ echo '<script>displayInfo("error", "Erreur ('.$petitionResult['status']['code'].') lors de l\'enregistrement de votre signature");</script>'; }
 		}
 	?></body>
 </html>

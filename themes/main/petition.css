@@ -27,7 +27,11 @@
 }
 
 .signatures_petition table tr td {
-	padding: 8px;
+	padding: 8px 3px;
+}
+
+.signatures_petition table tr td:first-child  {
+	padding: 8px 3px 8px 8px;
 }
 
 .signatures_petition p {

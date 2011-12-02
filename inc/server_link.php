@@ -70,15 +70,17 @@
 	
 	include_once $rel_to_root.'inc/antispam.php';
 	include_once $rel_to_root.'inc/conventions.php';
-	include_once $rel_to_root.'inc/utils.php';
-	include_once $rel_to_root.'inc/head.php';
-	include_once $rel_to_root.'inc/header.php';
-	include_once $rel_to_root.'inc/quote.php';
-	include_once $rel_to_root.'inc/comments.php';
-	include_once $rel_to_root.'inc/signatures.php';
-	include_once $rel_to_root.'inc/forms.php';
-	include_once $rel_to_root.'inc/footer.php';
-	include_once $rel_to_root.'inc/scripts.php';
-	include_once $rel_to_root.'inc/selection.php';
-	include_once $rel_to_root.'utils/twitter.php';
+	
+	include_once $rel_to_root.'fragments/utils.php';
+	include_once $rel_to_root.'fragments/head.php';
+	include_once $rel_to_root.'fragments/header.php';
+	include_once $rel_to_root.'fragments/quote.php';
+	include_once $rel_to_root.'fragments/comments.php';
+	include_once $rel_to_root.'fragments/signatures.php';
+	include_once $rel_to_root.'fragments/forms.php';
+	include_once $rel_to_root.'fragments/footer.php';
+	include_once $rel_to_root.'fragments/scripts.php';
+	include_once $rel_to_root.'fragments/selection.php';
+	
+	//include_once $rel_to_root.'utils/twitter.php';
 ?>
