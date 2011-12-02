@@ -1,5 +1,4 @@
 
-- ajouter une barre représentant les votes sur les citations
 
 - ajouter un champ "avis" aux commentaires (pour ou contre la citation) et le représenter par une pastille devant le pseudo
 

@@ -151,12 +151,68 @@
 }
 
 .quote .quote_block .quote_meta .quote_actions ul{
-	float: left;
+	
 }
 
-.quote .quote_block .quote_meta .quote_actions li{
+.quote .quote_block .quote_meta .quote_actions ul li{
+	float: left;
 	display: inline;
 	margin-right: 15px;
+}
+
+.quote .quote_block .quote_meta .quote_actions ul li ul{
+	margin: 0px;
+}
+
+.quote .quote_block .quote_meta .quote_actions ul li ul li{
+	margin-right: 0px;
+}
+
+.quote .quote_block .quote_meta .quote_actions .votebar {
+	display: block;
+	width: 80px;
+	height: 5px;
+	margin: 5px 4px;
+	border: 1px solid #CCC;
+	overflow: hidden;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background: #eee;
+}
+
+.quote .quote_block .quote_meta .quote_actions .votebar-up {
+	float: left;
+	height: 5px;
+	border-right: 1px solid white;
+	-webkit-border-radius: 3px 0px 0px 3px;
+	-moz-border-radius: 3px 0px 0px 3px;
+	border-radius: 3px 0px 0px 3px;
+	background: #060;
+	background: #92B901;
+	
+	background: -webkit-gradient(linear,left top, right top,from(	#8d8),to(	#060));
+	background: -webkit-linear-gradient(left,						#8d8,		#060);
+	background: -moz-linear-gradient(	left,						#8d8,		#060);
+	background: -o-linear-gradient(		left,						#8d8,		#060);
+	background: linear-gradient(		left,						#8d8,		#060);
+}
+
+.quote .quote_block .quote_meta .quote_actions .votebar-down {
+	float: right;
+	height: 5px;
+	margin-right: -1px;
+	-webkit-border-radius: 0px 3px 3px 0px;
+	-moz-border-radius: 0px 3px 3px 0px;
+	border-radius: 0px 3px 3px 0px;
+	background: #C00;
+	background: #D44;
+	
+	background: -webkit-gradient(linear,left top, right top,from(	#C00),to(	#e88));
+	background: -webkit-linear-gradient(left,						#C00,		#e88);
+	background: -moz-linear-gradient(	left,						#C00,		#e88);
+	background: -o-linear-gradient(		left,						#C00,		#e88);
+	background: linear-gradient(		left,						#C00,		#e88);
 }
 
 .quote .quote_block .quote_meta .quote_actions .category img{

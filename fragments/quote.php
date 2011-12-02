@@ -52,7 +52,7 @@ function generateQuoteBlock($quote, $editable = false){
 					<div class="quote_actions">
 						<ul>
 							<li class="select"><script>document.write(s_quote.selection.item.notselected);</script></li>
-							<li><a href="#" class="thumb_up">(+)</a> <span class="val_up">'.$quote['up'].'</span> / <a href="#" class="thumb_down">(-)</a> <span class="val_down">'.$quote['down'].'</span></li>
+							<li>'.generateVoteBar($quote['up'], $quote['down']).'</li>
 							<li><a href="quote.php?id='.$quote['id'].'#commentContainer">'.$quote['total_comments'].' réaction'.$accordReaction.'</a></li>
 							<li><a href="quote.php?id='.$quote['id'].'#petitionContainer">'.$quote['total_signatures'].' signtaires</a></li>
 							<li class="category">'.$category.'</li>
@@ -65,6 +65,29 @@ function generateQuoteBlock($quote, $editable = false){
 			</div>
 		</div>';
 		return $html;
+}
+
+function generateVoteBar($voteUp, $voteDown){
+	if($voteUp + $voteDown > 0){
+		$up = ceil(($voteUp / ($voteUp + $voteDown)) * 100);
+		$down = 100 - $up;
+	}
+	else{
+		$up = 0;
+		$down = 0;
+	}
+	
+	$html = '<ul>
+		<li><a href="#" class="thumb_up">(+)</a> <span class="val_up">'.$voteUp.'</span></li>
+		<li>
+			<div class="votebar">
+			  <div class="votebar-up" style="width: '.$up.'%;"></div>
+			  <div class="votebar-down" style="width: '.$down.'%;"></div>
+			</div>
+		</li>
+		<li><span class="val_down">'.$voteDown.'</span> <a href="#" class="thumb_down">(-)</a></li>
+	</ul>';
+	return $html;
 }
 
 function generateQuotePager($nbPages, $current, $baseUrl){

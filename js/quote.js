@@ -1,25 +1,25 @@
 function quote_actions(){
 	// UI : show meta datas
 	$('.quote_block .quote_meta .more').toggle(
-		function(event){ $(this).parent().parent().find('.quote_expand').slideDown(); $(this).find('a').html(s_quote.meta.expanded); },
-		function(event){ $(this).parent().parent().find('.quote_expand').slideUp(); $(this).find('a').html(s_quote.meta.expand); }
+		function(event){ $(this).parents('.quote_block').find('.quote_expand').slideDown(); $(this).find('a').html(s_quote.meta.expanded); },
+		function(event){ $(this).parents('.quote_block').find('.quote_expand').slideUp(); $(this).find('a').html(s_quote.meta.expand); }
 	);
 	
 	// quote vote up
 	$('.quote .quote_block .quote_meta .quote_actions .thumb_up').click(function(event){
-		quote_vote('up', $(this).parent().parent().parent().parent().parent().parent(), meth);
+		quote_vote('up', $(this).parents('.quote'), meth);
 		return false;
 	});
 	
 	// quote vote down
 	$('.quote .quote_block .quote_meta .quote_actions .thumb_down').click(function(event){
-		quote_vote('down', $(this).parent().parent().parent().parent().parent().parent(), meth);
+		quote_vote('down', $(this).parents('.quote'), meth);
 		return false;
 	});
 	
 	// report quote
 	$('.quote .quote_header .options .report').click(function(event){
-		quote_report($(this).parent().parent().parent().parent().parent(), meth);
+		quote_report($(this).parents('.quote'), meth);
 		return false;
 	});
 	
@@ -54,19 +54,19 @@ function quote_actions(){
 	
 	// ajouter une quote à la sélection : avant identify_selected_quotes();
 	$('.quote .quote_block .quote_meta .quote_actions .select').click(function(){
-		quote_add_selection($(this).parent().parent().parent().parent().parent());
+		quote_add_selection($(this).parents('.quote'));
 		return false;
 	});
 	
 	// ajouter la quote aux favoris : avant identify_favoris_quotes();
 	$('.quote .quote_header .options .favoris').click(function(event){
-		quote_add_to_favoris($(this).parent().parent().parent().parent().parent());
+		quote_add_to_favoris($(this).parents('.quote'));
 		return false;
 	});
 	
 	// proposer une nouvelle catégorie pour la quote
 	$('.quote .quote_header .options .category').click(function(event){
-		quote_new_category($(this).parent().parent().parent().parent().parent());
+		quote_new_category($(this).parents('.quote'));
 		return false;
 	});
 	
@@ -77,9 +77,13 @@ function quote_actions(){
 
 
 function quote_vote(vote, html_quote, meth){
-	if(vote == 'up'){ var html_vote_value = html_quote.find('.quote_block .quote_meta .quote_actions ul li .val_up'); }
-	else if(vote == 'down'){ var html_vote_value = html_quote.find('.quote_block .quote_meta .quote_actions ul li .val_down'); }
-	else{ return false; }
+	if(vote != 'up' && vote != 'down'){
+		return false;
+	}
+	
+	var html_vote_up_value = html_quote.find('.quote_block .quote_meta .quote_actions ul li .val_up');
+	var html_vote_down_value = html_quote.find('.quote_block .quote_meta .quote_actions ul li .val_down');
+	var html_vote_bar = html_quote.find('.quote_block .quote_meta .quote_actions ul li .votebar');
 	var quote_id = eval(html_quote.find('.quote_header .quote_number a span').html());
 	
 	if(meth == 'local'){
@@ -103,7 +107,19 @@ function quote_vote(vote, html_quote, meth){
 	function call_success(obj){
 		if(obj != null && obj['status']['code'] == 200){
 			displayInfo('success', s_ajax.vote.success);
-			html_vote_value.html(eval(html_vote_value.html()) + 1);
+			//html_vote_value.html(eval(html_vote_value.html()) + 1);
+			var up = eval(html_vote_up_value.html());
+			var down = eval(html_vote_down_value.html());
+			if(vote == 'up'){up = up + 1;}
+			else if(vote == 'down'){down = down + 1;}
+			
+			var pc_up = Math.ceil((up / (up + down)) * 100);
+			var pc_down = 100 - pc_up;
+			
+			html_vote_up_value.html(up);
+			html_vote_down_value.html(down);
+			html_vote_bar.find('.votebar-up').css('width', pc_up+'%');
+			html_vote_bar.find('.votebar-down').css('width', pc_down+'%');
 		}
 		else{
 			if(obj != null && obj['status']['code'] == 406){
