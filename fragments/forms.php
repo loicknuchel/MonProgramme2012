@@ -280,7 +280,7 @@ function generatePetitionForm($usr, $server_path, $postResult, $actionPage, $anc
 	
 	$antiSpam = getAntiSpamQuestion();
 	$html = '<div class="sign_quote" id="sign_quote">
-		<form method="POST" action="'.$actionPage.$anchor.'" class="FV_comment">
+		<form method="POST" action="'.$actionPage.$anchor.'" class="FV_petition">
 			'.$captchaError.'
 			<input type="hidden" name="antiSpam" value="'.$antiSpam['id'].'" />
 			<input type="hidden" name="type" value="'.$type.'" />

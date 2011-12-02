@@ -12,7 +12,7 @@ function welcome_fancybox(rel_to_root){
 		if(welcome != 1 && welcome_fancybox_enabled == true){
 			localStorage.setItem("welcome", 1);
 			$.fancybox({
-				'href'				: rel_to_root+'inc/f_welcome.html',
+				'href'				: rel_to_root+'fancyboxes/f_welcome.html',
 				'title'				: '',
 				'titleShow'			: false,
 				'titlePosition'		: 'over',
@@ -37,7 +37,7 @@ function welcome_fancybox(rel_to_root){
 
 function supportus_fancybox(rel_to_root){
 	$('.supportus').fancybox({
-		'href'				: rel_to_root+'inc/f_supportus.html',
+		'href'				: rel_to_root+'fancyboxes/f_supportus.html',
 		'title'				: '',
 		'titleShow'			: false,
 		'titlePosition'		: 'over',
@@ -60,7 +60,7 @@ function supportus_fancybox(rel_to_root){
 
 function create_category_fancybox(rel_to_root){
 	$('.new_quote form .create_category').fancybox({
-		'href'				: rel_to_root+'inc/f_create_category.php',
+		'href'				: rel_to_root+'fancyboxes/f_create_category.php',
 		'title'				: '',
 		'titleShow'			: false,
 		'titlePosition'		: 'over',
@@ -83,7 +83,7 @@ function create_category_fancybox(rel_to_root){
 
 function suivi_quote_fancybox(rel_to_root){
 	$('.quote .quote_header .options .suivi').fancybox({
-		'href'				: rel_to_root+'inc/f_suivi_quote.php',
+		'href'				: rel_to_root+'fancyboxes/f_suivi_quote.php',
 		'title'				: '',
 		'titleShow'			: false,
 		'titlePosition'		: 'over',
@@ -110,7 +110,7 @@ function open_new_quote_category_fancybox(html_quote){
 	var quote_id = eval(html_quote.find('.quote_header .quote_number a span').html());
 	
 	$.fancybox({
-		'href'				: './inc/f_new_quote_category.php?quote_id='+quote_id+'',
+		'href'				: './fancyboxes/f_new_quote_category.php?quote_id='+quote_id+'',
 		'title'				: '',
 		'titleShow'			: false,
 		'titlePosition'		: 'over',
