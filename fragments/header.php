@@ -8,31 +8,6 @@ function generateHeader($rel_to_root = './'){
 	<div id="header">
 		<div class="wrapper">
 			<div class="title">
-				<!--
-				<div class="disclaimer" style="margin-top: 0px; padding: 5px 0px; font-size: 9px;">
-					Quand ils sont venus chercher les communistes,
-					je n\'ai rien dit,<br/>
-					je n\'étais pas communiste.<br/>
-					Quand ils sont venus chercher les syndicalistes,
-					je n\'ai rien dit,<br/>
-					je n\'étais pas syndicaliste.<br/>
-					Quand ils sont venus chercher les juifs,
-					je n\'ai pas protesté,<br/>
-					je n\'étais pas juif.<br/>
-					Quand ils sont venus chercher les catholiques,
-					je n\'ai pas protesté,<br/>
-					je n\'étais pas catholique.<br/>
-					Puis ils sont venus me chercher,
-					et il ne restait personne pour protester.<br/>
-					<a href="#">Martin Niemöller</a>
-				</div>
-				<div class="disclaimer" style="top: 81px; left: 640px; font-size: 10px;">
-					Ce qui est simple est faux,<br/>
-					ce qui ne l\'est pas est inutilisable.<br/>
-					<a href="#">Paul Valéry</a> 
-				</div>
-				<div class="disclaimer" style="top: 81px; left: 500px; font-size: 10px;">
-				-->
 				<div class="disclaimer" style="bottom: 0px; right: 10px; font-size: 10px;">
 					<span style="font-style: italic;">"Le monde ne sera pas détruit par ceux qui font le mal,<br/>
 					<span onclick="displayInfo(\'info\', \'Voici le message...\');">mais</span> <span onclick="displayInfo(\'success\', \'Voici le message...\');">par</span> <span onclick="displayInfo(\'warning\', \'Voici le message...\');">ceux</span> <span onclick="displayInfo(\'error\', \'Voici le message...\');">qui</span> <span onclick="displayInfo(\'debug\', \'Voici le message...\');">les</span> regardent sans rien faire."</span><br/>
@@ -56,14 +31,14 @@ function generateHeader($rel_to_root = './'){
 				<!--<li><a href="'.$rel_to_root.'allselections.php">Sélections</a></li>-->
 				<li><a href="'.$rel_to_root.'new.php">Nouvelle proposition</a></li>
 				<li><a href="'.$rel_to_root.'info/projet.php">Le projet</a></li>
-				<li><a href="'.$rel_to_root.'info/events.php">Evènements</a></li>
-				<li>
+				<!--<li><a href="'.$rel_to_root.'info/events.php">Evènements</a></li>-->
+				<!--<li>
 					<a href="#" class="topnavtitle">Articles</a>
 					<ul class="subnav">
 						<li><a href="'.$rel_to_root.'info/combat_de_mots.php">Combat de mots</a></li>
 					</ul>
 					<span></span>
-				</li>
+				</li>-->
 				<!--<li><a href="'.$rel_to_root.'info/discutions.php">Chat</a></li>-->
 				<li><a href="'.$rel_to_root.'info/faq.php">F.A.Q.</a></li>
 				<li class="selection"><a href="#">&#9733; <div></div></a></li>
