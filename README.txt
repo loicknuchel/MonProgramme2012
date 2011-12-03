@@ -8,6 +8,6 @@
                                       |___/                                                      
 	
 	MonProgramme2012 est un site web dédié à la discussion de réformes politiques.
-	Ce projet provient de https://github.com/loicknuchel/MonProgramme2012
+	Le code de ce projet est hébergé sur github : https://github.com/loicknuchel/MonProgramme2012
 
-Ce projet ne fonctionne pas seul. Il est un simple frontend qui s'appuie pour la persistance de données sur l'API du service CroudQuotes (https://github.com/loicknuchel/CroudQuotes).
+Ce projet ne fonctionne pas seul. Il s'appuie sur l'API du service CroudQuotes (https://github.com/loicknuchel/CroudQuotes) pour la persistance des données.

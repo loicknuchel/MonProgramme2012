@@ -24,27 +24,28 @@ function fill_forms(){
 }
 
 function action_forms(){
+	// toggle les informations facultatives
+	$('.more_datas').css('display','none');
 	function replace_img(html_img, new_img){
 		var link = html_img.attr('src');
 		var lastSlash = link.lastIndexOf("/");
 		var new_link = link.substring(0, lastSlash+1) + new_img;
 		html_img.attr('src', new_link);
 	}
-	
-	// toggle les informations facultatives pour une nouvelle citation
-	$('.new_quote .more_datas').css('display','none');
-	$('.new_quote .show_more_datas').toggle(
-		function() {$('.new_quote .more_datas').slideDown(300); replace_img($('.new_quote .show_more_datas img'), 'arrow_down.png');},
-		function() {$('.new_quote .more_datas').slideUp(300); replace_img($('.new_quote .show_more_datas img'), 'arrow_right.png');}
+	$('.show_more_datas').toggle(
+		function() {$(this).parent().find('.more_datas').slideDown(300); replace_img($(this).find('img'), 'arrow_down.png');},
+		function() {$(this).parent().find('.more_datas').slideUp(300); replace_img($(this).find('img'), 'arrow_right.png');}
 	);
 	
 	
-	
-	// toggle les informations complémentaires pour les pétitions
-	$('.sign_quote .more_datas').css('display','none');
-	$('.sign_quote .show_more_datas').toggle(
-		function() {$('.sign_quote .more_datas').slideDown(300); replace_img($('.sign_quote .show_more_datas img'), 'arrow_down.png');},
-		function() {$('.sign_quote .more_datas').slideUp(300); replace_img($('.sign_quote .show_more_datas img'), 'arrow_right.png');}
-	);
-
+	// radio button set
+	$(".switch input").css('display', 'none');
+	$(".switch label").click(function(){
+		$(this).parents('.switch').find('label').removeClass('selected');
+		$(this).addClass('selected');
+	});
 }
+
+
+
+

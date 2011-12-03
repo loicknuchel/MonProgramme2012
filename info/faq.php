@@ -27,12 +27,14 @@
 				<section id="example">
 					<p>Objectifs :</p>
 
-<pre><code>Ce site a été conçu en partant du constat que la politique ne peut plus être laissée aux politiciens et aux lobbies.
-L'objectif direct est que nous (citoyens) puissions <span class="string">reprendre la main sur la politique</span> par des actions concrêtes et collectives.
-Il nous semble important de donner envie aux gens de s'intéresser à la politique en leur montrant que des initiatives existent et que les choses peuvent bouger.
-D'autre part, si la communauté devient significative, ce site pourra servir de <span class="string">réservoir à idées</span> et à sujets de débats constructifs pour la campagne.
-
-<span class="mixin">La campagne 2012 ne se fera pas sans nous !</span></code></pre>
+					<pre><code>
+						Ce site a été conçu en partant du constat que la politique ne peut plus être laissée aux politiciens et aux lobbies.<br/>
+						L'objectif direct est que nous (citoyens) puissions <span class="string">reprendre la main sur la politique</span> par des actions concrêtes et collectives.<br/>
+						Il nous semble important de donner envie aux gens de s'intéresser à la politique en leur montrant que des initiatives existent et que les choses peuvent bouger.<br/>
+						D'autre part, si la communauté devient significative, ce site pourra servir de <span class="string">réservoir à idées</span> et à sujets de débats constructifs pour la campagne.<br/>
+						<br/>
+						<span class="mixin">La campagne 2012 ne se fera pas sans nous !</span>
+					</code></pre>
 					
 					<!--<p>Qui sommes nous :</p>
 <pre></pre>-->
@@ -313,6 +315,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 				$cause_param['name'] = 'cause'; 			$cause_param['status'] = 'optionnel';			$cause_param['use'] = "Texte servant à préciser les raisons de la signalisation.";
 				$name_param['name'] = 'info'; 				$name_param['status'] = 'optionnel';			$name_param['use'] = "Champ servant a communiquer le nom de la personne qui demande le suivit.";
 				$info_param['name'] = 'info'; 				$info_param['status'] = 'optionnel';			$info_param['use'] = "Champ servant a communiquer des inforations supplémentaires sur la personne qui demande le suivit.";
+				$avis_param['name'] = 'avis';		 		$avis_param['status'] = 'optionnel';			$avis_param['use'] = "Valeurs possibles : <span class=\"val\">pour</span> ou <span class=\"val\">contre</span>. Précise comment le commentaire se positionne par rapport à la ressource commentée.";
 				$comment_param['name'] = 'comment'; 		$comment_param['status'] = 'requis';			$comment_param['use'] = "Contenu du nouveau commentaire.";
 				$commentid_param['name'] = 'commentid'; 	$commentid_param['status'] = 'requis';			$commentid_param['use'] = "Identifie un commentaire avec son id (entier).";
 				$newsel_param['name'] = 'sel';				$newsel_param['status'] = 'optionnel';			$newsel_param['use'] = "Permet de donner un nom à la sélection à créer.";
@@ -365,7 +368,15 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					$params[8] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'quote.php?key='.$APIdatas['public_key_test'].'&amp;quoteid=1';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"id":2,"post_timestamp":1312036074,"post_date":"30/07/2011 à 16:27","quote":"\"Connexion à réseau non identifié (Nom du réseau: dlink)\"","source":"","context":"","explanation":"","author":"georges","publisher":"","publisher_info":"","site":"","category":"geek","category_id":3,"up":6,"down":1,"total_comments":24,"total_signatures":2,"comments":[{"id":120,"post_timestamp":1321534716,"post_date":"17/11/2011 à 13:58","publisher":"toto","site":"","comment":"qsd","up":0,"down":0,"reported":0},{"id":133,"post_timestamp":1322438577,"post_date":"28/11/2011 à 01:02","publisher":"toto","site":"","comment":"mon comment","up":0,"down":0,"reported":0}],"nbcomments":2,"size_comment_page":20,"current_comment_page":2,"total_comment_pages":2,"signatures":[{"no":2,"post_date":"01/12/2011 à 16:40","genre":"Mme","prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"75000","message":"Bonjour"},{"no":1,"post_date":"01/12/2011 à 16:33","genre":"","prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""}],"nbsignatures":2,"size_petition_page":40,"current_petition_page":1,"total_petition_pages":1},"info":{"remaining_queries":35,"next_restart":8}}';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
+					"response":{"id":2,"post_timestamp":1312036074,"post_date":"30/07/2011 à 16:27","quote":"\"Connexion à réseau non identifié (Nom du réseau: dlink)\"","source":"","context":"","explanation":"","author":"georges","publisher":"","publisher_info":"","site":"","category":"geek","category_id":3,"up":6,"down":1,"total_comments":24,"total_signatures":2,
+					"comments":[{"id":120,"post_timestamp":1321534716,"post_date":"17/11/2011 à 13:58","avis":""<span class="comment">Valeurs possibles : "pour" ou "contre".</span>,"publisher":"toto","site":"","comment":"qsd","up":0,"down":0,"reported":0},
+					{"id":133,"post_timestamp":1322438577,"post_date":"28/11/2011 à 01:02","avis":"pour","publisher":"toto","site":"","comment":"mon comment","up":0,"down":0,"reported":0}],
+					"nbcomments":2,"size_comment_page":20,"current_comment_page":2,"total_comment_pages":2,
+					"signatures":[{"no":2,"post_date":"01/12/2011 à 16:40","genre":"Mme"<span class="comment">Valeurs possibles : "Mr" ou "Mme".</span>,"prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"75000","message":"Bonjour"},
+					{"no":1,"post_date":"01/12/2011 à 16:33","genre":"","prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""}],
+					"nbsignatures":2,"size_petition_page":40,"current_petition_page":1,"total_petition_pages":1},
+					"info":{"remaining_queries":35,"next_restart":8}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					
@@ -484,7 +495,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					$params[7] = $meth_param;
 					$sample['methode'] = 'POST';
 					$sample['requete'] = $APIdatas['base_url'].'quote.php?key='.$APIdatas['public_key_test'].'&amp;quoteid=3&report=1';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"action":"none"<span class="comment">Autre valeur : "deleted". C\'est l\'êtat de la citation après signalement.</span>},"info":{"remaining_queries":37,"next_restart":29}}';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"action":"none"<span class="comment">Autre valeur : "deleted". C\'est l\'état de la citation après signalement.</span>},"info":{"remaining_queries":37,"next_restart":29}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					
@@ -528,7 +539,13 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					$params[6] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'comment.php?key='.$APIdatas['public_key_test'].'&type=quote&id=5';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"comments":[{"id":84,"post_timestamp":"1315086","post_date":"03/09/2011 à 23:43","publisher":"kas","site":"","comment":"Hello !","up":0,"down":0,"reported":0},{"id":85,"post_timestamp":"1315086","post_date":"03/09/2011 à 23:44","publisher":"kas","site":"","comment":"coucou","up":0,"down":0,"reported":0},{"id":108,"post_timestamp":"1315910","post_date":"13/09/2011 à 12:47","publisher":"leclown","site":"http://twitter.com/leclown","comment":"j\'adore! tiens je vais commander une pomme par internet","up":0,"down":0,"reported":0}],"nbcomments":3,"size_comment_page":20,"current_comment_page":1,"total_comment_pages":1},"info":{"remaining_queries":39,"next_restart":60}}';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
+					"response":{"comments":[
+					{"id":84,"post_timestamp":"1315086","post_date":"03/09/2011 à 23:43","avis":""<span class="comment">Valeurs possibles : "pour" ou "contre".</span>,"publisher":"kas","site":"","comment":"Hello !","up":0,"down":0,"reported":0},
+					{"id":85,"post_timestamp":"1315086","post_date":"03/09/2011 à 23:44","avis":"contre","publisher":"kas","site":"","comment":"coucou","up":0,"down":0,"reported":0},
+					{"id":108,"post_timestamp":"1315910","post_date":"13/09/2011 à 12:47","avis":"pour","publisher":"leclown","site":"http://twitter.com/leclown","comment":"j\'adore! tiens je vais commander une pomme par internet","up":0,"down":0,"reported":0}],
+					"nbcomments":3,"size_comment_page":20,"current_comment_page":1,"total_comment_pages":1},
+					"info":{"remaining_queries":39,"next_restart":60}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					$ressource= null; $params = null; $sample = null;
@@ -540,10 +557,11 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					$params[3] = $reqpublieur_param;
 					$params[4] = $mail_param;
 					$params[5] = $site_param;
-					$params[6] = $noheaders_param;
-					$params[7] = $format_param;
-					$params[8] = $callback_param;
-					$params[9] = $meth_param;
+					$params[6] = $avis_param;
+					$params[7] = $noheaders_param;
+					$params[8] = $format_param;
+					$params[9] = $callback_param;
+					$params[10] = $meth_param;
 					$sample['methode'] = 'POST';
 					$sample['requete'] = $APIdatas['base_url'].'comment.php?key='.$APIdatas['public_key_test'].'&amp;quoteid=3&comment=premier+commentaire&pub=toto';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"id":62},"info":{"remaining_queries":37,"next_restart":44}}';
@@ -559,10 +577,11 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					$params[4] = $reqpublieur_param;
 					$params[5] = $mail_param;
 					$params[6] = $site_param;
-					$params[7] = $noheaders_param;
-					$params[8] = $format_param;
-					$params[9] = $callback_param;
-					$params[10] = $meth_param;
+					$params[7] = $avis_param;
+					$params[8] = $noheaders_param;
+					$params[9] = $format_param;
+					$params[10] = $callback_param;
+					$params[11] = $meth_param;
 					$sample['methode'] = 'POST';
 					$sample['requete'] = $APIdatas['base_url'].'comment.php?key='.$APIdatas['public_key_test'].'&type=quote&id=3&comment=premier+commentaire&pub=toto';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"id":62},"info":{"remaining_queries":37,"next_restart":44}}';
@@ -598,7 +617,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					$params[7] = $meth_param;
 					$sample['methode'] = 'POST';
 					$sample['requete'] = $APIdatas['base_url'].'comment.php?key='.$APIdatas['public_key_test'].'&commentid=8&report=1';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"action":"none"<span class="comment">Autre valeur : "deleted". C\'est l\'êtat de la citation après signalement.</span>},"info":{"remaining_queries":39,"next_restart":60}}';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"action":"none"<span class="comment">Autre valeur : "deleted". C\'est l\'état de la citation après signalement.</span>},"info":{"remaining_queries":39,"next_restart":60}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					
@@ -699,7 +718,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					
 					$ressource= null; $params = null; $sample = null;
 					$ressource['ressource'] = 'suivi.php?key={key}&mail={mail}';
-					$ressource['use'] = "Retourne la liste des citations suivies par le mail donné.";
+					$ressource['use'] = "Retourne la liste des ressources suivies par le mail donné.";
 					$params[0] = $key_param;
 					$params[1] = $mailsuivi_param;
 					$params[2] = $noheaders_param;
@@ -713,7 +732,7 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					
 					$ressource= null; $params = null; $sample = null;
 					$ressource['ressource'] = 'suivi.php?key={key}&type={type}&id={id}';
-					$ressource['use'] = "Retourne la liste des mails qui suivent la ressource donnée.";
+					$ressource['use'] = "Retourne la liste des personnes qui suivent la ressource donnée.";
 					$params[0] = $key_param;
 					$params[1] = $typesuivi_param;
 					$params[2] = $id_param;
@@ -722,7 +741,9 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					$params[5] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'suivi.php?key='.$APIdatas['public_key_test'].'&type=quote&id=3';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"elt":"event","id":"1","suivi":[{"name":"loic","info":"Informaticien et intéressé par la politique"},{"name":"toto","info":"artiste"},{"name":"yohan","info":""}],"total_suivis":7},"info":{"remaining_queries":39,"next_restart":60}}';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
+					"response":{"elt":"event","id":"1","suivi":[{"name":"loic","info":"Informaticien et intéressé par la politique"},{"name":"toto","info":"artiste"},{"name":"yohan","info":""}],
+					"total_suivis":3},"info":{"remaining_queries":39,"next_restart":60}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					
@@ -768,7 +789,12 @@ D'autre part, si la communauté devient significative, ce site pourra servir de 
 					$params[6] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'petition.php?key='.$APIdatas['public_key_test'].'&type=quote&id=3';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"elt":"quote","id":3,"petition":[{"no":1,"post_date":"01/12/2011 à 16:33","genre":"","prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""},{"no":1,"post_date":"01/12/2011 à 16:40","genre":"Mme","prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"","message":"Bonjour"}],"nbsignatures":2,"size_petition_page":40,"current_petition_page":1,"total_petition_pages":1},"info":{"remaining_queries":39,"next_restart":42}}';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
+					"response":{"elt":"quote","id":3,"petition":[
+					{"no":1,"post_date":"01/12/2011 à 16:33","genre":""<span class="comment">Valeurs possibles : "Mr" ou "Mme".</span>,"prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""},
+					{"no":1,"post_date":"01/12/2011 à 16:40","genre":"Mme","prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"","message":"Bonjour"}],
+					"nbsignatures":2,"size_petition_page":40,"current_petition_page":1,"total_petition_pages":1},
+					"info":{"remaining_queries":39,"next_restart":42}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					

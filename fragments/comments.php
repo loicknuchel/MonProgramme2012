@@ -23,9 +23,13 @@ function generateComment($comment, $rel_to_root = './'){
 		if($cptStart != $cptEnd){$text = str_replace('[/quote]', '', str_replace('[quote]', '', nl2br($comment['comment'])));}
 	}
 	
+	if($comment['avis'] == "pour"){$avis = ' <span class="label '.$comment['avis'].'">'.$comment['avis'].'</span> ';}
+	else if($comment['avis'] == "contre"){$avis = ' <span class="label '.$comment['avis'].'">'.$comment['avis'].'</span> ';}
+	else{$avis = ' <span class="label neutre">Mitigé</span> ';}
+	
 	$html = '<div class="comment" id="comment_'.$comment['id'].'">
 		<div class="comment_header">
-			<span class="comment_no">'.$comment['id'].'</span><span class="comment_pseudo">'.$pseudo.'</span><span class="comment_date">, le '.$comment['post_date'].' :</span>';
+			<span class="comment_no">'.$comment['id'].'</span>'.$avis.'<span class="comment_pseudo">'.$pseudo.'</span><span class="comment_date">, le '.$comment['post_date'].' :</span>';
 		if($comment['reported'] != 1){
 			$html .= '
 			<div class="comment_vote">

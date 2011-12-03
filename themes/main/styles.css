@@ -112,6 +112,28 @@ body{
 	width: 900px;
 }
 
+.label {
+padding: 1px 3px 2px;
+font-size: 9.75px;
+font-weight: bold;
+color: white;
+text-transform: uppercase;
+white-space: nowrap;
+background: #BFBFBF;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+.label.light {background: none;color: #777;border: 1px solid #ccc;}
+.label.success {background: #46A546;}
+.label.warning {background: #F89406;}
+.label.important  {background: #C43C35;}
+.label.notice   {background: #62CFFC;}
+.label.light.success {color: #46A546;}
+.label.light.warning {color: #F89406;}
+.label.light.important {color: #C43C35;}
+.label.light.notice {color: #62CFFC;}
+
 #info {
 	display: none;
 	width: 500px;

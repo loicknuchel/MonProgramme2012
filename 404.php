@@ -1,12 +1,12 @@
 <?php
-	include_once './inc/utils.php';
-	include_once './inc/head.php';
-	include_once './inc/header.php';
-	include_once './inc/quote.php';
-	include_once './inc/comments.php';
-	include_once './inc/forms.php';
-	include_once './inc/footer.php';
-	include_once './inc/scripts.php';
+	include_once './fragments/utils.php';
+	include_once './fragments/head.php';
+	include_once './fragments/header.php';
+	include_once './fragments/quote.php';
+	include_once './fragments/comments.php';
+	include_once './fragments/forms.php';
+	include_once './fragments/footer.php';
+	include_once './fragments/scripts.php';
 ?>
 
 <?php echo generateHead(' - Erreur 404 !', ''); ?>

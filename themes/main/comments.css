@@ -27,9 +27,33 @@
 	display: none;
 }
 
+.comments .comment .comment_header .label {
+display: inline-block;
+width: 41px;
+text-align: center;
+font-weight: bold;
+border: 1px solid #ccc;
+}
+.comments .comment .comment_header .label.neutre  {
+background-color: #ccc;
+background: none;
+color: #777;
+}
+.comments .comment .comment_header .label.pour {
+background-color: #9c9;
+background: none;
+color: #46A546;
+}
+.comments .comment .comment_header .label.contre  {
+background-color: #c99;
+background: none;
+color: #C43C35;
+}
+
 .comments .comment .comment_header .comment_pseudo, .comments .comment .comment_header .comment_pseudo a{
 	font-weight: bold;
 	color: #C10000;
+	color: #7799CC;
 }
 
 .comments .comment .comment_header .comment_pseudo a{

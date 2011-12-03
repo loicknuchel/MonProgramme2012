@@ -129,6 +129,7 @@ function sendCommentForm(&$usr, $server_path){
 			$comment_params = null;
 			$comment_params['type'] = isset($_POST['type']) ? $_POST['type'] : null;
 			$comment_params['id'] = isset($_POST['id']) ? $_POST['id'] : null;
+			$comment_params['avis'] = isset($_POST['avis']) ? $_POST['avis'] : null;
 			$comment_params['pub'] = isset($_POST['pseudo']) ? $_POST['pseudo'] : null;
 			$comment_params['mail'] = isset($_POST['mail']) ? $_POST['mail'] : null;
 			$comment_params['site'] = isset($_POST['site']) ? $_POST['site'] : null;
@@ -171,7 +172,7 @@ function generateCommentForm($usr, $server_path, $postResult, $actionPage, $anch
 	
 	$captchaError = '';
 	if(isset($postResult) && $postResult['status']['code'] == 200){
-		$pseudo = null;$mail = null;$site = null;$comment = null;
+		$pseudo = null;$mail = null;$site = null;$comment = null;$avis = null;
 	}
 	else{
 		if(isset($postResult) && $postResult == 500){$captchaError = '<div style="border: #C00 1px solid; background: #FEE; padding: 10px;">Erreur dans la captcha antispam !!</div><br/>';}
@@ -179,6 +180,7 @@ function generateCommentForm($usr, $server_path, $postResult, $actionPage, $anch
 		$mail = isset($_POST['mail']) ? $_POST['mail'] : null;
 		$site = isset($_POST['site']) ? $_POST['site'] : null;
 		$comment = isset($_POST['comment']) ? $_POST['comment'] : null;
+		$avis = isset($_POST['avis']) ? $_POST['avis'] : null;
 	}
 	
 	$antiSpam = getAntiSpamQuestion();
@@ -188,6 +190,15 @@ function generateCommentForm($usr, $server_path, $postResult, $actionPage, $anch
 			<input type="hidden" name="antiSpam" value="'.$antiSpam['id'].'" />
 			<input type="hidden" name="type" value="'.$type.'" />
 			<input type="hidden" name="id" value="'.$id.'" />
+			<div class="switch">
+				<input type="radio" id="avis_sans" name="avis" value=""'; if($avis != 2 && $avis != 3){$html .= ' checked';} $html .= ' />
+				<label for="avis_sans"'; if($avis != 2 && $avis != 3){$html .= ' class="selected"';} $html .= '>Mitigé</label>
+				<input type="radio" id="avis_pour" name="avis" value="pour"'; if($avis == 2){$html .= ' checked';} $html .= ' />
+				<label for="avis_pour"'; if($avis == 2){$html .= ' class="selected"';} $html .= '>Pour</label>
+				<input type="radio" id="avis_contre" name="avis" value="contre"'; if($avis == 3){$html .= ' checked';} $html .= ' />
+				<label for="avis_contre"'; if($avis == 3){$html .= ' class="selected"';} $html .= '>Contre</label>
+				<div class="clear"></div>
+			</div>
 			<input class="FV_required FV_length" type="text" name="pseudo" placeholder="Pseudo" value="'.$pseudo.'" maxsize="'.$app['params']['size']['publisher'].'" /><br/>
 			<input class="FV_mail FV_length" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
 			<input class="FV_length" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>

@@ -1,10 +1,10 @@
 
 
-- ajouter un champ "avis" aux commentaires (pour ou contre la citation) et le représenter par une pastille devant le pseudo
-
 - proposer de voter dans les formulaires de commentaires et de pétition
 
 - ajouter un champ "age" dans les pétitions
+
+- dans la fancybox de suivi, ajouter le nom et les infos (pour le suivi des citations)
 
 - ajouter une partie wiki (à coté des commentaires et pétition)
 
