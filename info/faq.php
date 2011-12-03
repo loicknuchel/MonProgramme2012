@@ -324,12 +324,12 @@
 				$mailsuivi_param['name'] = 'mail'; 			$mailsuivi_param['status'] = 'requis';			$mailsuivi_param['use'] = "Adresse mail où sont envoyés les mails du suivi.";
 				$mailsign_param['name'] = 'mail'; 			$mailsign_param['status'] = 'requis';			$mailsign_param['use'] = "Adresse mail qui signe la pétition. Nécessaire pour recevoir le code de validation de la signature.";
 				$suiviaction_param['name'] = 'action'; 		$suiviaction_param['status'] = 'requis'; 		$suiviaction_param['use'] = "Valeurs possibles : <span class=\"val\">follow</span> ou <span class=\"val\">unfollow</span>. Indique l'action qui doit être effetuée lors de cet appel.";
-				/*to delete*/$newcomments_param['name'] = 'newcomments'; $newcomments_param['status'] = 'requis'; 		$newcomments_param['use'] = "Booléen (0 ou 1) indiquant si l'adresse mail sera informée ou pas de l'arrivée de nouveaux commentaires sur la citation.";
 				
 				$confirm_param['name'] = 'confirm'; 		$confirm_param['status'] = 'requis';			$confirm_param['use'] = "Clé de confirmation de la signature (hash sha1)";
 				$prenom_param['name'] = 'prenom'; 			$prenom_param['status'] = 'requis';				$prenom_param['use'] = "Prenom de la personnes souhaitant signer la pétition";
 				$nom_param['name'] = 'nom'; 				$nom_param['status'] = 'requis';				$nom_param['use'] = "Nom de la personnes souhaitant signer la pétition";
-				$genre_param['name'] = 'genre'; 			$genre_param['status'] = 'optionnel';			$genre_param['use'] = "Valeurs possibles : <span class=\"val\">Mr</span>, <span class=\"val\">Mme</span> ou <span class=\"val\">Mlle</span>. Genre de la personnes souhaitant signer la pétition";
+				$genre_param['name'] = 'genre'; 			$genre_param['status'] = 'optionnel';			$genre_param['use'] = "Valeurs possibles : <span class=\"val\">Mr</span> ou <span class=\"val\">Mme</span>. Genre de la personnes souhaitant signer la pétition";
+				$age_param['name'] = 'age'; 				$age_param['status'] = 'optionnel';				$age_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>(0 à 18ans), <span class=\"val\">2</span>(18 à 25ans), <span class=\"val\">3</span>(25 à 50ans), <span class=\"val\">4</span>(>50ans). Age de la personnes souhaitant signer la pétition";
 				$profession_param['name'] = 'profession'; 	$profession_param['status'] = 'optionnel';		$profession_param['use'] = "Profession de la personnes souhaitant signer la pétition";
 				$zipcode_param['name'] = 'zipcode'; 		$zipcode_param['status'] = 'optionnel';			$zipcode_param['use'] = "Code postal de la personnes souhaitant signer la pétition";
 				$message_param['name'] = 'message'; 		$message_param['status'] = 'optionnel';			$message_param['use'] = "Message complémentaire à la signature";
@@ -373,8 +373,8 @@
 					"comments":[{"id":120,"post_timestamp":1321534716,"post_date":"17/11/2011 à 13:58","avis":""<span class="comment">Valeurs possibles : "pour" ou "contre".</span>,"publisher":"toto","site":"","comment":"qsd","up":0,"down":0,"reported":0},
 					{"id":133,"post_timestamp":1322438577,"post_date":"28/11/2011 à 01:02","avis":"pour","publisher":"toto","site":"","comment":"mon comment","up":0,"down":0,"reported":0}],
 					"nbcomments":2,"size_comment_page":20,"current_comment_page":2,"total_comment_pages":2,
-					"signatures":[{"no":2,"post_date":"01/12/2011 à 16:40","genre":"Mme"<span class="comment">Valeurs possibles : "Mr" ou "Mme".</span>,"prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"75000","message":"Bonjour"},
-					{"no":1,"post_date":"01/12/2011 à 16:33","genre":"","prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""}],
+					"signatures":[{"no":2,"post_date":"01/12/2011 à 16:40","genre":"Mme"<span class="comment">Valeurs possibles : "Mr" ou "Mme".</span>,"age":""<span class="comment">Valeurs possibles : "0 à 18 ans" ou "18 à 25 ans" ou "25 à 50 ans" ou ">50 ans".</span>,"prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"75000","message":"Bonjour"},
+					{"no":1,"post_date":"01/12/2011 à 16:33","genre":"","age":"25 à 50 ans","prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""}],
 					"nbsignatures":2,"size_petition_page":40,"current_petition_page":1,"total_petition_pages":1},
 					"info":{"remaining_queries":35,"next_restart":8}}';
 					echo generateAPIRessource($ressource, $params, $sample);
@@ -791,8 +791,8 @@
 					$sample['requete'] = $APIdatas['base_url'].'petition.php?key='.$APIdatas['public_key_test'].'&type=quote&id=3';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
 					"response":{"elt":"quote","id":3,"petition":[
-					{"no":1,"post_date":"01/12/2011 à 16:33","genre":""<span class="comment">Valeurs possibles : "Mr" ou "Mme".</span>,"prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""},
-					{"no":1,"post_date":"01/12/2011 à 16:40","genre":"Mme","prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"","message":"Bonjour"}],
+					{"no":1,"post_date":"01/12/2011 à 16:33","genre":""<span class="comment">Valeurs possibles : "Mr" ou "Mme".</span>,"age":""<span class="comment">Valeurs possibles : "0 à 18 ans" ou "18 à 25 ans" ou "25 à 50 ans" ou ">50 ans".</span>,"prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""},
+					{"no":1,"post_date":"01/12/2011 à 16:40","genre":"Mme","age":"0 à 18 ans","prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"","message":"Bonjour"}],
 					"nbsignatures":2,"size_petition_page":40,"current_petition_page":1,"total_petition_pages":1},
 					"info":{"remaining_queries":39,"next_restart":42}}';
 					echo generateAPIRessource($ressource, $params, $sample);
@@ -808,13 +808,14 @@
 					$params[4] = $prenom_param;
 					$params[5] = $nom_param;
 					$params[6] = $genre_param;
-					$params[7] = $site_param;
-					$params[8] = $profession_param;
-					$params[9] = $zipcode_param;
-					$params[10] = $message_param;
-					$params[11] = $noheaders_param;
-					$params[12] = $format_param;
-					$params[13] = $callback_param;
+					$params[7] = $age_param;
+					$params[8] = $site_param;
+					$params[9] = $profession_param;
+					$params[10] = $zipcode_param;
+					$params[11] = $message_param;
+					$params[12] = $noheaders_param;
+					$params[13] = $format_param;
+					$params[14] = $callback_param;
 					$sample['methode'] = 'POST';
 					$sample['requete'] = $APIdatas['base_url'].'petition.php?key='.$APIdatas['public_key_test'].'&type=quote&id=3&mail=toto@example.com&prenom=toto&nom=dupont';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"info":{"remaining_queries":39,"next_restart":60}}';

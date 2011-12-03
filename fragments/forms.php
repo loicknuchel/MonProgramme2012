@@ -231,6 +231,7 @@ function sendPetitionForm(&$usr, $server_path){
 			$comment_params['prenom'] = isset($_POST['prenom']) ? $_POST['prenom'] : null;
 			$comment_params['nom'] = isset($_POST['nom']) ? $_POST['nom'] : null;
 			$comment_params['mail'] = isset($_POST['mail']) ? $_POST['mail'] : null;
+			$comment_params['age'] = isset($_POST['age']) ? $_POST['age'] : null;
 			$comment_params['genre'] = isset($_POST['genre']) ? $_POST['genre'] : null;
 			$comment_params['site'] = isset($_POST['site']) ? $_POST['site'] : null;
 			$comment_params['profession'] = isset($_POST['profession']) ? $_POST['profession'] : null;
@@ -286,19 +287,12 @@ function generatePetitionForm($usr, $server_path, $postResult, $actionPage, $anc
 	
 	$captchaError = '';
 	if(isset($postResult) && $postResult['status']['code'] == 200){
-		$genre = null;$prenom = null;$nom = null;$mail = null;$site = null;$profession = null;$zipcode = null;$sign_message = null;
-		$genre = isset($_POST['genre']) ? $_POST['genre'] : null;
-		$prenom = isset($_POST['prenom']) ? $_POST['prenom'] : null;
-		$nom = isset($_POST['nom']) ? $_POST['nom'] : null;
-		$mail = isset($_POST['mail']) ? $_POST['mail'] : null;
-		$site = isset($_POST['site']) ? $_POST['site'] : null;
-		$profession = isset($_POST['profession']) ? $_POST['profession'] : null;
-		$zipcode = isset($_POST['zipcode']) ? $_POST['zipcode'] : null;
-		$sign_message = isset($_POST['sign_message']) ? $_POST['sign_message'] : null;
+		$genre = null;$age = null;$prenom = null;$nom = null;$mail = null;$site = null;$profession = null;$zipcode = null;$sign_message = null;
 	}
 	else{
 		if(isset($postResult) && $postResult == 500){$captchaError = '<div style="border: #C00 1px solid; background: #FEE; padding: 10px;">Erreur dans la captcha antispam !!</div><br/>';}
 		$genre = isset($_POST['genre']) ? $_POST['genre'] : null;
+		$age = isset($_POST['age']) ? $_POST['age'] : null;
 		$prenom = isset($_POST['prenom']) ? $_POST['prenom'] : null;
 		$nom = isset($_POST['nom']) ? $_POST['nom'] : null;
 		$mail = isset($_POST['mail']) ? $_POST['mail'] : null;
@@ -326,12 +320,19 @@ function generatePetitionForm($usr, $server_path, $postResult, $actionPage, $anc
 			<div class="show_more_datas"><img src="'.$rel_to_root.'themes/main/img/forms/arrow_right.png" /> Données complémentaires</div>
 			<div class="more_datas">
 				<select name="genre">
-					<option value=""></option>
+					<option value="">Sexe</option>
 					<option value="Mr"'; if($genre == 'Mr'){$html .= ' selected="selected"';} $html .= '>Mr</option>
 					<option value="Mme"'; if($genre == 'Mme'){$html .= ' selected="selected"';} $html .= '>Mme</option>
-					<option value="Mlle"'; if($genre == 'Mlle'){$html .= ' selected="selected"';} $html .= '>Mlle</option>
 				</select><br/>
-				<input class="FV_length" type="text" name="zipcode" placeholder="Code postal" value="'.$zipcode.'" maxsize="'.$app['params']['size']['zipcode'].'" 	/>
+				<br/>
+				<select name="age">
+					<option value="">Age</option>
+					<option value="1"'; if($age == '1'){$html .= ' selected="selected"';} $html .= '>0 à 18 ans</option>
+					<option value="2"'; if($age == '2'){$html .= ' selected="selected"';} $html .= '>18 à 25 ans</option>
+					<option value="3"'; if($age == '3'){$html .= ' selected="selected"';} $html .= '>15 à 50 ans</option>
+					<option value="4"'; if($age == '4'){$html .= ' selected="selected"';} $html .= '>> à 50 ans</option>
+				</select><br/>
+				<input class="FV_length" type="text" name="zipcode" placeholder="Code postal" value="'.$zipcode.'" maxsize="'.$app['params']['size']['zipcode'].'" style="width: 70px;"	/>
 			</div>
 			
 			<textarea class="FV_length" name="sign_message" placeholder="Un petit commentaire..." maxsize="'.$app['params']['size']['sign_message'].'">'.$sign_message.'</textarea><br/>
