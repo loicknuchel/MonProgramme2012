@@ -1,13 +1,11 @@
 <?php
 	$rel_to_root = isset($rel_to_root) ? $rel_to_root : './'; 				// 		chemin relatif de la page courante vers la racine de MonProgramme2012
+	include_once $rel_to_root.'private_datas/keys.php';
+	$private_keys = getPrivateKeys();
 	
-	$private_keys['test'] 	= 'b1551c0e7dad8c4b29b80edd846d99c7b69c4c46';
-	$private_keys['mp2012']	= '4739040f4981a4aa9973043f63e5e5ef4312d8f1';
-	$private_keys['ps12'] 	= '7f0a84b7946b290c1aac7a2c6bc6b2f13787a4a1';
 	
 	$status_site 			= "LOCAL";										// TODO : mettre LOCAL, DEV ou PROD															<= ICI
 	$bdd_site				= "test";										// TODO : mettre test, mp2012 ou ps12														<= ICI
-	
 	
 	
 	$usr = null;
@@ -28,7 +26,7 @@
 		$server_path = $rel_to_root.'../lkws_croudquotes/';					// lien de la page courante vers la racine de CroudQuotes
 		$server_uri = 'http://croudquotes.lkws.fr/';						// url du serveur
 		$usr['site_url'] = 'http://monprogramme2012.lkws.fr/';				// url du site
-		$usr['key'] = $private_keys['monprogramme2012'];					// clé pour se connecter à l'API
+		$usr['key'] = $private_keys['mp2012'];								// clé pour se connecter à l'API
 	}
 	unset($private_keys);
 	$usr['api_url'] = $server_uri.$api_rel_path;							// url de l'API
