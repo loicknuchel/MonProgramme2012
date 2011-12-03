@@ -62,8 +62,6 @@ s_selection.err_save_2 = 'est survenue lors de l\'enregistrement de la sélectio
 
 var s_form = new Object();
 s_form.new_quote = new Object();
-s_form.new_quote.show_facultative_fields = 'Afficher les champs optionnels';
-s_form.new_quote.hide_facultative_fields = 'Masquer les champs optionnels';
 
 var s_ajax = new Object();
 s_ajax.vote = new Object();

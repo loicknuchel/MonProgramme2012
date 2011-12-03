@@ -1,6 +1,6 @@
 <?php
 	$rel_to_root = '../';
-	include './server_link.php';
+	include $rel_to_root.'inc/server_link.php';
 	
 	// TODO : faire une boucle while pour récupérer toutes les catégories et non pas juste la première page...
 	$params = null;

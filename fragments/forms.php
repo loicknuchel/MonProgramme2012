@@ -74,7 +74,7 @@ function generateQuoteForm($usr, $server_path, $postResult, $categories, $rel_to
 	$antiSpam = getAntiSpamQuestion();
 	$html = '<div class="new_quote">
 		<div class="disclaimer">
-			Partagez vos propositions pour la campagne presidentielle 2012 :
+			Que proposez vous pour 2012 ?
 		</div>
 		<form method="POST" class="FV_quote">
 			'.$captchaError.'
@@ -98,21 +98,21 @@ function generateQuoteForm($usr, $server_path, $postResult, $categories, $rel_to
 				<a href="#"><img class="create_category" src="'.$rel_to_root.'themes/main/img/forms/new_category.png" title="Créer un nouveau sujet" /></a>
 			</div>
 			<br/>
-			<div class="show_facultative_data"><a href="#"><script>document.write(s_form.new_quote.show_facultative_fields);</script></a></div>
-			<div class="facultative_data">
+			<div class="show_more_datas"><img src="'.$rel_to_root.'themes/main/img/forms/arrow_right.png" /> Données complémentaires</div>
+			<div class="more_datas">
 				<p>Contexte de la proposition :</p>
-				<textarea class="FV_length" name="ctx" placeholder="Décrivez ici dans quel contexte vous est venue cette proposition" maxsize="'.$app['params']['size']['context'].'">'.$ctx.'</textarea><br/>
-				<p>Si cette proposition est inspirée d\'une source, vous pouvez la mettre ici :</p>
+				<textarea class="FV_length" name="ctx" placeholder="Dans quel contexte avez vous pensé à cette proposition ?" maxsize="'.$app['params']['size']['context'].'">'.$ctx.'</textarea><br/>
+				<p>Source de cette proposition :</p>
 				<input class="FV_length" type="text" name="src" placeholder="Source" value="'.$src.'" maxsize="'.$app['params']['size']['source'].'" style="width: 400px;" /><br/>
-				<p>Si la proposition n\'est pas de vous, vous pouvez mettre ici son auteur initial :</p>
+				<p>Personne à l\'origine de cette proposition :</p>
 				<input class="FV_length" type="text" name="auth" placeholder="Auteur initial" value="'.$auth.'" maxsize="'.$app['params']['size']['author'].'" /><br/>
-				<p>Votre nom (ou pseudo) :</p>
+				<p>Votre nom :</p>
 				<input class="FV_length" type="text" name="pub" placeholder="Auteur" value="'.$pub.'" maxsize="'.$app['params']['size']['publisher'].'" /><br/>
-				<p>Quelques informations sur vous (si elles sont pertinentes pour la proposition) :</p>
-				<textarea class="FV_length" name="pubinfo" placeholder="Informations pertinentes sur vous..." maxsize="'.$app['params']['size']['publisher_info'].'">'.$pubinfo.'</textarea><br/>
-				<p>Votre adresse mail (elle ne sera communiquée sous aucun prétexte mais pourra servir à prouver que vous êtes bien l\'auteur de la proposition et à regrouper toutes vos propositions) :</p>
+				<p>Quelques informations à propos vous :</p>
+				<textarea class="FV_length" name="pubinfo" placeholder="D\'autres informations pertinentes sur vous ?" maxsize="'.$app['params']['size']['publisher_info'].'">'.$pubinfo.'</textarea><br/>
+				<p>Votre adresse mail (ne sera jamais communiquée) :</p>
 				<input class="FV_length FV_mail" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
-				<p>Votre site web (ou un site web que vous appréciez) :</p>
+				<p>Votre site web :</p>
 				<input class="FV_length" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>
 			</div>
 			<input type="checkbox" name="suivi" id="suivi" /><label for="suivi">Recevoir une notification de commentaires par email</label><br/>
@@ -158,7 +158,7 @@ function sendCommentForm(&$usr, $server_path){
 	return null;
 }
 
-function generateCommentForm($usr, $server_path, $postResult, $actionPage, $anchor, $type, $id){
+function generateCommentForm($usr, $server_path, $postResult, $actionPage, $anchor, $type, $id, $rel_to_root = './'){
 	$params = null;
 	$params['noheaders'] = 1;
 	$params_json = apiGetParams($usr, $params, $server_path);
@@ -240,7 +240,7 @@ function sendPetitionForm(&$usr, $server_path){
 	return null;
 }
 
-function generatePetitionForm($usr, $server_path, $postResult, $actionPage, $anchor, $type, $id){
+function generatePetitionForm($usr, $server_path, $postResult, $actionPage, $anchor, $type, $id, $rel_to_root = './'){
 	$params = null;
 	$params['noheaders'] = 1;
 	$params_json = apiGetParams($usr, $params, $server_path);
@@ -286,18 +286,24 @@ function generatePetitionForm($usr, $server_path, $postResult, $actionPage, $anc
 			<input type="hidden" name="type" value="'.$type.'" />
 			<input type="hidden" name="id" value="'.$id.'" />
 			
-			<select name="genre">
-				<option value=""></option>
-				<option value="Mr"'; if($genre == 'Mr'){$html .= ' selected="selected"';} $html .= '>Mr</option>
-				<option value="Mme"'; if($genre == 'Mme'){$html .= ' selected="selected"';} $html .= '>Mme</option>
-				<option value="Mlle"'; if($genre == 'Mlle'){$html .= ' selected="selected"';} $html .= '>Mlle</option>
-			</select><br/><br/>
+			
 			<input class="FV_required FV_length" 			type="text" name="prenom" 		placeholder="Prénom" 		value="'.$prenom.'" 		maxsize="'.$app['params']['size']['prenom'].'" 		/><br/>
 			<input class="FV_required FV_length" 			type="text" name="nom" 			placeholder="Nom" 			value="'.$nom.'" 			maxsize="'.$app['params']['size']['nom'].'" 		/><br/>
 			<input class="FV_required FV_mail FV_length" 	type="text" name="mail" 		placeholder="Mail" 			value="'.$mail.'" 			maxsize="'.$app['params']['size']['mail'].'" 		/><br/>
 			<input class="FV_length" 						type="text" name="site" 		placeholder="Site web" 		value="'.$site.'" 			maxsize="'.$app['params']['size']['site'].'" 		/><br/>
 			<input class="FV_length" 						type="text" name="profession" 	placeholder="Profession" 	value="'.$profession.'" 	maxsize="'.$app['params']['size']['profession'].'" 	/><br/>
-			<input class="FV_length" 						type="text" name="zipcode" 		placeholder="Code postal" 	value="'.$zipcode.'" 		maxsize="'.$app['params']['size']['zipcode'].'" 	/><br/>
+			
+			<div class="show_more_datas"><img src="'.$rel_to_root.'themes/main/img/forms/arrow_right.png" /> Données complémentaires</div>
+			<div class="more_datas">
+				<select name="genre">
+					<option value=""></option>
+					<option value="Mr"'; if($genre == 'Mr'){$html .= ' selected="selected"';} $html .= '>Mr</option>
+					<option value="Mme"'; if($genre == 'Mme'){$html .= ' selected="selected"';} $html .= '>Mme</option>
+					<option value="Mlle"'; if($genre == 'Mlle'){$html .= ' selected="selected"';} $html .= '>Mlle</option>
+				</select><br/>
+				<input class="FV_length" type="text" name="zipcode" placeholder="Code postal" value="'.$zipcode.'" maxsize="'.$app['params']['size']['zipcode'].'" 	/>
+			</div>
+			
 			<textarea class="FV_length" name="sign_message" placeholder="Un petit commentaire..." maxsize="'.$app['params']['size']['sign_message'].'">'.$sign_message.'</textarea><br/>
 			
 			<input type="checkbox" name="suivi" id="suivi" /><label for="suivi">Recevoir une notification par email lorsque des commentaires sont ajoutés</label><br/>

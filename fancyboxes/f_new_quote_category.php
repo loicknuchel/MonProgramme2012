@@ -1,6 +1,6 @@
 <?php
 	$rel_to_root = '../';
-	include './server_link.php';
+	include $rel_to_root.'inc/server_link.php';
 	
 	$quote_id = isset($_GET['quote_id']) ? $_GET['quote_id'] : 0;
 	

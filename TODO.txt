@@ -6,7 +6,7 @@
 
 - ajouter un champ "age" dans les pétitions
 
-- améliorer le formulaire de pétition : mettre les champs genre, age et code postal dans des champs avancés (cf http://gwt.google.com/samples/Showcase/Showcase.html#!CwDisclosurePanel)
+- ajouter une partie wiki (à coté des commentaires et pétition)
 
 - Ajouter des pages pour présenter mes solutions ou mettre des liens vers mon blog...
 

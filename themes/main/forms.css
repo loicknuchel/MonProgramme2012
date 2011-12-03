@@ -1,5 +1,5 @@
 /*----------------------------
-	Forms styles
+	Forms global styles
 -----------------------------*/
 
 input[type="text"] {
@@ -75,6 +75,10 @@ span.area_leave_char{
 	left: -35px;
 }
 
+input[name="antiSpamRep"] {
+	width: 100px;
+}
+
 input[type="checkbox"] {
 	margin-bottom: 11px;
 	margin-left: 10px;
@@ -148,6 +152,25 @@ form .red {
 	color:	#F5410F;
 }
 
+form .show_more_datas {
+	margin-left: 15px;
+	margin-bottom: 10px;
+	width: 250px;
+	cursor : pointer; 
+}
+
+form .show_more_datas img {
+	position: relative;
+	top: 3px;
+}
+
+form .more_datas {
+	padding: 10px 0px 10px 10px;
+	border-left: 3px solid #EEE;
+	margin-left: 30px;
+	margin-bottom: 10px;
+}
+
 /******************************************************
  * SPECIFIC CSS
 ******************************************************/
@@ -166,6 +189,15 @@ form .red {
 	margin-top: 30px;
 }
 
+.sign_quote .more_datas input {
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.sign_quote .more_datas span.text_leave_char {
+	top: 5px;
+}
+
 /* CITATIONS */
 .new_quote{
 	width: 600px;
@@ -176,9 +208,10 @@ form .red {
 .new_quote .disclaimer {
 	padding: 15px;
 	font-family: 'KaratulaNormal', Arial, sans-serif;
-	font-size: 22px;
+	font-size: 26px;
 	text-align: center;
-	margin-top: -20px;
+	margin-top: -15px;
+	margin-bottom: 5px;
 }
 
 .new_quote form{
@@ -247,6 +280,16 @@ form .red {
 	margin: 5px 0px -5px 0px;
 }
 
+.new_quote .more_datas textarea {
+	width: 480px;
+	margin-bottom: 15px;
+}
+
+.new_quote .more_datas .area_leave_char {
+	top: -21px;
+}
+
+/*
 .new_quote .show_facultative_data {
 	width: 200px;
 	background: white;
@@ -274,7 +317,7 @@ form .red {
 
 .new_quote .facultative_data p, .new_quote .important_data p {
 	font-style: italic;
-}
+}*/
 
 /* SELECTIONS */
 .new_selection{

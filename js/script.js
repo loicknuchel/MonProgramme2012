@@ -27,8 +27,8 @@ $(document).ready(function () {
 		return false;
 	});
 	
-	// toggle les informations facultatives lors de l'envoi d'une citation
-	toggleBlock('.new_quote .show_facultative_data a', '.new_quote .facultative_data', s_form.new_quote.show_facultative_fields, s_form.new_quote.hide_facultative_fields, function(){}, function(){});
+	// gère les actions des différents formulaires
+	action_forms();
 	
 	// catch ajax errors
 	$('#info').ajaxError(function(e, jqxhr, settings, exception) {
