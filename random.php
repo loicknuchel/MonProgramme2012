@@ -93,7 +93,7 @@
 			else if($commentResult != 500){ echo '<script>displayInfo("error", "Erreur ('.$commentResult['status']['code'].') lors de la sauvegarde du commentaire");</script>'; }
 		}
 		if(isset($petitionResult)){
-			if($petitionResult['status']['code'] == 200){ echo '<script>displayInfo("success", "signature enregistrée");</script>'; }
+			if($petitionResult['status']['code'] == 200){ echo '<script>displayInfo("success", "signature enregistrée.<br/>Vous allez recevoir un mail pour confirmer votre signature !");</script>'; }
 			else if($petitionResult == 500){ echo '<script>displayInfo("info", "Vous avez déjà signé cette pétition !");</script>'; }
 			else{ echo '<script>displayInfo("error", "Erreur ('.$petitionResult['status']['code'].') lors de l\'enregistrement de votre signature");</script>'; }
 		}

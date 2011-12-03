@@ -329,7 +329,7 @@ function generatePetitionForm($usr, $server_path, $postResult, $actionPage, $anc
 					<option value="">Age</option>
 					<option value="1"'; if($age == '1'){$html .= ' selected="selected"';} $html .= '>0 à 18 ans</option>
 					<option value="2"'; if($age == '2'){$html .= ' selected="selected"';} $html .= '>18 à 25 ans</option>
-					<option value="3"'; if($age == '3'){$html .= ' selected="selected"';} $html .= '>15 à 50 ans</option>
+					<option value="3"'; if($age == '3'){$html .= ' selected="selected"';} $html .= '>25 à 50 ans</option>
 					<option value="4"'; if($age == '4'){$html .= ' selected="selected"';} $html .= '>> à 50 ans</option>
 				</select><br/>
 				<input class="FV_length" type="text" name="zipcode" placeholder="Code postal" value="'.$zipcode.'" maxsize="'.$app['params']['size']['zipcode'].'" style="width: 70px;"	/>
