@@ -150,6 +150,16 @@ function sendCommentForm(&$usr, $server_path){
 				apiUpdateSuivi($usr, $suivi_params, $server_path);
 			}
 			
+			// si on donne son avis sur une proposition dans un commentaire (pour ou contre), on vote alors pour cette proposition
+			if(isset($_POST['avis']) && ($_POST['avis'] == 'pour' || $_POST['avis'] == 'contre') && isset($_POST['type']) && $_POST['type'] == 'quote'){
+				$vote_params = null;
+				$vote_params['quoteid'] = isset($_POST['id']) ? $_POST['id'] : null;
+				if($_POST['avis'] == 'contre'){$vote_params['vote'] = 'down';}
+				else{$vote_params['vote'] = 'up';}
+				$vote_params['noheaders'] = 1;
+				apiQuoteVote($usr, $vote_params, $server_path);
+			}
+			
 			return $result;
 		}
 		else{
@@ -240,6 +250,15 @@ function sendPetitionForm(&$usr, $server_path){
 				$suivi_params['action'] = 'follow';
 				$suivi_params['noheaders'] = 1;
 				apiUpdateSuivi($usr, $suivi_params, $server_path);
+			}
+			
+			// si on signe la pétition pour une proposition, on vote positivement pour elle
+			if(isset($_POST['type']) && $_POST['type'] == 'quote'){
+				$vote_params = null;
+				$vote_params['quoteid'] = isset($_POST['id']) ? $_POST['id'] : null;
+				$vote_params['vote'] = 'up';
+				$vote_params['noheaders'] = 1;
+				apiQuoteVote($usr, $vote_params, $server_path);
 			}
 			
 			return $result;

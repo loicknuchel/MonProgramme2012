@@ -47,6 +47,7 @@
 	include_once $server_path.'api/fonc/postPetition.php';
 	include_once $server_path.'api/fonc/postQuote.php';
 	include_once $server_path.'api/fonc/postSuivi.php';
+	include_once $server_path.'api/fonc/postVote.php';
 	
 	
 	$serv_result = filtre($usr, 'client'); // exit if incorrect
