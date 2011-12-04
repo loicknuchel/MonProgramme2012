@@ -145,13 +145,13 @@ select{
 .switch label.selected {
 	background: #ccc;
 }
-.switch label.bggreen:hover{
+.switch label.hovergreen:hover{
 	background: #cdc;
 }
 .switch label.selected.bggreen {
 	switch: #cec;
 }
-.switch label.bgred:hover {
+.switch label.hoverred:hover {
 	background: #dcc;
 }
 .switch label.selected.bgred {

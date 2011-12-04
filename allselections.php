@@ -1,5 +1,6 @@
 <?php
-	include './inc/server_link.php';
+	$rel_to_root = './';
+	include $rel_to_root.'inc/server_link.php';
 	
 	$params = null;
 	$params['p'] = isset($_GET['p']) ? $_GET['p'] : null;
@@ -33,5 +34,9 @@
 	<?php echo generateFooter(); ?>
 	
 	<?php echo generateScriptsJs(); ?>
+	<?php 
+		include $rel_to_root.'fragments/endPage.php';
+		echo generateEndPage(); 
+	?>
 </body>
 </html>

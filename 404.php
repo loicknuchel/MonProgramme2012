@@ -1,12 +1,13 @@
 <?php
-	include_once './fragments/utils.php';
-	include_once './fragments/head.php';
-	include_once './fragments/header.php';
-	include_once './fragments/quote.php';
-	include_once './fragments/comments.php';
-	include_once './fragments/forms.php';
-	include_once './fragments/footer.php';
-	include_once './fragments/scripts.php';
+	$rel_to_root = './';
+	include_once $rel_to_root.'fragments/utils.php';
+	include_once $rel_to_root.'fragments/head.php';
+	include_once $rel_to_root.'fragments/header.php';
+	include_once $rel_to_root.'fragments/quote.php';
+	include_once $rel_to_root.'fragments/comments.php';
+	include_once $rel_to_root.'fragments/forms.php';
+	include_once $rel_to_root.'fragments/footer.php';
+	include_once $rel_to_root.'fragments/scripts.php';
 ?>
 
 <?php echo generateHead(' - Erreur 404 !', ''); ?>
@@ -24,5 +25,9 @@
 	
 	<?php echo generateFooter(); ?>
 	<?php echo generateScriptsJs(); ?>
+	<?php 
+		include $rel_to_root.'fragments/endPage.php';
+		echo generateEndPage(); 
+	?>
 </body>
 </html>

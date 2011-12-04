@@ -35,6 +35,8 @@ function generateHeader($rel_to_root = './'){
 				<!--<li>
 					<a href="#" class="topnavtitle">Articles</a>
 					<ul class="subnav">
+						<li><a href="'.$rel_to_root.'info/bibliographie.php">Bibliographie</a></li>
+						<li><a href="'.$rel_to_root.'info/le-vote-electronique.php">Vote électronique</a></li>
 						<li><a href="'.$rel_to_root.'info/combat_de_mots.php">Combat de mots</a></li>
 					</ul>
 					<span></span>

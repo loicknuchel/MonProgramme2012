@@ -34,6 +34,8 @@ function generateFooter($rel_to_root = './'){
 						<dd><a target="_blanck" href="http://www.youtube.com/watch?v=PuZgkL5BEBk" title="Présentation des nouvelles monnaies et de l\'importance de la création monétaire.">Jean-François Noubel</a></dd>
 						<dd><a target="_blanck" href="http://www.dailymotion.com/video/xh1foy_conference-bernard-friot-de-l-emploi-a-la-qualification_news" title="Discussions sur la retraite, l\'investissement et l\'économie.">Bernard Friot</a></dd>
 						<dd><a target="_blanck" href="http://www.dailymotion.com/video/x5njza_le-choix-de-la-defaite-annie-lacroi_news" title="Historienne">Annie Lacroix-Riz</a></dd>
+						<dd>...</dd>
+						<dd><a href="'.$rel_to_root.'info/bibliographie.php">Bibliographie</a></dd>
 					</dl>
 					<dl class="tight">
 						<dt>Journaux</dt>

@@ -16,6 +16,12 @@ $pageId['event']['title'] = 'Evènements organisés';
 $pageId['chat']['id'] = 5;
 $pageId['chat']['link'] = 'info/discutions.php';
 $pageId['chat']['title'] = 'Le chat';
+$pageId['voteelectronique']['id'] = 6;
+$pageId['voteelectronique']['link'] = 'info/le-vote-electonique.php';
+$pageId['voteelectronique']['title'] = 'Le vote électronique';
+$pageId['biblio']['id'] = 7;
+$pageId['biblio']['link'] = 'info/bibliographie.php';
+$pageId['biblio']['title'] = 'Bibliographie';
 
 
 ?>

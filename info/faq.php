@@ -1,3 +1,6 @@
+<?php
+	$rel_to_root = '../';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -130,11 +133,6 @@
 				</p>
 				
 				<div class="evolution">
-					<h2><a href="#" class="comment_evolution">Evolution #11</a> : Suivre une proposition</h2>
-					<p>S'inscrire au suivi pour une proposition nous tiens au courant par mail des activités de cette proposition (nouveaux commentaires, mises à jour, etc.)</p>
-				</div>
-				
-				<div class="evolution">
 					<h2><a href="#" class="comment_evolution">Evolution #10</a> : Améliorer le système de commentaires</h2>
 					<p>L'objectif est de mettre en avant les commentaires constructifs et de stimuler les débats sur le fond.</p>
 					<ul>
@@ -144,11 +142,6 @@
 						<li>se connecter au site pour pouvoir commenter (afin d'éviter les usurpations d'identité) => <a href="#" class="comment_evolution">A discuter !</a></li>
 					</ul>
 					<p>S'inspirer du système de commentaires sur <a href="http://www.rue89.com/2011/08/27/valerie-pecresse-lache-le-petit-secret-de-la-regle-dor-219551" target="_blanck">rue89</a> par exemple...</p>
-				</div>
-				
-				<div class="evolution">
-					<h2><a href="#" class="comment_evolution">Evolution #9</a> : Créer une pétition pour chaque proposition</h2>
-					<p>Cela permettrait de pouvoir donner plus de poids à une proposition que de simples votes. La pétition serait signée nominativement et serait ainsi importante pour donner du poids aux propositions.</p>
 				</div>
 				
 				<div class="evolution">
@@ -189,6 +182,16 @@
 				<div class="evolution">
 					<h2><a href="#" class="comment_evolution">Evolution #1</a> : Enregistrer des sélections privées</h2>
 					<p>Actuellement toutes les sélections sont publiques. Il pourrait être intéressant d'avoir des sélections visibles uniquement si l'on possède un mot de passe (donné lors de son enregistrement).</p>
+				</div>
+				
+				<div class="evolution">
+					<h2><a href="#" class="comment_evolution">Evolution #11</a> : Suivre une proposition <= FAIT !</h2>
+					<p>S'inscrire au suivi pour une proposition nous tiens au courant par mail des activités de cette proposition (nouveaux commentaires, mises à jour, etc.)</p>
+				</div>
+				
+				<div class="evolution">
+					<h2><a href="#" class="comment_evolution">Evolution #9</a> : Créer une pétition pour chaque proposition <= FAIT</h2>
+					<p>Cela permettrait de pouvoir donner plus de poids à une proposition que de simples votes. La pétition serait signée nominativement et serait ainsi importante pour donner du poids aux propositions.</p>
 				</div>
 			</div>
 		</section>
@@ -949,6 +952,11 @@
 	<script src="./faq.js"></script>
 	<?php
 		// Design pris du site : http://lesscss.org/
+	?>
+	
+	<?php 
+		include $rel_to_root.'fragments/endPage.php';
+		echo generateEndPage(); 
 	?>
 </body>
 </html>

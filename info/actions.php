@@ -29,14 +29,14 @@
 	<div id="main">
 		<div class="wrapper">
 			<div class="article">
-				<h1>Les actions citoyennes ?</h1>
+				<h1 class="first">Les actions citoyennes ?</h1>
 				<p>
 					Avec les élections qui approchent, de nombreuses personnes s'investissent dans la campagne, que ce soit pour soutenir un candidat, créer un débat ou diffuser des informations les initiatives venant de la part
 					de citoyens sont toujours intéressantes.<br/>
 					Ces sites sont regroupés ici sans parti-pris.
 				</p>
 				
-				<h2>Surveillance de nos institutions</h2>
+				<h2>Surveillance de nos institutions et élus</h2>
 				<p>
 					<dl>
 						<dt><a target="_blanck" href="http://www.regardscitoyens.org">www.regardscitoyens.org</a></dt>
@@ -90,6 +90,11 @@
 							Site créé par <a target="_blanck" href="http://www.2012memepaspeur.net/qui_sommes_nous.php">le réseau Animafac</a>.
 						</dd>
 						
+						<dt><a target="_blanck" href="http://pourquoijevoteoupas.eu/">pourquoijevoteoupas.eu</a></dt>
+						<dd>
+							Exprimez votre avis sur le vote, irez vous voter ou pas ? Quelles sont vos raisons ?
+						</dd>
+						
 						<dt><a target="_blanck" href="http://www.touscandidats2012.fr/">www.touscandidats2012.fr</a></dt>
 						<dd>
 							Site appelant chaque personne a être candidate et à proposer son programme.
@@ -105,16 +110,25 @@
 						<dd>
 							Site d'actualité politique.
 						</dd>
+						
+						<dt><a target="_blanck" href="http://www.talkeo.fr/">www.talkeo.fr</a></dt>
+						<dd>
+							Site de débat généraliste (pas forcément politique).
+						</dd>
 					</dl>
 					<br/>
 				</p>
 				
-				<h2>Sites engagés politiquement</h2>
+				<h2>Sites engagés pour des actions précises</h2>
 				<p>
 					<dl>
 						<dt><a target="_blanck" href="http://www.le-message.org">www.le-message.org</a></dt>
 						<dd>
 							Site prônant la création d'une assemblée constituante tirée au sort.
+						</dd>
+						<dt><a target="_blanck" href="http://pourunrevenusocial.org">pourunrevenusocial.org</a></dt>
+						<dd>
+							Site pour un revenu social, universel, inconditionnel, maintenu par le collectif PouRS.
 						</dd>
 						<dt><a target="_blanck" href="http://www.nevotezpas.fr">www.nevotezpas.fr</a></dt>
 						<dd>
@@ -165,6 +179,10 @@
 				echo '<script>displayInfo("Erreur ('.$commentResult['status']['code'].') lors de la sauvegarde du commentaire");</script>';
 			}
 		}
+	?>
+	<?php 
+		include $rel_to_root.'fragments/endPage.php';
+		echo generateEndPage(); 
 	?>
 </body>
 </html>

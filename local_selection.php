@@ -1,5 +1,6 @@
 <?php
-	include './inc/server_link.php';
+	$rel_to_root = './';
+	include $rel_to_root.'inc/server_link.php';
 	
 	$params = null;
 	$params['list'] = 'custom';
@@ -104,5 +105,9 @@
 		});
 	</script>
 	-->
+	<?php 
+		include $rel_to_root.'fragments/endPage.php';
+		echo generateEndPage(); 
+	?>
 </body>
 </html>

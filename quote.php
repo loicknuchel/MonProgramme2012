@@ -1,5 +1,6 @@
 <?php
-	include './inc/server_link.php';
+	$rel_to_root = './';
+	include $rel_to_root.'inc/server_link.php';
 	
 	$commentResult = sendCommentForm($usr, $server_path);
 	$petitionResult = sendPetitionForm($usr, $server_path);
@@ -98,5 +99,9 @@
 			else if($petitionResult == 500){ echo '<script>displayInfo("info", "Vous avez déjà signé cette pétition !");</script>'; }
 			else{ echo '<script>displayInfo("error", "Erreur ('.$petitionResult['status']['code'].') lors de l\'enregistrement de votre signature");</script>'; }
 		}
+	?>
+	<?php 
+		include $rel_to_root.'fragments/endPage.php';
+		echo generateEndPage(); 
 	?></body>
 </html>

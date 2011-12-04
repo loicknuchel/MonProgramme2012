@@ -204,9 +204,9 @@ function generateCommentForm($usr, $server_path, $postResult, $actionPage, $anch
 				<input type="radio" id="avis_sans" name="avis" value=""'; if($avis != 2 && $avis != 3){$html .= ' checked';} $html .= ' />
 				<label for="avis_sans"'; if($avis != 2 && $avis != 3){$html .= ' class="selected"';} $html .= '>Mitigé</label>
 				<input type="radio" id="avis_pour" name="avis" value="pour"'; if($avis == 2){$html .= ' checked';} $html .= ' />
-				<label for="avis_pour"'; if($avis == 2){$html .= ' class="selected"';} $html .= '>Pour</label>
+				<label for="avis_pour" class="hovergreen'; if($avis == 2){$html .= ' selected';} $html .= '">Pour</label>
 				<input type="radio" id="avis_contre" name="avis" value="contre"'; if($avis == 3){$html .= ' checked';} $html .= ' />
-				<label for="avis_contre"'; if($avis == 3){$html .= ' class="selected"';} $html .= '>Contre</label>
+				<label for="avis_contre" class="hoverred'; if($avis == 3){$html .= ' selected';} $html .= '">Contre</label>
 				<div class="clear"></div>
 			</div>
 			<input class="FV_required FV_length" type="text" name="pseudo" placeholder="Pseudo" value="'.$pseudo.'" maxsize="'.$app['params']['size']['publisher'].'" /><br/>

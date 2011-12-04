@@ -29,7 +29,29 @@
 	<div id="main">
 		<div class="wrapper">
 			<div class="article">
-				<h1 class="first">Quel constat ?</h1>
+				<h1 class="first">Pourquoi ce site ?</h1>
+				<p>
+					Tout d'abord, il me parait essentiel de préciser que ce site est <span>une initiative personnelle</span> d'un simple citoyen n'ayant souscrit à <span>aucun parti ou association politique</span>.<br/>
+					Cette précision faite, on peut se demander : pourquoi un tel site ?<br/>
+					Tout simplement parce que de fil en aiguille, j'ai été amené à m'intéresser à diverses personnalités qui mènent des réflexions très intéressantes sur notre système politique.
+					Que ce soit 
+					<span>Franck Lepage</span> avec ses <a href="#">conférences gesticulées</a> sur l'éducation (très divertissantes), 
+					<span>Etienne Chouard</span> lors de <a href="#">conférences</a> passionnantes sur la démocratie greque et le processus de création monétaire ou
+					<span>Annie Lacroix-Riz</span> dans ses <a href="#">propos sur l'histoire</a>,
+					ils m'ont tous fait me rendre compte que les 
+				</p>
+				<h1>Mais dans quel but ?</h1>
+				<p>
+				
+				</p>
+			</div>
+			<div class="article">
+				
+				
+				
+				
+				
+				<h1>Quel constat ?</h1>
 				<p>
 					Depuis que je m'intéresse à la politique et aussi loin que j'ai pu remonter, je constate que <span>les problèmes sont toujours les mêmes</span>, 
 					que les hommes et femmes politiques proposent <span>toujours les mêmes solutions</span>,
@@ -115,6 +137,10 @@
 				echo '<script>displayInfo("Erreur ('.$commentResult['status']['code'].') lors de la sauvegarde du commentaire");</script>';
 			}
 		}
+	?>
+	<?php 
+		include $rel_to_root.'fragments/endPage.php';
+		echo generateEndPage(); 
 	?>
 </body>
 </html>

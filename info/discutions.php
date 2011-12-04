@@ -24,5 +24,9 @@
 	<?php echo generateFooter($rel_to_root); ?>
 	
 	<?php echo generateScriptsJs($rel_to_root); ?>
+	<?php 
+		include $rel_to_root.'fragments/endPage.php';
+		echo generateEndPage(); 
+	?>
 </body>
 </html>
