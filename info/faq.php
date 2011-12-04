@@ -22,8 +22,9 @@
 					<img src="../themes/main/img/logo.gif" style="height: 150px; float: left; margin-top: 0px;" />
 					<h2>Mon Programme 2012</h2>
 					<h3>
-						Ce site regroupe des <span>propositions de réformes</span> et des <span>sujets de débat</span> en vue de la campagne présidentielle 2012.<br/>
-						Chaque proposition peut être <span>débattue</span> dans les commentaires et est classée par les votes qui lui sont attribués.
+						Mon Programme 2012 est un <span>site collaboratif</span> ayant pour but de <span>partager des propositions</span> pour 2012.<br/>
+						Chaque proposition est soumise aux commentaires, au vote et à une pétition de sorte de pouvoir mesurer l'engouement qu'elle remporte.<br/>
+						Il est aussi possible de constituer et d'enregistrer des sélections de propositions afin de les partager plus facilement. 
 					</h3>
 				</section>
 
@@ -31,12 +32,14 @@
 					<p>Objectifs :</p>
 
 					<pre><code>
-						Ce site a été conçu en partant du constat que la politique ne peut plus être laissée aux politiciens et aux lobbies.<br/>
-						L'objectif direct est que nous (citoyens) puissions <span class="string">reprendre la main sur la politique</span> par des actions concrêtes et collectives.<br/>
-						Il nous semble important de donner envie aux gens de s'intéresser à la politique en leur montrant que des initiatives existent et que les choses peuvent bouger.<br/>
-						D'autre part, si la communauté devient significative, ce site pourra servir de <span class="string">réservoir à idées</span> et à sujets de débats constructifs pour la campagne.<br/>
+						Ce site a été conçu en partant du constat que les avancées dont nous avons besoins ne pourront venir des politiciens.<br/>
+						Il est alors nécessaire de se prendre en main et de, chacun à son échelle, <span class="string">participer la société que nous souhaitons construire</span>.<br/>
+						Et cela passe d'abord par un <span class="string">débat</span> qu'il faut mettre en place entre citoyens pour <span class="string">repolitiser le plus de personnes possibles</span>.<br/>
+						Ce n'est que par le nombre que nous pourrons faire passer nos idées.<br/>
 						<br/>
-						<span class="mixin">La campagne 2012 ne se fera pas sans nous !</span>
+						Ce site est pour moi une participation à la création de ce débat citoyen nécessaire.<br/>
+						<br/>
+						<span class="mixin">Nous devons reprendre la main sur le champ politique !</span>
 					</code></pre>
 					
 					<!--<p>Qui sommes nous :</p>
@@ -71,7 +74,7 @@
 
 		<section id="synopsis" class="page">
 			<div class="content">
-				<h1>Questions récurrentes</h1>
+				<h1>Questions en vrac</h1>
 				
 				<div class="question">
 					<h2>Quel est le but ?</h2>
@@ -82,7 +85,7 @@
 					<ul>
 						<li class="title">Les objectifs affichés ici sont :</li>
 						<li>Agir pour ne plus être exclu de la vie politique</li>
-						<li>Ne plus subir les sujets de débats des hommes politiques</li>
+						<li>Ne plus subir les sujets de débats des hommes politiques et imposer les notres</li>
 						<li>Débattre et rassembler les aspirations et propositions des français</li>
 						<li>
 							Ainsi que tout ce que vous ferez de cet outil... 
@@ -94,19 +97,19 @@
 				<div class="question">
 					<h2>Politique de confidentialité</h2>
 					<p>
-						Pour nous, l'anonymat et la liberté d'expression sont essentiels. Nous relevons donc des informations sur les connexions (adresse ip) uniquement dans un but de lutte anti-spam.<br/>
+						Pour moi, l'anonymat et la liberté d'expression sont essentiels. Je relève donc des informations nécessaires (adresse ip) dans un but de lutte anti-spam.<br/>
 						Les données relevées ne seront transmises sous aucune condition à un tiers et pourront être détruites en cas de problème.<br/>
 						Concernant les données publiées, elle sont accessibles à tous à travers ce site ainsi que l'API mise en place. Le contenu étant totalement libre, il peut être dupliqué (que ce soit avec l'API ou sur
 						demande d'une copie de la base de donnée).<br/>
 						<br/>
-						Il n'y a aucun système d'autentification et donc personne qui puisse avoir des droits plus élevés que les autres.
+						Il n'y a aucun système d'autentification et l'administration doit donc se faire en signalant les contenus abusifs.
 					</p>
 				</div>
 				
 				<div class="question">
 					<h2>Technologies</h2>
 					<p>
-						Ce site a été développé entièrement en PHP avec MySQL.<br/>
+						Ce site a été développé entièrement avec PHP et MySQL.<br/>
 						Dans un objectif de généricité, la partie persistance et la partie présentation ont été isolées :<br/>
 						 - Une API s'occupe de la persistance des données (CroudQuotes).<br/>
 						 - Un front est utilisé pour présenter les données issues de l'API et interragir avec celle-ci (MonProgramme2012).<br/>

@@ -12,6 +12,7 @@ s_contactable.notRecievedMsg = 'Désolé mais votre message n\'a pas pu être en
 var s_contactable_subjects = new Object();
 s_contactable_subjects.footer_link = 'Suggestion de nouveau lien pour le pied de page';
 s_contactable_subjects.actions_link = 'Nouveau lien pour les actions citoyennes';
+s_contactable_subjects.contact_direct = 'Bonjour :)';
 s_contactable_subjects.submit_goal = 'Partage de mes aspirations pour ce site';
 s_contactable_subjects.new_question = '';
 s_contactable_subjects.demande_sources = 'Demande de communication des sources';

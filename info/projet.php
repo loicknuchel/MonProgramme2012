@@ -31,79 +31,63 @@
 			<div class="article">
 				<h1 class="first">Pourquoi ce site ?</h1>
 				<p>
-					Tout d'abord, il me parait essentiel de préciser que ce site est <span>une initiative personnelle</span> d'un simple citoyen n'ayant souscrit à <span>aucun parti ou association politique</span>.<br/>
+					Tout d'abord, il me parait essentiel de préciser que ce site est <span>l'initiative personnelle</span> d'un simple citoyen n'ayant souscrit à <span>aucun parti ou association politique</span>.<br/>
 					Cette précision faite, on peut se demander : pourquoi un tel site ?<br/>
-					Tout simplement parce que de fil en aiguille, j'ai été amené à m'intéresser à diverses personnalités qui mènent des réflexions très intéressantes sur notre système politique.
-					Que ce soit 
-					<span>Franck Lepage</span> avec ses <a href="#">conférences gesticulées</a> sur l'éducation (très divertissantes), 
-					<span>Etienne Chouard</span> lors de <a href="#">conférences</a> passionnantes sur la démocratie greque et le processus de création monétaire ou
-					<span>Annie Lacroix-Riz</span> dans ses <a href="#">propos sur l'histoire</a>,
-					ils m'ont tous fait me rendre compte que les 
+					Tout simplement parce que de fil en aiguille, j'ai été amené à m'intéresser à diverses personnalités qui développent des réflexions très pertinentes et intéressantes sur notre système politique ;
+					que ce soit 
+					<span>Franck Lepage</span> avec ses <a href="http://www.scoplepave.org/la-culture">conférences gesticulées</a> sur l'éducation (très divertissantes), 
+					<span>Etienne Chouard</span> lors de <a href="http://etienne.chouard.free.fr/Europe/tirage_au_sort.php">conférences</a> passionnantes sur la démocratie grecque et le processus de création monétaire ou
+					<span>Annie Lacroix-Riz</span> dans ses <a href="http://www.dailymotion.com/video/x5njza_le-choix-de-la-defaite-annie-lacroi_news">propos sur l'histoire</a>.
+					Chacun d'eux m'a permis de me rendre compte, qu'en dehors des discours de politiciens, des solutions existaient et n'attendaient que d'être diffusées pour pouvoir être mises en place.
 				</p>
 				<h1>Mais dans quel but ?</h1>
 				<p>
-				
-				</p>
-			</div>
-			<div class="article">
-				
-				
-				
-				
-				
-				<h1>Quel constat ?</h1>
-				<p>
-					Depuis que je m'intéresse à la politique et aussi loin que j'ai pu remonter, je constate que <span>les problèmes sont toujours les mêmes</span>, 
-					que les hommes et femmes politiques proposent <span>toujours les mêmes solutions</span>,
-					et que la situation <span>n'évolue pas</span>. Au fur et à mesure de mes investigations dans plusieurs domaines, j'ai pu me rendre compte que des solutions existaient et qu'elles avaient déjà fait leur preuves pour certaines.
+					Le but de ce site est de <span>permettre à chacun de s'exprimer</span> sur ce qu'il souhaite pour 2012.<br/>
+					Quels changements doivent s'opérer ? Quelles initiatives soutenir ? Quelles réformes devraient être mises en place ?<br/>
+					Ce site se veut un <span>espace d'échange</span> et de <span>découvertes d'idées</span>.
 				</p>
 				<p>
-					Pour moi, le problème de notre système est que l'on <span>ne parle pas des vrais problèmes</span>. Que l'on s'occupe des cas particuliers mais qu'on laisse l'état général se dégrader. 
-					Les politiques de tous bords se combattent sur des détails sans prendre de recul (volontairement?) pour adresser les problèmes globaux et essentiels.
+					Concrètement, le site est basé sur les propositions des visiteurs. Elles sont catégorisées et classées par nombre de vote afin de faire ressortir les plus populaires.
+					Elles peuvent être commentées pour créer un débat autour de celles-ci.
+					Chaque proposition possède aussi une pétition, ce qui permet de la soutenir de manière plus concrète qu'un simple vote.<br/>
+					Ce site est en perpétuelle évolution, vous pouvez consulter la liste des évolutions prévues dans <a href="<?php echo $rel_to_root.'info/faq.php#guide'; ?>">le FAQ</a>.
 				</p>
-				
-				<h1>Pour quelle solution ?</h1>
+				<h1>Parler, certes, mais à quoi cela sert-il ?</h1>
 				<p>
-					Je pense que la solution à cette situation de déni de réalité est que chaque citoyen <span>réinvestisse le champ politique</span>. 
-					Bien sur, <info title="Vote tous les 5 ans, pas de référendum populaires, professionnalisation de la politique">tout a été fait pour nous dégouter</info> et
-					nous faire croire que l'on ne peut rien changer à notre petit niveau. 
-					Cela permet aux politiques d'agir en toute liberté sans être sérieusement remis en question.
-				</p>
-				<p>
-					C'est donc l'objet de ce site : permettre à chacun de <span>s'exprimer et découvrir les opinions</span> des autres. 
-					J'espère de cette manière que les discussions feront ressortir les sujets les plus importants et amèneront des propositions et des expérimentations de solutions.
+					Il me semble essentiel de réellement se rendre compte que politiquement, <span>tout est fait pour nous dégouter de la politique</span> et nous maintenir dans une spirale pessimiste.
+					Nous avons toujours des "connaissances insuffisantes" (comme s'il fallait être spécialiste pour en discuter!), on nous culpabilise à la moindre bêtise que l'on dit, 
+					nous vivons dans un monde trop complexe (il paraît!), nos appels à discussion avec les politiciens n'ont jamais de réponse, nos initiatives sont souvent ignorées, 
+					nos votes sont bafoués par les politiciens (et le vote blanc ignoré!)...
 				</p>
 				<p>
-					J'ai moi même des idées pour changer les choses en profondeur, à commencer par une sérieuse modification de notre processus de pris de décision collective (gouvernement et institutions) 
-					et une clarification et réattribution des rôles de chacun des acteurs.
-					La partie économique et monétaire me parrait, elle aussi, essentielle car c'est l'un des grands pouvoir actuel. 
-					Je n'ai pas encore eu le temps d'écrire des articles pour étailler mes propos et présenter les solutions que j'envisage mais je prévois de le faire rapidement.
+					Cet état de fait n'est pas là par hasard, il est sciemment mis en place afin que l'on 
+					<a href="http://pourquoijevoteoupas.eu/index.php?id=143" title="Parce que si nous ne nous occupons pas de politique, les politiques s'occupent de nous !">s'intéresse le moins possible aux affaires politiques</a>.
+					Ce <span>manque d'intérêt nous est fatal</span> lors des prises de décisions et permet aux politiciens d'agir librement.
 				</p>
 				<p>
-					Vous l'aurez compris, ce site souhaite privilégier la <span>réflexion de fond sur les sujets essentiels</span>. C'est pourquoi je tiens à ce qu'il ne soit pas mis en relation avec l'actualité politique.
+					Il est essentiel de voir que des alternatives existent, qu'elles peuvent nous permettre de vivre radicalement mieux et que ce ne sont pas des utopies. Lorsque nous sommes convaincus que les choses
+					peuvent réellement s'améliorer si <span>on se mobilise</span> et qu'à son tour <span>on mobilise son entourage</span> en leur demandant d'en faire autant, alors il est très facile de rester optimiste et de faire tout 
+					ce qui est en notre	pouvoir pour faire évoluer les choses (chacun avec ses moyens).<br/>
+					Le <a href="http://pourquoijevoteoupas.eu/index.php?id=16" title="Si faire l'amour tous les 5 ans ce n'est pas une vie sexuelle, voter tous les 5 ans est-ce une vie démocratique ?">vote seul ne suffira jamais</a>
+					à provoquer de vrais changements positifs.
 				</p>
-				
-				<h1>C'est bien beau mais, quoi faire ?</h1>
+				<h1>Que faire maintenant ?</h1>
 				<p>
-					C'est là où les choses deviennent difficiles. N'ayant pas de pouvoir, il est difficile de faire vraiment changer les choses.<br/>
-					Heureusement, il arrive toujours un moment de basculement, où les personnes détenant le pouvoir deviennent plus fragiles et où il devient possible de changer le système en profondeur.
-					Si nous nous sommes <span>préalablements mis d'accord</span> et que nous savons ce vers quoi nous souhaitons aller, 
-					ce changement peut se faire de manière pacifique et surtout amener vers une organisation mûrement réfléchie et bien plus adaptée à nos souhaits.
-					Mais c'est avant qu'il faut savoir ce que l'on souhaite, sinon, le moment venu, il sera difficile de se faire entendre et de créer un consensus.
+					Il est, je pense, <span>nécessaire de s'informer</span> auprès de personnes proposant des <span>alternatives positives</span> sur des sujets très variés. 
+					Je peux vous suggérer de jeter un coup d'oeil à la <a href="<?php echo $rel_to_root.'info/bibliographie.php'; ?>">bibliographie</a> que j'ai faite et qui m'a personnellement motivé pour monter ce site 
+					et participer à d'autres actions.<br/>
+					Il est également important de participer à des actions pour se rendre compte que <span>beaucoup de personnes sont actives</span>, chacunes à leur manière, et trouver la bonne idée à lancer ou à rejoindre.<br/>
+					Enfin, parler autour de soi de tout ce que l'on a pu découvrir, partager et proposer aux personnes de s'impliquer elles aussi dans les actions dans lesquelles elles croient.
 				</p>
+				<h1>Et c'est tout ?</h1>
 				<p>
-					Il est donc très important de <span>diffuser dès maintenant vos idées</span> et de débattre autours de vous.<br/>
-					Il est très important de politiser un maximum de personnes, non pas pour qu'elles aillent voter blanc ou noir 
-					mais pour qu'elles commencent à réfléchir sérieusement à quelle alternative serait la plus souhaitable !<br/>
-					Il est essentiel que les gens prennent concience que les choses risquent de changer et il faut qu'ils soient préparés et sachent ce qu'ils veulent avant que ce moment arrive.
+					Et bien non, je suis en train de prospecter pour <span>organiser des rencontres sur Paris</span> afin de discuter de tout ceci.<br/>
+					Si tu es intéressé(e), tu peux <a href="#" class="contact_direct">me contacter directement</a>, laisser un commentaire ici et/ou t'inscrire à la newsletter (dans le pied de page) pour être tenu(e) au courant.<br/>
+					L'objectif est toujours de partager des idées, rencontrer des personnes et créer une dynamique qui entretienne la motivation.
 				</p>
-				<p>
-					<br/>
-					<span>Soyez tous candidats,<br/>
-					proposez tous un programme,<br/>
-					parlez autours de vous<br/>
-					et devenez le moteur d'un nouveau système à votre image !<span>
-				</p>
+				<br/>
+				<br/>
+				<h3>Et toi, qu'est-ce qui te motive ?</h3>
 			</div>
 			<?php
 				

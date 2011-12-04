@@ -27,7 +27,7 @@
 	<?php echo generateHeader($rel_to_root); ?>
 	
 	<div id="main">
-		<div class="wrapper">
+		<div class="wrapper"> 
 			<div class="article">
 				<h1 class="first">Les personnes qui m'ont inspiré ce site :</h1>
 				<p>
@@ -37,7 +37,7 @@
 				</p>
 				<p>
 					<dl>
-						<dt>Reflets</dt>
+						<dt id="reflets">Reflets</dt>
 						<dd>
 							<a href="http://reflets.info/">Reflets</a> est un média en ligne où écrivent entre autre <a href="https://twitter.com/bluetouff">@bluetouff</a>, <a href="https://twitter.com/epelboin">@epelboin</a>, <a href="https://twitter.com/_Kitetoa_">@kitetoa</a>. 
 							Il traite principalement des sujets informatiques et financiers.
@@ -46,39 +46,39 @@
 							C'est pour moi un moyen d'information essentiel sur des problématiques qui me touchent.<br/>
 							Ils sont proches d'association ou de groupement de personnes tels que <a href="http://telecomix.org/">telecomix</a> ou <a href="http://owni.fr/">OWNI</a>.
 						</dd>
-						<dt>Franck Lepage</dt>
+						<dt id="franckLepage">Franck Lepage</dt>
 						<dd>
 							Franck Lepage et son association <a href="http://www.scoplepave.org/">le pavé</a> organisent des <a href="http://www.scoplepave.org/conferences-gesticulees">conférences gesticulées</a>
-							très divertissantes et didactiques. Notamment les confrences <a href="http://www.scoplepave.org/la-culture">inculture(s) 1</a> et <a href="http://www.youtube.com/watch?v=YTSDeVquHks">inculture(s) 2</a>.<br/>
-							Un autre sketch est aussi très sympa : <a href="http://www.youtube.com/watch?v=Ei8q0fn0Xc8">L'enjeu des retraites</a>.
+							très divertissantes et didactiques. Notamment les confrénces <a href="http://www.youtube.com/watch?v=V-EERZNEOAM">inculture(s) 1</a>[1h23] et <a href="http://www.youtube.com/watch?v=YTSDeVquHks">inculture(s) 2</a>[2h26].<br/>
+							D'autres sketchs sont aussi très sympa : <a href="http://www.youtube.com/watch?v=Ei8q0fn0Xc8">L'enjeu des retraites</a>[22min] et <a href="http://www.youtube.com/watch?v=VRkDgujIMpg">la langue de bois</a>[5min].
 						</dd>
-						<dt>Etienne Chouard</dt>
+						<dt id="etienneChouard">Etienne Chouard</dt>
 						<dd>
 							<a href="http://etienne.chouard.free.fr/Europe/">Etienne Chouard</a> est un ardent défenseur de la démocratie réelle par le tirage au sort. Intuitivement cette idée semble un peu fantaisiste mais
 							il faut <a href="http://etienne.chouard.free.fr/Europe/tirage_au_sort.php">regarder ses conférences</a> pour vraiment voir les vertues de ce système.<br/>
 							Il parle aussi beaucoup de <a href="http://www.dailymotion.com/video/xhiymd_entretien-avec-etienne-chouard-1-l-argent-dette_news">création monétaire</a> et de 
 							<a href="http://www.dailymotion.com/video/xkkyxc_etienne-chouard-10-raisons-de-sortir-de-l-union-europeenne_news">l'europe</a>[59min].
 						</dd>
-						<dt>Annie Lacroix-Riz</dt>
+						<dt id="annieLacroix-Riz">Annie Lacroix-Riz</dt>
 						<dd>
 							Annie Lacroix-Riz a pour moi été une révélation. Sa <a href="http://www.dailymotion.com/video/x5njza_le-choix-de-la-defaite-annie-lacroi_news">conférence</a>[3h22] sur son nouveau livre : 
 							"Le choix de la défaite"est édifiante. Elle y détaille les relations de pouvoir entre les politique, les militaire et les industriels. 
 							Certes, les faits remontent à presque un siècle mais il est aisé d'imaginer que les choses ne se sont pas arrangées (voire qu'elles ont certainement empirées!).<br/>
-							Elle fait aussi une analyse de la crise actuelle : <a href="http://www.dailymotion.com/video/xlkni0_conference-d-annie-lacroix-riz-27-09-2011_news">vidéo</a>.[1h18]<br/>
+							Elle fait aussi une analyse (actuelle) de la crise actuelle et de la guerre contre les salaires : <a href="http://www.dailymotion.com/video/xlkni0_conference-d-annie-lacroix-riz-27-09-2011_news">vidéo</a>.[1h18]<br/>
 							Son travail et sa conférence sont réellement passionnants.
 						</dd>
-						<dt>Bernard Friot</dt>
+						<dt id="bernardFriot">Bernard Friot</dt>
 						<dd>
 							Bernard Friot fait une <a href="http://www.dailymotion.com/video/xh1foy_conference-bernard-friot-de-l-emploi-a-la-qualification_news">conférence sur l'enjeu des retraites</a>[2h24]. 
 							Il remet en cause la notion même de travail et réfléchi de manière globale et radicalement différente sur les tenants et aboutissants de cette valeur.
 						</dd>
-						<dt>Jean-François Noubel</dt>
+						<dt id="jFNoubel">Jean-François Noubel</dt>
 						<dd>
 							J'ai découvert Jean-François Noubel dans une <a href="http://www.youtube.com/watch?v=PuZgkL5BEBk">conférence TEDxParis</a>[14min]. Il y parle de manière très imagée et très didactique de la création monétaire.
 							Il prône les monnaies libres et plurielles. Pour lui l'argent régalien (cad contrôlé par des autorités suppérieures) arrive en fin de vie. Chacun devrait pouvoir créer sa monnaie.<br/>
 							Le projet est présenté et détaillé sur le site <a href="http://people.thetransitioner.org/">thetransitioner.org</a>.
 						</dd>
-						<dt>...</dt>
+						<dt id="autres">...</dt>
 						<dd>
 							Et beaucoup d'autres comme les journaux <a href="http://owni.fr/">OWNI</a> et <a href="http://www.numerama.com/">numerama</a>.
 						</dd>
