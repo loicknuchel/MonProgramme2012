@@ -47,7 +47,7 @@
 					Ce site se veut un <span>espace d'échange</span> et de <span>découvertes d'idées</span>.
 				</p>
 				<p>
-					Concrètement, le site est basé sur les propositions des visiteurs. Elles sont catégorisées et classées par nombre de vote afin de faire ressortir les plus populaires.
+					Concrêtement, le site est basé sur les propositions des visiteurs. Elles sont catégorisées et classées par nombre de votes afin de faire ressortir les plus populaires.
 					Elles peuvent être commentées pour créer un débat autour de celles-ci.
 					Chaque proposition possède aussi une pétition, ce qui permet de la soutenir de manière plus concrète qu'un simple vote.<br/>
 					Ce site est en perpétuelle évolution, vous pouvez consulter la liste des évolutions prévues dans <a href="<?php echo $rel_to_root.'info/faq.php#guide'; ?>">le FAQ</a>.
