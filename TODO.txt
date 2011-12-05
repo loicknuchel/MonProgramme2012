@@ -1,6 +1,5 @@
 
 - pouvoir commenter et voter pour des sélections
-
 - pouvoir modifier une sélection (avec mdp)
 
 - ajouter à la table quote la date du dernier commentaires pour pouvoir ressortir des dernières citations commentées
@@ -8,6 +7,7 @@
 - dans la fancybox de suivi, ajouter le nom et les infos (pour le suivi des citations)
 
 - ajouter une partie wiki (à coté des commentaires et pétition)
+
 
 - Ajouter des pages pour présenter mes solutions ou mettre des liens vers mon blog...
 
