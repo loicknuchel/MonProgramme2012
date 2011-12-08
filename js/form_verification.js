@@ -71,7 +71,7 @@ function FV_Form_Verification(inner_html){
 			if($(this).val().length > maxsize){
 				alert(s_form_verification.field+' "'+$(this).attr('placeholder')+'" '+s_form_verification.lessthan+' '+maxsize+' '+s_form_verification.stringunit);
 				$(this).addClass('FV_error');
-				$(this).next().addClass('FV_error');
+				if($(this).next().hasClass("text_leave_char")){$(this).next().addClass('FV_error');}
 				sendForm = false;
 			}
 		});

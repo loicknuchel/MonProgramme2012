@@ -3,10 +3,19 @@ function fill_forms(){
 		var formDatas = JSON.parse(localStorage.getItem('form_data'));
 		if(formDatas == null){ return false; }
 		
-		if(formDatas.comment != null){
-			if($('.FV_comment input[name="pseudo"]').val() == ''){$('.FV_comment input[name="pseudo"]').val(formDatas.comment.pseudo);}
-			if($('.FV_comment input[name="mail"]').val() == ''){$('.FV_comment input[name="mail"]').val(formDatas.comment.mail);}
-			if($('.FV_comment input[name="site"]').val() == ''){$('.FV_comment input[name="site"]').val(formDatas.comment.site);}
+		if(formDatas.comment != null && formDatas.comment.pseudo != '' && $("#leave_comment form.FV_comment").length){
+			if($('.FV_comment input[name="pseudo"]').val() == '' && formDatas.comment.pseudo != ''){$('.FV_comment input[name="pseudo"]').val(formDatas.comment.pseudo); $('.FV_comment .no_meta_info .pseudo').html(formDatas.comment.pseudo);}
+			if($('.FV_comment input[name="mail"]').val() == '' && formDatas.comment.mail != ''){$('.FV_comment input[name="mail"]').val(formDatas.comment.mail); $('.FV_comment .no_meta_info .mail').html(formDatas.comment.mail);}
+			if($('.FV_comment input[name="site"]').val() == '' && formDatas.comment.site != ''){$('.FV_comment input[name="site"]').val(formDatas.comment.site); $('.FV_comment .no_meta_info .site').html(formDatas.comment.site);}
+			$("#leave_comment form.FV_comment .meta_info").hide();
+			$("#leave_comment form.FV_comment .no_meta_info").show();
+			$("#leave_comment form.FV_comment textarea[name=\"comment\"]").addClass('inc_meta_info');
+			$("#leave_comment form.FV_comment .no_meta_info .modify a").click(function(){
+				$("#leave_comment form.FV_comment .meta_info").show();
+				$("#leave_comment form.FV_comment .no_meta_info").hide();
+				$("#leave_comment form.FV_comment textarea[name=\"comment\"]").removeClass('inc_meta_info');
+				return false;
+			});
 		}
 		
 		if(formDatas.quote != null){
@@ -26,15 +35,9 @@ function fill_forms(){
 function action_forms(){
 	// toggle les informations facultatives
 	$('.more_datas').css('display','none');
-	function replace_img(html_img, new_img){
-		var link = html_img.attr('src');
-		var lastSlash = link.lastIndexOf("/");
-		var new_link = link.substring(0, lastSlash+1) + new_img;
-		html_img.attr('src', new_link);
-	}
 	$('.show_more_datas').toggle(
-		function() {$(this).parent().find('.more_datas').slideDown(300); replace_img($(this).find('img'), 'arrow_down.png');},
-		function() {$(this).parent().find('.more_datas').slideUp(300); replace_img($(this).find('img'), 'arrow_right.png');}
+		function() {$(this).parent().find('.more_datas').slideDown(300); $(this).addClass('visible');},
+		function() {$(this).parent().find('.more_datas').slideUp(300); $(this).removeClass('visible');}
 	);
 	
 	

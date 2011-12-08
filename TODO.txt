@@ -4,10 +4,18 @@
 
 - ajouter à la table quote la date du dernier commentaires pour pouvoir ressortir des dernières citations commentées
 
+- redesigner le formulaire de commentaires
+	* le styliser en blanc
+	* enlever les méta champs s'ils sont préremplis
+
 - dans la fancybox de suivi, ajouter le nom et les infos (pour le suivi des citations)
 
 - ajouter une partie wiki (à coté des commentaires et pétition)
 
+- permettre la création de comptes pour poster les commentaires et citations
+
+
+- rendre le site accessible depuis un smartphone
 
 - Ajouter des pages pour présenter mes solutions ou mettre des liens vers mon blog...
 

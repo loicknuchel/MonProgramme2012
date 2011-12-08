@@ -10,7 +10,12 @@
 	$params['pc'] = isset($_GET['pc']) ? $_GET['pc'] : null;
 	$params['pp'] = isset($_GET['pp']) ? $_GET['pp'] : null;
 	$params['noheaders'] = 1;
-	$json = apiGetQuoteById($usr, $params, $server_path);
+	if($params['quoteid'] == 'random'){
+		$json = apiGetQuoteByRandom($usr, $params, $server_path);
+	}
+	else{
+		$json = apiGetQuoteById($usr, $params, $server_path);
+	}
 	$result = json_decode($json, true);
 	$status_code = isset($result['status']['code']) ? $result['status']['code'] : null;
 	if($status_code != 200){

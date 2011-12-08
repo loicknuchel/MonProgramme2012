@@ -88,7 +88,9 @@
     border: none;
     height: 17px;
     padding: 8px;
+	margin: 0em;
     width: 183px;
+    width: 176px;
 }
 #formMailListEmail:focus {
     background: url('./img/footer/bgFormMailList.png') 0 -33px no-repeat;
@@ -97,10 +99,11 @@
     background: url('./img/footer/buttonFormMailList.png') no-repeat;
     border: none;
     cursor: pointer;
-    height: 21px;
     text-indent: -9999px;
     width: 13px;
+    height: 21px;
 	padding: 0px;
+	margin: 0px;
 	vertical-align: baseline;
 }
 #formMailListSubmit:hover {

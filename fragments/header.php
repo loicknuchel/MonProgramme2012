@@ -16,7 +16,7 @@ function generateHeader($rel_to_root = './'){
 				<h1><a href="'.$rel_to_root.'">Mon Programme 2012</a></h1>
 			</div>
 			<ul class="topnav">
-				<li><a href="'.$rel_to_root.'random.php">Aléatoire</a></li>
+				<li><a href="'.$rel_to_root.'quote.php?id=random">Aléatoire</a></li>
 				<li>
 					<a href="#" class="topnavtitle">Classées</a>
 					<ul class="subnav">

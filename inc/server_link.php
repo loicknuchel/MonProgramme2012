@@ -76,7 +76,10 @@
 	include_once $rel_to_root.'fragments/quote.php';
 	include_once $rel_to_root.'fragments/comments.php';
 	include_once $rel_to_root.'fragments/signatures.php';
-	include_once $rel_to_root.'fragments/forms.php';
+	include_once $rel_to_root.'fragments/quote_form.php';
+	include_once $rel_to_root.'fragments/comment_form.php';
+	include_once $rel_to_root.'fragments/petition_form.php';
+	include_once $rel_to_root.'fragments/selection_form.php';
 	include_once $rel_to_root.'fragments/footer.php';
 	include_once $rel_to_root.'fragments/scripts.php';
 	include_once $rel_to_root.'fragments/selection.php';
