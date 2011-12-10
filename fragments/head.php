@@ -24,7 +24,7 @@ function generateHead($titre, $jsEnv, $rel_to_root = './'){
 	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/styles.css?v=2">
 	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/header.css?v=2">
 	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/article.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/quote.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/quotes.css?v=2">
 	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/comments.css?v=2">
 	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/petition.css?v=2">
 	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/selection.css?v=2">

@@ -36,7 +36,7 @@
 	height: 17px;
 	margin-bottom: -5px;
 	border: 1px solid #EFEFEF;
-	background: url('./img/quote/options_sprite.png') center top no-repeat;
+	background: url('./img/quotes/options_sprite.png') center top no-repeat;
 	-webkit-border-radius: 5px 5px0px 0px;
 	-moz-border-radius: 5px 5px 0px 0px;
 	border-radius: 5px 5px 0px 0px;
@@ -45,7 +45,7 @@
 }
 .quote .quote_header .options.selected {
 	border: 1px solid #ccc;
-	background: url('./img/quote/options_sprite.png') center bottom no-repeat;
+	background: url('./img/quotes/options_sprite.png') center bottom no-repeat;
 }
 
 .quote .quote_header .options ul {
@@ -103,7 +103,7 @@
 	display: inline-block;
 	width: 20px;
 	height: 14px;
-	background: url('./img/quote/twitt_sprite.png') no-repeat;
+	background: url('./img/quotes/twitt_sprite.png') no-repeat;
 }
 .quote .quote_content .quote_social .twitter:hover{background-position: 0px -14px;}
 .quote .quote_content .quote_social .twitter:active{background-position: 0px -28px;}

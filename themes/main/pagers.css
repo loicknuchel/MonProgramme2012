@@ -30,7 +30,7 @@
 }*/
 /* Pager vdm */
 .quote_pager a, .quote_pager a:visited {
-	background: url('./img/quote/glass.png') repeat-x 0 50%;
+	background: url('./img/pagers/glass.png') repeat-x 0 50%;
 	background-color: #CCD9F0;
 	-moz-box-shadow: 0 1px 1px #A6B1C0;
 	-webkit-box-shadow: 0 1px 1px #A6B1C0;
@@ -98,7 +98,7 @@
 }*/
 /* Pager vdm */
 .comment_pager a, .comment_pager a:visited {
-	background: url(http://betacie.cachefly.net/fmylife/images/glass.png) repeat-x 0 50%;
+	background: url('./img/pagers/glass.png') repeat-x 0 50%;
 	background-color: #CCD9F0;
 	-moz-box-shadow: 0 1px 1px #A6B1C0;
 	-webkit-box-shadow: 0 1px 1px #A6B1C0;
@@ -163,7 +163,7 @@
 }*/
 /* Pager vdm */
 .petition_pager a, .petition_pager a:visited {
-	background: url(http://betacie.cachefly.net/fmylife/images/glass.png) repeat-x 0 50%;
+	background: url('./img/pagers/glass.png') repeat-x 0 50%;
 	background-color: #CCD9F0;
 	-moz-box-shadow: 0 1px 1px #A6B1C0;
 	-webkit-box-shadow: 0 1px 1px #A6B1C0;

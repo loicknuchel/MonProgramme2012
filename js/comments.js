@@ -1,9 +1,25 @@
+
 function comment_actions(){
 	// UI : show more actions
+	$('.comment .comment_header .comment_report').hide();
+	$('.comment .comment_header .reponse').hide();
 	$('.comment').hover(
 		function(event){ $(this).find('.comment_header .comment_report').show(); $(this).find('.comment_header .reponse').show(); },
 		function(event){ $(this).find('.comment_header .comment_report').hide(); $(this).find('.comment_header .reponse').hide(); }
 	);
+	
+	// citer commentaire
+	$('.comment .comment_header .reponse').click(function(event){
+		var text = $(this).parent().parent().find('.comment_text').html();
+		var comment = $('.leave_comment form textarea[name="comment"]');
+		text = text.replace(/<div class="quoted_comment">/gi, '[quote]');
+		text = text.replace(/<\/div>/gi, '[/quote]');
+		text = text.replace(/<br>/gi, '');
+		comment.val(comment.val() + '[quote]' + text + '[/quote]');
+		window.scroll(0,10000);
+		//comment.focus();
+		return false;
+	});
 	
 	// comment vote up
 	$('.comment .comment_vote .thumb_up').click(function(event){
@@ -20,19 +36,6 @@ function comment_actions(){
 	// report comment
 	$('.comment .comment_header .comment_report').click(function(event){
 		comment_report($(this).parent(), meth);
-		return false;
-	});
-	
-	// citer commentaire
-	$('.comment .comment_header .reponse').click(function(event){
-		var text = $(this).parent().parent().find('.comment_text').html();
-		var comment = $('.leave_comment form textarea[name="comment"]');
-		text = text.replace(/<div class="quoted_comment">/gi, '[quote]');
-		text = text.replace(/<\/div>/gi, '[/quote]');
-		text = text.replace(/<br>/gi, '');
-		comment.val(comment.val() + '[quote]' + text + '[/quote]');
-		window.scroll(0,10000);
-		//comment.focus();
 		return false;
 	});
 }

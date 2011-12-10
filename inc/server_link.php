@@ -73,7 +73,7 @@
 	include_once $rel_to_root.'fragments/utils.php';
 	include_once $rel_to_root.'fragments/head.php';
 	include_once $rel_to_root.'fragments/header.php';
-	include_once $rel_to_root.'fragments/quote.php';
+	include_once $rel_to_root.'fragments/quotes.php';
 	include_once $rel_to_root.'fragments/comments.php';
 	include_once $rel_to_root.'fragments/signatures.php';
 	include_once $rel_to_root.'fragments/quote_form.php';

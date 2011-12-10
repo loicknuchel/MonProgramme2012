@@ -23,25 +23,24 @@ function generateComment($comment, $rel_to_root = './'){
 		if($cptStart != $cptEnd){$text = str_replace('[/quote]', '', str_replace('[quote]', '', nl2br($comment['comment'])));}
 	}
 	
-	if($comment['avis'] == "pour"){$avis = ' <span class="label '.$comment['avis'].'">'.$comment['avis'].'</span> ';}
-	else if($comment['avis'] == "contre"){$avis = ' <span class="label '.$comment['avis'].'">'.$comment['avis'].'</span> ';}
-	else{$avis = ' <span class="label neutre">Mitigé</span> ';}
+	if($comment['avis'] == "pour"){$avis = ' <span class="label light '.$comment['avis'].'">'.$comment['avis'].'</span> ';}
+	else if($comment['avis'] == "contre"){$avis = ' <span class="label light '.$comment['avis'].'">'.$comment['avis'].'</span> ';}
+	else{$avis = ' <span class="label light neutre">Mitigé</span> ';}
 	
-	$html = '<div class="comment" id="comment_'.$comment['id'].'">
+	$html = '
+	<div class="comment" id="comment_'.$comment['id'].'">
 		<div class="comment_header">
 			<span class="comment_no">'.$comment['id'].'</span>'.$avis.'<span class="comment_pseudo">'.$pseudo.'</span><span class="comment_date">, le '.$comment['post_date'].' :</span>';
 		if($comment['reported'] != 1){
 			$html .= '
 			<div class="comment_vote">
-				<a href="#" title="commentaire pertinent"><div class="thumb_up"></div></a>
-				<a href="#" title="commentaire sans intérêt"><div class="thumb_down"></div></a>
+				<span class="thumb_up" title="commentaire pertinent"></span>
+				<span class="thumb_down" title="commentaire sans intérêt"></span>
 				<span class="val">(<span>'.$vote.'</span>)</span>
 			</div>
-			<div class="reponse">
-				<a href="#" title="répondre à ce commentaire"><img src="'.$rel_to_root.'themes/main/img/comments/citer.gif" /></a>
-			</div>
+			<div class="reponse" title="répondre à ce commentaire"></div>
 			<div class="clear"></div>
-			<div class="comment_report"><a href="#" title="signaler ce commentaire"><img src="'.$rel_to_root.'themes/main/img/comments/report.png" /></a></div>';
+			<div class="comment_report" title="signaler ce commentaire"></div>';
 		}
 		$html .= '</div>
 		<div class="comment_text">'.$text.'</div>

@@ -1,17 +1,6 @@
 
 @import url('./fonts/AfterShokRegular/stylesheet.css');
 @import url('./fonts/KaratulaNormal/stylesheet.css');
-/*
-@import url('header.css');
-@import url('article.css');
-@import url('quote.css');
-@import url('comments.css');
-@import url('petition.css');
-@import url('selection.css');
-@import url('comment_slider.css');
-@import url('forms.css');
-@import url('quote_form.css');
-@import url('footer.css');*/
 
 /* ==== Scroll down to find where to put your styles :) ==== */
 
@@ -127,14 +116,14 @@ background: #BFBFBF;
 -moz-border-radius: 3px;
 border-radius: 3px;
 }
-.label.light {background: none;color: #777;border: 1px solid #ccc;}
-.label.success {background: #46A546;}
+.label.success, .label.pour {background: #46A546;}
 .label.warning {background: #F89406;}
-.label.important  {background: #C43C35;}
+.label.important, .label.contre {background: #C43C35;}
 .label.notice   {background: #62CFFC;}
-.label.light.success {color: #46A546;}
+.label.light {background: none;font-weight: bold;color: #777;border: 1px solid #ccc;}
+.label.light.success, .label.light.pour {color: #46A546;}
 .label.light.warning {color: #F89406;}
-.label.light.important {color: #C43C35;}
+.label.light.important, .label.light.contre {color: #C43C35;}
 .label.light.notice {color: #62CFFC;}
 
 #info {
@@ -237,3 +226,4 @@ border-radius: 3px;
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3{ page-break-after: avoid; }
 }
+

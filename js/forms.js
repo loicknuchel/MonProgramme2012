@@ -1,3 +1,22 @@
+
+
+function action_forms(){
+	// UI : toggle les informations facultatives
+	$('.more_datas').css('display','none');
+	$('.show_more_datas').toggle(
+		function() {$(this).parent().find('.more_datas').slideDown(300); $(this).addClass('visible');},
+		function() {$(this).parent().find('.more_datas').slideUp(300); $(this).removeClass('visible');}
+	);
+	
+	
+	// UI : radio button set
+	$(".switch input").css('display', 'none');
+	$(".switch label").click(function(){
+		$(this).parents('.switch').find('label').removeClass('selected');
+		$(this).addClass('selected');
+	});
+}
+
 function fill_forms(){
 	if(localStorage){
 		var formDatas = JSON.parse(localStorage.getItem('form_data'));
@@ -31,24 +50,4 @@ function fill_forms(){
 		}
 	}
 }
-
-function action_forms(){
-	// toggle les informations facultatives
-	$('.more_datas').css('display','none');
-	$('.show_more_datas').toggle(
-		function() {$(this).parent().find('.more_datas').slideDown(300); $(this).addClass('visible');},
-		function() {$(this).parent().find('.more_datas').slideUp(300); $(this).removeClass('visible');}
-	);
-	
-	
-	// radio button set
-	$(".switch input").css('display', 'none');
-	$(".switch label").click(function(){
-		$(this).parents('.switch').find('label').removeClass('selected');
-		$(this).addClass('selected');
-	});
-}
-
-
-
 
