@@ -6,8 +6,7 @@
 	$params = null;
 	$params['noheaders'] = 1;
 	$categories_json = apiGetCategories($usr, $params, $server_path);
-	echo $categories_json;
-	/*$categories = json_decode($categories_json, true);
+	$categories = json_decode($categories_json, true);
 	if(isset($categories['response']['categories'])){
 		$cat = null;
 		$ind = 0;
@@ -16,7 +15,7 @@
 			$cat[$ind]['name'] = $value['name'];
 			$ind++;
 		}
-	}*/
+	}
 	
 	$params = null;
 	$params['noheaders'] = 1;
@@ -50,12 +49,13 @@
 	</div>
 	
 	
-	
+	<!--
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 	<script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
 	
 	<script src="js/utils.js"></script>
-	<script src="js/form_verification.js"></script>
+	<script src="js/form_verification.js"></script>-->
+	
 	
 	<script>
 		$(function(){
@@ -148,9 +148,5 @@
 			}
 		});
 	</script>
-	<?php 
-		include $rel_to_root.'fragments/endPage.php';
-		echo generateEndPage(); 
-	?>
 </body>
 </html>

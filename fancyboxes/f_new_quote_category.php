@@ -145,9 +145,5 @@
 			}
 		});
 	</script>
-	<?php 
-		include $rel_to_root.'fragments/endPage.php';
-		echo generateEndPage(); 
-	?>
 </body>
 </html>
