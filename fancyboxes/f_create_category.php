@@ -6,7 +6,8 @@
 	$params = null;
 	$params['noheaders'] = 1;
 	$categories_json = apiGetCategories($usr, $params, $server_path);
-	$categories = json_decode($categories_json, true);
+	echo $categories_json;
+	/*$categories = json_decode($categories_json, true);
 	if(isset($categories['response']['categories'])){
 		$cat = null;
 		$ind = 0;
@@ -15,7 +16,7 @@
 			$cat[$ind]['name'] = $value['name'];
 			$ind++;
 		}
-	}
+	}*/
 	
 	$params = null;
 	$params['noheaders'] = 1;

@@ -16,7 +16,7 @@
 
 .new_quote .textareaquote{
 	display: block;
-	width: 515px;
+	width: 550px;
 	text-align: left;
 	background: white;
 	padding: 0px;
@@ -31,7 +31,7 @@
 
 .new_quote .textareaquote textarea{
 	display: block;
-	width: 475px;
+	width: 510px;
 	height: 95px;
 	text-align: left;
 	color: #4F4F4F;
@@ -47,7 +47,7 @@
 
 .new_quote .textareaquote .area_leave_char{
 	display: block;
-	width: 505px;
+	width: 540px;
 	height: 18px;
 	text-align: right;
 	margin: 0px;

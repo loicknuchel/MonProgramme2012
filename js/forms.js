@@ -11,9 +11,9 @@ function fill_forms(){
 			$("#leave_comment form.FV_comment .no_meta_info").show();
 			$("#leave_comment form.FV_comment textarea[name=\"comment\"]").addClass('inc_meta_info');
 			$("#leave_comment form.FV_comment .no_meta_info .modify a").click(function(){
-				$("#leave_comment form.FV_comment .meta_info").show();
-				$("#leave_comment form.FV_comment .no_meta_info").hide();
 				$("#leave_comment form.FV_comment textarea[name=\"comment\"]").removeClass('inc_meta_info');
+				$("#leave_comment form.FV_comment .meta_info").slideDown();
+				$("#leave_comment form.FV_comment .no_meta_info").slideUp();
 				return false;
 			});
 		}

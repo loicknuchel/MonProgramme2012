@@ -11,23 +11,3 @@
 	margin: 8px 0px;
 }
 
-.selection_pager{
-	font-family: "Trebuchet MS", "Segoe UI", trebuchet, helvetica, arial, geneva, sans-serif;
-	color:#424242;
-	text-align:center;
-	font-size: 12px;
-	margin: 15px 0;
-}
-.selection_pager a, .selection_pager a:visited {
-	color:#ff3100;
-	padding:0 4px;
-	text-decoration:none;
-}
-.selection_pager span {
-	color:#888;
-	padding:0 4px;
-	text-decoration:none;
-}
-.selection_pager a:hover {
-	text-decoration:underline;
-}

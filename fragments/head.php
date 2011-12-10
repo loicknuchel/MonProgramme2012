@@ -22,6 +22,17 @@ function generateHead($titre, $jsEnv, $rel_to_root = './'){
 	<link rel="stylesheet" href="'.$rel_to_root.'js/libs/fancybox/jquery.fancybox-1.3.4.css">
 	<link rel="stylesheet" href="'.$rel_to_root.'js/libs/contactable.1.3/contactable.css">
 	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/styles.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/header.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/article.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/quote.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/comments.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/petition.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/selection.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/comment_slider.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/forms.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/quote_form.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/pagers.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.'themes/main/footer.css?v=2">
 
 	<script src="'.$rel_to_root.'js/libs/modernizr-1.7.min.js"></script>
 	<script src="'.$rel_to_root.'js/strings.js"></script>

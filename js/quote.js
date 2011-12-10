@@ -1,62 +1,20 @@
 function quote_actions(){
-	// UI : show meta datas
-	$('.quote_block .quote_meta .more').toggle(
-		function(event){ $(this).parents('.quote_block').find('.quote_expand').slideDown(); $(this).find('a').html(s_quote.meta.expanded); },
-		function(event){ $(this).parents('.quote_block').find('.quote_expand').slideUp(); $(this).find('a').html(s_quote.meta.expand); }
-	);
 	
-	// quote vote up
-	$('.quote .quote_block .quote_meta .quote_actions .thumb_up').click(function(event){
-		quote_vote('up', $(this).parents('.quote'), meth);
-		return false;
-	});
+	// UI : met les quotes sélectionnées dans l'état selected et les quotes des favoris dans l'état infavoris
+	identify_selected_quotes();
+	identify_favoris_quotes();
 	
-	// quote vote down
-	$('.quote .quote_block .quote_meta .quote_actions .thumb_down').click(function(event){
-		quote_vote('down', $(this).parents('.quote'), meth);
-		return false;
-	});
-	
-	// report quote
-	$('.quote .quote_header .options .report').click(function(event){
-		quote_report($(this).parents('.quote'), meth);
-		return false;
-	});
-	
-	// options quote
+	// UI : options quote
 	$('.quote .quote_header .options').hover(
-		function() { $(this).find("ul").slideDown('fast').show(); $(this).addClass("selected"); }, 
+		function() { $(this).find("ul").slideDown('fast'); $(this).addClass("selected"); }, 
 		function() { $(this).find("ul").slideUp('fast'); $(this).removeClass("selected"); }
 	);
-	/*$('.quote .quote_header .options').click(function(){
-		if($(this).find("ul").css('display') == 'none'){
-			$(this).find("ul").slideDown('fast').show();
-			$(this).addClass("selected");
-	  
-			$(this).hover(
-				function() {}, 
-				function() { $(this).find("ul").slideUp('slow'); $(this).removeClass("selected"); }
-			);
-		}
-		else{
-			$(this).find("ul").slideUp('slow');
-			$(this).removeClass("selected");
-		}
-		return false;
-	});*/
 	
-	// twitter quote
-	$('.quote .quote_block .quote_content .quote_social .twitter img').attr('src', s_quote.twitter.init);
-	$('.quote .quote_block .quote_content .quote_social .twitter img').hover(
-		function (){$(this).attr('src', s_quote.twitter.hover);},
-		function (){$(this).attr('src', s_quote.twitter.out);}
+	// UI : show meta datas
+	$('.quote_footer .more').toggle(
+		function(event){ $(this).parents('.quote').find('.quote_expand').slideDown(); $(this).find('a').html(s_quote.meta.expanded); },
+		function(event){ $(this).parents('.quote').find('.quote_expand').slideUp(); $(this).find('a').html(s_quote.meta.expand); }
 	);
-	
-	// ajouter une quote à la sélection : avant identify_selected_quotes();
-	$('.quote .quote_block .quote_meta .quote_actions .select').click(function(){
-		quote_add_selection($(this).parents('.quote'));
-		return false;
-	});
 	
 	// ajouter la quote aux favoris : avant identify_favoris_quotes();
 	$('.quote .quote_header .options .favoris').click(function(event){
@@ -65,14 +23,34 @@ function quote_actions(){
 	});
 	
 	// proposer une nouvelle catégorie pour la quote
-	$('.quote .quote_header .options .category').click(function(event){
+	/*$('.quote .quote_header .options .category').click(function(event){
 		quote_new_category($(this).parents('.quote'));
+		return false;
+	});*/
+	
+	// report quote
+	$('.quote .quote_header .options .report').click(function(event){
+		quote_report($(this).parents('.quote'), meth);
 		return false;
 	});
 	
-	// UI : met les quotes sélectionnées dans l'état selected et les quotes des favoris dans l'état infavoris
-	identify_selected_quotes();
-	identify_favoris_quotes();
+	// ajouter une quote à la sélection : avant identify_selected_quotes();
+	$('.quote .quote_footer .quote_actions .select').click(function(){
+		quote_add_selection($(this).parents('.quote'));
+		return false;
+	});
+	
+	// quote vote up
+	$('.quote .quote_footer .quote_actions .thumb_up').click(function(event){
+		quote_vote('up', $(this).parents('.quote'), meth);
+		return false;
+	});
+	
+	// quote vote down
+	$('.quote .quote_footer .quote_actions .thumb_down').click(function(event){
+		quote_vote('down', $(this).parents('.quote'), meth);
+		return false;
+	});
 }
 
 
@@ -81,10 +59,11 @@ function quote_vote(vote, html_quote, meth){
 		return false;
 	}
 	
-	var html_vote_up_value = html_quote.find('.quote_block .quote_meta .quote_actions ul li .val_up');
-	var html_vote_down_value = html_quote.find('.quote_block .quote_meta .quote_actions ul li .val_down');
-	var html_vote_bar = html_quote.find('.quote_block .quote_meta .quote_actions ul li .votebar');
 	var quote_id = eval(html_quote.find('.quote_header .quote_number a span').html());
+	var html_vote = html_quote.find('.quote_footer .quote_actions ul li');
+	var html_vote_up_value = html_vote.find('.val_up');
+	var html_vote_down_value = html_vote.find('.val_down');
+	var html_vote_bar = html_vote.find('.votebar');
 	
 	if(meth == 'local'){
 		var url = base_url+'quote.php';
@@ -107,7 +86,7 @@ function quote_vote(vote, html_quote, meth){
 	function call_success(obj){
 		if(obj != null && obj['status']['code'] == 200){
 			displayInfo('success', s_ajax.vote.success);
-			//html_vote_value.html(eval(html_vote_value.html()) + 1);
+			
 			var up = eval(html_vote_up_value.html());
 			var down = eval(html_vote_down_value.html());
 			if(vote == 'up'){up = up + 1;}
@@ -310,7 +289,7 @@ function quote_delete_selection(html_quote){
 }
 
 function change_to_selected(html_quote){
-	var select = html_quote.find('.quote_block .quote_meta .quote_actions .select');
+	var select = html_quote.find('.quote_footer .quote_actions .select');
 	select.html(s_quote.selection.item.selected);
 	select.addClass("unselect").removeClass("select");
 	select.unbind('click');
@@ -321,7 +300,7 @@ function change_to_selected(html_quote){
 }
 
 function change_to_unselected(html_quote){
-	var select = html_quote.find('.quote_block .quote_meta .quote_actions .unselect');
+	var select = html_quote.find('.quote_footer .quote_actions .unselect');
 	select.html(s_quote.selection.item.notselected);
 	select.addClass("select").removeClass("unselect");
 	select.unbind('click');
@@ -478,6 +457,6 @@ function set_favoris_link(){
 	}
 }
 
-function quote_new_category(html_quote){
+/*function quote_new_category(html_quote){
 	open_new_quote_category_fancybox(html_quote);
-}
+}*/

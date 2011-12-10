@@ -99,14 +99,7 @@ body{
 	background: url('../../../themes/main/img/bg.jpg');
 }
 
-hr {
-	//display: none;
-	visibility: hidden;
-	color: black;
-	border: 1px solid black;
-}
-
-
+a, a:active, a:visited { color: #4F4F4F;/*#607890;*/ }
 
 
 

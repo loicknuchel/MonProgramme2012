@@ -161,7 +161,7 @@ textarea.FV_length {
 	margin-bottom: 2px;
 }
 textarea.inc_meta_info {
-	padding-top: 36px;
+	padding-top: 28px;
 }
 textarea.small {
 	height: 30px;
@@ -226,8 +226,11 @@ form .no_meta_info {
 }
 form .no_meta_info .datas {
 	display: inline-block;
-	padding: 4px 10px;
+	max-width:455px;
+	height: 22px;
 	font-size: 12px;
+	padding: 4px 10px;
+	overflow: hidden;
 }
 form .no_meta_info .datas .pseudo {font-weight: bold;}
 form .no_meta_info .modify {
@@ -363,7 +366,7 @@ form .show_more_datas {
 	height: 16px;
 	margin: 4px 0px 8px 15px;
 	padding: 0px 0px 0px 18px;
-	background: url('../../../themes/main/img/forms/arrow_sprite.png') no-repeat;
+	background: url('./img/forms/arrow_sprite.png') no-repeat;
 	cursor : pointer;
 }
 form .show_more_datas.visible {
