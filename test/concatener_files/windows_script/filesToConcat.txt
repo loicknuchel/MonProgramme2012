@@ -1,0 +1,4 @@
+..\files\file1.txt
+..\files\file2.txt
+-- subdirectory
+..\files\dossier\file3.txt
