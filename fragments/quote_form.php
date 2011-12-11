@@ -4,31 +4,33 @@
 function sendQuoteForm(&$usr, $server_path){
 	if(isset($_POST['quote'])){
 		if(checkAntiSpamAnswer(isset($_POST['antiSpam']) ? $_POST['antiSpam'] : null, isset($_POST['antiSpamRep']) ? $_POST['antiSpamRep'] : null)){
-			$quote_params['quote'] = isset($_POST['quote']) ? $_POST['quote'] : null;
-			$quote_params['src'] = isset($_POST['src']) ? $_POST['src'] : null;
-			$quote_params['ctx'] = isset($_POST['ctx']) ? $_POST['ctx'] : null;
-			$quote_params['expl'] = isset($_POST['expl']) ? $_POST['expl'] : null;
-			$quote_params['auth'] = isset($_POST['auth']) ? $_POST['auth'] : null;
-			$quote_params['pub'] = isset($_POST['pub']) ? $_POST['pub'] : null;
-			$quote_params['pubinfo'] = isset($_POST['pubinfo']) ? $_POST['pubinfo'] : null;
-			$quote_params['mail'] = isset($_POST['mail']) ? $_POST['mail'] : null;
-			$quote_params['site'] = isset($_POST['site']) ? $_POST['site'] : null;
-			$quote_params['cat'] = isset($_POST['cat']) ? $_POST['cat'] : null;
-			$quote_params['noheaders'] = 1;
-			
-			$quoteJson = apiNewQuote($usr, $quote_params, $server_path);
-			$json = json_decode($quoteJson, true);
+			$result = api_call('POST', $usr['api_url'].'quote.php', array(
+				'key'=>$usr['key'],
+				'quote'=>isset($_POST['quote']) ? $_POST['quote'] : null,
+				'src'=>isset($_POST['src']) ? $_POST['src'] : null,
+				'ctx'=>isset($_POST['ctx']) ? $_POST['ctx'] : null,
+				'expl'=>isset($_POST['expl']) ? $_POST['expl'] : null,
+				'auth'=>isset($_POST['auth']) ? $_POST['auth'] : null,
+				'pub'=>isset($_POST['pub']) ? $_POST['pub'] : null,
+				'pubinfo'=>isset($_POST['pubinfo']) ? $_POST['pubinfo'] : null,
+				'mail'=>isset($_POST['mail']) ? $_POST['mail'] : null,
+				'site'=>isset($_POST['site']) ? $_POST['site'] : null,
+				'cat'=>isset($_POST['cat']) ? $_POST['cat'] : null
+			));
 			
 			if(isset($_POST['suivi']) && $_POST['suivi'] == true){
-				$suivi_params = null;
-				$suivi_params['mail'] = isset($_POST['mail']) ? $_POST['mail'] : null;
-				$suivi_params['quoteid'] = isset($json['response']['id']) ? $json['response']['id'] : null;
-				$suivi_params['newcomments'] = 1;
-				$suivi_params['noheaders'] = 1;
-				apiUpdateSuivi($usr, $suivi_params, $server_path);
+				api_call('POST', $usr['api_url'].'suivi.php', array(
+					'key'=>$usr['key'],
+					'type'=>'quote',
+					'id'=>isset($result['response']['id']) ? $result['response']['id'] : null,
+					'mail'=>isset($_POST['mail']) ? $_POST['mail'] : null,
+					'action'=>'follow',
+					'name'=>isset($_POST['pub']) ? $_POST['pub'] : null,
+					'info'=>isset($_POST['pubinfo']) ? $_POST['pubinfo'] : null
+				), false);
 			}
 			
-			return $json;
+			return $result;
 		}
 		else{
 			return 500;
@@ -38,10 +40,7 @@ function sendQuoteForm(&$usr, $server_path){
 }
 
 function generateQuoteForm($usr, $server_path, $postResult, $categories, $rel_to_root = './'){
-	$params = null;
-	$params['noheaders'] = 1;
-	$params_json = apiGetParams($usr, $params, $server_path);
-	$app_params = json_decode($params_json, true);
+	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']));
 	$app = null;
 	$app['params']['size']['quote'] = isset($app_params['response']['textMaxSize']['quote']) ? $app_params['response']['textMaxSize']['quote'] : null;
 	$app['params']['size']['source'] = isset($app_params['response']['textMaxSize']['source']) ? $app_params['response']['textMaxSize']['source'] : null;

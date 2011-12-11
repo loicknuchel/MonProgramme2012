@@ -1,5 +1,16 @@
 
-- PROBLEME avec les fancyboxes !!!!! : suivi des propositions et ajout d'une catégorie
+
+- JavaScript bonnes pratiques :
+	* http://whoshallsucceed.calepin.co/organiser-son-application-backbone-avec-des-modules.html
+	* http://www.alsacreations.com/article/lire/565-JavaScript-organiser-son-code-en-modules.html
+	* http://desgeeksetdeslettres.com/blog/programmation-java/optimiser-et-structurer-son-code-javascript
+	* http://www.atinux.fr/2011/12/10/organiser-son-code-backbone-js-en-modules/ (mini application avec backbone.js)
+	
+- lib JS :
+	* jquery.js
+	* require.js
+	* underscore.js
+	* backbone.js
 
 - pouvoir commenter et voter pour des sélections
 - pouvoir modifier une sélection (avec mdp)

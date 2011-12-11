@@ -1,4 +1,8 @@
 $(document).ready(function () {
+	
+	// gère les actions des différents formulaires
+	action_forms();
+	
 	dropdown_menu();
 	footer_actions();
 	
@@ -26,9 +30,6 @@ $(document).ready(function () {
 		show_selection_form($(this).parent(), meth);
 		return false;
 	});
-	
-	// gère les actions des différents formulaires
-	action_forms();
 	
 	// catch ajax errors
 	$('#info').ajaxError(function(e, jqxhr, settings, exception) {

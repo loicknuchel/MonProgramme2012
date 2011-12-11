@@ -4,41 +4,42 @@
 function sendPetitionForm(&$usr, $server_path){
 	if(isset($_POST['mail']) && isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['type']) && isset($_POST['id']) && isset($_POST['antiSpam']) && isset($_POST['antiSpamRep'])){
 		if(checkAntiSpamAnswer(isset($_POST['antiSpam']) ? $_POST['antiSpam'] : null, isset($_POST['antiSpamRep']) ? $_POST['antiSpamRep'] : null)){
-			$comment_params = null;
-			$comment_params['type'] = isset($_POST['type']) ? $_POST['type'] : null;
-			$comment_params['id'] = isset($_POST['id']) ? $_POST['id'] : null;
-			$comment_params['prenom'] = isset($_POST['prenom']) ? $_POST['prenom'] : null;
-			$comment_params['nom'] = isset($_POST['nom']) ? $_POST['nom'] : null;
-			$comment_params['mail'] = isset($_POST['mail']) ? $_POST['mail'] : null;
-			$comment_params['age'] = isset($_POST['age']) ? $_POST['age'] : null;
-			$comment_params['genre'] = isset($_POST['genre']) ? $_POST['genre'] : null;
-			$comment_params['site'] = isset($_POST['site']) ? $_POST['site'] : null;
-			$comment_params['profession'] = isset($_POST['profession']) ? $_POST['profession'] : null;
-			$comment_params['zipcode'] = isset($_POST['zipcode']) ? $_POST['zipcode'] : null;
-			$comment_params['message'] = isset($_POST['sign_message']) ? $_POST['sign_message'] : null;
-			$comment_params['noheaders'] = 1;
-			
-			$petitionJson = apiSignPetition($usr, $comment_params, $server_path);
-			$result = json_decode($petitionJson, true);
-			
+			$result = api_call('POST', $usr['api_url'].'petition.php', array(
+				'key'=>$usr['key'],
+				'type'=>isset($_POST['type']) ? $_POST['type'] : null,
+				'id'=>isset($_POST['id']) ? $_POST['id'] : null,
+				'mail'=>isset($_POST['mail']) ? $_POST['mail'] : null,
+				'prenom'=>isset($_POST['prenom']) ? $_POST['prenom'] : null,
+				'nom'=>isset($_POST['nom']) ? $_POST['nom'] : null,
+				'genre'=>isset($_POST['genre']) ? $_POST['genre'] : null,
+				'age'=>isset($_POST['age']) ? $_POST['age'] : null,
+				'site'=>isset($_POST['site']) ? $_POST['site'] : null,
+				'profession'=>isset($_POST['profession']) ? $_POST['profession'] : null,
+				'zipcode'=>isset($_POST['zipcode']) ? $_POST['zipcode'] : null,
+				'message'=>isset($_POST['sign_message']) ? $_POST['sign_message'] : null
+			));
 			
 			if(isset($_POST['suivi']) && $_POST['suivi'] == true){
-				$suivi_params = null;
-				$suivi_params['mail'] = isset($_POST['mail']) ? $_POST['mail'] : null;
-				$suivi_params['type'] = isset($_POST['type']) ? $_POST['type'] : null;
-				$suivi_params['id'] = isset($_POST['id']) ? $_POST['id'] : null;
-				$suivi_params['action'] = 'follow';
-				$suivi_params['noheaders'] = 1;
-				apiUpdateSuivi($usr, $suivi_params, $server_path);
+				$prenom = isset($_POST['prenom']) ? $_POST['prenom'] : null;
+				$nom = isset($_POST['nom']) ? $_POST['nom'] : null;
+				api_call('POST', $usr['api_url'].'suivi.php', array(
+					'key'=>$usr['key'],
+					'type'=>isset($_POST['type']) ? $_POST['type'] : null,
+					'id'=>isset($_POST['id']) ? $_POST['id'] : null,
+					'mail'=>isset($_POST['mail']) ? $_POST['mail'] : null,
+					'action'=>'follow',
+					'name'=>$prenom.' '.$nom,
+					'info'=>isset($_POST['profession']) ? $_POST['profession'] : null
+				), false);
 			}
 			
 			// si on signe la pétition pour une proposition, on vote positivement pour elle
 			if(isset($_POST['type']) && $_POST['type'] == 'quote'){
-				$vote_params = null;
-				$vote_params['quoteid'] = isset($_POST['id']) ? $_POST['id'] : null;
-				$vote_params['vote'] = 'up';
-				$vote_params['noheaders'] = 1;
-				apiQuoteVote($usr, $vote_params, $server_path);
+				api_call('POST', $usr['api_url'].'quote.php', array(
+					'key'=>$usr['key'],
+					'quoteid'=>isset($_POST['id']) ? $_POST['id'] : null,
+					'vote'=>'up'
+				), false);
 			}
 			
 			return $result;
@@ -51,10 +52,7 @@ function sendPetitionForm(&$usr, $server_path){
 }
 
 function generatePetitionForm($usr, $server_path, $postResult, $actionPage, $anchor, $type, $id, $rel_to_root = './'){
-	$params = null;
-	$params['noheaders'] = 1;
-	$params_json = apiGetParams($usr, $params, $server_path);
-	$app_params = json_decode($params_json, true);
+	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']));
 	$app = null;
 	$app['params']['size']['prenom'] = isset($app_params['response']['textMaxSize']['prenom']) ? $app_params['response']['textMaxSize']['prenom'] : null;
 	$app['params']['size']['nom'] = isset($app_params['response']['textMaxSize']['nom']) ? $app_params['response']['textMaxSize']['nom'] : null;

@@ -79,6 +79,7 @@
 	cursor: pointer;
 }
 .comments .comment .comment_header .comment_report{
+	clear: both;
 	float: right;
 	width: 20px;
 	height: 20px;

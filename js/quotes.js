@@ -330,7 +330,7 @@ function set_selection_no(no_sel){
 	if(no_sel > 0 && ids != ''){
 		$('#header .topnav li.selection div').html(no_sel);
 		$('#header .topnav li.selection').show();
-		$('#header .topnav .selection a').attr("href", 'local_selection.php?quoteids='+ids);
+		$('#header .topnav .selection a').attr("href", 'list.php?type=custom&quoteids='+ids);
 	}
 	else{
 		$('#header .topnav li.selection div').html('');
@@ -450,7 +450,7 @@ function set_favoris_link(){
 	var ids = build_quote_ids("favoris");
 	if(ids != ''){
 		$('#header .topnav .favoris').show();
-		$('#header .topnav .favoris a').attr("href", 'local_selection.php?fav=1&quoteids='+ids);
+		$('#header .topnav .favoris a').attr("href", 'list.php?type=favoris&quoteids='+ids);
 	}
 	else{
 		$('#header .topnav .favoris').hide();

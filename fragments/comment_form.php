@@ -3,38 +3,36 @@
 function sendCommentForm(&$usr, $server_path){
 	if(isset($_POST['comment']) && isset($_POST['type']) && isset($_POST['id']) && isset($_POST['antiSpam']) && isset($_POST['antiSpamRep'])){
 		if(checkAntiSpamAnswer(isset($_POST['antiSpam']) ? $_POST['antiSpam'] : null, isset($_POST['antiSpamRep']) ? $_POST['antiSpamRep'] : null)){
-			$comment_params = null;
-			$comment_params['type'] = isset($_POST['type']) ? $_POST['type'] : null;
-			$comment_params['id'] = isset($_POST['id']) ? $_POST['id'] : null;
-			$comment_params['avis'] = isset($_POST['avis']) ? $_POST['avis'] : null;
-			$comment_params['pub'] = isset($_POST['pseudo']) ? $_POST['pseudo'] : null;
-			$comment_params['mail'] = isset($_POST['mail']) ? $_POST['mail'] : null;
-			$comment_params['site'] = isset($_POST['site']) ? $_POST['site'] : null;
-			$comment_params['comment'] = isset($_POST['comment']) ? $_POST['comment'] : null;
-			$comment_params['noheaders'] = 1;
 			
-			$commentJson = apiNewComment($usr, $comment_params, $server_path);
-			$result = json_decode($commentJson, true);
-			
+			$result = api_call('POST', $usr['api_url'].'comment.php', array(
+				'key'=>$usr['key'],
+				'type'=>isset($_POST['type']) ? $_POST['type'] : null,
+				'id'=>isset($_POST['id']) ? $_POST['id'] : null,
+				'comment'=>isset($_POST['comment']) ? $_POST['comment'] : null,
+				'pub'=>isset($_POST['pseudo']) ? $_POST['pseudo'] : null,
+				'mail'=>isset($_POST['mail']) ? $_POST['mail'] : null,
+				'site'=>isset($_POST['site']) ? $_POST['site'] : null,
+				'avis'=>isset($_POST['avis']) ? $_POST['avis'] : null
+			));
 			
 			if(isset($_POST['suivi']) && $_POST['suivi'] == true){
-				$suivi_params = null;
-				$suivi_params['mail'] = isset($_POST['mail']) ? $_POST['mail'] : null;
-				$suivi_params['type'] = isset($_POST['type']) ? $_POST['type'] : null;
-				$suivi_params['id'] = isset($_POST['id']) ? $_POST['id'] : null;
-				$suivi_params['action'] = 'follow';
-				$suivi_params['noheaders'] = 1;
-				apiUpdateSuivi($usr, $suivi_params, $server_path);
+				api_call('POST', $usr['api_url'].'suivi.php', array(
+					'key'=>$usr['key'],
+					'type'=>isset($_POST['type']) ? $_POST['type'] : null,
+					'id'=>isset($_POST['id']) ? $_POST['id'] : null,
+					'mail'=>isset($_POST['mail']) ? $_POST['mail'] : null,
+					'action'=>'follow',
+					'name'=>isset($_POST['pseudo']) ? $_POST['pseudo'] : null
+				), false);
 			}
 			
 			// si on donne son avis sur une proposition dans un commentaire (pour ou contre), on vote alors pour cette proposition
 			if(isset($_POST['avis']) && ($_POST['avis'] == 'pour' || $_POST['avis'] == 'contre') && isset($_POST['type']) && $_POST['type'] == 'quote'){
-				$vote_params = null;
-				$vote_params['quoteid'] = isset($_POST['id']) ? $_POST['id'] : null;
-				if($_POST['avis'] == 'contre'){$vote_params['vote'] = 'down';}
-				else{$vote_params['vote'] = 'up';}
-				$vote_params['noheaders'] = 1;
-				apiQuoteVote($usr, $vote_params, $server_path);
+				api_call('POST', $usr['api_url'].'quote.php', array(
+					'key'=>$usr['key'],
+					'quoteid'=>isset($_POST['id']) ? $_POST['id'] : null,
+					'vote'=> ($_POST['avis'] == 'contre') ? 'down' : 'up'
+				), false);
 			}
 			
 			return $result;
@@ -47,10 +45,7 @@ function sendCommentForm(&$usr, $server_path){
 }
 
 function generateCommentForm($usr, $server_path, $postResult, $actionPage, $anchor, $type, $id, $rel_to_root = './'){
-	$params = null;
-	$params['noheaders'] = 1;
-	$params_json = apiGetParams($usr, $params, $server_path);
-	$app_params = json_decode($params_json, true);
+	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']));
 	$app = null;
 	$app['params']['size']['comment'] = isset($app_params['response']['textMaxSize']['comment']) ? $app_params['response']['textMaxSize']['comment'] : null;
 	$app['params']['size']['publisher'] = isset($app_params['response']['textMaxSize']['publisher']) ? $app_params['response']['textMaxSize']['publisher'] : null;

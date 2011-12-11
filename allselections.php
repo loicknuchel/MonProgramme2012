@@ -2,16 +2,7 @@
 	$rel_to_root = './';
 	include $rel_to_root.'inc/server_link.php';
 	
-	$params = null;
-	$params['p'] = isset($_GET['p']) ? $_GET['p'] : null;
-	$params['noheaders'] = 1;
-	$json = apiGetSelections($usr, $params, $server_path);
-	$result = json_decode($json, true);
-	$status_code = isset($result['status']['code']) ? $result['status']['code'] : null;
-	if($status_code != 200){
-		header('Location: 404.php');   
-		exit;
-	}
+	$result = api_call('GET', $usr['api_url'].'selection.php', array('key'=>$usr['key'], 'p'=>(isset($_GET['p']) ? $_GET['p'] : null) ) );
 ?>
 
 <?php echo generateHead(' - Toutes les sélections', $jsEnv); ?>

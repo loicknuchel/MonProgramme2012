@@ -1,11 +1,7 @@
 <?php
 	$rel_to_root = './';
-	include_once $rel_to_root.'fragments/utils.php';
 	include_once $rel_to_root.'fragments/head.php';
 	include_once $rel_to_root.'fragments/header.php';
-	include_once $rel_to_root.'fragments/quote.php';
-	include_once $rel_to_root.'fragments/comments.php';
-	include_once $rel_to_root.'fragments/forms.php';
 	include_once $rel_to_root.'fragments/footer.php';
 	include_once $rel_to_root.'fragments/scripts.php';
 ?>

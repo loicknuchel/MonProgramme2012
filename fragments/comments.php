@@ -39,7 +39,6 @@ function generateComment($comment, $rel_to_root = './'){
 				<span class="val">(<span>'.$vote.'</span>)</span>
 			</div>
 			<div class="reponse" title="répondre à ce commentaire"></div>
-			<div class="clear"></div>
 			<div class="comment_report" title="signaler ce commentaire"></div>';
 		}
 		$html .= '</div>
@@ -77,47 +76,5 @@ function generateCommentPages($commentDatas){
 		return '';
 	}
 }*/
-
-function generateCommentPager($nbPages, $current, $baseUrl, $anchor){
-	$widthPager = 4;
-	
-	$html = '<div class="comment_pager">';
-	// previous
-	if($current == 1){$html .= '<span>< Précédent</span> <b></b> ';}
-	else{$prev = $current-1; $html .= '<a href="'.$baseUrl.''.$prev.$anchor.'">< Précédent</a> <b></b> ';}
-	
-	// first
-	if($current - $widthPager - 1 == 1){
-		$html .= '<a href="'.$baseUrl.'1'.$anchor.'">1</a> <b></b> ';
-	}
-	else if($current - $widthPager > 1){
-		$html .= '<a href="'.$baseUrl.'1'.$anchor.'">1</a> <b></b> ... <b></b> ';
-	}
-	
-	// middle
-	for($i=$current-$widthPager; $i<=$current+$widthPager; $i++){
-		if($i == $current){
-			$html .= '<strong class="med">'.$i.'</strong> <b></b> ';
-		}
-		else if($i > 0 && $i <= $nbPages){
-			$html .= '<a href="'.$baseUrl.''.$i.$anchor.'">'.$i.'</a> <b></b> ';
-		}
-	}
-	
-	// last
-	if($current + $widthPager + 1 == $nbPages){
-		$html .= '<a href="'.$baseUrl.''.$nbPages.$anchor.'">'.$nbPages.'</a> <b></b> ';
-	}
-	else if($current + $widthPager < $nbPages){
-		$html .= '... <b></b> <a href="'.$baseUrl.''.$nbPages.$anchor.'">'.$nbPages.'</a> <b></b> ';
-	}
-	
-	// next
-	if($current == $nbPages){$html .= '<span>Suivant ></span>';}
-	else{$next = $current+1; $html .= '<a href="'.$baseUrl.''.$next.$anchor.'">Suivant ></a>';}
-	
-	$html .= '</div>';
-	return $html;
-}
 
 ?>

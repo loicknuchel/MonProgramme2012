@@ -1,10 +1,7 @@
 <?php
 
 function generateSelectionForm($usr, $server_path, $postResult){
-	$params = null;
-	$params['noheaders'] = 1;
-	$params_json = apiGetParams($usr, $params, $server_path);
-	$app_params = json_decode($params_json, true);
+	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']));
 	$app = null;
 	$app['params']['size']['selection'] = isset($app_params['response']['textMaxSize']['selection']) ? $app_params['response']['textMaxSize']['selection'] : null;
 	

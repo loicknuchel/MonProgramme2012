@@ -319,7 +319,7 @@
 				$vote_param['name'] = 'vote'; 				$vote_param['status'] = 'requis';				$vote_param['use'] = "Valeurs possibles : <span class=\"val\">up</span> ou <span class=\"val\">down</span>. Indique le sens du vote voulu.";
 /*24*/			$report_param['name'] = 'report'; 			$report_param['status'] = 'requis';				$report_param['use'] = "Unique valeur : <span class=\"val\">1</span>.";
 				$cause_param['name'] = 'cause'; 			$cause_param['status'] = 'optionnel';			$cause_param['use'] = "Texte servant à préciser les raisons de la signalisation.";
-				$name_param['name'] = 'info'; 				$name_param['status'] = 'optionnel';			$name_param['use'] = "Champ servant a communiquer le nom de la personne qui demande le suivit.";
+				$name_param['name'] = 'name'; 				$name_param['status'] = 'optionnel';			$name_param['use'] = "Champ servant a communiquer le nom de la personne qui demande le suivit.";
 				$info_param['name'] = 'info'; 				$info_param['status'] = 'optionnel';			$info_param['use'] = "Champ servant a communiquer des inforations supplémentaires sur la personne qui demande le suivit.";
 				$avis_param['name'] = 'avis';		 		$avis_param['status'] = 'optionnel';			$avis_param['use'] = "Valeurs possibles : <span class=\"val\">pour</span> ou <span class=\"val\">contre</span>. Précise comment le commentaire se positionne par rapport à la ressource commentée.";
 				$comment_param['name'] = 'comment'; 		$comment_param['status'] = 'requis';			$comment_param['use'] = "Contenu du nouveau commentaire.";
@@ -757,9 +757,9 @@
 					$ressource['ressource'] = 'suivi.php?key={key}&mail={mail}&type={type}&id={id}&action={action}';
 					$ressource['use'] = "Crée ou met a jour le suivi par l'adresse mail d'une ressource désignée par son type et son id.";
 					$params[0] = $key_param;
-					$params[1] = $mailsuivi_param;
-					$params[2] = $typesuivi_param;
-					$params[3] = $id_param;
+					$params[1] = $typesuivi_param;
+					$params[2] = $id_param;
+					$params[3] = $mailsuivi_param;
 					$params[4] = $suiviaction_param;
 					$params[5] = $name_param;
 					$params[6] = $info_param;
