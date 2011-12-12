@@ -2,24 +2,11 @@
 	$rel_to_root = '../';
 	include $rel_to_root.'inc/server_link.php';
 	
-	$commentResult = sendCommentForm($usr, $server_path);
+	$commentResult = sendCommentForm($usr);
 	
 	$page = 'events.php';
 	$page_id = $pageId['event']['id'];
-	
-	$params = null;
-	$params['type'] = 'page';
-	$params['id'] = $page_id;
-	$params['p'] = isset($_GET['p']) ? $_GET['p'] : null;
-	$params['noheaders'] = 1;
-	$json = apiGetCommentsByTypeId($usr, $params, $server_path);
-	$result = json_decode($json, true);
-	$status_code = isset($result['status']['code']) ? $result['status']['code'] : null;
-	if($status_code != 200){
-		header('Location: '.$rel_to_root.'404.php');   
-		exit;
-	}
-	
+	$result = api_call('GET', $usr['api_url'].'comment.php', array('key'=>$usr['key'],'type'=>'page','id'=>$page_id,'p'=>isset($_GET['p']) ? $_GET['p'] : null));
 ?>
 
 <?php echo generateHead(' - Les évènements organisés', $jsEnv, $rel_to_root); ?>
@@ -50,12 +37,8 @@
 				<h1 class="first">Premier contact</h1>
 				<p>
 					<?php
-						$params = null;
-						$params['type'] = 'event';
-						$params['id'] = 1;
-						$params['noheaders'] = 1;
-						$json = apiGetRessourceSuivi($usr, $params, $server_path);
-						$eventResult = json_decode($json, true);
+						$eventId = 1;
+						$eventResult = api_call('GET', $usr['api_url'].'suivi.php', array('key'=>$usr['key'],'type'=>'event','id'=>$eventId), false);
 						$status_code = isset($eventResult['status']['code']) ? $eventResult['status']['code'] : null;
 						$nbInscrits = 0;
 						if($status_code == 200){
@@ -69,7 +52,7 @@
 					
 					<form class="formEvent" action="" method="post" style="float:left;">
 						<fieldset>
-							<input type="hidden" name="formEventId" value="<?php echo $params['id']; ?>" />
+							<input type="hidden" name="formEventId" value="<?php echo $eventId; ?>" />
 							<input type="text" name="formEventName" placeholder="Entrez votre nom *" />
 							<input type="text" name="formEventSubject" placeholder="Centre(s) d'intérêts" />
 							<input type="text" name="formEventEmail" placeholder="Entrez votre adresse mail *" />
@@ -83,7 +66,7 @@
 						<table>
 						<?php
 							for($i=0; $i<$nbInscrits; $i++){
-								echo '<tr><td>'.$eventResult['response']['suivi'][$i]['name'].'</td><td>( intéréssé par : '.$eventResult['response']['suivi'][$i]['info'].' )</td></tr>';
+								echo '<tr><td>'.$eventResult['response']['suivi'][$i]['name'].'</td><td> (intéréssé par : '.$eventResult['response']['suivi'][$i]['info'].')</td></tr>';
 							}
 						?>
 						</table>
@@ -106,7 +89,7 @@
 				}
 				
 				$lastPage = isset($total_comment_pages) ? $total_comment_pages+1 : 1;
-				echo generateCommentForm($usr, $server_path, $commentResult, $page.'?p='.$lastPage, '#comment_block', 'page', $page_id);
+				echo generateCommentForm($usr, $commentResult, $page.'?p='.$lastPage, '#comment_block', 'page', $page_id);
 			?>
 		</div>
 	</div>

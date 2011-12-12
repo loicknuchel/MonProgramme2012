@@ -1,7 +1,7 @@
 <?php
 
 
-function sendPetitionForm(&$usr, $server_path){
+function sendPetitionForm($usr){
 	if(isset($_POST['mail']) && isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['type']) && isset($_POST['id']) && isset($_POST['antiSpam']) && isset($_POST['antiSpamRep'])){
 		if(checkAntiSpamAnswer(isset($_POST['antiSpam']) ? $_POST['antiSpam'] : null, isset($_POST['antiSpamRep']) ? $_POST['antiSpamRep'] : null)){
 			$result = api_call('POST', $usr['api_url'].'petition.php', array(
@@ -51,7 +51,7 @@ function sendPetitionForm(&$usr, $server_path){
 	return null;
 }
 
-function generatePetitionForm($usr, $server_path, $postResult, $actionPage, $anchor, $type, $id, $rel_to_root = './'){
+function generatePetitionForm($usr, $postResult, $actionPage, $anchor, $type, $id, $rel_to_root = './'){
 	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']));
 	$app = null;
 	$app['params']['size']['prenom'] = isset($app_params['response']['textMaxSize']['prenom']) ? $app_params['response']['textMaxSize']['prenom'] : null;

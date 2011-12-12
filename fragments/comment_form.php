@@ -1,6 +1,6 @@
 <?php
 
-function sendCommentForm(&$usr, $server_path){
+function sendCommentForm($usr){
 	if(isset($_POST['comment']) && isset($_POST['type']) && isset($_POST['id']) && isset($_POST['antiSpam']) && isset($_POST['antiSpamRep'])){
 		if(checkAntiSpamAnswer(isset($_POST['antiSpam']) ? $_POST['antiSpam'] : null, isset($_POST['antiSpamRep']) ? $_POST['antiSpamRep'] : null)){
 			
@@ -44,7 +44,7 @@ function sendCommentForm(&$usr, $server_path){
 	return null;
 }
 
-function generateCommentForm($usr, $server_path, $postResult, $actionPage, $anchor, $type, $id, $rel_to_root = './'){
+function generateCommentForm($usr, $postResult, $actionPage, $anchor, $type, $id, $rel_to_root = './'){
 	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']));
 	$app = null;
 	$app['params']['size']['comment'] = isset($app_params['response']['textMaxSize']['comment']) ? $app_params['response']['textMaxSize']['comment'] : null;

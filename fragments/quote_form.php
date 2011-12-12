@@ -1,7 +1,7 @@
 <?php
 
 
-function sendQuoteForm(&$usr, $server_path){
+function sendQuoteForm($usr){
 	if(isset($_POST['quote'])){
 		if(checkAntiSpamAnswer(isset($_POST['antiSpam']) ? $_POST['antiSpam'] : null, isset($_POST['antiSpamRep']) ? $_POST['antiSpamRep'] : null)){
 			$result = api_call('POST', $usr['api_url'].'quote.php', array(
@@ -39,7 +39,7 @@ function sendQuoteForm(&$usr, $server_path){
 	return null;
 }
 
-function generateQuoteForm($usr, $server_path, $postResult, $categories, $rel_to_root = './'){
+function generateQuoteForm($usr, $postResult, $categories, $rel_to_root = './'){
 	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']));
 	$app = null;
 	$app['params']['size']['quote'] = isset($app_params['response']['textMaxSize']['quote']) ? $app_params['response']['textMaxSize']['quote'] : null;

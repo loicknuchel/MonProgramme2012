@@ -2,33 +2,16 @@
 	$rel_to_root = './';
 	include $rel_to_root.'inc/server_link.php';
 	
-	$commentResult = sendCommentForm($usr, $server_path);
-	$petitionResult = sendPetitionForm($usr, $server_path);
-	
-	$params = null;
-	$params['quoteid'] = isset($_GET['id']) ? $_GET['id'] : null;
-	$params['pc'] = isset($_GET['pc']) ? $_GET['pc'] : null;
-	$params['pp'] = isset($_GET['pp']) ? $_GET['pp'] : null;
-	$params['noheaders'] = 1;
-	if($params['quoteid'] == 'random'){
-		$json = apiGetQuoteByRandom($usr, $params, $server_path);
-	}
-	else{
-		$json = apiGetQuoteById($usr, $params, $server_path);
-	}
-	$result = json_decode($json, true);
-	$status_code = isset($result['status']['code']) ? $result['status']['code'] : null;
-	if($status_code != 200){
-		header('Location: 404.php');   
-		exit;
-	}
+	$commentResult = sendCommentForm($usr);
+	$petitionResult = sendPetitionForm($usr);
 	
 	$pc = isset($_GET['pc']) ? $_GET['pc'] : null;
 	$pp = isset($_GET['pp']) ? $_GET['pp'] : null;
-	$_GET['id'] = $result['response']['id'];
+	$result = api_call('GET', $usr['api_url'].'quote.php', array('key'=>$usr['key'],'quoteid'=>isset($_GET['id']) ? $_GET['id'] : null,'pc'=>$pc,'pp'=>$pp));
+	$quote_id = isset($result['response']['id']) ? $result['response']['id'] : null;
 ?>
 
-<?php echo generateHead(' - Proposition #'.$params['quoteid'], $jsEnv); ?>
+<?php echo generateHead(' - Proposition #'.$quote_id, $jsEnv); ?>
 <body>
 	<?php echo generateHeader(); ?>
 	
@@ -56,7 +39,6 @@
 						<div class="panel" id="commentContainer">
 							<?php
 								if($quote['total_comments'] > 0){
-									$quote_id = isset($result['response']['id']) ? $result['response']['id'] : null;
 									$total_comment_pages = isset($result['response']['total_comment_pages']) ? $result['response']['total_comment_pages'] : null;
 									$current_comment_page = isset($result['response']['current_comment_page']) ? $result['response']['current_comment_page'] : null;
 									
@@ -65,14 +47,12 @@
 									if($total_comment_pages > 1){ echo generateCommentPager($total_comment_pages, $current_comment_page, 'quote.php?id='.$quote_id.'&pp='.$pp.'&pc=', '#commentContainer'); }
 								}
 								
-								$id = isset($_GET['id']) ? $_GET['id'] : (isset($_POST['id']) ? $_POST['id'] : '');
 								$lastPage = isset($total_comment_pages) ? $total_comment_pages+1 : 1;
-								echo generateCommentForm($usr, $server_path, $commentResult, 'quote.php?id='.$id.'&pp='.$pp.'&pc='.$lastPage, '#commentContainer', 'quote', $id);
+								echo generateCommentForm($usr, $commentResult, 'quote.php?id='.$quote_id.'&pp='.$pp.'&pc='.$lastPage, '#commentContainer', 'quote', $quote_id);
 							?>
 						</div>
 						<div class="panel" id="petitionContainer">
 							<?php
-								$quote_id = isset($result['response']['id']) ? $result['response']['id'] : null;
 								$total_petition_pages = isset($result['response']['total_petition_pages']) ? $result['response']['total_petition_pages'] : null;
 								$current_petition_page = isset($result['response']['current_petition_page']) ? $result['response']['current_petition_page'] : null;
 								
@@ -80,8 +60,7 @@
 								echo generatePetitionBlock($signatures, $quote['total_signatures']);
 								if($total_petition_pages > 1){ echo generatePetitionPager($total_petition_pages, $current_petition_page, 'quote.php?id='.$quote_id.'&pc='.$pc.'&pp=', '#petitionContainer'); }
 								
-								$id = isset($_GET['id']) ? $_GET['id'] : (isset($_POST['id']) ? $_POST['id'] : '');
-								echo generatePetitionForm($usr, $server_path, $petitionResult, 'quote.php?id='.$id.'&pc='.$pc.'&pp=1', '#petitionContainer', 'quote', $id);
+								echo generatePetitionForm($usr, $petitionResult, 'quote.php?id='.$quote_id.'&pc='.$pc.'&pp=1', '#petitionContainer', 'quote', $quote_id);
 							?>
 						</div>
 					</div>

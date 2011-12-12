@@ -2,24 +2,11 @@
 	$rel_to_root = '../';
 	include $rel_to_root.'inc/server_link.php';
 	
-	$commentResult = sendCommentForm($usr, $server_path);
+	$commentResult = sendCommentForm($usr);
 	
 	$page = 'projet.php';
 	$page_id = $pageId['projet']['id'];
-	
-	$params = null;
-	$params['type'] = 'page';
-	$params['id'] = $page_id;
-	$params['p'] = isset($_GET['p']) ? $_GET['p'] : null;
-	$params['noheaders'] = 1;
-	$json = apiGetCommentsByTypeId($usr, $params, $server_path);
-	$result = json_decode($json, true);
-	$status_code = isset($result['status']['code']) ? $result['status']['code'] : null;
-	if($status_code != 200){
-		header('Location: '.$rel_to_root.'404.php');
-		exit;
-	}
-	
+	$result = api_call('GET', $usr['api_url'].'comment.php', array('key'=>$usr['key'],'type'=>'page','id'=>$page_id,'p'=>isset($_GET['p']) ? $_GET['p'] : null));
 ?>
 
 <?php echo generateHead(' - Le projet', $jsEnv, $rel_to_root); ?>
@@ -103,7 +90,7 @@
 				}
 				
 				$lastPage = isset($total_comment_pages) ? $total_comment_pages+1 : 1;
-				echo generateCommentForm($usr, $server_path, $commentResult, $page.'?p='.$lastPage, '#comment_block', 'page', $page_id);
+				echo generateCommentForm($usr, $commentResult, $page.'?p='.$lastPage, '#comment_block', 'page', $page_id);
 			?>
 		</div>
 	</div>
