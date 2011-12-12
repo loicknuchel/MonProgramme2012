@@ -1,0 +1,12 @@
+..\..\..\themes\main\styles.css
+..\..\..\themes\main\header.css
+..\..\..\themes\main\article.css
+..\..\..\themes\main\quotes.css
+..\..\..\themes\main\comments.css
+..\..\..\themes\main\petition.css
+..\..\..\themes\main\selection.css
+..\..\..\themes\main\comment_slider.css
+..\..\..\themes\main\forms.css
+..\..\..\themes\main\quote_form.css
+..\..\..\themes\main\pagers.css
+..\..\..\themes\main\footer.css

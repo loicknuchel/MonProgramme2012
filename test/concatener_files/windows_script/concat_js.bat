@@ -1,0 +1,1 @@
+for /f "delims=" %%i in ('type jsFiles.txt') do Type %%i >> concatJsResult.js

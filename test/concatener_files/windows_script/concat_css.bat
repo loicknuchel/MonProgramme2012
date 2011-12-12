@@ -1,0 +1,1 @@
+for /f "delims=" %%i in ('type cssFiles.txt') do Type %%i >> concatCssResult.css

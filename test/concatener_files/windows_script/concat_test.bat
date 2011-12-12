@@ -1,0 +1,1 @@
+for /f "delims=" %%i in ('type testFiles.txt') do Type %%i >> concatTestResult.txt
