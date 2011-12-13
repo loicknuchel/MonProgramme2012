@@ -27,11 +27,15 @@
 						<dt id="reflets">Reflets</dt>
 						<dd>
 							<a href="http://reflets.info/">Reflets</a> est un média en ligne où écrivent entre autre <a href="https://twitter.com/bluetouff">@bluetouff</a>, <a href="https://twitter.com/epelboin">@epelboin</a>, <a href="https://twitter.com/_Kitetoa_">@kitetoa</a>. 
-							Il traite principalement des sujets informatiques et financiers.
+							Il traite principalement des sujets de libertés informatiques et financiers.
 							Les rédacteurs fabriquent l'information (au sens où ils effectuent les recherches nécessaire pour trouver de l'information non publiée) 
 							et n'ont pas leur langue dans leur poche sur des articles réellement engagés.<br/>
 							C'est pour moi un moyen d'information essentiel sur des problématiques qui me touchent.<br/>
-							Ils sont proches d'association ou de groupement de personnes tels que <a href="http://telecomix.org/">telecomix</a> ou <a href="http://owni.fr/">OWNI</a>.
+							Ils sont proches d'association ou de groupement de personnes tels que <a href="http://telecomix.org/">telecomix</a> ou <a href="http://owni.fr/">OWNI</a>.<br/>
+							Voici quelques articles qui me paraissent importants :
+							<ul>
+								<li><a href="http://reflets.info/surveillez-moi-oh-oui-surveillez-moi/">Surveillez moi, oh oui, surveillez moi !</a></li>
+							</ul>
 						</dd>
 						<dt id="franckLepage">Franck Lepage</dt>
 						<dd>
@@ -67,7 +71,7 @@
 						</dd>
 						<dt id="autres">...</dt>
 						<dd>
-							Et beaucoup d'autres comme les journaux <a href="http://owni.fr/">OWNI</a> et <a href="http://www.numerama.com/">numerama</a>.
+							Et beaucoup d'autres comme les journaux <a href="http://owni.fr/">OWNI</a>, <a href="http://www.numerama.com/">numerama</a> et <a href="http://www.youtube.com/user/jcfroglevrai">jcfrog</a>.
 						</dd>
 					</dl>
 				</p>

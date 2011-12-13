@@ -25,7 +25,7 @@ function generateFooter($rel_to_root = './'){
 						<dd><a target="_blanck" href="http://politiko.fr/" title="Site de débat sur la primaire du PS">Politiko</a></dd>
 						-->
 						<dd>...</dd>
-						<dd><a href="'.$rel_to_root.'info/actions.php">Et beaucoup d\'autres</a></dd>
+						<dd><a href="'.$rel_to_root.'articles/actions.php">Et beaucoup d\'autres</a></dd>
 					</dl>
 					<dl class="tight">
 						<dt>Penseurs</dt>
@@ -35,7 +35,7 @@ function generateFooter($rel_to_root = './'){
 						<dd><a target="_blanck" href="http://www.dailymotion.com/video/xh1foy_conference-bernard-friot-de-l-emploi-a-la-qualification_news" title="Discussions sur la retraite, l\'investissement et l\'économie.">Bernard Friot</a></dd>
 						<dd><a target="_blanck" href="http://www.dailymotion.com/video/x5njza_le-choix-de-la-defaite-annie-lacroi_news" title="Historienne">Annie Lacroix-Riz</a></dd>
 						<dd>...</dd>
-						<dd><a href="'.$rel_to_root.'info/bibliographie.php">Bibliographie</a></dd>
+						<dd><a href="'.$rel_to_root.'articles/bibliographie.php">Bibliographie</a></dd>
 					</dl>
 					<dl class="tight">
 						<dt>Journaux</dt>
@@ -51,8 +51,8 @@ function generateFooter($rel_to_root = './'){
 						<dd><a href="faq.php">FAQ</a></dd>
 						<dd><a href="http://quotes.lkws.fr/api/1.0/doc/api_architecture.txt">API doc</a></dd>
 						-->
-						<dd><a href="'.$rel_to_root.'info/projet.php">Objectifs du site</a></dd>
-						<dd class="deep"><a href="'.$rel_to_root.'info/faq.php">FAQ</a></dd>
+						<dd><a href="'.$rel_to_root.'articles/projet.php">Objectifs du site</a></dd>
+						<dd class="deep"><a href="'.$rel_to_root.'articles/faq.php">FAQ</a></dd>
 						<dt>Sites de citations</dt>
 						<dd><a target="_blanck" href="http://pourquoijevoteoupas.eu/">Pourquoi Je Vote Ou Pas</a></dd>
 						<dd><a target="_blanck" href="http://pourquoijepirate.fr/">Pourquoi Je Pirate</a></dd>

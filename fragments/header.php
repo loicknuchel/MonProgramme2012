@@ -30,19 +30,19 @@ function generateHeader($rel_to_root = './'){
 				</li>
 				<li><a href="'.$rel_to_root.'allselections.php">Sélections</a></li>
 				<li><a href="'.$rel_to_root.'new.php">Nouvelle proposition</a></li>
-				<li><a href="'.$rel_to_root.'info/projet.php">Le projet</a></li>
-				<!--<li><a href="'.$rel_to_root.'info/events.php">Evènements</a></li>-->
+				<li><a href="'.$rel_to_root.'articles/projet.php">Le projet</a></li>
+				<!--<li><a href="'.$rel_to_root.'articles/events.php">Evènements</a></li>-->
 				<!--<li>
 					<a href="#" class="topnavtitle">Articles</a>
 					<ul class="subnav">
-						<li><a href="'.$rel_to_root.'info/bibliographie.php">Bibliographie</a></li>
-						<li><a href="'.$rel_to_root.'info/le-vote-electronique.php">Vote électronique</a></li>
-						<li><a href="'.$rel_to_root.'info/combat_de_mots.php">Combat de mots</a></li>
+						<li><a href="'.$rel_to_root.'articles/bibliographie.php">Bibliographie</a></li>
+						<li><a href="'.$rel_to_root.'articles/le-vote-electronique.php">Vote électronique</a></li>
+						<li><a href="'.$rel_to_root.'articles/combat_de_mots.php">Combat de mots</a></li>
 					</ul>
 					<span></span>
 				</li>-->
-				<!--<li><a href="'.$rel_to_root.'info/discutions.php">Chat</a></li>-->
-				<li><a href="'.$rel_to_root.'info/faq.php">F.A.Q.</a></li>
+				<!--<li><a href="'.$rel_to_root.'articles/discutions.php">Chat</a></li>-->
+				<li><a href="'.$rel_to_root.'articles/faq.php">F.A.Q.</a></li>
 				<li class="selection"><a href="#">&#9733; <div></div></a></li>
 			</ul>
 		</div>

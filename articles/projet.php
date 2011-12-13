@@ -37,7 +37,7 @@
 					Concrêtement, le site est basé sur les propositions des visiteurs. Elles sont catégorisées et classées par nombre de votes afin de faire ressortir les plus populaires.
 					Elles peuvent être commentées pour créer un débat autour de celles-ci.
 					Chaque proposition possède aussi une pétition, ce qui permet de la soutenir de manière plus concrète qu'un simple vote.<br/>
-					Ce site est en perpétuelle évolution, vous pouvez consulter la liste des évolutions prévues dans <a href="<?php echo $rel_to_root.'info/faq.php#guide'; ?>">le FAQ</a>.
+					Ce site est en perpétuelle évolution, vous pouvez consulter la liste des évolutions prévues dans <a href="<?php echo $rel_to_root.'articles/faq.php#guide'; ?>">le FAQ</a>.
 				</p>
 				<h1>Parler, certes, mais à quoi cela sert-il ?</h1>
 				<p>
@@ -61,7 +61,7 @@
 				<h1>Que faire maintenant ?</h1>
 				<p>
 					Il est, je pense, <span>nécessaire de s'informer</span> auprès de personnes proposant des <span>alternatives positives</span> sur des sujets très variés. 
-					Je peux vous suggérer de jeter un coup d'oeil à la <a href="<?php echo $rel_to_root.'info/bibliographie.php'; ?>">bibliographie</a> que j'ai faite et qui m'a personnellement motivé pour monter ce site 
+					Je peux vous suggérer de jeter un coup d'oeil à la <a href="<?php echo $rel_to_root.'articles/bibliographie.php'; ?>">bibliographie</a> que j'ai faite et qui m'a personnellement motivé pour monter ce site 
 					et participer à d'autres actions.<br/>
 					Il est également important de participer à des actions pour se rendre compte que <span>beaucoup de personnes sont actives</span>, chacunes à leur manière, et trouver la bonne idée à lancer ou à rejoindre.<br/>
 					Enfin, parler autour de soi de tout ce que l'on a pu découvrir, partager et proposer aux personnes de s'impliquer elles aussi dans les actions dans lesquelles elles croient.

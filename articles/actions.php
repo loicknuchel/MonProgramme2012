@@ -66,7 +66,7 @@
 				<h2>Liberté d'expression et débats</h2>
 				<p>
 					<dl>
-						<dt><a target="_blanck" href="http://monprogramme2012.lkws.fr/info/projet.php">monprogramme2012.lkws.fr</a></dt>
+						<dt><a target="_blanck" href="http://monprogramme2012.lkws.fr/articles/projet.php">monprogramme2012.lkws.fr</a></dt>
 						<dd>
 							Site d'initiative personnelle pour créer un débat réel sur de vrais sujets de société.
 						</dd>
