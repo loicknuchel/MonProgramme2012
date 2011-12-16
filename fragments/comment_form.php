@@ -73,8 +73,8 @@ function generateCommentForm($usr, $postResult, $actionPage, $anchor, $type, $id
 			<input type="hidden" name="type" value="'.$type.'" />
 			<input type="hidden" name="id" value="'.$id.'" />
 			<div class="switch">
-				<input type="radio" id="avis_sans" name="avis" value=""'; if($avis != 2 && $avis != 3){$html .= ' checked';} $html .= ' />
-				<label for="avis_sans"'; if($avis != 2 && $avis != 3){$html .= ' class="selected"';} $html .= '>Mitigé</label>
+				<input type="radio" id="avis_sans" name="avis" value=""'; if($avis == 1){$html .= ' checked';} $html .= ' />
+				<label for="avis_sans"'; if($avis == 1){$html .= ' class="selected"';} $html .= '>Mitigé</label>
 				<input type="radio" id="avis_pour" name="avis" value="pour"'; if($avis == 2){$html .= ' checked';} $html .= ' />
 				<label for="avis_pour" class="hovergreen'; if($avis == 2){$html .= ' selected';} $html .= '">Pour</label>
 				<input type="radio" id="avis_contre" name="avis" value="contre"'; if($avis == 3){$html .= ' checked';} $html .= ' />

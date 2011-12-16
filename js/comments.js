@@ -1,5 +1,10 @@
 
 function comment_actions(){
+	// UI : display reported comments
+	$('.comment .comment_text .reported').each(function(){
+		$(this).html(s_comment.deleted);
+	});
+	
 	// UI : show more actions
 	$('.comment .comment_header .comment_report').hide();
 	$('.comment .comment_header .reponse').hide();
@@ -123,7 +128,7 @@ function comment_report(html_comment_header){
 				html_comment_header.find('.comment_report').html('');
 				html_comment_header.find('.reponse').fadeOut();
 				html_comment_header.find('.reponse').html('');
-				html_comment_header.parent().find('.comment_text').slideUp().html(s_comment.deleted).slideDown();
+				html_comment_header.parent().find('.comment_text .reported').slideUp().html(s_comment.deleted).slideDown();
 			}
 		}
 		else{

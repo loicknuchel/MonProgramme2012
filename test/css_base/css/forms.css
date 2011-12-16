@@ -206,6 +206,7 @@ form span.area_leave_char {
 }
 
 form .no_meta_info {
+	display: none;
 	width: 550px;
 	height: 33px;
 	position: relative;

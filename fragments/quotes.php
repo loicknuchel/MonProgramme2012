@@ -32,7 +32,7 @@ function generateQuoteBlock($quote, $editable = false){
 				</div>
 				<div class="options">
 					<ul>
-						<li><a href="#" class="favoris"><script>document.write(s_quote.favoris.item.notselected);</script></a></li>
+						<li><a href="#" class="favoris"></a></li>
 						<li><a href="#" class="suivi">Suivre cette proposition</a></li>
 						<!--<li><a href="#" class="category">Proposer un sujet</a></li>-->
 						<li><a href="#" class="report">Signaler</a></li>
@@ -51,14 +51,14 @@ function generateQuoteBlock($quote, $editable = false){
 			<div class="quote_footer">
 				<div class="quote_actions">
 					<ul>
-						<li class="select"><script>document.write(s_quote.selection.item.notselected);</script></li>
+						<li class="select"></li>
 						<li>'.generateVoteBar($quote['up'], $quote['down']).'</li>
 						<li><a href="quote.php?id='.$quote['id'].'#commentContainer">'.$quote['total_comments'].' réaction'.$accordReaction.'</a></li>
 						<li><a href="quote.php?id='.$quote['id'].'#petitionContainer">'.$quote['total_signatures'].' signtaire'.$accordPetition.'</a></li>
 						<li class="category">'.$category.'</li>
 					</ul>
 				</div>
-				<div class="more"><a href="#"><script>document.write(s_quote.meta.expand);</script></a></div>
+				<div class="more"><a href="#"></a></div>
 				<div class="clear"></div>
 			</div>
 			<div class="quote_expand">'.$more_infos.'</div>

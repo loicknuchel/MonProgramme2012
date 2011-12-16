@@ -1,0 +1,47 @@
+
+@import "colors.less";
+
+/* Operations */
+@defaultShapesWidth:200px;
+@borderSize:@defaultShapesWidth * 0.1;
+@defaultThemeColor:@lightBlue;
+@borderColor:@defaultThemeColor - #222;
+
+.shape{
+	border:@borderSize solid @borderColor;
+}
+
+/* mixin : like a function */
+@defaultRadius:30px;
+ 
+.RoundedShape(@radius:@defaultRadius){
+    -webkit-border-radius:@radius;
+       -moz-border-radius:@radius;
+            border-radius:@radius;
+}
+
+.Round{
+    .RoundedShape(9999px);
+}
+.RoundedSquare(@radius:@defaultRadius){
+    .RoundedShape(@radius);
+}
+ 
+#shape1{
+    .Round;
+}
+#shape2{
+    .RoundedSquare;
+}
+#shape3{
+    .RoundedSquare(60px)
+}
+
+
+.shape{
+    display:inline-block;
+    width:@defaultShapesWidth;
+    height:@defaultShapesWidth;
+    background:@defaultThemeColor;
+    margin:20px;
+}

@@ -1,6 +1,7 @@
 function quote_actions(){
 	
 	// UI : met les quotes sélectionnées dans l'état selected et les quotes des favoris dans l'état infavoris
+	$('.quote .quote_header .options').css('display', 'inline-block');
 	identify_selected_quotes();
 	identify_favoris_quotes();
 	
@@ -11,7 +12,8 @@ function quote_actions(){
 	);
 	
 	// UI : show meta datas
-	$('.quote_footer .more').toggle(
+	$('.quote .quote_footer .more a').html(s_quote.meta.expand);
+	$('.quote .quote_footer .more').toggle(
 		function(event){ $(this).parents('.quote').find('.quote_expand').slideDown(); $(this).find('a').html(s_quote.meta.expanded); },
 		function(event){ $(this).parents('.quote').find('.quote_expand').slideUp(); $(this).find('a').html(s_quote.meta.expand); }
 	);
@@ -291,7 +293,7 @@ function quote_delete_selection(html_quote){
 function change_to_selected(html_quote){
 	var select = html_quote.find('.quote_footer .quote_actions .select');
 	select.html(s_quote.selection.item.selected);
-	select.addClass("unselect").removeClass("select");
+	//select.addClass("unselect").removeClass("select");
 	select.unbind('click');
 	select.find('a').click(function(){
 		quote_delete_selection(html_quote);
@@ -300,9 +302,9 @@ function change_to_selected(html_quote){
 }
 
 function change_to_unselected(html_quote){
-	var select = html_quote.find('.quote_footer .quote_actions .unselect');
+	var select = html_quote.find('.quote_footer .quote_actions .select');
 	select.html(s_quote.selection.item.notselected);
-	select.addClass("select").removeClass("unselect");
+	//select.addClass("select").removeClass("unselect");
 	select.unbind('click');
 	select.find('a').click(function(){
 		quote_add_selection(html_quote);
@@ -319,6 +321,9 @@ function identify_selected_quotes(){
 			$('.quote').each(function(){
 				if(quote_is_selected($(this).find('.quote_header .quote_number a span').html(), localStorageKey)){
 					change_to_selected($(this));
+				}
+				else{
+					change_to_unselected($(this));
 				}
 			});
 		}
@@ -440,6 +445,9 @@ function identify_favoris_quotes(){
 			$('.quote').each(function(){
 				if(quote_is_selected($(this).find('.quote_header .quote_number a span').html(), localStorageKey)){
 					change_to_infavoris($(this));
+				}
+				else{
+					change_to_outfavoris($(this));
 				}
 			});
 		}

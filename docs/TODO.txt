@@ -1,4 +1,9 @@
 
+Refactoring :
+	- html/css : responsive webdesign
+	- css : less compiler
+	- php : MVC framework (symfony, zend, cakephp ou codeIgner)
+	- js : frameworks jQuery, require, underscore, backbone
 
 - JavaScript bonnes pratiques :
 	* http://whoshallsucceed.calepin.co/organiser-son-application-backbone-avec-des-modules.html

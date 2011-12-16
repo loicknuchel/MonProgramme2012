@@ -121,6 +121,11 @@
 						<dd>
 							Site défendant le vote blanc. Créé par <a target="_blanck" href="http://www.nevotezpas.fr/qui.php">Philippe Martin</a>.
 						</dd>
+						<dt><a target="_blanck" href="http://www.transparence-france.org/presidentielles2012/">www.transparence-france.org</a></dt>
+						<dd>
+							Site de l'association Transparence International France qui propose <a target="_blanck" href="http://www.transparence-france.org/presidentielles2012/nos-7-propositions/">7 engagements</a> 
+							aux candidats à la présidentielle.
+						</dd>
 					</dl>
 					<br/>
 				</p>

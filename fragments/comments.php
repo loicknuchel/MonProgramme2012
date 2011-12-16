@@ -15,7 +15,7 @@ function generateComment($comment, $rel_to_root = './'){
 	
 	$vote = $comment['up'] - $comment['down'];
 	
-	if($comment['reported'] == 1){ $text = '<script>document.write(s_comment.deleted);</script>'; }
+	if($comment['reported'] == 1){ $text = '<div class="reported"></div>'; }
 	else{ 
 		$text = nl2br(UrlToShortLink($comment['comment']));
 		$text = str_replace('[quote]', '<div class="quoted_comment">', $text, $cptStart);
