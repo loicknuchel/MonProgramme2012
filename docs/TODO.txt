@@ -1,26 +1,14 @@
 
-Refactoring :
-	- html/css : responsive webdesign
-	- css : less compiler
-	- php : MVC framework (symfony, zend, cakephp ou codeIgner)
-	- js : frameworks jQuery, require, underscore, backbone
+- permettre de modifier les propositions/descriptions en gardant l'original et en affichant la dernière modif.
 
-- JavaScript bonnes pratiques :
-	* http://whoshallsucceed.calepin.co/organiser-son-application-backbone-avec-des-modules.html
-	* http://www.alsacreations.com/article/lire/565-JavaScript-organiser-son-code-en-modules.html
-	* http://desgeeksetdeslettres.com/blog/programmation-java/optimiser-et-structurer-son-code-javascript
-	* http://www.atinux.fr/2011/12/10/organiser-son-code-backbone-js-en-modules/ (mini application avec backbone.js)
-	
-- lib JS :
-	* jquery.js
-	* require.js
-	* underscore.js
-	* backbone.js
+- mettre switch après comment  (form comment) ??
+
+- avoir un tracking des dernières activités (avec contenu à lire !)
+
+- vérifier l'envoi de mail lors de l'ajout de propositions
 
 - pouvoir commenter et voter pour des sélections
 - pouvoir modifier une sélection (avec mdp)
-
-- ajouter à la table quote la date du dernier commentaires pour pouvoir ressortir des dernières citations commentées
 
 - dans la fancybox de suivi, ajouter le nom et les infos (pour le suivi des citations)
 
@@ -45,3 +33,21 @@ Refactoring :
 
 
 
+
+Refactoring :
+	- html/css : responsive webdesign
+	- css : less compiler
+	- php : MVC framework (symfony, zend, cakephp ou codeIgner)
+	- js : frameworks jQuery, require, underscore, backbone
+
+- JavaScript bonnes pratiques :
+	* http://whoshallsucceed.calepin.co/organiser-son-application-backbone-avec-des-modules.html
+	* http://www.alsacreations.com/article/lire/565-JavaScript-organiser-son-code-en-modules.html
+	* http://desgeeksetdeslettres.com/blog/programmation-java/optimiser-et-structurer-son-code-javascript
+	* http://www.atinux.fr/2011/12/10/organiser-son-code-backbone-js-en-modules/ (mini application avec backbone.js)
+	
+- lib JS :
+	* jquery.js
+	* require.js
+	* underscore.js
+	* backbone.js

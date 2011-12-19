@@ -8,13 +8,14 @@
 	$quoteids = isset($_GET['quoteids']) ? $_GET['quoteids'] : null;
 	$type = isset($_GET['type']) ? $_GET['type'] : null;
 	
-		 if($type == 'top'		 ){$datas = array('key'=>$usr['key'],'list'=>'top',							'p'=>$p);	$title=' - Meilleures propositions';	$pagerLink = 'list.php?type=top&p=';}
-	else if($type == 'lasts'	 ){$datas = array('key'=>$usr['key'],'list'=>'lasts',						'p'=>$p);	$title=' - Dernières propositions';		$pagerLink = 'list.php?type=lasts&p=';}
-	else if($type == 'topcomment'){$datas = array('key'=>$usr['key'],'list'=>'topcomment',					'p'=>$p);	$title=' - Les plus commentées';		$pagerLink = 'list.php?type=topcomment&p=';}
-	else if($type == 'category'	 ){$datas = array('key'=>$usr['key'],'list'=>'category','cat'=>$category,	'p'=>$p);	$title=' - Catégorie ';					$pagerLink = 'list.php?type=category&cat='.$category.'&p=';}
-	else if($type == 'selection' ){$datas = array('key'=>$usr['key'],'list'=>'selection','sel'=>$selection,	'p'=>$p);	$title=' - Sélection ';					$pagerLink = 'list.php?type=selection&sel='.$selection.'&p=';}
-	else if($type == 'favoris'	 ){$datas = array('key'=>$usr['key'],'list'=>'custom','quoteids'=>$quoteids		   );	$title=' - Favoris';					}
-	else if($type == 'custom'	 ){$datas = array('key'=>$usr['key'],'list'=>'custom','quoteids'=>$quoteids		   );	$title=' - Sélection';					}
+		 if($type == 'top'		 	){$datas = array('key'=>$usr['key'],'list'=>'top',							'p'=>$p);	$title=' - Meilleures propositions';	$pagerLink = 'list.php?type=top&p=';}
+	else if($type == 'lasts'	 	){$datas = array('key'=>$usr['key'],'list'=>'lasts',						'p'=>$p);	$title=' - Dernières propositions';		$pagerLink = 'list.php?type=lasts&p=';}
+	else if($type == 'topcomment'	){$datas = array('key'=>$usr['key'],'list'=>'topcomment',					'p'=>$p);	$title=' - Les plus commentées';		$pagerLink = 'list.php?type=topcomment&p=';}
+	else if($type == 'lastactivity'	){$datas = array('key'=>$usr['key'],'list'=>'lastactivity',					'p'=>$p);	$title=' - Les dernières activités';	$pagerLink = 'list.php?type=lastactivity&p=';}
+	else if($type == 'category'	 	){$datas = array('key'=>$usr['key'],'list'=>'category','cat'=>$category,	'p'=>$p);	$title=' - Catégorie ';					$pagerLink = 'list.php?type=category&cat='.$category.'&p=';}
+	else if($type == 'selection' 	){$datas = array('key'=>$usr['key'],'list'=>'selection','sel'=>$selection,	'p'=>$p);	$title=' - Sélection ';					$pagerLink = 'list.php?type=selection&sel='.$selection.'&p=';}
+	else if($type == 'favoris'	 	){$datas = array('key'=>$usr['key'],'list'=>'custom','quoteids'=>$quoteids		   );	$title=' - Favoris';					}
+	else if($type == 'custom'	 	){$datas = array('key'=>$usr['key'],'list'=>'custom','quoteids'=>$quoteids		   );	$title=' - Sélection';					}
 	else{
 		header('Location: 404.php');   
 		exit;
@@ -56,7 +57,7 @@
 					}
 				}
 				
-				if($type == 'top' || $type == 'lasts' || $type == 'topcomment' || $type == 'category' || $type == 'selection'){
+				if($type != 'favoris' && $type != 'custom'){
 					$total_quote_pages = isset($result['response']['total_quote_pages']) ? $result['response']['total_quote_pages'] : null;
 					$current_quote_page = isset($result['response']['current_quote_page']) ? $result['response']['current_quote_page'] : null;
 					echo generateQuotePager($total_quote_pages, $current_quote_page, $pagerLink);

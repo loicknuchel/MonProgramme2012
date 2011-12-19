@@ -298,7 +298,7 @@
 				$p_petition_param['name'] = 'p'; 			$p_petition_param['status'] = 'optionnel';	$p_petition_param['use'] = "Numéro de la page de pétition.";
 				$nocomment_param['name'] = 'nocomment';		$nocomment_param['status'] = 'optionnel';	$nocomment_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Les commentaires ne seront pas dans la réponse (pour alléger le trafic réseau).";
 				$nopetition_param['name'] = 'nopetition';	$nopetition_param['status'] = 'optionnel';	$nopetition_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. La pétition ne sera pas dans la réponse (pour alléger le trafic réseau).";
-				$orderlist_param['name'] = 'list';			$orderlist_param['status'] = 'requis';		$orderlist_param['use'] = "Valeurs possibles : <span class=\"val\">top</span> (votes), <span class=\"val\">topcomment</span> (nombre de commentaires), <span class=\"val\">lasts</span> (date de publication). Les citations sont classées de manière décroissante selon les différents critères.";
+				$orderlist_param['name'] = 'list';			$orderlist_param['status'] = 'requis';		$orderlist_param['use'] = "Valeurs possibles : <span class=\"val\">top</span> (votes), <span class=\"val\">topcomment</span> (nombre de commentaires), <span class=\"val\">lasts</span> (date de publication), <span class=\"val\">lastactivity</span> (date de la dernière activité). Les citations sont classées de manière décroissante selon les différents critères.";
 				$cat_param['name'] = 'cat';					$cat_param['status'] = 'requis';			$cat_param['use'] = "Identifie une catégorie. Prend la valeur de l'id ou du nom de la catégorie.";
 /*9*/			$sel_param['name'] = 'sel';					$sel_param['status'] = 'requis';			$sel_param['use'] = "Identifie une sélection. Prend la valeur de l'id ou du nom de la sélection.";
 				$quoteids_param['name'] = 'quoteids';		$quoteids_param['status'] = 'requis';		$quoteids_param['use'] = "Fourni la liste de citations à partir de leurs id. Chaque id est un entier et est séparé des autres par un '/'.";
@@ -389,7 +389,7 @@
 					$ressource= null; $params = null; $sample = null;
 					$ressource['ressource'] = 'quote_list.php?key={key}&list={order}';
 					$ressource['use'] = "Retourne une page de citations par ordre de vote décroissant.";
-					$params[0] = $key_param;		// 0
+					$params[0] = $key_param;
 					$params[1] = $orderlist_param;
 					$params[2] = $p_quote_param;
 					$params[3] = $noheaders_param;

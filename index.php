@@ -3,7 +3,7 @@
 		header('Location: quote.php?id='.$_GET['q']);
 	}
 	else{
-		header('Location: list.php?type=lasts');
+		header('Location: list.php?type=lastactivity');
 	}
 	exit();
 	/*
