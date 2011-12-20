@@ -1,11 +1,8 @@
 
-- permettre de modifier les propositions/descriptions en gardant l'original et en affichant la dernière modif.
+MISE EN PROD :
+- vérifier l'envoi de mail lors de l'ajout d'une nouvelle proposition
+- faire fonctionner call_api()
 
-- mettre switch après comment  (form comment) ??
-
-- avoir un tracking des dernières activités (avec contenu à lire !)
-
-- vérifier l'envoi de mail lors de l'ajout de propositions
 
 - pouvoir commenter et voter pour des sélections
 - pouvoir modifier une sélection (avec mdp)
