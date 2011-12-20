@@ -16,6 +16,13 @@
 	margin-bottom: 7px;
 }
 
+.rephrase_quote .historique textarea {
+	width: 730px;
+}
+.rephrase_quote .historique textarea, .rephrase_quote .historique .area_leave_char {
+	margin-left: 130px;
+}
+
 .rephrase_quote .historique table {
 	width: 100%;
 }
