@@ -1,0 +1,44 @@
+.rephrase_quote {
+	margin-top: 30px;
+}
+
+.rephrase_quote .historique {
+	background: white;
+	padding: 10px;
+	margin-bottom: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.rephrase_quote .historique h1 {
+	margin: 2px;
+	margin-bottom: 7px;
+}
+
+.rephrase_quote .historique table {
+	width: 100%;
+}
+
+.rephrase_quote .historique table tr {
+	margin: 5px;
+}
+
+.rephrase_quote .historique table tr td {
+	border: 1px solid #ccc;
+	border-left: none;
+	border-right: none;
+	padding: 5px;
+}
+
+.rephrase_quote .historique table tr td:first-child {
+	width: 120px;
+}
+
+.rephrase_quote .historique table tr td pre {
+	padding: 5px;
+}
+
+.rephrase_quote .historique table tr td span {
+	font-size: 0.8em;
+}

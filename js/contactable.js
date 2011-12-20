@@ -21,7 +21,6 @@ function setContactable(rel_to_root){
 	$('.contact_direct').toggleContactable('contactable', s_contactable_subjects.contact_direct);		// info/projet.php
 	$('.submit_goal').toggleContactable('contactable', s_contactable_subjects.submit_goal);				// FAQ
 	$('.new_question').toggleContactable('contactable', s_contactable_subjects.new_question);			// FAQ
-	$('.demande_sources').toggleContactable('contactable', s_contactable_subjects.demande_sources);		// FAQ
 	$('.new_feature').toggleContactable('contactable', s_contactable_subjects.new_feature);				// FAQ
 	$('.comment_feature').toggleContactable('contactable', s_contactable_subjects.comment_feature);		// FAQ
 	$('.comment_evolution').toggleContactable('contactable', s_contactable_subjects.comment_evolution);	// FAQ

@@ -7,19 +7,6 @@ function FV_Form_Verification(inner_html){
 		$(this).attr('placeholder', $(this).attr('placeholder')+' *');
 	});
 	
-	function updateInputCpt(input, val){
-		input.next().html(val);
-		/*if(val < 0){
-			input.addClass('FV_error');
-			input.next().addClass('FV_error');
-			//alert($(this).val());
-			//input.css('background', 'red');
-		}
-		else{
-			input.addClass('FV_error');
-			input.next().addClass('FV_error');
-		}*/
-	}
 	
 	// text cpt
 	$(inner_html+'input.FV_length').each(function(){
@@ -28,24 +15,24 @@ function FV_Form_Verification(inner_html){
 	$(inner_html+'input.FV_length').focus(function(){
 		$(this).next().html(eval($(this).attr('maxsize'))-eval($(this).val().length));
 		$(this).keyup(function(event){
-			updateInputCpt($(this), eval($(this).attr('maxsize'))-eval($(this).val().length));
+			$(this).next().html(eval($(this).attr('maxsize'))-eval($(this).val().length));
 		});
 		$(this).keydown(function(event){
-			updateInputCpt($(this), eval($(this).attr('maxsize'))-eval($(this).val().length));
+			$(this).next().html(eval($(this).attr('maxsize'))-eval($(this).val().length));
 		});
 	});
 	
 	// textarea cpt
 	$(inner_html+'textarea.FV_length').each(function(){
-		$(this).after('<span class="area_leave_char">'+$(this).attr('maxsize')+'</span>');
+		$(this).after('<span class="area_leave_char"><span>'+$(this).attr('maxsize')+'</span> caractères restants</span>');
 	});
 	$(inner_html+'textarea.FV_length').focus(function(){
-		$(this).next().html(eval($(this).attr('maxsize'))-eval($(this).val().length));
+		$(this).next().find('span').html(eval($(this).attr('maxsize'))-eval($(this).val().length));
 		$(this).keyup(function(event){
-			updateInputCpt($(this), eval($(this).attr('maxsize'))-eval($(this).val().length));
+			$(this).next().find('span').html(eval($(this).attr('maxsize'))-eval($(this).val().length));
 		});
 		$(this).keydown(function(event){
-			updateInputCpt($(this), eval($(this).attr('maxsize'))-eval($(this).val().length));
+			$(this).next().find('span').html(eval($(this).attr('maxsize'))-eval($(this).val().length));
 		});
 	});
 	

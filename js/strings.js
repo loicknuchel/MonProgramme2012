@@ -15,7 +15,6 @@ s_contactable_subjects.actions_link = 'Nouveau lien pour les actions citoyennes'
 s_contactable_subjects.contact_direct = 'Bonjour :)';
 s_contactable_subjects.submit_goal = 'Partage de mes aspirations pour ce site';
 s_contactable_subjects.new_question = '';
-s_contactable_subjects.demande_sources = 'Demande de communication des sources';
 s_contactable_subjects.new_feature = 'Proposition d\'une fonctionnalité/orientation';
 s_contactable_subjects.comment_feature = 'Observation/classement sur les évolutions';
 s_contactable_subjects.comment_evolution = 'Mon avis sur l\'évolution #';

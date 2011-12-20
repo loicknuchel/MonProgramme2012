@@ -1,6 +1,6 @@
 <?php
 
-function generateSelectionForm($usr, $server_path, $postResult){
+function generateSelectionForm($usr, $postResult){
 	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']));
 	$app = null;
 	$app['params']['size']['selection'] = isset($app_params['response']['textMaxSize']['selection']) ? $app_params['response']['textMaxSize']['selection'] : null;

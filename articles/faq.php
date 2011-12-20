@@ -10,6 +10,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../themes/main/img/favicon.ico">
 	<link rel="stylesheet" href="../js/libs/contactable.1.3/contactable.css">
     <link rel="stylesheet" href="./faq.css">
 </head>
@@ -58,7 +59,7 @@
 					<a href="#synopsis">F.A.Q.</a>
 					<a href="#guide">Evolutions</a>
 					<a href="#docs" id="guide-link">API</a>
-					<a href="#" class="demande_sources">sources</a>
+					<a href="https://github.com/loicknuchel/MonProgramme2012">sources</a>
 					<a href="#about">about</a>
 					<a href="../">retour site</a>
 				</nav>
@@ -227,6 +228,7 @@
 				<h2 id="-API_ressources">API ressources</h2>
 				<ul>
 					<li><a href="#-API_ressources-quotes">Citations</a></li>
+					<li><a href="#-API_ressources-quotes-lists">Listes de citations</a></li>
 					<li><a href="#-API_ressources-comments">Commentaires</a></li>
 					<li><a href="#-API_ressources-categories">Catégories</a></li>
 					<li><a href="#-API_ressources-selections">Sélections</a></li>
@@ -296,6 +298,7 @@
 /*4*/			$p_selection_param['name'] = 'p'; 			$p_selection_param['status'] = 'optionnel'; $p_selection_param['use'] = "Numéro de la page de sélections.";
 				$p_category_param['name'] = 'p'; 			$p_category_param['status'] = 'optionnel';	$p_category_param['use'] = "Numéro de la page de catégories.";
 				$p_petition_param['name'] = 'p'; 			$p_petition_param['status'] = 'optionnel';	$p_petition_param['use'] = "Numéro de la page de pétition.";
+				$rephrase_param['name'] = 'rephrase';		$rephrase_param['status'] = 'optionnel';	$rephrase_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Ajoute à la réponse la liste des réécritures de la proposition.";
 				$nocomment_param['name'] = 'nocomment';		$nocomment_param['status'] = 'optionnel';	$nocomment_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Les commentaires ne seront pas dans la réponse (pour alléger le trafic réseau).";
 				$nopetition_param['name'] = 'nopetition';	$nopetition_param['status'] = 'optionnel';	$nopetition_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. La pétition ne sera pas dans la réponse (pour alléger le trafic réseau).";
 				$orderlist_param['name'] = 'list';			$orderlist_param['status'] = 'requis';		$orderlist_param['use'] = "Valeurs possibles : <span class=\"val\">top</span> (votes), <span class=\"val\">topcomment</span> (nombre de commentaires), <span class=\"val\">lasts</span> (date de publication), <span class=\"val\">lastactivity</span> (date de la dernière activité). Les citations sont classées de manière décroissante selon les différents critères.";
@@ -306,6 +309,7 @@
 				// POST
 				$quote_param['name'] = 'quote'; 			$quote_param['status'] = 'requis';				$quote_param['use'] = "Contenu de la nouvelle citation.";
 				$explication_param['name'] = 'expl';		$explication_param['status'] = 'optionnel';		$explication_param['use'] = "Texte précisant la citation.";
+				$explicationreq_param['name'] = 'expl';		$explicationreq_param['status'] = 'requis';		$explicationreq_param['use'] = "Texte précisant la citation.";
 				$categorie_param['name'] = 'cat'; 			$categorie_param['status'] = 'optionnel';		$categorie_param['use'] = "Catégorie à laquelle appartient la citation (nom ou id).";
 /*14*/			$source_param['name'] = 'src'; 				$source_param['status'] = 'optionnel';			$source_param['use'] = "Texte désignant la source de la citation.";
 				$context_param['name'] = 'ctx'; 			$context_param['status'] = 'optionnel';			$context_param['use'] = "Texte désignant le contexte de la citation.";
@@ -353,7 +357,7 @@
 					echo '<table class="API_ressources" id="-API_ressources-quotes">
 					<tr class="title">
 						<td colspan="2">
-							<h1>Citations</h1> <a href="#-API_ressources-comments">next</a> <a href="#-API_ressources">top</a>
+							<h1>Citations</h1> <a href="#-API_ressources-quotes-lists">next</a> <a href="#-API_ressources">top</a>
 						</td>
 					</tr>
 					<tr style="display: none;">
@@ -367,84 +371,28 @@
 					$params[1] = $quoteidget_param;
 					$params[2] = $pc_comment_param;
 					$params[3] = $pp_comment_param;
-					$params[4] = $nocomment_param;
-					$params[5] = $nopetition_param;
-					$params[6] = $noheaders_param;
-					$params[7] = $format_param;
-					$params[8] = $callback_param;
+					$params[4] = $rephrase_param;
+					$params[5] = $nocomment_param;
+					$params[6] = $nopetition_param;
+					$params[7] = $noheaders_param;
+					$params[8] = $format_param;
+					$params[9] = $callback_param;
 					$sample['methode'] = 'GET';
-					$sample['requete'] = $APIdatas['base_url'].'quote.php?key='.$APIdatas['public_key_test'].'&amp;quoteid=1';
+					$sample['requete'] = $APIdatas['base_url'].'quote.php?key='.$APIdatas['public_key_test'].'&amp;quoteid=1&rephrase=1';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
-					"response":{"id":2,"post_timestamp":1312036074,"post_date":"30/07/2011 à 16:27","quote":"\"Connexion à réseau non identifié (Nom du réseau: dlink)\"","source":"","context":"","explanation":"","author":"georges","publisher":"","publisher_info":"","site":"","category":"geek","category_id":3,"up":6,"down":1,"total_comments":24,"total_signatures":2,
-					"comments":[{"id":120,"post_timestamp":1321534716,"post_date":"17/11/2011 à 13:58","avis":""<span class="comment">Valeurs possibles : "pour" ou "contre".</span>,"publisher":"toto","site":"","comment":"qsd","up":0,"down":0,"reported":0},
-					{"id":133,"post_timestamp":1322438577,"post_date":"28/11/2011 à 01:02","avis":"pour","publisher":"toto","site":"","comment":"mon comment","up":0,"down":0,"reported":0}],
-					"nbcomments":2,"size_comment_page":20,"current_comment_page":2,"total_comment_pages":2,
-					"signatures":[{"no":2,"post_date":"01/12/2011 à 16:40","genre":"Mme"<span class="comment">Valeurs possibles : "Mr" ou "Mme".</span>,"age":""<span class="comment">Valeurs possibles : "0 à 18 ans" ou "18 à 25 ans" ou "25 à 50 ans" ou ">50 ans".</span>,"prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"75000","message":"Bonjour"},
-					{"no":1,"post_date":"01/12/2011 à 16:33","genre":"","age":"25 à 50 ans","prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""}],
-					"nbsignatures":2,"size_petition_page":40,"current_petition_page":1,"total_petition_pages":1},
+					"response":{"id":2,"post_timestamp":1312036074,"post_date":"30/07/2011 à 16:27","quote":"\"Connexion à réseau non identifié (Nom du réseau: dlink)\"","origin_quote":"\"Connexion à réseau non identifié (Nom du réseau: dlink)\"","source":"","context":"","explanation":"","origin_explanation":"","author":"georges","publisher":"","publisher_info":"","site":"","category":"geek","category_id":3,"up":6,"down":1,"total_comments":24,"total_signatures":2,
+					"rephrase":[
+						{"post_timestamp":1312036074,"post_date":"30/07/2011 à 16:27","publisher":"","site":"","quote":"Il est temps de travailler...","explanation":"Première quote !"}
+					],"nbrephrases":1,
+					"comments":[
+						{"id":120,"post_timestamp":1321534716,"post_date":"17/11/2011 à 13:58","avis":""<span class="comment">Valeurs possibles : "pour" ou "contre".</span>,"publisher":"toto","site":"","comment":"qsd","up":0,"down":0,"reported":0},
+						{"id":133,"post_timestamp":1322438577,"post_date":"28/11/2011 à 01:02","avis":"pour","publisher":"toto","site":"","comment":"mon comment","up":0,"down":0,"reported":0}
+					],"nbcomments":2,"size_comment_page":20,"current_comment_page":2,"total_comment_pages":2,
+					"signatures":[
+						{"no":2,"post_date":"01/12/2011 à 16:40","genre":"Mme"<span class="comment">Valeurs possibles : "Mr" ou "Mme".</span>,"age":""<span class="comment">Valeurs possibles : "0 à 18 ans" ou "18 à 25 ans" ou "25 à 50 ans" ou ">50 ans".</span>,"prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"75000","message":"Bonjour"},
+						{"no":1,"post_date":"01/12/2011 à 16:33","genre":"","age":"25 à 50 ans","prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""}
+					],"nbsignatures":2,"size_petition_page":40,"current_petition_page":1,"total_petition_pages":1},
 					"info":{"remaining_queries":35,"next_restart":8}}';
-					echo generateAPIRessource($ressource, $params, $sample);
-					
-					
-					$ressource= null; $params = null; $sample = null;
-					$ressource['ressource'] = 'quote_list.php?key={key}&list={order}';
-					$ressource['use'] = "Retourne une page de citations par ordre de vote décroissant.";
-					$params[0] = $key_param;
-					$params[1] = $orderlist_param;
-					$params[2] = $p_quote_param;
-					$params[3] = $noheaders_param;
-					$params[4] = $format_param;
-					$params[5] = $callback_param;
-					$sample['methode'] = 'GET';
-					$sample['requete'] = $APIdatas['base_url'].'quote_list.php?key='.$APIdatas['public_key_test'].'&list=top';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"quotes":[{"id":12,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"LOOOL","source":"","context":"","explanation":"","author":"lukas","publisher":"","publisher_info":"","site":"","category":"","category_id":"","up":0,"down":0,"total_comments":0},{"id":13,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Que signifie lol? valeur absolue de zéro!","source":"","context":"","explanation":"","author":"loic","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":0,"down":0,"total_comments":0},{"id":14,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Il était une fois","source":"","context":"","explanation":"","author":"loic","publisher":"","publisher_info":"","site":"","category":"loic quotes","category_id":"1","up":0,"down":0,"total_comments":0},{"id":15,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Hello","source":"","context":"","explanation":"","author":"tim","publisher":"","publisher_info":"","site":"","category":"","category_id":"","up":0,"down":0,"total_comments":0},{"id":1,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Il est temps de travailler...","source":"","context":"","explanation":"Première quote !","author":"loic","publisher":"","publisher_info":"","site":"","category":"loic quotes","category_id":"1","up":0,"down":1,"total_comments":1},{"id":17,"post_timestamp":"1312036","post_date":"30/07/2011 à 20:27","quote":"même citation mais sans remplir le site...","source":"source","context":"context","explanation":"explanation","author":"author","publisher":"publisher","publisher_info":"Quelques informations...","site":"","category":"loic quotes","category_id":"1","up":0,"down":1,"total_comments":0},{"id":16,"post_timestamp":"1312036","post_date":"30/07/2011 à 20:16","quote":"Ma quote avec beaucoup d\'infos... C\'est génial non ???","source":"Tiré d\'un article du monde...","context":"Pour faire un exemple de context : je cherche à customiser les méta infos","explanation":"Ca sert un peu à rien... Mais bon, il faut quand même en mettre","author":"Mon cher nico !","publisher":"loic","publisher_info":"","site":"http://lkws.fr/cq/","category":"loic quotes","category_id":"1","up":0,"down":1,"total_comments":0},{"id":7,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Quand un geek pense, il n oublie pas /* */ .","source":"","context":"","explanation":"","author":"loic","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":0,"down":3,"total_comments":0}],"nbquotes":8,"size_quote_page":10,"current_quote_page":2,"total_quote_pages":2},"info":{"remaining_queries":38,"next_restart":30}}';
-					echo generateAPIRessource($ressource, $params, $sample);
-					
-					
-					$ressource= null; $params = null; $sample = null;
-					$ressource['ressource'] = 'quote_list.php?key={key}&list=category&cat={cat_id|cat_name}';
-					$ressource['use'] = "Retourne une page de citations de la catégorie voulue (par id ou par nom) par ordre de date de publication décroissante.";
-					$params[0] = $key_param;		// 0
-					$params[1]['name'] = 'list';		$params[1]['status'] = 'requis';		$params[1]['use'] = "Valeur : <span class=\"val\">category</span>";
-					$params[2] = $cat_param;
-					$params[3] = $p_quote_param;
-					$params[4] = $noheaders_param;
-					$params[5] = $format_param;
-					$params[6] = $callback_param;
-					$sample['methode'] = 'GET';
-					$sample['requete'] = $APIdatas['base_url'].'quote_list.php?key='.$APIdatas['public_key_test'].'&list=category&cat=3';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"quotes":[{"id":24,"post_timestamp":"1312036","post_date":"16/08/2011 à 18:19","quote":"Nouvelle citation avec description....","source":"","context":"","explanation":"Voilà une super citation !!\n\nJe ne sais pas ce que vous en pensez mais moi je la trouve géniale. Je l\'ai entendue sur un forum informatique.\n\nTop non ?","author":"","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":1,"down":0,"total_comments":2},{"id":2,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"\"Connexion à réseau non identifié (Nom du réseau: dlink)\"","source":"","context":"","explanation":"","author":"georges","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":5,"down":1,"total_comments":0},{"id":7,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Quand un geek pense, il n oublie pas /* */ .","source":"","context":"","explanation":"","author":"loic","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":0,"down":3,"total_comments":0},{"id":9,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Le comble du Geek est de s inscrire sur un réseau social.","source":"","context":"","explanation":"","author":"lukas","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":0,"down":0,"total_comments":0},{"id":11,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Windows, ou l art de prendre les gens pour de bêta-testeurs.","source":"","context":"","explanation":"","author":"loic","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":1,"down":0,"total_comments":0},{"id":13,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Que signifie lol? valeur absolue de zéro!","source":"","context":"","explanation":"","author":"loic","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":0,"down":0,"total_comments":0}],"nbquotes":6,"size_quote_page":10,"current_quote_page":1,"total_quote_pages":1,"category_id":3,"category_name":"geek"},"info":{"remaining_queries":39,"next_restart":60}}';
-					echo generateAPIRessource($ressource, $params, $sample);
-					
-					
-					$ressource= null; $params = null; $sample = null;
-					$ressource['ressource'] = 'quote_list.php?key={key}&list=selection&sel={sel_id|sel_name}';
-					$ressource['use'] = "Retourne une page de citations d'une sélection voulue (par id ou par nom) par ordre de date de publication décroissante.";
-					$params[0] = $key_param;		// 0
-					$params[1]['name'] = 'list';		$params[1]['status'] = 'requis';		$params[1]['use'] = "Valeur : <span class=\"val\">selection</span>";
-					$params[2] = $sel_param;
-					$params[3] = $p_quote_param;
-					$params[4] = $noheaders_param;
-					$params[5] = $format_param;
-					$params[6] = $callback_param;
-					$sample['methode'] = 'GET';
-					$sample['requete'] = $APIdatas['base_url'].'quote_list.php?key='.$APIdatas['public_key_test'].'&list=selection&sel=2';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"quotes":[{"id":17,"post_timestamp":"1312036","post_date":"30/07/2011 à 20:27","quote":"même citation mais sans remplir le site...","source":"source","context":"context","explanation":"explanation","author":"author","publisher":"publisher","publisher_info":"","site":"","category":"loic quotes","category_id":"1","up":0,"down":1,"total_comments":0},{"id":16,"post_timestamp":"1312036","post_date":"30/07/2011 à 20:16","quote":"Ma quote avec beaucoup d\'infos... C\'est génial non ???","source":"Tiré d\'un article du monde...","context":"Pour faire un exemple de context : je cherche à customiser les méta infos","explanation":"Ca sert un peu à rien... Mais bon, il faut quand même en mettre","author":"Mon cher nico !","publisher":"loic","publisher_info":"","site":"http://lkws.fr/cq/","category":"loic quotes","category_id":"1","up":0,"down":1,"total_comments":0}],"nbquotes":2,"size_quote_page":10,"current_quote_page":1,"total_quote_pages":1,"selection_id":2,"selection_name":"zetr"},"info":{"remaining_queries":39,"next_restart":60}}';
-					echo generateAPIRessource($ressource, $params, $sample);
-					
-					
-					$ressource= null; $params = null; $sample = null;
-					$ressource['ressource'] = 'quote_list.php?key={key}&list=custom&amp;quoteids={id1/id2/id3}';
-					$ressource['use'] = "Retourne toutes les citations demandées par ordre de date de publication décroissante.";
-					$params[0] = $key_param;
-					$params[1]['name'] = 'list';		$params[1]['status'] = 'requis';		$params[1]['use'] = "Valeur : <span class=\"val\">custom</span>";
-					$params[2] = $quoteids_param;
-					$params[3] = $noheaders_param;
-					$params[4] = $format_param;
-					$params[5] = $callback_param;
-					$sample['methode'] = 'GET';
-					$sample['requete'] = $APIdatas['base_url'].'quote_list.php?key='.$APIdatas['public_key_test'].'&list=custom&amp;quoteids=2/15/6/8';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"quotes":[{"id":15,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Hello","source":"","context":"","explanation":"","author":"tim","publisher":"","publisher_info":"","site":"","category":"","category_id":"","up":0,"down":0,"total_comments":0},{"id":8,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Aujourd hui, cela fait trois mois que ma copine a ses règles. C est louche.","source":"","context":"","explanation":"","author":"fergie","publisher":"","publisher_info":"","site":"","category":"vdm","category_id":"2","up":1,"down":1,"total_comments":2},{"id":6,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Biloute !","source":"","context":"","explanation":"","author":"lukas","publisher":"","publisher_info":"","site":"","category":"","category_id":"","up":0,"down":0,"total_comments":0},{"id":2,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"\"Connexion à réseau non identifié (Nom du réseau: dlink)\"","source":"","context":"","explanation":"","author":"georges","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":5,"down":1,"total_comments":0}],"nbquotes":4,"size_quote_page":10,"current_quote_page":1,"total_quote_pages":1},"info":{"remaining_queries":39,"next_restart":60}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					
@@ -518,6 +466,132 @@
 					$sample['methode'] = 'POST';
 					$sample['requete'] = $APIdatas['base_url'].'quote.php?key='.$APIdatas['public_key_test'].'&amp;quoteid=3&cat=2';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"category":{"id":1,"name":"loic quotes"}},"info":{"remaining_queries":39,"next_restart":60}}';
+					echo generateAPIRessource($ressource, $params, $sample);
+					
+					
+					$ressource= null; $params = null; $sample = null;
+					$ressource['ressource'] = 'quote.php?key={key}&amp;quoteid={quoteid}&amp;quote={quote}&expl={expl}';
+					$ressource['use'] = "Permet de proposer une reformulation de la citation identifiée par quoteid et de sa description";
+					$params[0] = $key_param;
+					$params[1] = $quoteid_param;
+					$params[2] = $quote_param;
+					$params[3] = $explicationreq_param;
+					$params[4] = $publieur_param;
+					$params[5] = $mail_param;
+					$params[6] = $site_param;
+					$params[7] = $noheaders_param;
+					$params[8] = $format_param;
+					$params[9] = $callback_param;
+					$params[10] = $meth_param;
+					$sample['methode'] = 'POST';
+					$sample['requete'] = $APIdatas['base_url'].'quote.php?key='.$APIdatas['public_key_test'].'&amp;quoteid=3&amp;quote=ma+proposition&expl=super+non+?';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"info":{"remaining_queries":39,"next_restart":60}}';
+					echo generateAPIRessource($ressource, $params, $sample);
+					
+					
+					
+					echo '</table>
+					<table class="API_ressources" id="-API_ressources-quotes-lists">
+					<tr class="title">
+						<td colspan="2">
+							<h1>Listes de citations</h1> <a href="#-API_ressources-comments">next</a> <a href="#-API_ressources">top</a>
+						</td>
+					</tr>
+					<tr style="display: none;">
+						<td colspan="2"></td>
+					</tr>';
+					
+					$ressource= null; $params = null; $sample = null;
+					$ressource['ressource'] = 'quote_list.php?key={key}&list={order}';
+					$ressource['use'] = "Retourne une page de citations par ordre de vote décroissant.";
+					$params[0] = $key_param;
+					$params[1] = $orderlist_param;
+					$params[2] = $p_quote_param;
+					$params[3] = $noheaders_param;
+					$params[4] = $format_param;
+					$params[5] = $callback_param;
+					$sample['methode'] = 'GET';
+					$sample['requete'] = $APIdatas['base_url'].'quote_list.php?key='.$APIdatas['public_key_test'].'&list=top';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
+					"response":{"quotes":[
+						{"id":12,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"LOOOL","origin_quote":"LOOOL","source":"","context":"","explanation":"","origin_explanation":"","author":"lukas","publisher":"","publisher_info":"","site":"","category":"","category_id":"","up":0,"down":0,"total_comments":0},
+						{"id":13,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Que signifie lol? valeur absolue de zéro!","origin_quote":"Que signifie lol? valeur absolue de zéro!","source":"","context":"","explanation":"","origin_explanation":"","author":"loic","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":0,"down":0,"total_comments":0},
+						{"id":14,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Il était une fois","origin_quote":"Il était une fois","source":"","context":"","explanation":"","origin_explanation":"","author":"loic","publisher":"","publisher_info":"","site":"","category":"loic quotes","category_id":"1","up":0,"down":0,"total_comments":0},
+						{"id":15,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Hello","origin_quote":"Hello","source":"","context":"","explanation":"","origin_explanation":"","author":"tim","publisher":"","publisher_info":"","site":"","category":"","category_id":"","up":0,"down":0,"total_comments":0},
+						{"id":1,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Il est temps de travailler...","origin_quote":"Il est temps de travailler...","source":"","context":"","explanation":"Première quote !","origin_explanation":"Première quote !","author":"loic","publisher":"","publisher_info":"","site":"","category":"loic quotes","category_id":"1","up":0,"down":1,"total_comments":1},
+						{"id":17,"post_timestamp":"1312036","post_date":"30/07/2011 à 20:27","quote":"même citation mais sans remplir le site...","origin_quote":"même citation mais sans remplir le site...","source":"source","context":"context","explanation":"explanation","origin_explanation":"explanation","author":"author","publisher":"publisher","publisher_info":"Quelques informations...","site":"","category":"loic quotes","category_id":"1","up":0,"down":1,"total_comments":0},
+						{"id":16,"post_timestamp":"1312036","post_date":"30/07/2011 à 20:16","quote":"Ma quote avec beaucoup d\'infos... C\'est génial non ???","origin_quote":"Ma quote avec beaucoup d\'infos... C\'est génial non ???","source":"Tiré d\'un article du monde...","context":"Pour faire un exemple de context : je cherche à customiser les méta infos","explanation":"Ca sert un peu à rien... Mais bon, il faut quand même en mettre","origin_explanation":"Ca sert un peu à rien... Mais bon, il faut quand même en mettre","author":"Mon cher nico !","publisher":"loic","publisher_info":"","site":"http://lkws.fr/cq/","category":"loic quotes","category_id":"1","up":0,"down":1,"total_comments":0},
+						{"id":7,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Quand un geek pense, il n oublie pas /* */ .","origin_quote":"Quand un geek pense, il n oublie pas /* */ .","source":"","context":"","explanation":"","origin_explanation":"","author":"loic","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":0,"down":3,"total_comments":0}
+					],"nbquotes":8,"size_quote_page":10,"current_quote_page":2,"total_quote_pages":2},
+					"info":{"remaining_queries":38,"next_restart":30}}';
+					echo generateAPIRessource($ressource, $params, $sample);
+					
+					
+					$ressource= null; $params = null; $sample = null;
+					$ressource['ressource'] = 'quote_list.php?key={key}&list=category&cat={cat_id|cat_name}';
+					$ressource['use'] = "Retourne une page de citations de la catégorie voulue (par id ou par nom) par ordre de date de publication décroissante.";
+					$params[0] = $key_param;
+					$params[1]['name'] = 'list';		$params[1]['status'] = 'requis';		$params[1]['use'] = "Valeur : <span class=\"val\">category</span>";
+					$params[2] = $cat_param;
+					$params[3] = $p_quote_param;
+					$params[4] = $noheaders_param;
+					$params[5] = $format_param;
+					$params[6] = $callback_param;
+					$sample['methode'] = 'GET';
+					$sample['requete'] = $APIdatas['base_url'].'quote_list.php?key='.$APIdatas['public_key_test'].'&list=category&cat=3';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
+					"response":{"quotes":[
+						{"id":24,"post_timestamp":"1312036","post_date":"16/08/2011 à 18:19","quote":"Nouvelle citation avec description....","origin_quote":"Nouvelle citation avec description....","source":"","context":"","explanation":"Voilà une super citation !!\n\nJe ne sais pas ce que vous en pensez mais moi je la trouve géniale. Je l\'ai entendue sur un forum informatique.\n\nTop non ?","origin_explanation":"Voilà une super citation !!\n\nJe ne sais pas ce que vous en pensez mais moi je la trouve géniale. Je l\'ai entendue sur un forum informatique.\n\nTop non ?","author":"","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":1,"down":0,"total_comments":2},
+						{"id":2,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"\"Connexion à réseau non identifié (Nom du réseau: dlink)\"","origin_quote":"\"Connexion à réseau non identifié (Nom du réseau: dlink)\"","source":"","context":"","explanation":"","origin_explanation":"","author":"georges","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":5,"down":1,"total_comments":0},
+						{"id":7,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Quand un geek pense, il n oublie pas /* */ .","origin_quote":"Quand un geek pense, il n oublie pas /* */ .","source":"","context":"","explanation":"","origin_explanation":"","author":"loic","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":0,"down":3,"total_comments":0},
+						{"id":9,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Le comble du Geek est de s inscrire sur un réseau social.","origin_quote":"Le comble du Geek est de s inscrire sur un réseau social.","source":"","context":"","explanation":"","origin_explanation":"","author":"lukas","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":0,"down":0,"total_comments":0},
+						{"id":11,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Windows, ou l art de prendre les gens pour de bêta-testeurs.","origin_quote":"Windows, ou l art de prendre les gens pour de bêta-testeurs.","source":"","context":"","explanation":"","origin_explanation":"","author":"loic","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":1,"down":0,"total_comments":0},
+						{"id":13,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Que signifie lol? valeur absolue de zéro!","origin_quote":"Que signifie lol? valeur absolue de zéro!","source":"","context":"","explanation":"","origin_explanation":"","author":"loic","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":0,"down":0,"total_comments":0}
+					],"nbquotes":6,"size_quote_page":10,"current_quote_page":1,"total_quote_pages":1,"category_id":3,"category_name":"geek"},
+					"info":{"remaining_queries":39,"next_restart":60}}';
+					echo generateAPIRessource($ressource, $params, $sample);
+					
+					
+					$ressource= null; $params = null; $sample = null;
+					$ressource['ressource'] = 'quote_list.php?key={key}&list=selection&sel={sel_id|sel_name}';
+					$ressource['use'] = "Retourne une page de citations d'une sélection voulue (par id ou par nom) par ordre de date de publication décroissante.";
+					$params[0] = $key_param;
+					$params[1]['name'] = 'list';		$params[1]['status'] = 'requis';		$params[1]['use'] = "Valeur : <span class=\"val\">selection</span>";
+					$params[2] = $sel_param;
+					$params[3] = $p_quote_param;
+					$params[4] = $noheaders_param;
+					$params[5] = $format_param;
+					$params[6] = $callback_param;
+					$sample['methode'] = 'GET';
+					$sample['requete'] = $APIdatas['base_url'].'quote_list.php?key='.$APIdatas['public_key_test'].'&list=selection&sel=2';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
+					"response":{"quotes":[
+						{"id":17,"post_timestamp":"1312036","post_date":"30/07/2011 à 20:27","quote":"même citation mais sans remplir le site...","origin_quote":"même citation mais sans remplir le site...","source":"source","context":"context","explanation":"explanation","origin_explanation":"explanation","author":"author","publisher":"publisher","publisher_info":"","site":"","category":"loic quotes","category_id":"1","up":0,"down":1,"total_comments":0},
+						{"id":16,"post_timestamp":"1312036","post_date":"30/07/2011 à 20:16","quote":"Ma quote avec beaucoup d\'infos... C\'est génial non ???","origin_quote":"Ma quote avec beaucoup d\'infos... C\'est génial non ???","source":"Tiré d\'un article du monde...","context":"Pour faire un exemple de context : je cherche à customiser les méta infos","explanation":"Ca sert un peu à rien... Mais bon, il faut quand même en mettre","origin_explanation":"Ca sert un peu à rien... Mais bon, il faut quand même en mettre","author":"Mon cher nico !","publisher":"loic","publisher_info":"","site":"http://lkws.fr/cq/","category":"loic quotes","category_id":"1","up":0,"down":1,"total_comments":0}
+					],"nbquotes":2,"size_quote_page":10,"current_quote_page":1,"total_quote_pages":1,"selection_id":2,"selection_name":"zetr"},
+					"info":{"remaining_queries":39,"next_restart":60}}';
+					echo generateAPIRessource($ressource, $params, $sample);
+					
+					
+					$ressource= null; $params = null; $sample = null;
+					$ressource['ressource'] = 'quote_list.php?key={key}&list=custom&amp;quoteids={id1/id2/id3}';
+					$ressource['use'] = "Retourne toutes les citations demandées par ordre de date de publication décroissante.";
+					$params[0] = $key_param;
+					$params[1]['name'] = 'list';		$params[1]['status'] = 'requis';		$params[1]['use'] = "Valeur : <span class=\"val\">custom</span>";
+					$params[2] = $quoteids_param;
+					$params[3] = $noheaders_param;
+					$params[4] = $format_param;
+					$params[5] = $callback_param;
+					$sample['methode'] = 'GET';
+					$sample['requete'] = $APIdatas['base_url'].'quote_list.php?key='.$APIdatas['public_key_test'].'&list=custom&amp;quoteids=2/15/6/8';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
+					"response":{"quotes":[
+						{"id":15,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Hello","origin_quote":"Hello","source":"","context":"","explanation":"","origin_explanation":"","author":"tim","publisher":"","publisher_info":"","site":"","category":"","category_id":"","up":0,"down":0,"total_comments":0},
+						{"id":8,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Aujourd hui, cela fait trois mois que ma copine a ses règles. C est louche.","origin_quote":"Aujourd hui, cela fait trois mois que ma copine a ses règles. C est louche.","source":"","context":"","explanation":"","origin_explanation":"","author":"fergie","publisher":"","publisher_info":"","site":"","category":"vdm","category_id":"2","up":1,"down":1,"total_comments":2},
+						{"id":6,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"Biloute !","origin_quote":"Biloute !","source":"","context":"","explanation":"","origin_explanation":"","author":"lukas","publisher":"","publisher_info":"","site":"","category":"","category_id":"","up":0,"down":0,"total_comments":0},
+						{"id":2,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","quote":"\"Connexion à réseau non identifié (Nom du réseau: dlink)\"","origin_quote":"\"Connexion à réseau non identifié (Nom du réseau: dlink)\"","source":"","context":"","explanation":"","origin_explanation":"","author":"georges","publisher":"","publisher_info":"","site":"","category":"geek","category_id":"3","up":5,"down":1,"total_comments":0}
+					],"nbquotes":4,"size_quote_page":10,"current_quote_page":1,"total_quote_pages":1},
+					"info":{"remaining_queries":39,"next_restart":60}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					
@@ -935,8 +1009,7 @@
 				<p>CroudQuotes et MonProgramme2012 ont été développés par <a href="https://twitter.com/loicknuchel" target="_blanck">@loicknuchel</a>.</p>
 				
 				<footer>
-					<!--<p>powered by <a href="http://cloudhead.io/toto">toto</a>, <a href="http://github.com/cloudhead/less.js">LESS</a> and <a href="http://github.com/cloudhead/hiless">hiless</a></p>-->
-					<p id="copy">L'ensemble du contenu est <a href="http://croudquotes.lkws.fr/download" class="demande_sources">publié</a> sous license <a href="http://fr.wikipedia.org/wiki/Beerware" target="_blanck">BeerWare</a></p>
+					<p id="copy">L'ensemble du contenu est <a href="https://github.com/loicknuchel/MonProgramme2012">publié</a> sous license <a href="http://fr.wikipedia.org/wiki/Beerware" target="_blanck">BeerWare</a></p>
 				</footer>
 			</div>
 		</section>

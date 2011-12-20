@@ -72,15 +72,6 @@ function generateCommentForm($usr, $postResult, $actionPage, $anchor, $type, $id
 			<input type="hidden" name="antiSpam" value="'.$antiSpam['id'].'" />
 			<input type="hidden" name="type" value="'.$type.'" />
 			<input type="hidden" name="id" value="'.$id.'" />
-			<div class="switch">
-				<input type="radio" id="avis_sans" name="avis" value=""'; if($avis == 1){$html .= ' checked';} $html .= ' />
-				<label for="avis_sans"'; if($avis == 1){$html .= ' class="selected"';} $html .= '>Mitigé</label>
-				<input type="radio" id="avis_pour" name="avis" value="pour"'; if($avis == 2){$html .= ' checked';} $html .= ' />
-				<label for="avis_pour" class="hovergreen'; if($avis == 2){$html .= ' selected';} $html .= '">Pour</label>
-				<input type="radio" id="avis_contre" name="avis" value="contre"'; if($avis == 3){$html .= ' checked';} $html .= ' />
-				<label for="avis_contre" class="hoverred'; if($avis == 3){$html .= ' selected';} $html .= '">Contre</label>
-				<div class="clear"></div>
-			</div>
 			<div class="meta_info">
 				<input class="FV_required FV_length" type="text" name="pseudo" placeholder="Pseudo" value="'.$pseudo.'" maxsize="'.$app['params']['size']['publisher'].'" /><br/>
 				<input class="FV_mail FV_length" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
@@ -97,6 +88,15 @@ function generateCommentForm($usr, $postResult, $actionPage, $anchor, $type, $id
 				<div class="clear"></div>
 			</div>
 			<textarea class="FV_required FV_length expandable" name="comment" placeholder="Votre réaction" maxsize="'.$app['params']['size']['comment'].'">'.$comment.'</textarea>
+			<div class="switch">
+				<input type="radio" id="avis_sans" name="avis" value=""'; if($avis != 2 && $avis != 3){$html .= ' checked';} $html .= ' />
+				<label for="avis_sans"'; if($avis != 2 && $avis != 3){$html .= ' class="selected"';} $html .= '>Mitigé</label>
+				<input type="radio" id="avis_pour" name="avis" value="pour"'; if($avis == 2){$html .= ' checked';} $html .= ' />
+				<label for="avis_pour" class="hovergreen'; if($avis == 2){$html .= ' selected';} $html .= '">Pour</label>
+				<input type="radio" id="avis_contre" name="avis" value="contre"'; if($avis == 3){$html .= ' checked';} $html .= ' />
+				<label for="avis_contre" class="hoverred'; if($avis == 3){$html .= ' selected';} $html .= '">Contre</label>
+				<div class="clear"></div>
+			</div>
 			<div class="suivi">
 				<input type="checkbox" name="suivi" id="suivi" /><label for="suivi">Recevoir une notification de réponse aux commentaires par email</label>
 			</div>

@@ -5,28 +5,28 @@
 	$private_keys = getPrivateKeys();
 	
 	
-	$status_site 			= "LOCAL";										// TODO : mettre LOCAL, DEV ou PROD															<= ICI
+	function getStatus(){ return "LOCAL"; }									// TODO : mettre LOCAL, DEV ou PROD															<= ICI
 	$bdd_site				= "test";										// TODO : mettre test, mp2012 ou ps12														<= ICI
 	
 	
 	$usr = null;
-	if($status_site == "LOCAL"){
+	if(getStatus() == "LOCAL"){
 		$server_uri = 'http://localhost/lkws_croudquotes/';					// url du serveur
 		$usr['site_url'] = 'http://localhost/lkws_monprogramme2012/';		// url du site
 		$usr['key'] = $private_keys[$bdd_site];								// clé pour se connecter à l'API
 	}
-	else if($status_site == "DEV"){
+	else if(getStatus() == "DEV"){
 		$server_uri = 'http://dev.lkws.fr/lkws_croudquotes/';				// url du serveur
 		$usr['site_url'] = 'http://dev.lkws.fr/lkws_monprogramme2012/';		// url du site
 		$usr['key'] = $private_keys[$bdd_site];								// clé pour se connecter à l'API
 	}
-	else if($status_site == "PROD"){
+	else if(getStatus() == "PROD"){
 		$server_uri = 'http://croudquotes.lkws.fr/';						// url du serveur
 		$usr['site_url'] = 'http://monprogramme2012.lkws.fr/';				// url du site
 		$usr['key'] = $private_keys['mp2012'];								// clé pour se connecter à l'API
 	}
 	unset($private_keys);
-	$usr['api_url'] = $server_uri.'api/1.0/';							// url de l'API
+	$usr['api_url'] = $server_uri.'api/1.0/';								// url de l'API
 	
 	$jsEnv = '
 	<script>
@@ -51,6 +51,7 @@
 	include_once $rel_to_root.'fragments/petitions.php';
 	include_once $rel_to_root.'fragments/pagers.php';
 	include_once $rel_to_root.'fragments/quote_form.php';
+	include_once $rel_to_root.'fragments/rephrase_form.php';
 	include_once $rel_to_root.'fragments/comment_form.php';
 	include_once $rel_to_root.'fragments/petition_form.php';
 	include_once $rel_to_root.'fragments/selection_form.php';

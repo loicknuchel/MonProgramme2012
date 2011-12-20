@@ -34,6 +34,7 @@ function generateHead($titre, $jsEnv, $rel_to_root = './'){
 	<link rel="stylesheet" href="'.$rel_to_root.$style.'forms.css?v=2">
 	<link rel="stylesheet" href="'.$rel_to_root.$style.'quote_form.css?v=2">
 	<link rel="stylesheet" href="'.$rel_to_root.$style.'pagers.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'rephrase.css?v=2">
 	<link rel="stylesheet" href="'.$rel_to_root.$style.'footer.css?v=2">
 
 	<script src="'.$rel_to_root.'js/libs/modernizr-1.7.min.js"></script>

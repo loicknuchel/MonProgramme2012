@@ -140,7 +140,7 @@ textarea {
 	resize: vertical;
 	display: block;
 	width: 530px;
-	height: 70px;
+	height: 64px; /* 1 ligne = 16px */
 	margin: 8px 0px;
 	padding: 4px 10px;
 	text-align: left;
@@ -163,11 +163,8 @@ textarea.FV_length {
 textarea.inc_meta_info {
 	padding-top: 28px;
 }
-textarea.small {
-	height: 30px;
-}
 textarea.expandable {
-height: 50px;
+height: 48px;
 -webkit-transition-property: height;
 -webkit-transition-duration: 0.5s;
 -webkit-transition-timing-function: ease-out;
@@ -179,7 +176,7 @@ transition-duration: 0.5s;
 transition-timing-function: ease-out;
 }
 textarea.expandable:focus {
-height: 200px;
+height: 224px;
 -webkit-transition-property: height;
 -webkit-transition-duration: 0.5s;
 -webkit-transition-timing-function: ease-out;
@@ -189,6 +186,12 @@ height: 200px;
 transition-property: height;
 transition-duration: 0.5s;
 transition-timing-function: ease-out;
+}
+textarea.small {
+	height: 32px;
+}
+textarea.large {
+	height: 112px;
 }
 
 form span.area_leave_char {

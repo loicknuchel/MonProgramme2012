@@ -46,7 +46,7 @@
 			<?php
 				if($type == 'category'){ echo "<div class=\"category_disclaimer\">categorie : ".str_replace('é', 'e', $cat_name)."</div>"; }
 				else if($type == 'selection'){ echo "<br/>sélection no ".$sel_id." : ".$sel_name."<br/>"; }
-				else if($type == 'custom'){ echo generateSelectionForm($usr, $server_path, null); }
+				else if($type == 'custom'){ echo generateSelectionForm($usr, null); }
 				
 				
 				$quotes = isset($result['response']['quotes']) ? $result['response']['quotes'] : null;

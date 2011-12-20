@@ -22,7 +22,7 @@
 				$comments = isset($result['response']['comments']) ? $result['response']['comments'] : null;
 				$signatures = isset($result['response']['signatures']) ? $result['response']['signatures'] : null;
 				
-				echo generateQuoteBlock($quote, true);
+				echo generateQuoteBlock($quote, 'expanded');
 			?>
 			
 			<div id="footerQuoteSlider">
