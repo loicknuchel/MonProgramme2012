@@ -1,7 +1,6 @@
 
 MISE EN PROD :
 - vérifier l'envoi de mail lors de l'ajout d'une nouvelle proposition
-- faire fonctionner call_api()
 
 
 - pouvoir commenter et voter pour des sélections

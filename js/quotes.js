@@ -1,17 +1,5 @@
 function quote_actions(){
 	
-	// ajouter la quote aux favoris : avant identify_favoris_quotes();
-	$('.quote .quote_header .options .favoris').click(function(event){
-		quote_add_to_favoris($(this).parents('.quote'));
-		return false;
-	});
-	
-	// ajouter une quote à la sélection : avant identify_selected_quotes();
-	$('.quote .quote_footer .quote_actions .select').click(function(){
-		quote_add_selection($(this).parents('.quote'));
-		return false;
-	});
-	
 	// UI : met les quotes sélectionnées dans l'état selected et les quotes des favoris dans l'état infavoris
 	$('.quote .quote_header .options').css('display', 'inline-block');
 	identify_selected_quotes();
@@ -30,11 +18,23 @@ function quote_actions(){
 		function(event){ $(this).parents('.quote').find('.quote_expand').slideUp(); $(this).find('a').html(s_quote.meta.expand); }
 	);
 	
+	// ajouter la quote aux favoris
+	$('.quote .quote_header .options .favoris').click(function(event){
+		quote_add_to_favoris($(this).parents('.quote'));
+		return false;
+	});
+	
 	// proposer une nouvelle catégorie pour la quote
 	/*$('.quote .quote_header .options .category').click(function(event){
 		quote_new_category($(this).parents('.quote'));
 		return false;
 	});*/
+	
+	// ajouter une quote à la sélection
+	$('.quote .quote_footer .quote_actions .select').click(function(){
+		quote_add_selection($(this).parents('.quote'));
+		return false;
+	});
 	
 	// report quote
 	$('.quote .quote_header .options .report').click(function(event){
