@@ -3,10 +3,7 @@
 	include $rel_to_root.'inc/server_link.php';
 	
 	// TODO : faire une boucle while pour récupérer toutes les catégories et non pas juste la première page...
-	$params = null;
-	$params['noheaders'] = 1;
-	$categories_json = apiGetCategories($usr, $params, $server_path);
-	$categories = json_decode($categories_json, true);
+	$categories = api_call('GET', $usr['api_url'].'category.php', array('key'=>$usr['key']));
 	if(isset($categories['response']['categories'])){
 		$cat = null;
 		$ind = 0;
@@ -17,10 +14,7 @@
 		}
 	}
 	
-	$params = null;
-	$params['noheaders'] = 1;
-	$params_json = apiGetParams($usr, $params, $server_path);
-	$app_params = json_decode($params_json, true);
+	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']));
 	$app = null;
 	$app['params']['size']['category'] = isset($app_params['response']['textMaxSize']['category']) ? $app_params['response']['textMaxSize']['category'] : null;
 ?>

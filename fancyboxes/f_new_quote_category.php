@@ -1,4 +1,5 @@
 <?php
+	// UNUSED NOW !!!!!
 	$rel_to_root = '../';
 	include $rel_to_root.'inc/server_link.php';
 	

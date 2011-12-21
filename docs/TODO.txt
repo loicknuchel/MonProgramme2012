@@ -2,7 +2,7 @@
 MISE EN PROD :
 - vérifier l'envoi de mail lors de l'ajout d'une nouvelle proposition
 - envoyer un mail quand une proposition est reformulée
-- ajouter mail obligatoire si l'on veut être tenu au courant par mail...
+- vérifier la fancybox pour ajouter une catégorie
 
 
 - pouvoir commenter et voter pour des sélections

@@ -45,7 +45,7 @@ function sendCommentForm($usr){
 }
 
 function generateCommentForm($usr, $postResult, $actionPage, $anchor, $type, $id, $rel_to_root = './'){
-	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']));
+	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']), false);
 	$app = null;
 	$app['params']['size']['comment'] = isset($app_params['response']['textMaxSize']['comment']) ? $app_params['response']['textMaxSize']['comment'] : null;
 	$app['params']['size']['publisher'] = isset($app_params['response']['textMaxSize']['publisher']) ? $app_params['response']['textMaxSize']['publisher'] : null;

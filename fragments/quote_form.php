@@ -40,7 +40,7 @@ function sendQuoteForm($usr){
 }
 
 function generateQuoteForm($usr, $postResult, $categories, $rel_to_root = './'){
-	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']));
+	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']), false);
 	$app = null;
 	$app['params']['size']['quote'] = isset($app_params['response']['textMaxSize']['quote']) ? $app_params['response']['textMaxSize']['quote'] : null;
 	$app['params']['size']['source'] = isset($app_params['response']['textMaxSize']['source']) ? $app_params['response']['textMaxSize']['source'] : null;
@@ -96,6 +96,12 @@ function generateQuoteForm($usr, $postResult, $categories, $rel_to_root = './'){
 					}
 				$html .= '</select>
 				<a href="#"><img class="create_category" src="'.$rel_to_root.'themes/main/img/forms/new_category.png" title="Créer un nouveau sujet" /></a>
+				<label class="block">Votre nom :</label>
+				<input class="FV_length labeled" type="text" name="pub" placeholder="Auteur" value="'.$pub.'" maxsize="'.$app['params']['size']['publisher'].'" /><br/>
+				<label class="block">Votre adresse mail (ne sera jamais communiquée) :</label>
+				<input class="FV_length FV_mail labeled" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
+				<label class="block">Votre site web :</label>
+				<input class="FV_length labeled" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>
 			</div>
 			<div class="show_more_datas">Données complémentaires</div>
 			<div class="more_datas">
@@ -105,14 +111,8 @@ function generateQuoteForm($usr, $postResult, $categories, $rel_to_root = './'){
 				<input class="FV_length labeled" type="text" name="src" placeholder="Source" value="'.$src.'" maxsize="'.$app['params']['size']['source'].'" style="width: 400px;" /><br/>
 				<label class="block">Personne à l\'origine de cette proposition :</label>
 				<input class="FV_length labeled" type="text" name="auth" placeholder="Auteur initial" value="'.$auth.'" maxsize="'.$app['params']['size']['author'].'" /><br/>
-				<label class="block">Votre nom :</label>
-				<input class="FV_length labeled" type="text" name="pub" placeholder="Auteur" value="'.$pub.'" maxsize="'.$app['params']['size']['publisher'].'" /><br/>
 				<label class="block">Quelques informations à propos vous :</label>
 				<textarea class="FV_length labeled" name="pubinfo" placeholder="D\'autres informations pertinentes sur vous ?" maxsize="'.$app['params']['size']['publisher_info'].'">'.$pubinfo.'</textarea>
-				<label class="block">Votre adresse mail (ne sera jamais communiquée) :</label>
-				<input class="FV_length FV_mail labeled" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
-				<label class="block">Votre site web :</label>
-				<input class="FV_length labeled" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>
 			</div>
 			<div class="suivi">
 				<input type="checkbox" name="suivi" id="suivi" /><label for="suivi">Recevoir une notification de réponse aux commentaires par email</label>
