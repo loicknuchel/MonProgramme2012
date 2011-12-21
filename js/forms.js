@@ -15,6 +15,30 @@ function action_forms(){
 		$(this).parents('.switch').find('label').removeClass('selected');
 		$(this).addClass('selected');
 	});
+	
+	
+	// set required mail when you want to be notify
+	$('form .suivi input[type="checkbox"]').click(function(){
+		mail_field = $(this).parents('form').find('input[name="mail"]');
+		if($(this).attr('checked') == 'checked'){
+			if(mail_field.hasClass('FV_required')){
+				mail_field.addClass('FV_required_2');
+			}
+			else{
+				mail_field.addClass('FV_required');
+				mail_field.attr('placeholder', mail_field.attr('placeholder')+' *');
+			}
+		}
+		else{
+			if(mail_field.hasClass('FV_required_2')){
+				mail_field.removeClass('FV_required_2');
+			}
+			else{
+				mail_field.removeClass('FV_required');
+				mail_field.attr('placeholder', mail_field.attr('placeholder').substr(0, mail_field.attr('placeholder').length - 2));
+			}
+		}
+	});
 }
 
 function fill_forms(){
