@@ -3,9 +3,9 @@
 	include $rel_to_root.'inc/server_link.php';
 	
 	// TODO : faire une boucle while pour récupérer toutes les catégories et non pas juste la première page...
-	$categories = api_call('GET', $usr['api_url'].'category.php', array('key'=>$usr['key']));
+	$categories = api_call('GET', $usr['api_url'].'category.php', array('key'=>$usr['key']), false);
+	$cat = null;
 	if(isset($categories['response']['categories'])){
-		$cat = null;
 		$ind = 0;
 		foreach($categories['response']['categories'] as $key => $value){
 			$cat[$ind]['id'] = $value['id'];
@@ -14,7 +14,7 @@
 		}
 	}
 	
-	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']));
+	$app_params = api_call('GET', $usr['api_url'].'params.php', array('key'=>$usr['key']), false);
 	$app = null;
 	$app['params']['size']['category'] = isset($app_params['response']['textMaxSize']['category']) ? $app_params['response']['textMaxSize']['category'] : null;
 ?>
@@ -49,15 +49,14 @@
 	
 	<script src="js/utils.js"></script>
 	<script src="js/form_verification.js"></script>-->
-	
-	
+			
 	<script>
 		$(function(){
 			FV_Form_Verification('#newForm ');
 			
 			var cat = new Array();
 			<?php
-				if($cat != null){
+				if(isset($cat) && $cat != null){
 					foreach($cat as $key => $value){
 						echo '
 						cat['.$key.'] = "'.$value['name'].'";';

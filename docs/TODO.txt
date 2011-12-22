@@ -1,9 +1,9 @@
 
 MISE EN PROD :
-- vérifier l'envoi de mail lors de l'ajout d'une nouvelle proposition
-- envoyer un mail quand une proposition est reformulée
-- vérifier la fancybox pour ajouter une catégorie
 
+
+
+- citer un commentaire : ajouter nom, date et référence
 
 - pouvoir commenter et voter pour des sélections
 - pouvoir modifier une sélection (avec mdp)

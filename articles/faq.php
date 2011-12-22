@@ -142,7 +142,8 @@
 					<ul>
 						<li class="title">Pistes d'actions concrètes:</li>
 						<li>mettre en avant les commentaires les mieux notés</li>
-						<li>permettre de répondre à un commentaire spécifique</li>
+						<li>permettre de répondre à un commentaire spécifique (2 niveaux de com?)</li>
+						<li>permettre d'avoir les infos nom, date et id dans la citation de commentaires</li>
 						<li>se connecter au site pour pouvoir commenter (afin d'éviter les usurpations d'identité) => <a href="#" class="comment_evolution">A discuter !</a></li>
 					</ul>
 					<p>S'inspirer du système de commentaires sur <a href="http://www.rue89.com/2011/08/27/valerie-pecresse-lache-le-petit-secret-de-la-regle-dor-219551" target="_blanck">rue89</a> par exemple...</p>
@@ -159,18 +160,8 @@
 				</div>
 				
 				<div class="evolution">
-					<h2><a href="#" class="comment_evolution">Evolution #6</a> : Possibilité de reformuler une proposition</h2>
-					<p>Le but ici est d'avoir les propositions les plus claires possibles. Le texte serait donc choisi par un système de votes.</p>
-				</div>
-				
-				<div class="evolution">
 					<h2><a href="#" class="comment_evolution">Evolution #5</a> : Possibiliter de fermer les commentaires</h2>
 					<p>Cela pourra être utilisé temporairement si un débat devient inintéressant ou de manière permanente si la proposition est identique à une autre.</p>
-				</div>
-				
-				<div class="evolution">
-					<h2><a href="#" class="comment_evolution">Evolution #4</a> : Classement des propositions par les dernières commentées</h2>
-					<p>Ce classement permettrait de voir les derniers commentaires laissés sur les citations et ainsi participer aux sujets actifs du moment.</p>
 				</div>
 				
 				<div class="evolution">
@@ -179,13 +170,12 @@
 				</div>
 				
 				<div class="evolution">
-					<h2><a href="#" class="comment_evolution">Evolution #2</a> : Agrandissement possible des zones de saisie de texte</h2>
-					<p>Au fur et à mesure que l'on écrit un texte dans les zones prévues, la zone de texte s'agrandit pour que l'on voie l'ensemble de son texte sans barre de défilement.</p>
-				</div>
-				
-				<div class="evolution">
 					<h2><a href="#" class="comment_evolution">Evolution #1</a> : Enregistrer des sélections privées</h2>
-					<p>Actuellement toutes les sélections sont publiques. Il pourrait être intéressant d'avoir des sélections visibles uniquement si l'on possède un mot de passe (donné lors de son enregistrement).</p>
+					<p>
+						Actuellement toutes les sélections sont publiques. 
+						Il pourrait être intéressant d'avoir des sélections visibles uniquement si l'on possède un mot de passe (donné lors de son enregistrement).<br/>
+						Des sélections pourraient être modifiées avec un mot de passe (pour les enrichir au fur et à mesure)
+					</p>
 				</div>
 				
 				<div class="evolution">
@@ -196,6 +186,21 @@
 				<div class="evolution">
 					<h2><a href="#" class="comment_evolution">Evolution #9</a> : Créer une pétition pour chaque proposition <= FAIT</h2>
 					<p>Cela permettrait de pouvoir donner plus de poids à une proposition que de simples votes. La pétition serait signée nominativement et serait ainsi importante pour donner du poids aux propositions.</p>
+				</div>
+				
+				<div class="evolution">
+					<h2><a href="#" class="comment_evolution">Evolution #6</a> : Possibilité de reformuler une proposition <= FAIT</h2>
+					<p>Le but ici est d'avoir les propositions les plus claires possibles. Le texte serait donc choisi par un système de votes.</p>
+				</div>
+				
+				<div class="evolution">
+					<h2><a href="#" class="comment_evolution">Evolution #4</a> : Classement des propositions par les dernières commentées <= FAIT</h2>
+					<p>Ce classement permettrait de voir les derniers commentaires laissés sur les citations et ainsi participer aux sujets actifs du moment.</p>
+				</div>
+				
+				<div class="evolution">
+					<h2><a href="#" class="comment_evolution">Evolution #2</a> : Agrandissement possible des zones de saisie de texte <= FAIT</h2>
+					<p>Au fur et à mesure que l'on écrit un texte dans les zones prévues, la zone de texte s'agrandit pour que l'on voie l'ensemble de son texte sans barre de défilement.</p>
 				</div>
 			</div>
 		</section>
