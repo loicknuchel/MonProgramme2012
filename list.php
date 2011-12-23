@@ -44,23 +44,27 @@
 	<div id="main">
 		<div class="wrapper">
 			<?php
-				if($type == 'category'){ echo "<div class=\"category_disclaimer\">categorie : ".str_replace('é', 'e', $cat_name)."</div>"; }
-				else if($type == 'selection'){ echo "<br/>sélection no ".$sel_id." : ".$sel_name."<br/>"; }
-				else if($type == 'custom'){ echo generateSelectionForm($usr, null); }
+				if($type == 'category'){ 		echo "<div class=\"category_disclaimer\">categorie : ".str_replace('é', 'e', $cat_name)."</div>"; }
+				else if($type == 'selection'){ 	echo "<br/>sélection no <span class=\"sel_id\">".$sel_id."</span> : ".$sel_name."<br/>"; }
+				else if($type == 'custom'){ 	echo generateSelectionForm($usr); }
 				
+				if($type == 'selection'){	$quote_style = 'selection';}
+				else{						$quote_style = '';}
 				
 				$quotes = isset($result['response']['quotes']) ? $result['response']['quotes'] : null;
 				
 				if($quotes != null){
 					foreach($quotes as $key => $quote){
-						echo generateQuoteBlock($quote);
+						echo generateQuoteBlock($quote, $quote_style);
 					}
 				}
 				
 				if($type != 'favoris' && $type != 'custom'){
 					$total_quote_pages = isset($result['response']['total_quote_pages']) ? $result['response']['total_quote_pages'] : null;
 					$current_quote_page = isset($result['response']['current_quote_page']) ? $result['response']['current_quote_page'] : null;
-					echo generateQuotePager($total_quote_pages, $current_quote_page, $pagerLink);
+					if($total_quote_pages > 1){
+						echo generateQuotePager($total_quote_pages, $current_quote_page, $pagerLink);
+					}
 				}
 			?>
 		</div>

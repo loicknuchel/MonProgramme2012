@@ -28,7 +28,7 @@ function generateHeader($rel_to_root = './'){
 					</ul>
 					<span></span>
 				</li>
-				<!--<li><a href="'.$rel_to_root.'allselections.php">Sélections</a></li>-->
+				<li><a href="'.$rel_to_root.'allselections.php">Sélections</a></li>
 				<li><a href="'.$rel_to_root.'new.php">Nouvelle proposition</a></li>
 				<li><a href="'.$rel_to_root.'articles/projet.php">Le projet</a></li>
 				<!--<li><a href="'.$rel_to_root.'articles/events.php">Evènements</a></li>-->

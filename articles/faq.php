@@ -310,6 +310,8 @@
 				$cat_param['name'] = 'cat';					$cat_param['status'] = 'requis';			$cat_param['use'] = "Identifie une catégorie. Prend la valeur de l'id ou du nom de la catégorie.";
 /*9*/			$sel_param['name'] = 'sel';					$sel_param['status'] = 'requis';			$sel_param['use'] = "Identifie une sélection. Prend la valeur de l'id ou du nom de la sélection.";
 				$quoteids_param['name'] = 'quoteids';		$quoteids_param['status'] = 'requis';		$quoteids_param['use'] = "Fourni la liste de citations à partir de leurs id. Chaque id est un entier et est séparé des autres par un '/'.";
+				$addids_param['name'] = 'addids';			$addids_param['status'] = 'requis';			$addids_param['use'] = "Fourni la liste des id de citations à ajouter à la sélection. Chaque id est un entier et est séparé des autres par un '/'.";
+				$remids_param['name'] = 'remids';			$remids_param['status'] = 'requis';			$remids_param['use'] = "Fourni la liste des id de citations à supprimer de la sélection. Chaque id est un entier et est séparé des autres par un '/'.";
 				
 				// POST
 				$quote_param['name'] = 'quote'; 			$quote_param['status'] = 'requis';				$quote_param['use'] = "Contenu de la nouvelle citation.";
@@ -334,6 +336,8 @@
 				$comment_param['name'] = 'comment'; 		$comment_param['status'] = 'requis';			$comment_param['use'] = "Contenu du nouveau commentaire.";
 				$commentid_param['name'] = 'commentid'; 	$commentid_param['status'] = 'requis';			$commentid_param['use'] = "Identifie un commentaire avec son id (entier).";
 				$newsel_param['name'] = 'sel';				$newsel_param['status'] = 'optionnel';			$newsel_param['use'] = "Permet de donner un nom à la sélection à créer.";
+				$createpass_param['name'] = 'pass';			$createpass_param['status'] = 'optionnel';		$createpass_param['use'] = "Permet de modifier la sélection avec ce mot de passe. S'il n'est pas fourni, la sélection n'est pas modifiable.";
+				$usepass_param['name'] = 'pass';			$usepass_param['status'] = 'requis';			$usepass_param['use'] = "Permet de modifier une sélection. Il correspond au mot de passe donné lors de la création";
 /*29*/			$newcat_param['name'] = 'cat';				$newcat_param['status'] = 'requis';				$newcat_param['use'] = "Nom de la nouvelle catégorie à créer.";
 				
 				$mailsuivi_param['name'] = 'mail'; 			$mailsuivi_param['status'] = 'requis';			$mailsuivi_param['use'] = "Adresse mail où sont envoyés les mails du suivi.";
@@ -779,13 +783,48 @@
 					$params[0] = $key_param;
 					$params[1] = $quoteids_param;
 					$params[2] = $newsel_param;
-					$params[3] = $noheaders_param;
-					$params[4] = $format_param;
-					$params[5] = $callback_param;
-					$params[6] = $meth_param;
+					$params[3] = $createpass_param;
+					$params[4] = $noheaders_param;
+					$params[5] = $format_param;
+					$params[6] = $callback_param;
+					$params[7] = $meth_param;
 					$sample['methode'] = 'POST';
 					$sample['requete'] = $APIdatas['base_url'].'selection.php?key='.$APIdatas['public_key_test'].'&amp;quoteids=8/1/5/12/4/3';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"selection":{"id":4,"name":"selection_4"}},"info":{"remaining_queries":39,"next_restart":60}}';
+					echo generateAPIRessource($ressource, $params, $sample);
+					
+					
+					$ressource= null; $params = null; $sample = null;
+					$ressource['ressource'] = 'selection.php?key={key}&sel={sel_id|sel_name}&addids={id1/id2/id3}&pass={mdp}';
+					$ressource['use'] = "Permet d'ajouter des citations à une sélection. Pour ce faire, il est nécessaire de fournir le mot de passe donné lors de la création de cette sélection.";
+					$params[0] = $key_param;
+					$params[1] = $sel_param;
+					$params[2] = $addids_param;
+					$params[3] = $usepass_param;
+					$params[4] = $noheaders_param;
+					$params[5] = $format_param;
+					$params[6] = $callback_param;
+					$params[7] = $meth_param;
+					$sample['methode'] = 'POST';
+					$sample['requete'] = $APIdatas['base_url'].'selection.php?key='.$APIdatas['public_key_test'].'&sel=2&addids=1/3/5&pass=titi';
+					$sample['reponse'] = 'TODO !';
+					echo generateAPIRessource($ressource, $params, $sample);
+					
+					
+					$ressource= null; $params = null; $sample = null;
+					$ressource['ressource'] = 'selection.php?key={key}&sel={sel_id|sel_name}&remids={id1/id2/id3}&pass={mdp}';
+					$ressource['use'] = "Permet de supprimer une citation d'une sélection. Pour ce faire, il est nécessaire de fournir le mot de passe donné lors de la création de cette sélection.";
+					$params[0] = $key_param;
+					$params[1] = $sel_param;
+					$params[2] = $remids_param;
+					$params[3] = $usepass_param;
+					$params[4] = $noheaders_param;
+					$params[5] = $format_param;
+					$params[6] = $callback_param;
+					$params[7] = $meth_param;
+					$sample['methode'] = 'POST';
+					$sample['requete'] = $APIdatas['base_url'].'selection.php?key='.$APIdatas['public_key_test'].'&sel=2&remids=1/2/3&pass=titi';
+					$sample['reponse'] = 'TODO !';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					

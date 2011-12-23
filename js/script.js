@@ -26,10 +26,7 @@ $(document).ready(function () {
 	fill_forms();
 	
 	// affiche le formulaire d'envoi pour une nouvelle sélection (selection.js)
-	$('.new_selection a').click(function(){
-		show_selection_form($(this).parent(), meth);
-		return false;
-	});
+	selection_actions();
 	
 	// catch ajax errors
 	$('#info').ajaxError(function(e, jqxhr, settings, exception) {

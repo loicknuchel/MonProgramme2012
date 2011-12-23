@@ -7,6 +7,9 @@ function generateQuoteBlock($quote, $style = ''){
 	}
 	else{$originalQuote = ''; $originalExpl = '';}
 	
+	if($style == 'selection'){ 	$remFromSelection = '<li><a href="#" class="selectRem">Supprimer de la sélection</a></li>'; }
+	else { 						$remFromSelection = ''; }
+	
 	
 	$pubinfo = $quote['publisher_info'] != '' ? ' title="'.$quote['publisher_info'].'"' : '';
 	$pub = $quote['publisher'] != '' ? ($quote['site'] != '' ? ' par <a href="'.$quote['site'].'"'.$pubinfo.' target="_blanck">'.$quote['publisher'].'</a>.' : ' par <span'.$pubinfo.'>'.$quote['publisher'].'</span>.') : '.';
@@ -20,7 +23,6 @@ function generateQuoteBlock($quote, $style = ''){
 	
 	$more_infos = 'Proposition publiée le '.$quote['post_date'].$pub.$auth.'<br/>'.$ctx.$src.'';
 	
-	
 	$html = '<div class="quote '.$quote['id'].'">
 			<div class="quote_header">
 				<div class="quote_number">
@@ -28,6 +30,7 @@ function generateQuoteBlock($quote, $style = ''){
 				</div>
 				<div class="options">
 					<ul>
+						'.$remFromSelection.'
 						<li><a href="#" class="favoris"></a></li>
 						<li><a href="#" class="suivi">Suivre cette proposition</a></li>
 						<li><a href="rephrase.php?id='.$quote['id'].'" class="rephrase">Reformuler la proposition</a></li>

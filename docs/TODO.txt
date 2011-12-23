@@ -6,7 +6,6 @@ MISE EN PROD :
 - citer un commentaire : ajouter nom, date et référence
 
 - pouvoir commenter et voter pour des sélections
-- pouvoir modifier une sélection (avec mdp)
 
 - dans la fancybox de suivi, ajouter le nom et les infos (pour le suivi des citations)
 

@@ -24,6 +24,12 @@ function quote_actions(){
 		return false;
 	});
 	
+	// supprimer de la sélection (visible quand on affiche une sélection)
+	$('.quote .quote_header .options .selectRem').click(function(event){
+		rem_quote_from_selection($(this).parents('.quote'), meth);
+		return false;
+	});
+	
 	// proposer une nouvelle catégorie pour la quote
 	/*$('.quote .quote_header .options .category').click(function(event){
 		quote_new_category($(this).parents('.quote'));
@@ -164,6 +170,52 @@ function quote_report(html_quote, meth){
 		}
 	}
 	
+	return false;
+}
+
+function rem_quote_from_selection(html_quote, meth){
+	var sel_id = $('.sel_id').html();
+	var sel_pass = prompt('mot de passe');
+	var quote_id = eval(html_quote.find('.quote_header .quote_number a span').html());
+	
+	if(sel_pass != null){
+		if(meth == 'local'){
+			var url = base_url+'selection.php';
+			$.post(url, { sel: sel_id, remids: quote_id, pass: sel_pass, key: api_key, noheaders: 1 },
+			function(data) {
+				call_success(jQuery.parseJSON(data));
+			});
+		}
+		else{
+			var url = base_url+'selection.php?sel='+sel_id+'&remids='+quote_id+'&pass='+sel_pass+'&key='+api_key+'&noheaders=1&meth=post&format=jsonp&callback=?';
+			$.ajax({
+				url: url,
+				success: function(data) {
+					call_success(data);
+				},
+				dataType: 'jsonp'
+			});
+		}
+		
+		function call_success(obj){
+			if(obj != null && obj['status']['code'] == 200){
+				displayInfo('success', s_selection.updated);
+				html_quote.slideUp();
+			}
+			else if(obj != null && obj['status']['code'] == 406){
+				displayInfo('error', 'Mot de passe de la sélection incorrect !');
+			}
+			else{
+				var errno = ' ';
+				if(obj != null){errno = ' ('+obj['status']['code']+') ';}
+				
+				displayInfo('error', s_selection.err_save_1 + errno + s_selection.err_save_2);
+			}
+		}
+	}
+	else{
+		displayInfo('info', 'Pour modifier une sélection, vous devez saisir son mot de passe.');
+	}
 	return false;
 }
 

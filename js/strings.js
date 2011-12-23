@@ -57,6 +57,7 @@ s_comment.deleted = '<span class="reported_comment">Ce commentaire a été modé
 
 var s_selection = new Object();
 s_selection.saved = 'Sélection enregistrée.';
+s_selection.updated = 'Sélection mise à jour.';
 s_selection.err_save_1 = 'Une erreur';
 s_selection.err_save_2 = 'est survenue lors de l\'enregistrement de la sélection.';
 
