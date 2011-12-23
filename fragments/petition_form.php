@@ -117,7 +117,7 @@ function generatePetitionForm($usr, $postResult, $actionPage, $anchor, $type, $i
 				<input type="checkbox" name="suivi" id="suivi"><label for="suivi">Recevoir une notification de réponse aux commentaires par email</label>
 			</div>
 			<div class="antiSpam">
-				<span style="font-weight: bold;">Anti-spam :</span> Veuillez écrire imprimante s\'il vous plait <input class="FV_required" type="text" name="antiSpamRep" placeholder="Anti-Spam">
+				<span style="font-weight: bold;">Anti-spam :</span> '.$antiSpam['ask'].' <input class="FV_required" type="text" name="antiSpamRep" placeholder="Anti-Spam" />
 			</div>
 			<div style="text-align: center;"><input type="submit" value="Signer la pétition !"/></div>
 			<div class="clearfix"></div>

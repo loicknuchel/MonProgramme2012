@@ -66,6 +66,30 @@
 						echo generateQuotePager($total_quote_pages, $current_quote_page, $pagerLink);
 					}
 				}
+				
+				
+				if($type == 'selection'){
+					$commentResult = sendCommentForm($usr);
+					
+					$result = api_call('GET', $usr['api_url'].'comment.php', array('key'=>$usr['key'],'type'=>'selection','id'=>$sel_id,'p'=>isset($_GET['pc']) ? $_GET['pc'] : null));
+					$comments = isset($result['response']['comments']) ? $result['response']['comments'] : null;
+					
+					if($result['response']['nbcomments'] > 0){
+						$total_comment_pages = isset($result['response']['total_comment_pages']) ? $result['response']['total_comment_pages'] : null;
+						$current_comment_page = isset($result['response']['current_comment_page']) ? $result['response']['current_comment_page'] : null;
+						
+						if($total_comment_pages > 1){
+							echo generateCommentPager($total_comment_pages, $current_comment_page, 'list.php?type=selection&sel='.$selection.'&p='.$p.'&pc=', '#comment_block');
+						}
+						echo generateCommentsBlock($comments, $rel_to_root);
+						if($total_comment_pages > 1){
+							echo generateCommentPager($total_comment_pages, $current_comment_page, 'list.php?type=selection&sel='.$selection.'&p='.$p.'&pc=', '#comment_block');
+						}
+					}
+					
+					$lastPage = isset($total_comment_pages) ? $total_comment_pages+1 : 1;
+					echo generateCommentForm($usr, $commentResult, 'list.php?type=selection&sel='.$selection.'&p='.$p.'&pc=', '#comment_block', 'selection', $sel_id);
+				}
 			?>
 		</div>
 	</div>
