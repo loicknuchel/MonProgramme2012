@@ -1,7 +1,7 @@
 function quote_actions(){
 	
 	// UI : met les quotes sélectionnées dans l'état selected et les quotes des favoris dans l'état infavoris
-	$('.quote .quote_header .options').css('display', 'inline-block');
+	$('.quote .quote_header .options').css('display', 'inline-block'); // pour que ce soit affiché uniquement s'il y a le js activé
 	identify_selected_quotes();
 	identify_favoris_quotes();
 	
@@ -18,27 +18,9 @@ function quote_actions(){
 		function(event){ $(this).parents('.quote').find('.quote_expand').slideUp(); $(this).find('a').html(s_quote.meta.expand); }
 	);
 	
-	// ajouter la quote aux favoris
-	$('.quote .quote_header .options .favoris').click(function(event){
-		quote_add_to_favoris($(this).parents('.quote'));
-		return false;
-	});
-	
 	// supprimer de la sélection (visible quand on affiche une sélection)
 	$('.quote .quote_header .options .selectRem').click(function(event){
 		rem_quote_from_selection($(this).parents('.quote'), meth);
-		return false;
-	});
-	
-	// proposer une nouvelle catégorie pour la quote
-	/*$('.quote .quote_header .options .category').click(function(event){
-		quote_new_category($(this).parents('.quote'));
-		return false;
-	});*/
-	
-	// ajouter une quote à la sélection
-	$('.quote .quote_footer .quote_actions .select').click(function(){
-		quote_add_selection($(this).parents('.quote'));
 		return false;
 	});
 	
@@ -535,7 +517,3 @@ function set_favoris_link(){
 		$('#header .topnav .favoris').hide();
 	}
 }
-
-/*function quote_new_category(html_quote){
-	open_new_quote_category_fancybox(html_quote);
-}*/

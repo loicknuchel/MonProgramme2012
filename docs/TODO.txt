@@ -1,6 +1,5 @@
 
 MISE EN PROD :
-- vérifier que les favoris fonctionnent bien !!! (problème pour virer le dernier)
 
 - dans l'API : mettre "all" comme valeur possible pour le paramètre 'p' pour tout récupérer !
 
