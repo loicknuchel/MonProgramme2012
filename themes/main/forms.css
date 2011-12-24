@@ -164,7 +164,7 @@ textarea.inc_meta_info {
 	padding-top: 28px;
 }
 textarea.expandable {
-height: 48px;
+height: 64px;
 -webkit-transition-property: height;
 -webkit-transition-duration: 0.5s;
 -webkit-transition-timing-function: ease-out;

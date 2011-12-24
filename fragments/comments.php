@@ -46,35 +46,5 @@ function generateComment($comment, $rel_to_root = './'){
 	</div>';
 	return $html;
 }
-/*
-function generateCommentPages($commentDatas){
-	if($commentDatas['total_comment_pages'] > 1){
-		$html = '<div class="comment_pages">';
-		
-		if($commentDatas['current_comment_page'] != 1){
-			$html .= '<span class="page"><a href="#"><<</a></span> ';
-		}
-		
-		for($i=1; $i<=$commentDatas['total_comment_pages']; $i++){
-			if($i == $commentDatas['current_comment_page']){
-				$html .= '<span class="cur_page">'.$i.'</span> ';
-			}
-			else{
-				$html .= '<span class="page"><a href="#">'.$i.'</a></span> ';
-			}
-		}
-		
-		if($commentDatas['current_comment_page'] != $commentDatas['total_comment_pages']){
-			$html .= '<span class="page"><a href="#">>></a></span> ';
-		}
-		
-		$html .= '</div>';
-		
-		return $html;
-	}
-	else{
-		return '';
-	}
-}*/
 
 ?>
