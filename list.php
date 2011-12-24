@@ -21,7 +21,7 @@
 		exit;
 	}
 	
-	$result = api_call('GET', $usr['api_url'].'quote_list.php', $datas);
+	$result = api_call('GET', $usr['api_url'].'quote_list.php', $datas, true);
 ?>
 
 <?php 
@@ -97,12 +97,6 @@
 	<?php echo generateFooter(); ?>
 	
 	<?php echo generateScriptsJs(); ?>
-	
-	<?php 
-		if($type == 'custom'){
-			// TODO : gérer la liste des possibilités de nom de sélection : cf local_selection.php
-		}
-	?>
 	
 	<?php 
 		include $rel_to_root.'fragments/endPage.php';

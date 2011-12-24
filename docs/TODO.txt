@@ -1,8 +1,6 @@
 
 MISE EN PROD :
 
-- dans l'API : mettre "all" comme valeur possible pour le paramètre 'p' pour tout récupérer !
-
 - citer un commentaire : ajouter nom, date et référence
 
 - pouvoir voter pour des sélections

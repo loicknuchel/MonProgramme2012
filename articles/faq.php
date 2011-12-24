@@ -297,12 +297,12 @@
 				$typesign_param['name'] = 'type';			$typesign_param['status'] = 'requis';		$typesign_param['use'] = "Valeurs possibles : <span class=\"val\">quote</span> ou <span class=\"val\">site</span>. Désigne le type de ressource voulu.";
 				$id_param['name'] = 'id'; 					$id_param['status'] = 'requis'; 			$id_param['use'] = "Id de la ressource souhaitée.";
 				$pc_comment_param['name'] = 'pc'; 			$pc_comment_param['status'] = 'optionnel'; 	$pc_comment_param['use'] = "Numéro de la page de commentaires.";
-				$pp_comment_param['name'] = 'pp'; 			$pp_comment_param['status'] = 'optionnel'; 	$pp_comment_param['use'] = "Numéro de la page de la pétition.";
+				$pp_comment_param['name'] = 'pp'; 			$pp_comment_param['status'] = 'optionnel'; 	$pp_comment_param['use'] = "Numéro de la page de la pétition ou <span class=\"val\">all</span> pour tout avoir.";
 				$p_comment_param['name'] = 'p'; 			$p_comment_param['status'] = 'optionnel'; 	$p_comment_param['use'] = "Numéro de la page de commentaires.";
 				$p_quote_param['name'] = 'p'; 				$p_quote_param['status'] = 'optionnel'; 	$p_quote_param['use'] = "Numéro de la page de citations.";
-/*4*/			$p_selection_param['name'] = 'p'; 			$p_selection_param['status'] = 'optionnel'; $p_selection_param['use'] = "Numéro de la page de sélections.";
-				$p_category_param['name'] = 'p'; 			$p_category_param['status'] = 'optionnel';	$p_category_param['use'] = "Numéro de la page de catégories.";
-				$p_petition_param['name'] = 'p'; 			$p_petition_param['status'] = 'optionnel';	$p_petition_param['use'] = "Numéro de la page de pétition.";
+/*4*/			$p_selection_param['name'] = 'p'; 			$p_selection_param['status'] = 'optionnel'; $p_selection_param['use'] = "Numéro de la page de sélections ou <span class=\"val\">all</span> pour tout avoir.";
+				$p_category_param['name'] = 'p'; 			$p_category_param['status'] = 'optionnel';	$p_category_param['use'] = "Numéro de la page de catégories ou <span class=\"val\">all</span> pour tout avoir.";
+				$p_petition_param['name'] = 'p'; 			$p_petition_param['status'] = 'optionnel';	$p_petition_param['use'] = "Numéro de la page de pétition ou <span class=\"val\">all</span> pour tout avoir.";
 				$rephrase_param['name'] = 'rephrase';		$rephrase_param['status'] = 'optionnel';	$rephrase_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Ajoute à la réponse la liste des réécritures de la proposition.";
 				$nocomment_param['name'] = 'nocomment';		$nocomment_param['status'] = 'optionnel';	$nocomment_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Les commentaires ne seront pas dans la réponse (pour alléger le trafic réseau).";
 				$nopetition_param['name'] = 'nopetition';	$nopetition_param['status'] = 'optionnel';	$nopetition_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. La pétition ne sera pas dans la réponse (pour alléger le trafic réseau).";

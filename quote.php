@@ -7,7 +7,7 @@
 	
 	$pc = isset($_GET['pc']) ? $_GET['pc'] : null;
 	$pp = isset($_GET['pp']) ? $_GET['pp'] : null;
-	$result = api_call('GET', $usr['api_url'].'quote.php', array('key'=>$usr['key'],'quoteid'=>isset($_GET['id']) ? $_GET['id'] : null,'pc'=>$pc,'pp'=>$pp));
+	$result = api_call('GET', $usr['api_url'].'quote.php', array('key'=>$usr['key'],'quoteid'=>isset($_GET['id']) ? $_GET['id'] : null,'pc'=>$pc,'pp'=>$pp), true);
 	$quote_id = isset($result['response']['id']) ? $result['response']['id'] : null;
 ?>
 
