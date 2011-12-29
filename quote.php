@@ -29,6 +29,7 @@
 				<ul class="navigation">
 					<li><a href="#commentContainer">Commentaires</a></li>
 					<li><a href="#petitionContainer">Pétition</a></li>
+					<!--<li><a href="#wikiContainer">Wiki</a></li>-->
 				</ul>
 
 				<!-- element with overflow applied -->
@@ -63,6 +64,14 @@
 								echo generatePetitionForm($usr, $petitionResult, 'quote.php?id='.$quote_id.'&pc='.$pc.'&pp=1', '#petitionContainer', 'quote', $quote_id);
 							?>
 						</div>
+						<!--<div class="panel" id="wikiContainer">
+							<?php
+								echo '
+								<div>
+									Le Wiki ici !
+								</div>';
+							?>
+						</div>-->
 					</div>
 				</div>
 			</div>

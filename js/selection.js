@@ -5,7 +5,10 @@ function selection_actions(){
 	});
 	
 	$('form.add_to_selection .send').click(function(){
-		post_add_to_selection($(this).parents('form'), meth);
+		//var res = verif_form($(this).parents('form'));
+		//if(res == true){
+			post_add_to_selection($(this).parents('form'), meth);
+		//}
 		return false;
 	});
 }
