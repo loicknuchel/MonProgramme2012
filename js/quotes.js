@@ -157,10 +157,10 @@ function quote_report(html_quote, meth){
 
 function rem_quote_from_selection(html_quote, meth){
 	var sel_id = $('.sel_id').html();
-	var sel_pass = prompt('mot de passe');
+	var sel_pass = prompt('mot de passe de la sélection :', '');
 	var quote_id = eval(html_quote.find('.quote_header .quote_number a span').html());
 	
-	if(sel_pass != null){
+	if(sel_pass != null && sel_pass != ''){
 		if(meth == 'local'){
 			var url = base_url+'selection.php';
 			$.post(url, { sel: sel_id, remids: quote_id, pass: sel_pass, key: api_key, noheaders: 1 },
@@ -344,6 +344,10 @@ function change_to_unselected(html_quote){
 		quote_add_selection(html_quote);
 		return false;
 	});
+	
+	if($('#quotelist_selected').html() != null){
+		html_quote.slideUp();
+	}
 }
 
 function identify_selected_quotes(){
@@ -374,7 +378,7 @@ function set_selection_no(no_sel){
 	if(no_sel > 0 && ids != ''){
 		$('#header .topnav li.selection div').html(no_sel);
 		$('#header .topnav li.selection').show();
-		$('#header .topnav .selection a').attr("href", 'list.php?type=custom&quoteids='+ids);
+		$('#header .topnav .selection a').attr("href", 'list.php?type=selected&quoteids='+ids);
 	}
 	else{
 		$('#header .topnav li.selection div').html('');

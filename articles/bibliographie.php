@@ -24,19 +24,6 @@
 				</p>
 				<p>
 					<dl>
-						<dt id="reflets">Reflets</dt>
-						<dd>
-							<a href="http://reflets.info/">Reflets</a> est un média en ligne où écrivent entre autre <a href="https://twitter.com/bluetouff">@bluetouff</a>, <a href="https://twitter.com/epelboin">@epelboin</a>, <a href="https://twitter.com/_Kitetoa_">@kitetoa</a>. 
-							Il traite principalement des sujets de libertés informatiques et financiers.
-							Les rédacteurs fabriquent l'information (au sens où ils effectuent les recherches nécessaire pour trouver de l'information non publiée) 
-							et n'ont pas leur langue dans leur poche sur des articles réellement engagés.<br/>
-							C'est pour moi un moyen d'information essentiel sur des problématiques qui me touchent.<br/>
-							Ils sont proches d'association ou de groupement de personnes tels que <a href="http://telecomix.org/">telecomix</a> ou <a href="http://owni.fr/">OWNI</a>.<br/>
-							Voici quelques articles qui me paraissent importants :
-							<ul>
-								<li><a href="http://reflets.info/surveillez-moi-oh-oui-surveillez-moi/">Surveillez moi, oh oui, surveillez moi !</a></li>
-							</ul>
-						</dd>
 						<dt id="franckLepage">Franck Lepage</dt>
 						<dd>
 							Franck Lepage et son association <a href="http://www.scoplepave.org/">le pavé</a> organisent des <a href="http://www.scoplepave.org/conferences-gesticulees">conférences gesticulées</a>
@@ -50,6 +37,11 @@
 							Il parle aussi beaucoup de <a href="http://www.dailymotion.com/video/xhiymd_entretien-avec-etienne-chouard-1-l-argent-dette_news">création monétaire</a> et de 
 							<a href="http://www.dailymotion.com/video/xkkyxc_etienne-chouard-10-raisons-de-sortir-de-l-union-europeenne_news">l'europe</a>[59min].
 						</dd>
+						<dt id="bernardFriot">Bernard Friot</dt>
+						<dd>
+							Bernard Friot fait une <a href="http://www.dailymotion.com/video/xh1foy_conference-bernard-friot-de-l-emploi-a-la-qualification_news">conférence sur l'enjeu des retraites</a>[2h24]. 
+							Il remet en cause la notion même de travail et réfléchi de manière globale et radicalement différente sur les tenants et aboutissants de cette valeur.
+						</dd>
 						<dt id="annieLacroix-Riz">Annie Lacroix-Riz</dt>
 						<dd>
 							Annie Lacroix-Riz a pour moi été une révélation. Sa <a href="http://www.dailymotion.com/video/x5njza_le-choix-de-la-defaite-annie-lacroi_news">conférence</a>[3h22] sur son nouveau livre : 
@@ -58,20 +50,34 @@
 							Elle fait aussi une analyse (actuelle) de la crise actuelle et de la guerre contre les salaires : <a href="http://www.dailymotion.com/video/xlkni0_conference-d-annie-lacroix-riz-27-09-2011_news">vidéo</a>.[1h18]<br/>
 							Son travail et sa conférence sont réellement passionnants.
 						</dd>
-						<dt id="bernardFriot">Bernard Friot</dt>
-						<dd>
-							Bernard Friot fait une <a href="http://www.dailymotion.com/video/xh1foy_conference-bernard-friot-de-l-emploi-a-la-qualification_news">conférence sur l'enjeu des retraites</a>[2h24]. 
-							Il remet en cause la notion même de travail et réfléchi de manière globale et radicalement différente sur les tenants et aboutissants de cette valeur.
-						</dd>
 						<dt id="jFNoubel">Jean-François Noubel</dt>
 						<dd>
 							J'ai découvert Jean-François Noubel dans une <a href="http://www.youtube.com/watch?v=PuZgkL5BEBk">conférence TEDxParis</a>[14min]. Il y parle de manière très imagée et très didactique de la création monétaire.
 							Il prône les monnaies libres et plurielles. Pour lui l'argent régalien (cad contrôlé par des autorités suppérieures) arrive en fin de vie. Chacun devrait pouvoir créer sa monnaie.<br/>
 							Le projet est présenté et détaillé sur le site <a href="http://people.thetransitioner.org/">thetransitioner.org</a>.
 						</dd>
-						<dt id="autres">...</dt>
+						<dt id="reflets">Reflets</dt>
 						<dd>
-							Et beaucoup d'autres comme les journaux <a href="http://owni.fr/">OWNI</a>, <a href="http://www.numerama.com/">numerama</a> et <a href="http://www.youtube.com/user/jcfroglevrai">jcfrog</a>.
+							<a href="http://reflets.info/">Reflets</a> est un média en ligne où écrivent entre autre <a href="https://twitter.com/bluetouff">@bluetouff</a>, <a href="https://twitter.com/epelboin">@epelboin</a>, <a href="https://twitter.com/_Kitetoa_">@kitetoa</a>. 
+							Il traite principalement des sujets de libertés informatiques et financiers.
+							Les rédacteurs fabriquent l'information (au sens où ils effectuent les recherches nécessaire pour trouver de l'information non publiée) 
+							et n'ont pas leur langue dans leur poche sur des articles réellement engagés.<br/>
+							C'est pour moi un moyen d'information essentiel sur des problématiques qui me touchent.<br/>
+							Ils sont proches d'association ou de groupement de personnes tels que <a href="http://telecomix.org/">telecomix</a> ou <a href="http://owni.fr/">OWNI</a>.<br/>
+							Voici quelques articles qui me paraissent importants :
+							<ul>
+								<li><a href="http://reflets.info/surveillez-moi-oh-oui-surveillez-moi/">Surveillez moi, oh oui, surveillez moi !</a></li>
+							</ul>
+						</dd>
+						<dt id="autres">Et beaucoup d'autres...</dt>
+						<dd>
+							Et beaucoup d'autres comme les journaux sources :
+							<ul>
+								<li><a href="http://www.youtube.com/watch?v=ZE8xBzcLYRs">La création monétaire</a>[10min]</li>
+								<li><a href="http://owni.fr/">OWNI</a> (journal)</li>
+								<li><a href="http://www.numerama.com/">numerama</a> (journal)</li>
+								<li><a href="http://www.youtube.com/user/jcfroglevrai">jcfrog</a> (chansons humouristiques)</li>
+							</ul>
 						</dd>
 					</dl>
 				</p>

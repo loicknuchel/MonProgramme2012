@@ -16,7 +16,7 @@ function generateSelectionForm($usr){
 				<div class="show_more_datas">Créer sélection</div>
 				<div class="more_datas">
 					<input class="FV_length small" type="text" name="name" placeholder="Nom de la sélection" value="'.$name.'" maxsize="'.$app['params']['size']['selection'].'" /><br/>
-					<input class="small" type="text" name="pass" placeholder="Créer mot de passe" /><br/>
+					<input class="small" type="password" name="pass" placeholder="Créer mot de passe" /><br/>
 					<input type="submit" class="send" value="Créer sélection" />
 				</div>
 			</form>
@@ -33,7 +33,7 @@ function generateSelectionForm($usr){
 								}
 							$html .= '
 						</select><br/>
-						<input class="FV_required small" type="text" name="pass" placeholder="Saisir mot de passe" /><br/>
+						<input class="FV_required small" type="password" name="pass" placeholder="Saisir mot de passe" /><br/>
 						<input type="submit" class="send" value="Ajouter à cette sélection" />
 					</div>
 				</form>';

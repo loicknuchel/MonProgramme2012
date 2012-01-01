@@ -2,7 +2,7 @@
 	$rel_to_root = './';
 	include $rel_to_root.'inc/server_link.php';
 	
-	$result = api_call('GET', $usr['api_url'].'selection.php', array('key'=>$usr['key'], 'p'=>'all' ), true );
+	$result = api_call('GET', $usr['api_url'].'selection.php', array('key'=>$usr['key'], 'p'=>'all' ), false );
 ?>
 
 <?php echo generateHead(' - Toutes les sélections', $jsEnv); ?>

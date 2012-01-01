@@ -15,7 +15,7 @@
 	else if($type == 'category'	 	){$datas = array('key'=>$usr['key'],'list'=>'category','cat'=>$category,	'p'=>$p);	$title=' - Catégorie ';					$pagerLink = 'list.php?type=category&cat='.$category.'&p=';}
 	else if($type == 'selection' 	){$datas = array('key'=>$usr['key'],'list'=>'selection','sel'=>$selection,	'p'=>$p);	$title=' - Sélection ';					$pagerLink = 'list.php?type=selection&sel='.$selection.'&p=';}
 	else if($type == 'favoris'	 	){$datas = array('key'=>$usr['key'],'list'=>'custom','quoteids'=>$quoteids		   );	$title=' - Favoris';					}
-	else if($type == 'custom'	 	){$datas = array('key'=>$usr['key'],'list'=>'custom','quoteids'=>$quoteids		   );	$title=' - Sélection';					}
+	else if($type == 'selected'	 	){$datas = array('key'=>$usr['key'],'list'=>'custom','quoteids'=>$quoteids		   );	$title=' - Sélection';					}
 	else{
 		header('Location: 404.php');   
 		exit;
@@ -46,7 +46,8 @@
 			<?php
 				if($type == 'category'){ 		echo "<div class=\"category_disclaimer\">categorie : ".str_replace('é', 'e', $cat_name)."</div>"; }
 				else if($type == 'selection'){ 	echo "<br/>sélection no <span class=\"sel_id\">".$sel_id."</span> : ".$sel_name."<br/>"; }
-				else if($type == 'custom'){ 	echo generateSelectionForm($usr); }
+				else if($type == 'selected'){ 	echo '<div id="quotelist_selected">'; echo generateSelectionForm($usr); }
+				
 				
 				if($type == 'selection'){	$quote_style = 'selection';}
 				else{						$quote_style = '';}
@@ -59,7 +60,7 @@
 					}
 				}
 				
-				if($type != 'favoris' && $type != 'custom'){
+				if($type != 'favoris' && $type != 'selected'){
 					$total_quote_pages = isset($result['response']['total_quote_pages']) ? $result['response']['total_quote_pages'] : null;
 					$current_quote_page = isset($result['response']['current_quote_page']) ? $result['response']['current_quote_page'] : null;
 					if($total_quote_pages > 1){
@@ -90,6 +91,9 @@
 					$lastPage = isset($total_comment_pages) ? $total_comment_pages+1 : 1;
 					echo generateCommentForm($usr, $commentResult, 'list.php?type=selection&sel='.$selection.'&p='.$p.'&pc=', '#comment_block', 'selection', $sel_id);
 				}
+				
+				
+				if($type == 'selected'){ echo '</div>'; }
 			?>
 		</div>
 	</div>

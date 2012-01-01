@@ -1,9 +1,29 @@
 function selection_actions(){
+	// UI : name field in "new selection" become red if selection already exist
+	var sel_list = new Array();
+	$('form.add_to_selection select option').each(function(){
+		if($(this).html() != ''){
+			sel_list.push($(this).html());
+		}
+	});
+	$('form.new_selection input[name="name"]').keyup(function(event){
+		if(in_array(sel_list, $(this).val())){
+			$(this).addClass('FV_error');
+			$(this).next().addClass('FV_error');
+		}
+		else{
+			$(this).removeClass('FV_error');
+			$(this).next().removeClass('FV_error');
+		}
+	});
+	
+	// send new selection
 	$('form.new_selection .send').click(function(){
 		post_new_selection($(this).parents('form'), meth);
 		return false;
 	});
 	
+	// send add to selection
 	$('form.add_to_selection .send').click(function(){
 		//var res = verif_form($(this).parents('form'));
 		//if(res == true){

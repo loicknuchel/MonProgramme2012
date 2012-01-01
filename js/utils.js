@@ -1,8 +1,11 @@
 function displayInfo(type, text){
-	if(type == 'warning' || type == 'error' || type == 'debug' || type == 'info' || type == 'success'){
+	if(type == 'warning' || type == 'error' || type == 'info' || type == 'success'){
 		$('#info').removeClass().addClass(type).html(text).delay(500).slideDown().click(function(event){
 			$(this).hide();
 		}).delay(5000).slideUp();
+	}
+	else if(type == 'debug'){
+		$('#info').removeClass().addClass(type).html(text).delay(0).slideDown().delay(10000).slideUp();
 	}
 	else if(type == 'else'){
 		return false;

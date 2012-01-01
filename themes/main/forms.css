@@ -74,7 +74,7 @@ form .switch label.selected.bgred {background: #ecc;}
 /****************************************/
 /* 			Text field widget 			*/
 /****************************************/
-input[type="text"] {
+input[type="text"], input[type="password"] {
 	width: 260px;
 	text-align: left;
 	color: #888;
@@ -92,7 +92,7 @@ input[type="text"] {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
-input[type="text"].FV_length {
+input[type="text"].FV_length, input[type="password"].FV_length {
 	width: 227px;
 	margin-right: 0px;
 	border-right: none;
@@ -100,10 +100,10 @@ input[type="text"].FV_length {
 	-moz-border-radius: 5px 0px 0px 5px;
 	border-radius: 5px 0px 0px 5px;
 }
-input[type="text"].small {
+input[type="text"].small, input[type="password"].small {
 	width: 125px;
 }
-input[type="text"].xsmall {
+input[type="text"].xsmall, input[type="password"].xsmall {
 	width: 73px;
 }
 

@@ -41,7 +41,7 @@ s_quote.selection.unsaved = 'Citation retirée de la sélection.';
 s_quote.selection.alreadySaved = 'Cette citation est déjà sélectionnée.';
 s_quote.selection.notSaved = 'Cette citation n\'est pas sélectionnée.';
 s_quote.selection.item = new Object();
-s_quote.selection.item.selected = '&#9733; Sélectionnée <a href="#">(Retirer)</a>';
+s_quote.selection.item.selected = '&#9733; Sélectionnée <a href="#" class="unselect">(Retirer)</a>';
 s_quote.selection.item.notselected = '<a href="#">&#9734; sélectionner</a>';
 s_quote.favoris = new Object();
 s_quote.favoris.saved = 'Citation enregistrée dans les favoris.';
