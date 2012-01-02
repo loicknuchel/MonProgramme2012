@@ -18,17 +18,17 @@ function generateHeader($rel_to_root = './'){
 			<ul class="topnav">
 				<li><a href="'.$rel_to_root.'quote.php?id=random">Aléatoire</a></li>
 				<li>
-					<a href="#" class="topnavtitle">Classées</a>
+					<a href="#" class="topnavtitle">Propositions</a>
 					<ul class="subnav">
-						<li><a href="'.$rel_to_root.'list.php?type=top">Top votes</a></li>
-						<li><a href="'.$rel_to_root.'list.php?type=topcomment">Top réactions</a></li>
-						<li><a href="'.$rel_to_root.'list.php?type=lastactivity">Dernière activité</a></li>
+						<li><a href="'.$rel_to_root.'list.php?type=top">Populaires</a></li>
+						<li><a href="'.$rel_to_root.'list.php?type=topcomment">Commentées</a></li>
+						<li><a href="'.$rel_to_root.'list.php?type=lastactivity">Dernières activitées</a></li>
 						<li><a href="'.$rel_to_root.'list.php?type=lasts">Dernières</a></li>
 						<li class="favoris"><a href="'.$rel_to_root.'list.php?type=favoris">Favoris</a></li>
 					</ul>
 					<span></span>
 				</li>
-				<li><a href="'.$rel_to_root.'allselections.php">Sélections</a></li>
+				<li><a href="'.$rel_to_root.'allselections.php">Programmes</a></li>
 				<li><a href="'.$rel_to_root.'new.php">Nouvelle proposition</a></li>
 				<li><a href="'.$rel_to_root.'articles/projet.php">Le projet</a></li>
 				<!--<li><a href="'.$rel_to_root.'articles/events.php">Evènements</a></li>-->

@@ -13,7 +13,7 @@
 	else if($type == 'topcomment'	){$datas = array('key'=>$usr['key'],'list'=>'topcomment',					'p'=>$p);	$title=' - Les plus commentées';		$pagerLink = 'list.php?type=topcomment&p=';}
 	else if($type == 'lastactivity'	){$datas = array('key'=>$usr['key'],'list'=>'lastactivity',					'p'=>$p);	$title=' - Les dernières activités';	$pagerLink = 'list.php?type=lastactivity&p=';}
 	else if($type == 'category'	 	){$datas = array('key'=>$usr['key'],'list'=>'category','cat'=>$category,	'p'=>$p);	$title=' - Catégorie ';					$pagerLink = 'list.php?type=category&cat='.$category.'&p=';}
-	else if($type == 'selection' 	){$datas = array('key'=>$usr['key'],'list'=>'selection','sel'=>$selection,	'p'=>$p);	$title=' - Sélection ';					$pagerLink = 'list.php?type=selection&sel='.$selection.'&p=';}
+	else if($type == 'selection' 	){$datas = array('key'=>$usr['key'],'list'=>'selection','sel'=>$selection,	'p'=>$p);	$title=' - Programme de ';				$pagerLink = 'list.php?type=selection&sel='.$selection.'&p=';}
 	else if($type == 'favoris'	 	){$datas = array('key'=>$usr['key'],'list'=>'custom','quoteids'=>$quoteids		   );	$title=' - Favoris';					}
 	else if($type == 'selected'	 	){$datas = array('key'=>$usr['key'],'list'=>'custom','quoteids'=>$quoteids		   );	$title=' - Sélection';					}
 	else{
@@ -44,9 +44,14 @@
 	<div id="main">
 		<div class="wrapper">
 			<?php
-				if($type == 'category'){ 		echo "<div class=\"category_disclaimer\">categorie : ".str_replace('é', 'e', $cat_name)."</div>"; }
-				else if($type == 'selection'){ 	echo "<br/>sélection no <span class=\"sel_id\">".$sel_id."</span> : ".$sel_name."<br/>"; }
-				else if($type == 'selected'){ 	echo '<div id="quotelist_selected">'; echo generateSelectionForm($usr); }
+				if($type == 'category'			){ 	echo "<div class=\"category_disclaimer\">categorie : ".str_replace('é', 'e', $cat_name)."</div>"; }
+				else if($type == 'selection'	){ 	echo "<div class=\"category_disclaimer\"><span class=\"sel_id\" style=\"display: none;\">".$sel_id."</span> Programme de ".str_replace('é', 'e', $sel_name)."</div>"; }
+				else if($type == 'selected'		){ 	echo '<div id="quotelist_selected">'; echo generateSelectionForm($usr); }
+				else if($type == 'top'			){ 	echo "<div class=\"category_disclaimer\">Propositions les plus populaires</div>"; }
+				else if($type == 'lasts'		){ 	echo "<div class=\"category_disclaimer\">Les dernieres propositions</div>"; }
+				else if($type == 'topcomment'	){ 	echo "<div class=\"category_disclaimer\">Propositions les plus commentees</div>"; }
+				else if($type == 'lastactivity'	){	echo "<div class=\"category_disclaimer\">Propositions avec une activite recente</div>"; }
+				else if($type == 'favoris'		){ 	echo "<div class=\"category_disclaimer\">Propositions dans les favoris</div>"; }
 				
 				
 				if($type == 'selection'){	$quote_style = 'selection';}

@@ -30,6 +30,6 @@ $(document).ready(function () {
 	
 	// catch ajax errors
 	$('#info').ajaxError(function(e, jqxhr, settings, exception) {
-		displayInfo('debug', '<br/>'+s_ajax.error.def+'<br/>Error :<br/><br/>'+settings.url+'<br/><br/>'+jqxhr.responseText+'<br/>');
+		displayInfo('debug', '<br/>An ajax error occurs !<br/>Error :<br/><br/>'+settings.url+'<br/><br/>'+jqxhr.responseText+'<br/>');
 	});
 });

@@ -773,7 +773,7 @@
 					$params[4] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'selection.php?key='.$APIdatas['public_key_test'].'';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"selections":[{"id":1,"post_timestamp":"1312036","post_date":"30/07/2011 à 22:46","name":"klm"},{"id":3,"post_timestamp":"1312036","post_date":"16/08/2011 à 19:40","name":"undefined"},{"id":2,"post_timestamp":"1312036","post_date":"15/08/2011 à 16:31","name":"zetr"}],"nbselections":3,"size_selection_page":20,"current_selection_page":1,"total_selection_pages":1},"info":{"remaining_queries":38,"next_restart":16}}';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"selections":[{"id":1,"post_timestamp":"1312036","post_date":"30/07/2011 à 22:46","name":"klm","nbquotes":2},{"id":3,"post_timestamp":"1312036","post_date":"16/08/2011 à 19:40","name":"undefined","nbquotes":2},{"id":2,"post_timestamp":"1312036","post_date":"15/08/2011 à 16:31","name":"zetr","nbquotes":6}],"nbselections":3,"size_selection_page":20,"current_selection_page":1,"total_selection_pages":1},"info":{"remaining_queries":38,"next_restart":16}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					

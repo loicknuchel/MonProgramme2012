@@ -1,11 +1,18 @@
 
 MISE EN PROD :
+- vérifier l'envoi de mail lors de la publication d'une nouvelle proposition
+
+
+- liste des suivis (fancybox) : afficher le nom des pages (au lieu du numéro)
+
+- boutons pour partager les programmes (twitter, facebook et +1)
+
+- programmes : pouvoir ordonner ses propositions (ajouter champ no dans cq1_4_selection_quote)
+
+- pouvoir voter pour des programmes
+
 
 - citer un commentaire : ajouter nom, date et référence
-
-- pouvoir voter pour des sélections
-
-- dans la fancybox de suivi, ajouter le nom et les infos (pour le suivi des citations)
 
 - ajouter une partie wiki (à coté des commentaires et pétition)
 

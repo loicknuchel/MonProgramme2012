@@ -78,22 +78,27 @@ function post_add_to_selection(form_block, meth){
 	var sel_pass = form_block.find('input[name="pass"]').val();
 	var add_ids = build_quote_ids("selection");
 	
-	if(meth == 'local'){
-		var url = base_url+'selection.php';
-		$.post(url, { sel: sel_id, addids: add_ids, pass: sel_pass, key: api_key, noheaders: 1 },
-		function(data) {
-			call_success(jQuery.parseJSON(data));
-		});
+	if(sel_id != '' && sel_id != null && sel_pass != '' && sel_pass != null){
+		if(meth == 'local'){
+			var url = base_url+'selection.php';
+			$.post(url, { sel: sel_id, addids: add_ids, pass: sel_pass, key: api_key, noheaders: 1 },
+			function(data) {
+				call_success(jQuery.parseJSON(data));
+			});
+		}
+		else{
+			var url = base_url+'selection.php?sel='+sel_id+'&addids='+add_ids+'&pass='+sel_pass+'&key='+api_key+'&noheaders=1&meth=post&format=jsonp&callback=?';
+			$.ajax({
+				url: url,
+				success: function(data) {
+					call_success(data);
+				},
+				dataType: 'jsonp'
+			});
+		}
 	}
 	else{
-		var url = base_url+'selection.php?sel='+sel_id+'&addids='+add_ids+'&pass='+sel_pass+'&key='+api_key+'&noheaders=1&meth=post&format=jsonp&callback=?';
-		$.ajax({
-			url: url,
-			success: function(data) {
-				call_success(data);
-			},
-			dataType: 'jsonp'
-		});
+		displayInfo('info', 'Tous les champs n\'ont pas été remplis...');
 	}
 	
 	function call_success(obj){

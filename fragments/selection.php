@@ -3,19 +3,23 @@ function generateSelectionBlock($selections){
 	$html = '
 	<div class="selection_list">';
 	if(isset($selections) && $selections != null){
+		$html .= '<p>Programmes publiés :<br/><br/>';
+		$first = true;
 		foreach($selections as $key => $selection){
-			$html .= '<p>La sélection "'.$selection['name'].'" a été postée le '.$selection['post_date'].' (<a href="list.php?type=selection&sel='.$selection['id'].'">voir</a>)</p>';
+			if($first == true){$first = false;} else{$html .= ', ';}
+			$html .= '<a href="list.php?type=selection&sel='.$selection['id'].'">'.$selection['name'].'</a> ('.$selection['nbquotes'].' propositions)';
 		}
+		$html .= '</p>';
 	}
 	else{
 		$html .= '
 		<p>
-			Aucune sélection enregistée.
+			Aucun programme enregisté.
 		</p>';
 	}
-	$html .= '
+	$html .= '<br/>
 		<p>
-			Utilisez le "&#9734; sélectionner" dans les propositions pour créer votre propre sélection.
+			Utilisez le "&#9734; Ajouter au programme" des propositions pour créer votre propre programme !
 		</p>
 	</div>';
 	return $html;
