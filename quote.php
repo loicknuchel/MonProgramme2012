@@ -13,7 +13,7 @@
 
 <?php echo generateHead(' - Proposition #'.$quote_id, $jsEnv); ?>
 <body>
-	<?php echo generateHeader(); ?>
+	<?php echo generateHeader($usr); ?>
 	
 	<div id="main">
 		<div class="wrapper">

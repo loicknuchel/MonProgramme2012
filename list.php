@@ -39,7 +39,7 @@
 	echo generateHead($title, $jsEnv); 
 ?>
 <body>
-	<?php echo generateHeader(); ?>
+	<?php echo generateHeader($usr); ?>
 	
 	<div id="main">
 		<div class="wrapper">

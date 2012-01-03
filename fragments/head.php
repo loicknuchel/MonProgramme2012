@@ -23,19 +23,19 @@ function generateHead($titre, $jsEnv, $rel_to_root = './'){
 	
 	<link rel="stylesheet" href="'.$rel_to_root.'js/libs/fancybox/jquery.fancybox-1.3.4.css">
 	<link rel="stylesheet" href="'.$rel_to_root.'js/libs/contactable.1.3/contactable.css">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'styles.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'header.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'article.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'quotes.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'comments.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'petition.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'selection.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'comment_slider.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'forms.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'quote_form.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'pagers.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'rephrase.css?v=2">
-	<link rel="stylesheet" href="'.$rel_to_root.$style.'footer.css?v=2">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'styles.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'header.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'article.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'quotes.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'comments.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'petition.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'selection.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'comment_slider.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'forms.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'quote_form.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'pagers.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'rephrase.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'footer.css?v=3">
 
 	<script src="'.$rel_to_root.'js/libs/modernizr-1.7.min.js"></script>
 	<script src="'.$rel_to_root.'js/strings.js"></script>

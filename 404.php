@@ -8,7 +8,7 @@
 
 <?php echo generateHead(' - Erreur 404 !', ''); ?>
 <body>
-	<?php echo generateHeader(); ?>
+	<?php echo generateHeader(null); ?>
 	
 	<div id="main">
 		<div class="wrapper">

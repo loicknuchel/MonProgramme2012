@@ -1,6 +1,19 @@
 <?php
 
-function generateHeader($rel_to_root = './'){
+function generateHeader($usr, $rel_to_root = './'){
+	$cat = null;
+	if($usr != null){
+		$categories = api_call('GET', $usr['api_url'].'category.php', array('key'=>$usr['key'], 'p'=>'all') );
+		if(isset($categories['response']['categories'])){
+			$ind = 0;
+			foreach($categories['response']['categories'] as $key => $value){
+				$cat[$ind]['id'] = $value['id'];
+				$cat[$ind]['name'] = $value['name'];
+				$ind++;
+			}
+		}
+	}
+	
 	$html = '
 	<a href="#" class="supportus"><img src="'.$rel_to_root.'themes/main/img/header/supportus.png" style="position: absolute; top: 0; right: 0; z-index: 1000;" /></a>
 	<div id="info">C\'est la classe info...</div>
@@ -29,8 +42,23 @@ function generateHeader($rel_to_root = './'){
 					<span></span>
 				</li>
 				<li><a href="'.$rel_to_root.'allselections.php">Programmes</a></li>
-				<li><a href="'.$rel_to_root.'new.php">Nouvelle proposition</a></li>
-				<li><a href="'.$rel_to_root.'articles/projet.php">Le projet</a></li>
+				<li><a href="'.$rel_to_root.'new.php">Nouvelle proposition</a></li>';
+				
+			if($cat != null){
+					$html .= '
+				<li>
+					<a href="#" class="topnavtitle">Sujets</a>
+					<ul class="subnav">';
+					foreach($cat as $key => $value){
+						$html .= '<li><a href="'.$rel_to_root.'list.php?type=category&cat='.$value['id'].'">'.$value['name'].'</a></li>';
+					}
+					$html .= '
+					</ul>
+					<span></span>
+				</li>';
+			}
+			
+				$html .= '<li><a href="'.$rel_to_root.'articles/projet.php">Le projet</a></li>
 				<!--<li><a href="'.$rel_to_root.'articles/events.php">Evènements</a></li>-->
 				<!--<li>
 					<a href="#" class="topnavtitle">Articles</a>
