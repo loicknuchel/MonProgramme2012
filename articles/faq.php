@@ -732,7 +732,7 @@
 					$params[4] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'category.php?key='.$APIdatas['public_key_test'].'';
-					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"categories":[{"id":4,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","name":"autres"},{"id":3,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","name":"geek"},{"id":2,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","name":"vdm"}],"nbcategories":3,"size_category_page":20,"current_category_page":1,"total_category_pages":1},"info":{"remaining_queries":39,"next_restart":60}}';
+					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},"response":{"categories":[{"id":4,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","name":"autres","nbquotes":2},{"id":3,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","name":"geek","nbquotes":6},{"id":2,"post_timestamp":"1312036","post_date":"30/07/2011 à 16:27","name":"vdm","nbquotes":0}],"nbcategories":3,"size_category_page":20,"current_category_page":1,"total_category_pages":1},"info":{"remaining_queries":39,"next_restart":60}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
 					
