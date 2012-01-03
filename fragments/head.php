@@ -33,6 +33,7 @@ function generateHead($titre, $jsEnv, $rel_to_root = './'){
 	<link rel="stylesheet" href="'.$rel_to_root.$style.'comment_slider.css?v=3">
 	<link rel="stylesheet" href="'.$rel_to_root.$style.'forms.css?v=3">
 	<link rel="stylesheet" href="'.$rel_to_root.$style.'quote_form.css?v=3">
+	<link rel="stylesheet" href="'.$rel_to_root.$style.'comment_form.css?v=3">
 	<link rel="stylesheet" href="'.$rel_to_root.$style.'pagers.css?v=3">
 	<link rel="stylesheet" href="'.$rel_to_root.$style.'rephrase.css?v=3">
 	<link rel="stylesheet" href="'.$rel_to_root.$style.'footer.css?v=3">

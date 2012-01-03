@@ -24,17 +24,25 @@ function FV_Form_Verification(inner_html){
 	
 	// textarea cpt
 	$(inner_html+'textarea.FV_length').each(function(){
-		$(this).after('<span class="area_leave_char"><span>'+$(this).attr('maxsize')+'</span> caractères restants</span>');
+		$(this).after('<span class="area_leave_char" style="visibility: hidden;"><span></span> caractères restants</span>');
 	});
 	$(inner_html+'textarea.FV_length').focus(function(){
-		$(this).next().find('span').html(eval($(this).attr('maxsize'))-eval($(this).val().length));
+		textarea_change_cpt_value($(this));
 		$(this).keyup(function(event){
-			$(this).next().find('span').html(eval($(this).attr('maxsize'))-eval($(this).val().length));
+			textarea_change_cpt_value($(this));
 		});
 		$(this).keydown(function(event){
-			$(this).next().find('span').html(eval($(this).attr('maxsize'))-eval($(this).val().length));
+			textarea_change_cpt_value($(this));
 		});
 	});
+	function textarea_change_cpt_value(textarea_html){
+		var nb = eval(textarea_html.attr('maxsize'))-eval(textarea_html.val().length);
+		textarea_html.next().find('span').html(nb);
+		if(nb < 0){textarea_html.next().css('visibility', 'visible'); textarea_html.next().find('span').addClass('FV_error');}
+		else if(nb < 200){textarea_html.next().css('visibility', 'visible'); textarea_html.next().find('span').removeClass('FV_error');}
+		else{textarea_html.next().css('visibility', 'hidden'); textarea_html.next().find('span').removeClass('FV_error');}
+	}
+	
 	
 	
 	$(inner_html+'form').submit(function(){

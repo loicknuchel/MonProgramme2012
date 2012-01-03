@@ -1,0 +1,15 @@
+
+.leave_comment {
+	width: 700px;
+	margin: 30px auto;
+}
+
+.leave_comment form textarea[name="comment"]{
+	width: 680px; /* 150px larger */
+}
+
+.leave_comment form .no_meta_info {
+	width: 700px; /* 150px larger */
+}
+
+

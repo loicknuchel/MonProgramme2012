@@ -66,7 +66,7 @@ function generateCommentForm($usr, $postResult, $actionPage, $anchor, $type, $id
 	}
 	
 	$antiSpam = getAntiSpamQuestion();
-	$html = '<div class="leave_comment" id="leave_comment" style="width: 600px; margin: auto; margin-top: 30px;">
+	$html = '<div class="leave_comment" id="leave_comment">
 		<form method="POST" action="'.$actionPage.$anchor.'" class="FV_comment">
 			'.$captchaError.'
 			<input type="hidden" name="antiSpam" value="'.$antiSpam['id'].'" />
