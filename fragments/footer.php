@@ -18,6 +18,7 @@ function generateFooter($rel_to_root = './'){
 						<dd><a target="_blanck" href="http://www.nossenateurs.fr/" title="Recensement des sénateurs et de leurs activités.">Nos Sénateurs</a></dd>
 						<dd><a target="_blanck" href="http://memopol2.lqdn.fr/" title="Recensement des députés européens et de leurs activités.">Political Memory</a></dd>
 						<dd><a target="_blanck" href="http://politique.slate.fr/" title="Annuaire des personnalités qui feront les élections en 2012.">Wikipol</a></dd>
+						<dd><a target="_blanck" href="http://republiqueduweb.tumblr.com/" title="Organisent des rencontres politiques">la République Du Web</a></dd>
 						<dd><a target="_blanck" href="http://www.2012memepaspeur.net/" title="Un site \'je veux\'/\'je ne veux pas\' sur les élections 2012.">2012 même pas peur !</a></dd>
 						<!--
 						<dd><a target="_blanck" href="http://www.regardscitoyens.org/" title="Association ayant pour but de regrouper des informations sur nos institutions.">Regards Citoyens</a></dd>
@@ -52,6 +53,7 @@ function generateFooter($rel_to_root = './'){
 						<dd><a href="http://quotes.lkws.fr/api/1.0/doc/api_architecture.txt">API doc</a></dd>
 						-->
 						<dd><a href="'.$rel_to_root.'articles/projet.php">Objectifs du site</a></dd>
+						<dd><a href="'.$rel_to_root.'articles/help.php">Aide et fonctionnalités</a></dd>
 						<dd class="deep"><a href="'.$rel_to_root.'articles/faq.php">FAQ</a></dd>
 						<dt>Sites de citations</dt>
 						<dd><a target="_blanck" href="http://pourquoijevoteoupas.eu/">Pourquoi Je Vote Ou Pas</a></dd>

@@ -28,7 +28,7 @@
 	line-height: 18px;
 }
 
-.article p span, .article p span a{
+.article p span, .article p span a, .article li span{
 	color: #7F0000;
 }
 

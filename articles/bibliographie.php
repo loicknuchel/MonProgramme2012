@@ -67,6 +67,7 @@
 							Voici quelques articles qui me paraissent importants :
 							<ul>
 								<li><a href="http://reflets.info/surveillez-moi-oh-oui-surveillez-moi/">Surveillez moi, oh oui, surveillez moi !</a></li>
+								<li><a href="http://reflets.info/la-guerre-de-troie-na-pas-eu-lieu/">Analyse de l'interdiction du négationisme</a></li>
 							</ul>
 						</dd>
 						<dt id="autres">Et beaucoup d'autres...</dt>
