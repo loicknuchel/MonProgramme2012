@@ -1,8 +1,8 @@
 
 MISE EN PROD :
 - vérifier l'envoi de mail lors de la publication d'une nouvelle proposition
+- catégories : donner le nombre de propositions dans chaque catégorie
 - augmenter taille des commentaires (4096 char) et largeur du textarea des commentaires.
-- ne pas afficher le max de caractères si > 150 (par exemple)
 
 - liste des suivis (fancybox) : afficher le nom des pages (au lieu du numéro)
 

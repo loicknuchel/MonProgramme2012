@@ -24,7 +24,8 @@ function FV_Form_Verification(inner_html){
 	
 	// textarea cpt
 	$(inner_html+'textarea.FV_length').each(function(){
-		$(this).after('<span class="area_leave_char" style="visibility: hidden;"><span></span> caractères restants</span>');
+		//$(this).after('<span class="area_leave_char"><span>'+$(this).attr('maxsize')+'</span> caractères restants</span> <span class="textarea_expand"></span>');
+		$(this).after('<span class="area_leave_char"><span>'+$(this).attr('maxsize')+'</span> caractères restants</span>');
 	});
 	$(inner_html+'textarea.FV_length').focus(function(){
 		textarea_change_cpt_value($(this));

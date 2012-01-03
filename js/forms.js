@@ -39,6 +39,19 @@ function action_forms(){
 			}
 		}
 	});
+	
+	// for expandable textarea : keep max height
+	$('form textarea.expandable').focus(function(){
+		if($(this).height() < 224){
+			$(this).css('height', '224px'); /*224px : see forms.css : textarea.expandable:focus  (line 178) */
+		}
+	});
+	
+	// expand textarea
+	/*$('form .textarea_expand').click(function(){
+		var html_textarea = $(this).prev().prev();
+		html_textarea.css('height', eval(html_textarea.height()+64)+'px');
+	});*/
 }
 
 function fill_forms(){

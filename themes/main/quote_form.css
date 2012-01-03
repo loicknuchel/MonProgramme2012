@@ -47,6 +47,7 @@
 
 .new_quote .textareaquote .area_leave_char{
 	display: block;
+	visibility: visible;
 	width: 540px;
 	height: 18px;
 	text-align: right;

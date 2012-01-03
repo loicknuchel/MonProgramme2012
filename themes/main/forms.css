@@ -196,6 +196,7 @@ textarea.large {
 
 form span.area_leave_char {
 	display: block;
+	visibility: hidden;
 	width: auto;
 	padding: 0px;
 	padding-left: 10px;
@@ -207,6 +208,19 @@ form span.area_leave_char {
 	background: none;
 	position: static;
 }
+/*form span.textarea_expand {
+	float: right;
+	display: block;
+	padding: 0px;
+	margin: -20px 10px 8px 0px;
+	font-size: 12px;
+	text-align: right;
+	color: #777;
+	background: none;
+}
+form span.textarea_expand:after {
+	content: 'Agrandir';
+}*/
 
 form .no_meta_info {
 	display: none;
