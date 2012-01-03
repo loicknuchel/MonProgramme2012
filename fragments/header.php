@@ -36,7 +36,7 @@ function generateHeader($usr, $rel_to_root = './'){
 					<ul class="subnav">
 						<li><a href="'.$rel_to_root.'list.php?type=top">Populaires</a></li>
 						<li><a href="'.$rel_to_root.'list.php?type=topcomment">Commentées</a></li>
-						<li><a href="'.$rel_to_root.'list.php?type=lastactivity">Dernières activitées</a></li>
+						<li><a href="'.$rel_to_root.'list.php?type=lastactivity">Dernières activités</a></li>
 						<li><a href="'.$rel_to_root.'list.php?type=lasts">Dernières</a></li>
 						<li class="favoris"><a href="'.$rel_to_root.'list.php?type=favoris">Favoris</a></li>
 					</ul>

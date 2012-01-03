@@ -306,6 +306,8 @@
 				$rephrase_param['name'] = 'rephrase';		$rephrase_param['status'] = 'optionnel';	$rephrase_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Ajoute à la réponse la liste des réécritures de la proposition.";
 				$nocomment_param['name'] = 'nocomment';		$nocomment_param['status'] = 'optionnel';	$nocomment_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Les commentaires ne seront pas dans la réponse (pour alléger le trafic réseau).";
 				$nopetition_param['name'] = 'nopetition';	$nopetition_param['status'] = 'optionnel';	$nopetition_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. La pétition ne sera pas dans la réponse (pour alléger le trafic réseau).";
+				$noselection_param['name'] = 'noselection';	$noselection_param['status'] = 'optionnel';	$noselection_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Les sélections contenant cette citation ne seront pas indiquées dans la réponse (pour alléger le trafic réseau).";
+				$selection_param['name'] = 'selections';	$selection_param['status'] = 'optionnel';	$selection_param['use'] = "Valeurs possibles : <span class=\"val\">1</span>. Ajoute à chaque citation la liste, les sélections dont elle fait partie.";
 				$orderlist_param['name'] = 'list';			$orderlist_param['status'] = 'requis';		$orderlist_param['use'] = "Valeurs possibles : <span class=\"val\">top</span> (votes), <span class=\"val\">topcomment</span> (nombre de commentaires), <span class=\"val\">lasts</span> (date de publication), <span class=\"val\">lastactivity</span> (date de la dernière activité). Les citations sont classées de manière décroissante selon les différents critères.";
 				$cat_param['name'] = 'cat';					$cat_param['status'] = 'requis';			$cat_param['use'] = "Identifie une catégorie. Prend la valeur de l'id ou du nom de la catégorie.";
 /*9*/			$sel_param['name'] = 'sel';					$sel_param['status'] = 'requis';			$sel_param['use'] = "Identifie une sélection. Prend la valeur de l'id ou du nom de la sélection.";
@@ -383,9 +385,10 @@
 					$params[4] = $rephrase_param;
 					$params[5] = $nocomment_param;
 					$params[6] = $nopetition_param;
-					$params[7] = $noheaders_param;
-					$params[8] = $format_param;
-					$params[9] = $callback_param;
+					$params[7] = $noselection_param;
+					$params[8] = $noheaders_param;
+					$params[9] = $format_param;
+					$params[10] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'quote.php?key='.$APIdatas['public_key_test'].'&amp;quoteid=1&rephrase=1';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
@@ -400,7 +403,11 @@
 					"signatures":[
 						{"no":2,"post_date":"01/12/2011 à 16:40","genre":"Mme"<span class="comment">Valeurs possibles : "Mr" ou "Mme".</span>,"age":""<span class="comment">Valeurs possibles : "0 à 18 ans" ou "18 à 25 ans" ou "25 à 50 ans" ou ">50 ans".</span>,"prenom":"tata","nom":"dupont","site":"https://twitter.com","profession":"facteur","code_postal":"75000","message":"Bonjour"},
 						{"no":1,"post_date":"01/12/2011 à 16:33","genre":"","age":"25 à 50 ans","prenom":"toto","nom":"dupont","site":"","profession":"","code_postal":"","message":""}
-					],"nbsignatures":2,"size_petition_page":40,"current_petition_page":1,"total_petition_pages":1},
+					],"nbsignatures":2,"size_petition_page":40,"current_petition_page":1,"total_petition_pages":1,
+					"selections":[
+						{"id":30,"post_timestamp":1325429560,"post_date":"01/01/2012 à 15:52","name":"a","nbquotes":2},
+						{"id":31,"post_timestamp":1325472697,"post_date":"02/01/2012 à 03:51","name":"loic","nbquotes":4}
+					],"nbselections":2},
 					"info":{"remaining_queries":35,"next_restart":8}}';
 					echo generateAPIRessource($ressource, $params, $sample);
 					
@@ -516,9 +523,10 @@
 					$params[0] = $key_param;
 					$params[1] = $orderlist_param;
 					$params[2] = $p_quote_param;
-					$params[3] = $noheaders_param;
-					$params[4] = $format_param;
-					$params[5] = $callback_param;
+					$params[3] = $selection_param;
+					$params[4] = $noheaders_param;
+					$params[5] = $format_param;
+					$params[6] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'quote_list.php?key='.$APIdatas['public_key_test'].'&list=top';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},

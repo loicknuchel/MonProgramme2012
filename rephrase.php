@@ -4,7 +4,7 @@
 	
 	$rephraseResult = sendRephraseForm($usr);
 	
-	$result = api_call('GET', $usr['api_url'].'quote.php', array('key'=>$usr['key'],'quoteid'=>isset($_GET['id']) ? $_GET['id'] : null,'rephrase'=>1,'nocomment'=>1,'nopetition'=>1), true);
+	$result = api_call('GET', $usr['api_url'].'quote.php', array('key'=>$usr['key'],'quoteid'=>isset($_GET['id']) ? $_GET['id'] : null,'rephrase'=>1,'nocomment'=>1,'nopetition'=>1,'noselection'=>1), true);
 	$quote_id = isset($result['response']['id']) ? $result['response']['id'] : null;
 ?>
 

@@ -18,10 +18,15 @@ function generateQuoteBlock($quote, $style = ''){
 	$ctx = $quote['context'] != '' ? '<br/>'.nl2br(UrlToShortLink($quote['context'])).'<br/>' : '';
 	$expl = $quote['explanation'] != '' || ($quote['origin_explanation'] != '' && $style == 'expanded') ? '<div class="quote_desc">'.nl2br(UrlToShortLink($quote['explanation'])).$originalExpl.'</div>' : '';
 	$src = $quote['source'] != '' ? '<br/>['.UrlToShortLink($quote['source']).']<br/>' : '';
-	$accordReaction = ($quote['total_comments'] > 1) ? 's' : '';
-	$accordPetition = ($quote['total_signatures'] > 1) ? 's' : '';
-	
-	$more_infos = 'Proposition publiée le '.$quote['post_date'].$pub.$auth.'<br/>'.$ctx.$src.'';
+	$list_selection = null;
+	if(isset($quote['selections'])){
+		$pluriel = false;
+		foreach($quote['selections'] as $key => $program){
+			if($list_selection == null){$list_selection .= '<a href="list.php?type=selection&sel='.$program['id'].'">'.$program['name'].'</a>';}
+			else{$list_selection .= ', <a href="list.php?type=selection&sel='.$program['id'].'">'.$program['name'].'</a>'; $pluriel = true;}
+		}
+		if($list_selection != null){$list_selection = '<br/>Cette proposition a été intégrée dans le'.($pluriel ? 's' : '').' programme'.($pluriel ? 's' : '').' suivant'.($pluriel ? 's' : '').' : '.$list_selection;}
+	}
 	
 	$html = '<div class="quote '.$quote['id'].'">
 			<div class="quote_header">
@@ -54,15 +59,15 @@ function generateQuoteBlock($quote, $style = ''){
 					<ul>
 						<li class="select"></li>
 						<li>'.generateVoteBar($quote['up'], $quote['down']).'</li>
-						<li><a href="quote.php?id='.$quote['id'].'#commentContainer">'.$quote['total_comments'].' réaction'.$accordReaction.'</a></li>
-						<li><a href="quote.php?id='.$quote['id'].'#petitionContainer">'.$quote['total_signatures'].' signtaire'.$accordPetition.'</a></li>
+						<li><a href="quote.php?id='.$quote['id'].'#commentContainer">'.$quote['total_comments'].' réaction'.(($quote['total_comments'] > 1) ? 's' : '').'</a></li>
+						<li><a href="quote.php?id='.$quote['id'].'#petitionContainer">'.$quote['total_signatures'].' signtaire'.(($quote['total_signatures'] > 1) ? 's' : '').'</a></li>
 						<li class="category">'.$category.'</li>
 					</ul>
 				</div>
 				<div class="more"><a href="#"></a></div>
 				<div class="clear"></div>
 			</div>
-			<div class="quote_expand">'.$more_infos.'</div>
+			<div class="quote_expand">Proposition publiée le '.$quote['post_date'].$pub.$auth.'<br/>'.$ctx.$src.$list_selection.'</div>
 		</div>';
 		return $html;
 }

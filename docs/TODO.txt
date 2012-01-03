@@ -1,7 +1,13 @@
 
 MISE EN PROD :
 - vérifier l'envoi de mail lors de la publication d'une nouvelle proposition
-- augmenter taille des commentaires (4096 char) et largeur du textarea des commentaires.
+- PROBLEME : ne pas poster un commentaire sur un raffraichissement de page (vérifier si le commentaire n'existe pas déjà !)
+	* enregistrer dans une session le dernier envoi (avant d'appeler l'API : check si c'est pas déjà envoyé !) => possibilité de créer une signature sha1 de l'envoi (ex : sha1(pseudo+mail+site+comment))
+	* ajouter un rafraichissement forcé : http://www.siteduzero.com/tutoriel-3-38553-eviter-le-renvoi-repetitif-d-un-formulaire-en-rafraichissant.html
+- augmenter taille des commentaires (6000 char, 1 page word = 3400 char environ)
+
+
+- pour une citation : renvoyer la liste des sélection dont elle fait partie
 
 - liste des suivis (fancybox) : afficher le nom des pages (au lieu du numéro)
 
@@ -10,6 +16,11 @@ MISE EN PROD :
 - programmes : pouvoir ordonner ses propositions (ajouter champ no dans cq1_4_selection_quote)
 
 - pouvoir voter pour des programmes
+
+- faire une page unsubscribe ...
+
+- problème anti-spam : si je connais une réponse, il suffit de renvoyer tout le temps le même id_spam avec la même réponse...
+	solution : ajouter un hash-spam qui prend la question et l'heure
 
 
 - citer un commentaire : ajouter nom, date et référence
