@@ -7,7 +7,7 @@ MISE EN PROD :
 - augmenter taille des commentaires (6000 char, 1 page word = 3400 char environ)
 
 
-- pour une citation : renvoyer la liste des sélection dont elle fait partie
+- créer une aide pour expliquer toutes les fonctionnalités
 
 - liste des suivis (fancybox) : afficher le nom des pages (au lieu du numéro)
 

@@ -74,6 +74,9 @@
 					Si tu es intéressé(e) par ces rencontres, tu peux <a href="#" class="contact_direct">me contacter directement</a>, laisser un commentaire ici et/ou t'inscrire à la newsletter (dans le pied de page) pour être tenu(e) au courant des évolutions.<br/>
 					L'objectif est toujours de partager des idées, rencontrer des personnes et créer une dynamique qui entretienne l'envie et l'optimisme.
 				</p>
+				<p>
+					En attendant la première rencontre que j'organiserai (si je vois une demande), je serais au <a href="http://republiqueduweb.tumblr.com/post/15207077024/rendez-vous-le-11-janvier-pour-le-retour-de-la">rendez-vous</a> de la République du Web !
+				</p>
 				<br/>
 				<br/>
 				<h3>Et toi, qu'est-ce qui te motive ?</h3>

@@ -137,6 +137,15 @@
 				</p>
 				
 				<div class="evolution">
+					<h2><a href="#" class="comment_evolution">Evolution #11</a> : Impliquer les élus</h2>
+					<p>
+						C'est très bien de débattre entre nous, on se cultive et on s'enrichit mais ça pourrait être mieux si les élus viennent réagir à nos idées et nous dire ce qu'ils en pensent.<br/>
+						Je pense donc à mettre en place un fil de commentaire à part "réponse des élus" où les différents candidats pourraient venir exprimer leur avis sur les propositions de manière identifiée.<br/>
+						Techniquement ils auraient un compte pour se connecter et certifier leur identité.
+					</p>
+				</div>
+				
+				<div class="evolution">
 					<h2><a href="#" class="comment_evolution">Evolution #10</a> : Améliorer le système de commentaires</h2>
 					<p>L'objectif est de mettre en avant les commentaires constructifs et de stimuler les débats sur le fond.</p>
 					<ul>
@@ -551,9 +560,10 @@
 					$params[1]['name'] = 'list';		$params[1]['status'] = 'requis';		$params[1]['use'] = "Valeur : <span class=\"val\">category</span>";
 					$params[2] = $cat_param;
 					$params[3] = $p_quote_param;
-					$params[4] = $noheaders_param;
-					$params[5] = $format_param;
-					$params[6] = $callback_param;
+					$params[4] = $selection_param;
+					$params[5] = $noheaders_param;
+					$params[6] = $format_param;
+					$params[7] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'quote_list.php?key='.$APIdatas['public_key_test'].'&list=category&cat=3';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
@@ -576,9 +586,10 @@
 					$params[1]['name'] = 'list';		$params[1]['status'] = 'requis';		$params[1]['use'] = "Valeur : <span class=\"val\">selection</span>";
 					$params[2] = $sel_param;
 					$params[3] = $p_quote_param;
-					$params[4] = $noheaders_param;
-					$params[5] = $format_param;
-					$params[6] = $callback_param;
+					$params[4] = $selection_param;
+					$params[5] = $noheaders_param;
+					$params[6] = $format_param;
+					$params[7] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'quote_list.php?key='.$APIdatas['public_key_test'].'&list=selection&sel=2';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},
@@ -596,9 +607,10 @@
 					$params[0] = $key_param;
 					$params[1]['name'] = 'list';		$params[1]['status'] = 'requis';		$params[1]['use'] = "Valeur : <span class=\"val\">custom</span>";
 					$params[2] = $quoteids_param;
-					$params[3] = $noheaders_param;
-					$params[4] = $format_param;
-					$params[5] = $callback_param;
+					$params[3] = $selection_param;
+					$params[4] = $noheaders_param;
+					$params[5] = $format_param;
+					$params[6] = $callback_param;
 					$sample['methode'] = 'GET';
 					$sample['requete'] = $APIdatas['base_url'].'quote_list.php?key='.$APIdatas['public_key_test'].'&list=custom&amp;quoteids=2/15/6/8';
 					$sample['reponse'] = '{"status":{"code":200,"message":"Success"},

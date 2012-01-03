@@ -42,7 +42,7 @@ function generateHeader($usr, $rel_to_root = './'){
 					</ul>
 					<span></span>
 				</li>
-				<li><a href="'.$rel_to_root.'allselections.php">Programmes</a></li>
+				<li><a href="'.$rel_to_root.'programmes.php">Programmes</a></li>
 				<li><a href="'.$rel_to_root.'new.php">Nouvelle proposition</a></li>';
 				
 			if($cat != null){

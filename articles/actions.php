@@ -27,38 +27,26 @@
 				<p>
 					<dl>
 						<dt><a target="_blanck" href="http://www.regardscitoyens.org">www.regardscitoyens.org</a></dt>
-						<dd>
-							Collectif qui se donne pour but de faciliter l'accès aux informations sur nos institutions.
-						</dd>
+						<dd>Collectif qui se donne pour but de faciliter l'accès aux informations sur nos institutions.</dd>
 						
 						<dt><a target="_blanck" href="http://www.nosdeputes.fr">www.nosdeputes.fr</a></dt>
-						<dd>
-							Site regroupant l'activité parlementaire de manière détaillée. 
-							Site conçu par le collectif <a target="_blanck" href="http://www.regardscitoyens.org/qui-sommes-nous/">Regards citoyens</a>.
-						</dd>
+						<dd>Site regroupant l'activité parlementaire de manière détaillée. 
+							Site conçu par le collectif <a target="_blanck" href="http://www.regardscitoyens.org/qui-sommes-nous/">Regards citoyens</a>.</dd>
 						
 						<dt><a target="_blanck" href="http://www.nossenateurs.fr">www.nossenateurs.fr</a></dt>
-						<dd>
-							Site regroupant l'activité sénatoriale de manière détaillée.
-							Site conçu par le collectif <a target="_blanck" href="http://www.regardscitoyens.org/qui-sommes-nous/">Regards citoyens</a>.
-						</dd>
+						<dd>Site regroupant l'activité sénatoriale de manière détaillée.
+							Site conçu par le collectif <a target="_blanck" href="http://www.regardscitoyens.org/qui-sommes-nous/">Regards citoyens</a>.</dd>
 						
 						<dt><a target="_blanck" href="http://mon-depute.fr">mon-depute.fr</a></dt>
-						<dd>
-							Site détaillant l'activité de chaque député du point de vue de ses votes.
-						</dd>
+						<dd>Site détaillant l'activité de chaque député du point de vue de ses votes.</dd>
 						
 						<dt><a target="_blanck" href="http://memopol2.lqdn.fr">memopol2.lqdn.fr</a></dt>
-						<dd>
-							Site qui recense les députés européens ainsi que les informations sur leur parcourt et pour les contacter. 
-							Site conçu par <a target="_blanck" href="http://www.laquadrature.net/fr/qui-sommes-nous">La quadrature du net</a>.
-						</dd>
+						<dd>Site qui recense les députés européens ainsi que les informations sur leur parcourt et pour les contacter. 
+							Site conçu par <a target="_blanck" href="http://www.laquadrature.net/fr/qui-sommes-nous">La quadrature du net</a>.</dd>
 						
 						<dt><a target="_blanck" href="http://politique.slate.fr">politique.slate.fr</a></dt>
-						<dd>
-							Wikipol est un site d'information sur les hommes et femmes qui joueront un rôle dans les élections de 2012.
-							Site conçu par <a target="_blanck" href="http://www.slate.fr">Slate</a>.
-						</dd>
+						<dd>Wikipol est un site d'information sur les hommes et femmes qui joueront un rôle dans les élections de 2012.
+							Site conçu par <a target="_blanck" href="http://www.slate.fr">Slate</a>.</dd>
 					</dl>
 					<br/>
 				</p>
@@ -67,41 +55,35 @@
 				<p>
 					<dl>
 						<dt><a target="_blanck" href="http://monprogramme2012.lkws.fr/articles/projet.php">monprogramme2012.lkws.fr</a></dt>
-						<dd>
-							Site d'initiative personnelle pour créer un débat réel sur de vrais sujets de société.
-						</dd>
+						<dd>Site d'initiative personnelle pour créer un débat réel sur de vrais sujets de société.</dd>
+						
+						<dt><a target="_blanck" href="http://republiqueduweb.tumblr.com/">republiqueduweb.tumblr.com</a></dt>
+						<dd>La République Du Web organise des rencontres informelles autours d'un verre. 
+							La première est le 11 janvier, à Paris, au pub le Quigley’s Point, face à l’église Saint-Eustache, aux Halles, à Paris.
+							Et sur twitter : <a target="_blanck" href="https://twitter.com/Repdweb">@Repdweb</a></dd>
 						
 						<dt><a target="_blanck" href="http://www.2012memepaspeur.net">www.2012memepaspeur.net</a></dt>
-						<dd>
-							Site appelant à se mobiliser et organiser des évènements pour la campagne.
-							Site créé par <a target="_blanck" href="http://www.2012memepaspeur.net/qui_sommes_nous.php">le réseau Animafac</a>.
-						</dd>
+						<dd>Site appelant à se mobiliser et organiser des évènements pour la campagne.
+							Site créé par <a target="_blanck" href="http://www.2012memepaspeur.net/qui_sommes_nous.php">le réseau Animafac</a>.</dd>
 						
 						<dt><a target="_blanck" href="http://pourquoijevoteoupas.eu/">pourquoijevoteoupas.eu</a></dt>
-						<dd>
-							Exprimez votre avis sur le vote, irez vous voter ou pas ? Quelles sont vos raisons ?
-						</dd>
+						<dd>Exprimez votre avis sur le vote, irez vous voter ou pas ? Quelles sont vos raisons ?</dd>
 						
 						<dt><a target="_blanck" href="http://www.touscandidats2012.fr/">www.touscandidats2012.fr</a></dt>
-						<dd>
-							Site appelant chaque personne a être candidate et à proposer son programme.
-							Site créé par <a target="_blanck" href="http://www.colibris-lemouvement.org/colibris/notre-mission">l'association Colibris</a>.
-						</dd>
+						<dd>Site appelant chaque personne a être candidate et à proposer son programme.
+							Site créé par <a target="_blanck" href="http://www.colibris-lemouvement.org/colibris/notre-mission">l'association Colibris</a>.</dd>
 						
 						<dt><a target="_blanck" href="http://www.mon-programme-presidentiel.com/">www.mon-programme-presidentiel.com</a></dt>
-						<dd>
-							Un site ayant un but très proche de celui-ci. Il vous propose d'écrire vous même votre programme et de le soumettre aux vote des internautes.
-						</dd>
+						<dd>Un site ayant un but très proche de celui-ci. Il vous propose d'écrire vous même votre programme et de le soumettre aux vote des internautes.</dd>
+						
+						<dt><a target="_blanck" href="http://www.propx.fr/">propx.fr</a></dt>
+						<dd>Site permet de proposer ses idées et d'avoir un vote des candidats à la présidentielle sur les idées proposées. Edité par les équipes de skyrock.com</dd>
 						
 						<dt><a target="_blanck" href="http://politiko.fr/">politiko.fr</a></dt>
-						<dd>
-							Site d'actualité politique.
-						</dd>
+						<dd>Site d'actualité politique.</dd>
 						
 						<dt><a target="_blanck" href="http://www.talkeo.fr/">www.talkeo.fr</a></dt>
-						<dd>
-							Site de débat généraliste (pas forcément politique).
-						</dd>
+						<dd>Site de débat généraliste (pas forcément politique).</dd>
 					</dl>
 					<br/>
 				</p>
@@ -110,22 +92,17 @@
 				<p>
 					<dl>
 						<dt><a target="_blanck" href="http://www.le-message.org">www.le-message.org</a></dt>
-						<dd>
-							Site prônant la création d'une assemblée constituante tirée au sort.
-						</dd>
+						<dd>Site prônant la création d'une assemblée constituante tirée au sort.</dd>
+						
 						<dt><a target="_blanck" href="http://pourunrevenusocial.org">pourunrevenusocial.org</a></dt>
-						<dd>
-							Site pour un revenu social, universel, inconditionnel, maintenu par le collectif PouRS.
-						</dd>
+						<dd>Site pour un revenu social, universel, inconditionnel, maintenu par le collectif PouRS.</dd>
+						
 						<dt><a target="_blanck" href="http://www.nevotezpas.fr">www.nevotezpas.fr</a></dt>
-						<dd>
-							Site défendant le vote blanc. Créé par <a target="_blanck" href="http://www.nevotezpas.fr/qui.php">Philippe Martin</a>.
-						</dd>
+						<dd>Site défendant le vote blanc. Créé par <a target="_blanck" href="http://www.nevotezpas.fr/qui.php">Philippe Martin</a>.</dd>
+						
 						<dt><a target="_blanck" href="http://www.transparence-france.org/presidentielles2012/">www.transparence-france.org</a></dt>
-						<dd>
-							Site de l'association Transparence International France qui propose <a target="_blanck" href="http://www.transparence-france.org/presidentielles2012/nos-7-propositions/">7 engagements</a> 
-							aux candidats à la présidentielle.
-						</dd>
+						<dd>Site de l'association Transparence International France qui propose <a target="_blanck" href="http://www.transparence-france.org/presidentielles2012/nos-7-propositions/">7 engagements</a> 
+							aux candidats à la présidentielle.</dd>
 					</dl>
 					<br/>
 				</p>
