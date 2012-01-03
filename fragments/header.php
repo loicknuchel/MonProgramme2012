@@ -51,7 +51,7 @@ function generateHeader($usr, $rel_to_root = './'){
 					<a href="#" class="topnavtitle">Sujets</a>
 					<ul class="subnav">';
 					foreach($cat as $key => $value){
-						if($value['nbquotes'] > 0){$html .= '<li><a href="'.$rel_to_root.'list.php?type=category&cat='.$value['id'].'">'.$value['name'].'</a></li>';}
+						if($value['nbquotes'] > 0){$html .= '<li><a href="'.$rel_to_root.'list.php?type=category&cat='.$value['id'].'">'.$value['name'].' ('.$value['nbquotes'].')</a></li>';}
 					}
 					$html .= '
 					</ul>

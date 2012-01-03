@@ -11,7 +11,7 @@
 
 <?php echo generateHead(' - Bibliographie', $jsEnv, $rel_to_root); ?>
 <body>
-	<?php echo generateHeader($rel_to_root); ?>
+	<?php echo generateHeader($usr, $rel_to_root); ?>
 	
 	<div id="main">
 		<div class="wrapper"> 

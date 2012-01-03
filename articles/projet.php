@@ -11,16 +11,17 @@
 
 <?php echo generateHead(' - Le projet', $jsEnv, $rel_to_root); ?>
 <body>
-	<?php echo generateHeader($rel_to_root); ?>
+	<?php echo generateHeader($usr, $rel_to_root); ?>
 	
 	<div id="main">
 		<div class="wrapper">
 			<div class="article">
 				<h1 class="first">Pourquoi ce site ?</h1>
 				<p>
-					Tout d'abord, il me parait essentiel de préciser que ce site est <span>l'initiative personnelle</span> d'un simple citoyen n'ayant souscrit à <span>aucun parti ou association politique</span>.<br/>
+					Tout d'abord, il me parait essentiel de préciser que ce site par d'une <span>initiative personnelle</span> n'ayant aucun lien avec un quelconque <span>parti politique ou aucune association politique</span>.<br/>
 					Cette précision faite, on peut se demander : pourquoi un tel site ?<br/>
-					Tout simplement parce que de fil en aiguille, j'ai été amené à m'intéresser à diverses personnalités qui développent des réflexions très pertinentes et intéressantes sur notre système politique ;
+					Tout simplement parce que j'apprécie discuter de politique et réfléchir aux solutions pour améliorer la situation actuelle.
+					De fil en aiguille, j'ai été amené à m'intéresser à diverses personnalités qui développent des réflexions très pertinentes et intéressantes sur nos enjeux de société ;
 					que ce soit 
 					<span>Franck Lepage</span> avec ses <a href="http://www.scoplepave.org/la-culture">conférences gesticulées</a> sur l'éducation (très divertissantes), 
 					<span>Etienne Chouard</span> lors de <a href="http://etienne.chouard.free.fr/Europe/tirage_au_sort.php">conférences</a> passionnantes sur la démocratie grecque et le processus de création monétaire ou
@@ -29,19 +30,19 @@
 				</p>
 				<h1>Mais dans quel but ?</h1>
 				<p>
-					Le but de ce site est de <span>permettre à chacun de s'exprimer</span> sur ce qu'il souhaite pour 2012.<br/>
+					Le but de ce site est de <span>permettre à chacun de s'exprimer et développer ses idées</span> sur ce qu'il souhaite pour 2012.<br/>
 					Quels changements doivent s'opérer ? Quelles initiatives soutenir ? Quelles réformes devraient être mises en place ?<br/>
 					Ce site se veut un <span>espace d'échange</span> et de <span>découvertes d'idées</span>.
 				</p>
 				<p>
-					Concrêtement, le site est basé sur les propositions des visiteurs. Elles sont catégorisées et classées par nombre de votes afin de faire ressortir les plus populaires.
+					Concrêtement, le site est basé sur les propositions des utilisateurs. Elles sont rangées par sujet. Des programmes peuvent être créés en regroupant les propositions qui vous paraissent pertinantes.
 					Elles peuvent être commentées pour créer un débat autour de celles-ci.
 					Chaque proposition possède aussi une pétition, ce qui permet de la soutenir de manière plus concrète qu'un simple vote.<br/>
 					Ce site est en perpétuelle évolution, vous pouvez consulter la liste des évolutions prévues dans <a href="<?php echo $rel_to_root.'articles/faq.php#guide'; ?>">le FAQ</a>.
 				</p>
 				<h1>Parler, certes, mais à quoi cela sert-il ?</h1>
 				<p>
-					Il me semble essentiel de réellement se rendre compte que politiquement, <span>tout est fait pour nous dégouter de la politique</span> et nous maintenir dans une spirale pessimiste.
+					Il me semble essentiel de réellement se rendre compte que politiquement, <span>tout est fait pour nous dégouter de la politique</span> et nous maintenir dans une sorte de spirale pessimiste.
 					Nous avons toujours des "connaissances insuffisantes" (comme s'il fallait être spécialiste pour en discuter!), on nous culpabilise à la moindre bêtise que l'on dit, 
 					nous vivons dans un monde trop complexe (il paraît!), nos appels à discussion avec les politiciens n'ont jamais de réponse, nos initiatives sont souvent ignorées, 
 					nos votes sont bafoués par les politiciens (et le vote blanc ignoré!)...
@@ -56,21 +57,22 @@
 					peuvent réellement s'améliorer si <span>on se mobilise</span> et qu'à son tour <span>on mobilise son entourage</span> en leur demandant d'en faire autant, alors il est très facile de rester optimiste et de faire tout 
 					ce qui est en notre	pouvoir pour faire évoluer les choses (chacun avec ses moyens).<br/>
 					Le <a href="http://pourquoijevoteoupas.eu/index.php?id=16" title="Si faire l'amour tous les 5 ans ce n'est pas une vie sexuelle, voter tous les 5 ans est-ce une vie démocratique ?">vote seul ne suffira jamais</a>
-					à provoquer de vrais changements positifs.
+					à provoquer les véritables changements nécessaires.
 				</p>
 				<h1>Que faire maintenant ?</h1>
 				<p>
 					Il est, je pense, <span>nécessaire de s'informer</span> auprès de personnes proposant des <span>alternatives positives</span> sur des sujets très variés. 
-					Je peux vous suggérer de jeter un coup d'oeil à la <a href="<?php echo $rel_to_root.'articles/bibliographie.php'; ?>">bibliographie</a> que j'ai faite et qui m'a personnellement motivé pour monter ce site 
-					et participer à d'autres actions.<br/>
-					Il est également important de participer à des actions pour se rendre compte que <span>beaucoup de personnes sont actives</span>, chacunes à leur manière, et trouver la bonne idée à lancer ou à rejoindre.<br/>
-					Enfin, parler autour de soi de tout ce que l'on a pu découvrir, partager et proposer aux personnes de s'impliquer elles aussi dans les actions dans lesquelles elles croient.
+					Je peux vous suggérer de jeter un coup d'oeil à la <a href="<?php echo $rel_to_root.'articles/bibliographie.php'; ?>">bibliographie</a> 
+					que j'ai faite et qui m'a personnellement donné la motivation de créer ce site.<br/>
+					Il est également important de participer à des actions, <a href="<?php echo $rel_to_root.'articles/actions.php'; ?>">en ligne</a> ou physiquement, 
+					pour se rendre compte que <span>beaucoup de personnes sont actives</span> et trouver la bonne idée à lancer ou à rejoindre pour faire ententre ses convictions.<br/>
+					Enfin, parler autour de soi de tout ce que l'on a pu découvrir, partager et proposer aux personnes de s'impliquer elles aussi dans les actions dans lesquelles elles croient permet de démultiplier la motivation et les chances de succès.
 				</p>
 				<h1>Et c'est tout ?</h1>
 				<p>
-					Et bien non, je suis en train de prospecter pour <span>organiser des rencontres sur Paris</span> afin de discuter de tout ceci.<br/>
-					Si tu es intéressé(e), tu peux <a href="#" class="contact_direct">me contacter directement</a>, laisser un commentaire ici et/ou t'inscrire à la newsletter (dans le pied de page) pour être tenu(e) au courant.<br/>
-					L'objectif est toujours de partager des idées, rencontrer des personnes et créer une dynamique qui entretienne la motivation.
+					Et bien non, je suis en train de prospecter pour <span>organiser des rencontres sur Paris</span> afin de pouvoir discuter de tout ceci de vive voix.<br/>
+					Si tu es intéressé(e) par ces rencontres, tu peux <a href="#" class="contact_direct">me contacter directement</a>, laisser un commentaire ici et/ou t'inscrire à la newsletter (dans le pied de page) pour être tenu(e) au courant des évolutions.<br/>
+					L'objectif est toujours de partager des idées, rencontrer des personnes et créer une dynamique qui entretienne l'envie et l'optimisme.
 				</p>
 				<br/>
 				<br/>
