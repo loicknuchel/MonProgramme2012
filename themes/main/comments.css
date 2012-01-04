@@ -9,9 +9,10 @@
 }
 
 .comments .comment{
-	border-top: #ccc 1px solid;
-	padding: 5px;
-	margin-bottom: 15px;
+	border-top: #ccc 2px solid;
+	padding: 15px;
+	margin-bottom: 5px;
+	line-height: 14px;
 }
 .comments .comment:first-child{
 	border-top: none;
@@ -91,6 +92,8 @@
 	text-indent: 20px;
 	margin-left: 5px;
 	margin-right: 20px;
+	font-size: 14px;
+	line-height: 18px;
 }
 
 .comments .comment .comment_text .quoted_comment{

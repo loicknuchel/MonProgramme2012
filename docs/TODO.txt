@@ -1,6 +1,8 @@
 
 MISE EN PROD :
-- vérifier l'envoi de mail lors de la publication d'une nouvelle proposition
+- vérifier l'envoi de mail lors de la publication d'une nouvelle proposition !
+- vérifier l'envoi de mail lors de la publication d'un commentaire sur une page !
+
 - PROBLEME : ne pas poster un commentaire sur un raffraichissement de page (vérifier si le commentaire n'existe pas déjà !)
 	* enregistrer dans une session le dernier envoi (avant d'appeler l'API : check si c'est pas déjà envoyé !) => possibilité de créer une signature sha1 de l'envoi (ex : sha1(pseudo+mail+site+comment))
 	* ajouter un rafraichissement forcé : http://www.siteduzero.com/tutoriel-3-38553-eviter-le-renvoi-repetitif-d-un-formulaire-en-rafraichissant.html
