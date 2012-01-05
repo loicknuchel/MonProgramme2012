@@ -1,7 +1,7 @@
 
 MISE EN PROD :
 
-- vérifier l'envoi de mail lors de la publication d'un commentaire sur une page !
+- envoi de mails : rendre générique les mails (pour n'importe que site => ajouter le contenu des mails dans la bdd) !!!
 
 - PROBLEME : ne pas poster un commentaire sur un raffraichissement de page (vérifier si le commentaire n'existe pas déjà !)
 	* enregistrer dans une session le dernier envoi (avant d'appeler l'API : check si c'est pas déjà envoyé !) => possibilité de créer une signature sha1 de l'envoi (ex : sha1(pseudo+mail+site+comment))
@@ -13,8 +13,9 @@ MISE EN PROD :
 - formulaires : créer boutton "Agrandir" sur les textarea (ceux qui ont la classe expend par exemple...)
 
 - boutons pour partager les programmes (twitter, facebook et +1)
-- programmes : pouvoir ordonner ses propositions (ajouter champ no dans cq1_4_selection_quote)
-	* solution : ajouter la date d'ajout dans la table cq1_4_selection_quote et renvoyer les sélections par ordre décroissant de cette date. => Pour mettre une proposition en premier : la supprimer et la rajouter !
+- programmes : pouvoir ordonner ses propositions
+	* ajouter le champ "post_date" dans la table cq1_4_selection_quote et renvoyer les sélections par ordre décroissant de cette date. => Pour mettre une proposition en premier : la supprimer et la rajouter !
+	* ajouter le champ "no" dans la table cq1_4_selection_quote pour classer les propositions
 - pouvoir voter pour des programmes
 
 - API : pouvoir choisir la taille des pages : ajout du param facultatif : pagelenght

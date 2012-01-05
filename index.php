@@ -1,6 +1,16 @@
 <?php 
+	$rel_to_root = './';
+	include $rel_to_root.'inc/conventions.php';
+	
 	if(isset($_GET['q'])){
 		header('Location: quote.php?id='.$_GET['q']);
+	}
+	else if(isset($_GET['p'])){
+		foreach($pageId as $content){
+			if($_GET['p'] == $content['id']){
+				header('Location: '.$content['link']);
+			}
+		}
 	}
 	else{
 		header('Location: list.php?type=lastactivity');
