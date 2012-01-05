@@ -1,30 +1,32 @@
 
 MISE EN PROD :
-- vérifier l'envoi de mail lors de la publication d'une nouvelle proposition !
+
 - vérifier l'envoi de mail lors de la publication d'un commentaire sur une page !
 
 - PROBLEME : ne pas poster un commentaire sur un raffraichissement de page (vérifier si le commentaire n'existe pas déjà !)
 	* enregistrer dans une session le dernier envoi (avant d'appeler l'API : check si c'est pas déjà envoyé !) => possibilité de créer une signature sha1 de l'envoi (ex : sha1(pseudo+mail+site+comment))
-	* ajouter un rafraichissement forcé : http://www.siteduzero.com/tutoriel-3-38553-eviter-le-renvoi-repetitif-d-un-formulaire-en-rafraichissant.html
+	* ET faire une détection de doublons (WHERE quote_id=id AND comment=text)
+- commentaires : citation : ajouter nom, date et référence / améliorer le rendu des liens
 
 
-- créer une aide pour expliquer toutes les fonctionnalités
 
-- liste des suivis (fancybox) : afficher le nom des pages (au lieu du numéro)
+- formulaires : créer boutton "Agrandir" sur les textarea (ceux qui ont la classe expend par exemple...)
 
 - boutons pour partager les programmes (twitter, facebook et +1)
-
 - programmes : pouvoir ordonner ses propositions (ajouter champ no dans cq1_4_selection_quote)
-
+	* solution : ajouter la date d'ajout dans la table cq1_4_selection_quote et renvoyer les sélections par ordre décroissant de cette date. => Pour mettre une proposition en premier : la supprimer et la rajouter !
 - pouvoir voter pour des programmes
+
+- API : pouvoir choisir la taille des pages : ajout du param facultatif : pagelenght
 
 - faire une page unsubscribe ...
 
 - problème anti-spam : si je connais une réponse, il suffit de renvoyer tout le temps le même id_spam avec la même réponse...
 	solution : ajouter un hash-spam qui prend la question et l'heure
 
+- liste des suivis (fancybox) : afficher le nom des pages (au lieu du numéro)
 
-- citer un commentaire : ajouter nom, date et référence
+
 
 - ajouter une partie wiki (à coté des commentaires et pétition)
 

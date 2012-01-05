@@ -44,7 +44,7 @@
 	<div id="main">
 		<div class="wrapper">
 			<?php
-				if($type == 'category'			){ 	echo "<div class=\"category_disclaimer\">categorie : ".str_replace('é', 'e', $cat_name)."</div>"; }
+				if($type == 'category'			){ 	echo "<div class=\"category_disclaimer\">Sujet : ".str_replace('é', 'e', $cat_name)."</div>"; }
 				else if($type == 'selection'	){ 	echo "<div class=\"category_disclaimer\"><span class=\"sel_id\" style=\"display: none;\">".$sel_id."</span> Programme de ".str_replace('é', 'e', $sel_name)."</div>"; }
 				else if($type == 'selected'		){ 	echo '<div id="quotelist_selected">'; echo generateSelectionForm($usr); }
 				else if($type == 'top'			){ 	echo "<div class=\"category_disclaimer\">Propositions les plus populaires</div>"; }
