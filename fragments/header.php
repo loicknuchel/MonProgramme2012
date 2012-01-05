@@ -15,6 +15,15 @@ function generateHeader($usr, $rel_to_root = './'){
 		}
 	}
 	
+	
+	if(getStatus() == "LOCAL" || getStatus() == "DEV"){
+		$title = getStatus().': '.getService();
+	} else if(getStatus() == "PROD"){
+		$title = 'Mon Programme 2012';
+	} else{
+		$title = 'ERREUR DE STATUS !!!';
+	}
+	
 	$html = '
 	<a href="#" class="supportus"><img src="'.$rel_to_root.'themes/main/img/header/supportus.png" style="position: absolute; top: 0; right: 0; z-index: 1000;" /></a>
 	<div id="info">C\'est la classe info...</div>
@@ -27,7 +36,7 @@ function generateHeader($usr, $rel_to_root = './'){
 					mais par ceux qui les regardent sans rien faire."</span><br/>
 					<a href="http://www.maphilo.net/citations_albert-einstein-147.html" target="_blanck" style="float: right;">Einstein</a> 
 				</div>
-				<h1><a href="'.$rel_to_root.'">Mon Programme 2012</a></h1>
+				<h1><a href="'.$rel_to_root.'">'.$title.'</a></h1>
 			</div>
 			<ul class="topnav">
 				<li><a href="'.$rel_to_root.'quote.php?id=random">Aléatoire</a></li>

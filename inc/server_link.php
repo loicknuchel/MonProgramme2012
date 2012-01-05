@@ -6,19 +6,19 @@
 	
 	
 	function getStatus(){ return "LOCAL"; }									// TODO : mettre LOCAL, DEV ou PROD															<= ICI
-	$bdd_site				= "test";										// TODO : mettre test, mp2012 ou ps12														<= ICI
+	function getService(){ return "test"; }									// TODO : mettre test, mp2012 ou ps12														<= ICI
 	
 	
 	$usr = null;
 	if(getStatus() == "LOCAL"){
 		$server_uri = 'http://localhost/lkws_croudquotes/';					// url du serveur
 		$usr['site_url'] = 'http://localhost/lkws_monprogramme2012/';		// url du site
-		$usr['key'] = $private_keys[$bdd_site];								// clé pour se connecter à l'API
+		$usr['key'] = $private_keys[getService()];								// clé pour se connecter à l'API
 	}
 	else if(getStatus() == "DEV"){
 		$server_uri = 'http://dev.lkws.fr/lkws_croudquotes/';				// url du serveur
 		$usr['site_url'] = 'http://dev.lkws.fr/lkws_monprogramme2012/';		// url du site
-		$usr['key'] = $private_keys[$bdd_site];								// clé pour se connecter à l'API
+		$usr['key'] = $private_keys[getService()];								// clé pour se connecter à l'API
 	}
 	else if(getStatus() == "PROD"){
 		$server_uri = 'http://croudquotes.lkws.fr/';						// url du serveur
