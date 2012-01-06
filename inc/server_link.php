@@ -39,11 +39,11 @@
 	</script>';
 	
 	include_once $rel_to_root.'utils/api_call.php';
+	include_once $rel_to_root.'utils/transform.php';
 	
 	include_once $rel_to_root.'inc/antispam.php';
 	include_once $rel_to_root.'inc/conventions.php';
 	
-	include_once $rel_to_root.'fragments/utils.php';
 	include_once $rel_to_root.'fragments/head.php';
 	include_once $rel_to_root.'fragments/header.php';
 	include_once $rel_to_root.'fragments/quotes.php';

@@ -211,6 +211,27 @@ function getAntiSpam(){
 	$antiSpam[79]['ask'] = '(1 * 12) + 0 = ';
 	$antiSpam[79]['answer'] = '12';
 	
+	$antiSpam[80]['ask'] = 'Combient font trois plus trois ?';
+	$antiSpam[80]['answer'] = '6';
+	$antiSpam[81]['ask'] = 'Que donnent six moins deux ?';
+	$antiSpam[81]['answer'] = '4';
+	$antiSpam[82]['ask'] = 'Deux fois deux = ';
+	$antiSpam[82]['answer'] = '4';
+	$antiSpam[83]['ask'] = 'Trois plus cinq moins deux = ';
+	$antiSpam[83]['answer'] = '6';
+	$antiSpam[84]['ask'] = 'Combient donne un fois un ?';
+	$antiSpam[84]['answer'] = '1';
+	$antiSpam[85]['ask'] = '';
+	$antiSpam[85]['answer'] = '';
+	$antiSpam[86]['ask'] = '';
+	$antiSpam[86]['answer'] = '';
+	$antiSpam[87]['ask'] = '';
+	$antiSpam[87]['answer'] = '';
+	$antiSpam[88]['ask'] = '';
+	$antiSpam[88]['answer'] = '';
+	$antiSpam[89]['ask'] = '';
+	$antiSpam[89]['answer'] = '';
+	
 	return $antiSpam;
 }
 

@@ -1,14 +1,14 @@
 
 MISE EN PROD :
 
+- PROBLEME : pas d'envoi de mail sur la signature d'une pétition !!!!
 - envoi de mails : rendre générique les mails (pour n'importe que site => ajouter le contenu des mails dans la bdd) !!!
 
+- PROBLEME : on ne retransforme pas les liens quand on cite un commentaire !
 - PROBLEME : ne pas poster un commentaire sur un raffraichissement de page (vérifier si le commentaire n'existe pas déjà !)
 	* enregistrer dans une session le dernier envoi (avant d'appeler l'API : check si c'est pas déjà envoyé !) => possibilité de créer une signature sha1 de l'envoi (ex : sha1(pseudo+mail+site+comment))
 	* ET faire une détection de doublons (WHERE quote_id=id AND comment=text)
 - commentaires : citation : ajouter nom, date et référence / améliorer le rendu des liens
-
-
 
 - formulaires : créer boutton "Agrandir" sur les textarea (ceux qui ont la classe expend par exemple...)
 
@@ -29,10 +29,9 @@ MISE EN PROD :
 
 
 
-- ajouter une partie wiki (à coté des commentaires et pétition)
+- ajouter une partie wiki par citation qui soit une sorte de document de synthèse du débat
 
 - permettre la création de comptes pour poster les commentaires et citations
-
 
 - rendre le site accessible depuis un smartphone
 
@@ -41,10 +40,6 @@ MISE EN PROD :
 - ajouter des tables pour faire des sondages (sondage, sondage_options, sondage_answers)
 
 - mettre en place un chat
-
-- permettre de modifier les description et les citations et suivre les modifs avec l'historique
-
-- améliorer les pages category.php, local_selection.php et selection.php
 
 - améliorer les pages d'erreur (404.php et 403.php)
 

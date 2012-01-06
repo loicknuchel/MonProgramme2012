@@ -16,12 +16,7 @@ function generateComment($comment, $rel_to_root = './'){
 	$vote = $comment['up'] - $comment['down'];
 	
 	if($comment['reported'] == 1){ $text = '<div class="reported"></div>'; }
-	else{ 
-		$text = nl2br(UrlToShortLink($comment['comment']));
-		$text = str_replace('[quote]', '<div class="quoted_comment">', $text, $cptStart);
-		$text = str_replace('[/quote]', '</div>', $text, $cptEnd);
-		if($cptStart != $cptEnd){$text = str_replace('[/quote]', '', str_replace('[quote]', '', nl2br($comment['comment'])));}
-	}
+	else{ $text = commentToHtmlFormat($comment['comment']); }
 	
 	if($comment['avis'] == "pour"){$avis = ' <span class="label light '.$comment['avis'].'">'.$comment['avis'].'</span> ';}
 	else if($comment['avis'] == "contre"){$avis = ' <span class="label light '.$comment['avis'].'">'.$comment['avis'].'</span> ';}

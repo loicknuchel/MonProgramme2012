@@ -38,3 +38,20 @@ function checkEmail(mail) {
 	}
 	return false;
 }
+
+function commentToCodeFormat(comment_html){
+/* TODO :
+	<a href="link" title="link" target="_blanck">shortLink</a>						=>	link
+	<br/>																			=>	\r\n
+	<div class="quoted_comment">blabla</div>										=>	[quote]blabla[/quote]
+	<div class="quoted_comment"><div class="ref">toto, le lundi</div>blabla</div>	=>	[quote name="toto" date="lundi" time="timestamp" comment="id"]blabla[/quote]
+	
+	ajouter : [quote name="actual_toto" date="actual_lundi" time="actual_timestamp" comment="actual_id"]tout le commentaire ![/quote]
+*/
+	var text = comment_html.find('.comment_text').html();
+	text = text.replace(/<div class="quoted_comment">/gi, '[quote]');
+	text = text.replace(/<\/div>/gi, '[/quote]');
+	text = text.replace(/<br>/gi, '');
+	text = '[quote]' + text + '[/quote]\r\n';
+	return text;
+}

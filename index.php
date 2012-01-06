@@ -7,7 +7,7 @@
 	}
 	else if(isset($_GET['p'])){
 		foreach($pageId as $content){
-			if($_GET['p'] == $content['id']){
+			if($_GET['p'] == $content['id'] || $_GET['p'] == $content['link']){
 				header('Location: '.$content['link']);
 			}
 		}

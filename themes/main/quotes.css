@@ -1,4 +1,42 @@
 
+/* Dock only proposition*/
+.quote .quote_content .quote_text.docked {
+	width: 868px;
+	margin-top: 0px;
+	margin-left: -10px;
+	padding-left: 20px;
+	border: none;
+	background: #EFEFEF;
+	-webkit-border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+	box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+	z-index: 100;
+}
+
+/* Dock all quote*/
+.quote.docked {
+	width: 898px;
+	margin-top: 0px;
+	border: none;
+	z-index: 100;
+}
+.quote.docked .quote_content {
+	-webkit-border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+}
+
+#footerQuoteSlider .scrollContainer #commentContainer, #footerQuoteSlider .scrollContainer #petitionContainer {
+	padding-top: 60px;
+}
+#footerQuoteSlider div.scroll {
+	margin-top: -50px;
+}
+
+/**/
+
 .quote{
 	margin: 30px 0px;
 	border: solid 1px #ccc;

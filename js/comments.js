@@ -15,13 +15,9 @@ function comment_actions(){
 	
 	// citer commentaire
 	$('.comment .comment_header .reponse').click(function(event){
-		var text = $(this).parents('.comment').find('.comment_text').html();
-		var comment = $('.leave_comment form textarea[name="comment"]');
-		text = text.replace(/<div class="quoted_comment">/gi, '[quote]');
-		text = text.replace(/<\/div>/gi, '[/quote]');
-		text = text.replace(/<br>/gi, '');
-		comment.val(comment.val() + '[quote]' + text + '[/quote]');
-		comment.focus();
+		var comment_input = $('.leave_comment form textarea[name="comment"]');
+		comment_input.val(comment_input.val() + commentToCodeFormat($(this).parents('.comment')));
+		comment_input.focus();
 		return false;
 	});
 	

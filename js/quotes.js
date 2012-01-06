@@ -41,6 +41,59 @@ function quote_actions(){
 		quote_vote('down', $(this).parents('.quote'), meth);
 		return false;
 	});
+	
+	// garder la citation en haut de la page
+	if($('#footerQuoteSlider').html() != null){ // si on est sur la page d'une citation
+		// Dock only proposition
+		var prop = $('.quote .quote_text').get(0);
+		var nextElem = $('.quote .quote_text').next().get(0);
+		var elemMargin = $('.quote .quote_text').next().css('margin-top');
+		elemMargin = elemMargin.substring(0, elemMargin.length - 2);
+		var init = prop.offsetTop;
+		var docked = false;
+		
+		window.onscroll = function () {
+			if (!docked && (prop.offsetTop - scrollTop() < 0)) {
+				prop.style.top = 0;
+				prop.style.position = 'fixed';
+				prop.className = 'docked ' + prop.className;
+				nextElem.style.marginTop = eval(eval(prop.offsetHeight) + eval(elemMargin))+'px';
+				docked = true;
+			} else if (docked && scrollTop() <= init) {
+				prop.style.position = 'static';
+				prop.className = prop.className.replace('docked ', '');
+				nextElem.style.marginTop = elemMargin+'px';
+				docked = false;
+			}
+		};
+		
+		// Dock all quote
+		/*var quote = $('.quote').get(0);
+		var nextElem = $('.quote').next().get(0);
+		var elemMargin = $('.quote').next().css('margin-top');
+		elemMargin = elemMargin.substring(0, elemMargin.length - 2);
+		var init = quote.offsetTop;
+		var docked = false;
+		
+		window.onscroll = function () {
+			if (!docked && (quote.offsetTop - scrollTop() < 0)) {
+				quote.style.top = 0;
+				quote.style.position = 'fixed';
+				quote.className = 'docked ' + quote.className;
+				nextElem.style.marginTop = eval(eval(quote.offsetHeight) + eval(elemMargin) + 60)+'px'; // 60px = marge de la citation
+				docked = true;
+			} else if (docked && scrollTop() <= init) {
+				quote.style.position = 'static';
+				quote.className = quote.className.replace('docked ', '');
+				nextElem.style.marginTop = elemMargin+'px';
+				docked = false;
+			}
+		};*/
+		
+		function scrollTop() {
+			return document.body.scrollTop || document.documentElement.scrollTop;
+		}
+	}
 }
 
 
