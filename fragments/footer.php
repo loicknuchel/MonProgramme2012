@@ -17,7 +17,7 @@ function generateFooter($rel_to_root = './'){
 						<dd><a target="_blanck" href="http://www.nosdeputes.fr/" title="Recensement des députés et de leurs activités parlementaires.">Nos Députés</a></dd>
 						<dd><a target="_blanck" href="http://www.nossenateurs.fr/" title="Recensement des sénateurs et de leurs activités.">Nos Sénateurs</a></dd>
 						<dd><a target="_blanck" href="http://memopol2.lqdn.fr/" title="Recensement des députés européens et de leurs activités.">Political Memory</a></dd>
-						<dd><a target="_blanck" href="http://politique.slate.fr/" title="Annuaire des personnalités qui feront les élections en 2012.">Wikipol</a></dd>
+						<dd><a target="_blanck" href="http://paris.reelledemocratie.com/" title="Le site des indigné. Ils organisent beaucoup de rencontres">Réelle Démocratie Paris</a></dd>
 						<dd><a target="_blanck" href="http://republiqueduweb.tumblr.com/" title="Organisent des rencontres politiques">la République Du Web</a></dd>
 						<dd><a target="_blanck" href="http://www.2012memepaspeur.net/" title="Un site \'je veux\'/\'je ne veux pas\' sur les élections 2012.">2012 même pas peur !</a></dd>
 						<!--

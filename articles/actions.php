@@ -54,8 +54,8 @@
 				<h2>Liberté d'expression et débats</h2>
 				<p>
 					<dl>
-						<dt><a target="_blanck" href="http://monprogramme2012.lkws.fr/articles/projet.php">monprogramme2012.lkws.fr</a></dt>
-						<dd>Site d'initiative personnelle pour créer un débat réel sur de vrais sujets de société.</dd>
+						<dt><a target="_blanck" href="http://paris.reelledemocratie.com/">paris.reelledemocratie.com</a></dt>
+						<dd>Le site des indignés de Paris. Organisation de <a target="_blanck" href="http://paris.reelledemocratie.com/agenda">nombreux évènements</a></dd>
 						
 						<dt><a target="_blanck" href="http://republiqueduweb.tumblr.com/">republiqueduweb.tumblr.com</a></dt>
 						<dd>La République Du Web organise des rencontres informelles autours d'un verre. 
@@ -84,6 +84,9 @@
 						
 						<dt><a target="_blanck" href="http://www.talkeo.fr/">www.talkeo.fr</a></dt>
 						<dd>Site de débat généraliste (pas forcément politique).</dd>
+						
+						<dt><a target="_blanck" href="http://monprogramme2012.lkws.fr/articles/projet.php">monprogramme2012.lkws.fr</a></dt>
+						<dd>Site d'initiative personnelle pour créer un débat réel sur de vrais sujets de société.</dd>
 					</dl>
 					<br/>
 				</p>
