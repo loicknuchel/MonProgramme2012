@@ -33,7 +33,7 @@ function UrlToShortLink($text) {
 	return $text;
 }
 
-function commentToHtmlFormat($comment){
+function commentToHtmlFormat2($comment){
 /* TODO :
 	link 																			=>	 <a href="link" title="link" target="_blanck">shortLink</a>
 	\r\n 																			=>	 <br/>
@@ -58,6 +58,48 @@ function commentToHtmlFormat($comment){
 	
 	
 	return $text;
+}
+
+function commentToHtmlFormat($comment){
+	$modificateur = 'i';
+	
+	$startBlockPattern_nameDate = '#([\s\r\n ]*)?\[quote( name="([^"]*)")( date="([a-zA-Z0-9 à/:]*)")( time="([0-9]*)")?( comment="([0-9]*)")?\]([\s\r\n ]*)?#'.$modificateur;
+	$startBlockPattern_name = '#([\s\r\n ]*)?\[quote( name="([^"]*)")( time="([0-9]*)")?( comment="([0-9]*)")?\]([\s\r\n ]*)?#'.$modificateur;
+	$startBlockPattern_date = '#([\s\r\n ]*)?\[quote( date="([a-zA-Z0-9 à/:]*)")( time="([0-9]*)")?( comment="([0-9]*)")?\]([\s\r\n ]*)?#'.$modificateur;
+	$startBlockPattern_none = '#([\s\r\n ]*)?\[quote( time="([0-9]*)")?( comment="([0-9]*)")?\]([\s\r\n ]*)?#'.$modificateur;
+	$startBlockReplace_nameDate = '<div class="quoted_comment"><div class="ref"><span class="name">$3</span>, le <span class="date">$5</span> :<span class="time">$7</span><span class="comment">$9</span></div>';
+	$startBlockReplace_name = '<div class="quoted_comment"><div class="ref"><span class="name">$3</span> :<span class="time">$5</span><span class="comment">$7</span></div>';
+	$startBlockReplace_date = '<div class="quoted_comment"><div class="ref">le <span class="date">$3</span> :<span class="time">$5</span><span class="comment">$7</span></div>';
+	$startBlockReplace_none = '<div class="quoted_comment"><div class="ref"><span class="time">$3</span><span class="comment">$5</span></div>';
+	
+	$endBlockPattern = '#([\s\r\n ]*)?\[/quote\]([\s\r\n ]*)?#'.$modificateur;
+	$endBlockReplace = '</div>';
+	
+	$linkPattern = '#(http|ftp|https)://(\w+:{0,1}\w*@)?((\d+\.\d+\.\d+\.\d+)|(([\w-]+\.)+([a-z,A-Z][\w-]*)))(:[1-9][0-9]*)?(/([\w-./:%+@&=]+[\w- ./?:%+@&=]*)?)?(\#([^\s\.,;:)}\]]*))?#'.$modificateur;
+	$linkReplace = '<a href="$0" title="$0" target="_blanck">$3$9$11</a>';
+	
+	$endLinePattern = '#[\r\n]#'.$modificateur;
+	$endLineReplace = '<br />';
+	
+	
+	$tmp = 0;
+	$count = 0;
+	$comment = preg_replace($startBlockPattern_nameDate,	$startBlockReplace_nameDate,	$comment, -1, $tmp); $count += $tmp;
+	$comment = preg_replace($startBlockPattern_name, 		$startBlockReplace_name, 		$comment, -1, $tmp); $count += $tmp;
+	$comment = preg_replace($startBlockPattern_date, 		$startBlockReplace_date, 		$comment, -1, $tmp); $count += $tmp;
+	$comment = preg_replace($startBlockPattern_none, 		$startBlockReplace_none, 		$comment, -1, $tmp); $count += $tmp;
+	$comment = preg_replace($endBlockPattern, $endBlockReplace, $comment, $count, $tmp);
+	if($count > $tmp){ // plus de début que de fins
+		for($i=0; $i<($count - $tmp); $i++){
+			$comment .= '</div>';
+		}
+	}
+	
+	$comment = preg_replace($linkPattern, $linkReplace, $comment);
+	
+	$comment = preg_replace($endLinePattern, $endLineReplace, $comment);
+	
+	return $comment;
 }
 
 

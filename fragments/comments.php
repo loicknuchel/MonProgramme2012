@@ -25,7 +25,7 @@ function generateComment($comment, $rel_to_root = './'){
 	$html = '
 	<div class="comment" id="comment_'.$comment['id'].'">
 		<div class="comment_header">
-			<span class="comment_no">'.$comment['id'].'</span>'.$avis.'<span class="comment_pseudo">'.$pseudo.'</span><span class="comment_date">, le '.$comment['post_date'].' :</span>';
+			<span class="comment_no">'.$comment['id'].'</span>'.$avis.'<span class="comment_pseudo">'.$pseudo.'</span><span class="comment_time">'.$comment['post_timestamp'].'</span><span class="comment_date">, le <span>'.$comment['post_date'].'</span> :</span>';
 		if($comment['reported'] != 1){
 			$html .= '
 			<div class="comment_vote">
