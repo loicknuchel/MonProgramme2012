@@ -9,7 +9,7 @@
 	$result = api_call('GET', $usr['api_url'].'comment.php', array('key'=>$usr['key'],'type'=>'page','id'=>$page_id,'p'=>isset($_GET['p']) ? $_GET['p'] : null));
 ?>
 
-<?php echo generateHead(' - Bibliographie', $jsEnv, $rel_to_root); ?>
+<?php echo generateHead('Bibliographie', $jsEnv, $rel_to_root); ?>
 <body>
 	<?php echo generateHeader($usr, $rel_to_root); ?>
 	

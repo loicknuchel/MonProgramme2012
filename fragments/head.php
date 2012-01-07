@@ -13,7 +13,7 @@ function generateHead($titre, $jsEnv, $rel_to_root = './'){
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Mon Programme 2012'.$titre.'</title>
+	<title>'.$titre.' - Mon Programme Politique 2012</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	

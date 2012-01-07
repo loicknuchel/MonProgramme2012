@@ -6,7 +6,7 @@
 	include_once $rel_to_root.'fragments/scripts.php';
 ?>
 
-<?php echo generateHead(' - Erreur 404 !', ''); ?>
+<?php echo generateHead('Erreur 404 !', ''); ?>
 <body>
 	<?php echo generateHeader(null); ?>
 	

@@ -5,7 +5,7 @@
 	$result = api_call('GET', $usr['api_url'].'selection.php', array('key'=>$usr['key'], 'p'=>'all' ), false );
 ?>
 
-<?php echo generateHead(' - Les programmes', $jsEnv); ?>
+<?php echo generateHead('Les programmes', $jsEnv); ?>
 <body>
 	<?php echo generateHeader($usr); ?>
 	

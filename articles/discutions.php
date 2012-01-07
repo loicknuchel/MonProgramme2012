@@ -6,7 +6,7 @@
 	$page_id = $pageId['chat']['id'];
 ?>
 
-<?php echo generateHead(' - Le chat', $jsEnv, $rel_to_root); ?>
+<?php echo generateHead('Le chat', $jsEnv, $rel_to_root); ?>
 <body>
 	<?php echo generateHeader($usr, $rel_to_root); ?>
 	

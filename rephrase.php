@@ -8,7 +8,7 @@
 	$quote_id = isset($result['response']['id']) ? $result['response']['id'] : null;
 ?>
 
-<?php echo generateHead(' - Rephrase proposition #'.$quote_id, $jsEnv); ?>
+<?php echo generateHead('Rephrase proposition #'.$quote_id, $jsEnv); ?>
 <body>
 	<?php echo generateHeader($usr); ?>
 	
