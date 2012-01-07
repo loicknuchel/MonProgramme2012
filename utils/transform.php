@@ -1,5 +1,9 @@
 <?php
 
+function orNull(&$val){
+	return isset($val) ? $val : null;
+}
+
 function twittFormat($quote, $link){
 	$twitt = str_replace('#', "%23", str_replace('"', "'", $quote));
 	$max = 140 - strlen('#fr2012 #mp2012 http://mp2012.lkws.fr/?q=54 ');
@@ -11,52 +15,18 @@ function twittFormat($quote, $link){
 	return $twitt;
 }
 
-function ShortUrl($matches) {
-	//$limit = 30;
-	//$link_displayed = (strlen($matches[0]) > $limit + 7) ? substr($matches[0], 7, floor($limit/2)).'…'.substr($matches[0], -floor($limit/2)) : $matches[0];
-	
-	//$link_displayed = str_replace("http://","",$matches[0]);
-	$link_displayed = preg_replace('/(https?|ftp):\/\//','',$matches[0]);
-	$link_displayed = (strlen($link_displayed) > 50) ? substr($link_displayed, 0, 20).'…'.substr($link_displayed, -20) : $link_displayed;
-	
-	
-	return '<a href="'.$matches[0].'" title="'.$matches[0].'" target="_blanck">'.$link_displayed.'</a>';
-}
-
 function UrlToShortLink($text) {
-	//Pattern to retrieve the url in the comment
-	$pattern = '`((?:https?|ftp)://\S+?)(?=[[:punct:]]?(?:\s|\Z)|\Z)`'; 
-
-	//Replacement of the pattern
-	$text = preg_replace_callback($pattern, 'ShortUrl', $text);
-
-	return $text;
-}
-
-function commentToHtmlFormat2($comment){
-/* TODO :
-	link 																			=>	 <a href="link" title="link" target="_blanck">shortLink</a>
-	\r\n 																			=>	 <br/>
-	[quote]blabla[/quote] 															=>	 <div class="quoted_comment">blabla</div>
-	[quote name="toto" date="lundi" time="timestamp" comment="id"]blabla[/quote] 	=>	 <div class="quoted_comment"><div class="ref">toto, le lundi</div>blabla</div>
-*/
+	$linkPattern = '#(http|ftp|https)://(\w+:{0,1}\w*@)?((\d+\.\d+\.\d+\.\d+)|(([\w-]+\.)+([a-z,A-Z][\w-]*)))(:[1-9][0-9]*)?(/([\w-./:%+@&=]+[\w- ./?:;%+@&=]*)?)?(\#([^\s\,;:)}\]]*))?#i';
+	//$linkReplace = '<a href="$0" title="$0" target="_blanck">$3$9$11</a>';
 	
-	$text = $comment;
-	
-	// link 																		=>	 <a href="link" title="link" target="_blanck">shortLink</a>
-	$text = UrlToShortLink($text);
-	
-	// \r\n 																		=>	 <br/>
-	$text = nl2br($text);
-	
-	// [quote]blabla[/quote] 														=>	 <div class="quoted_comment">blabla</div>
-	$text = str_replace('[quote]', '<div class="quoted_comment">', $text, $cptStart);
-	$text = str_replace('[/quote]', '</div>', $text, $cptEnd);
-	if($cptStart != $cptEnd){$text = str_replace('[/quote]', '', str_replace('[quote]', '', nl2br($comment['comment'])));}
-	
-	// [quote name="toto" date="lundi" time="timestamp" comment="id"]blabla[/quote]	=>	 <div class="quoted_comment"><div class="ref">toto, le lundi</div>blabla</div>
-	
-	
+	//$comment = preg_replace($linkPattern, $linkReplace, $comment);
+	$text = preg_replace_callback($linkPattern, 'reduceLink', $text);
+	/* Fonctions anonymes : supportées en PHP 5.3 mais sur le serveur : PHP 5.2 !!!
+	$comment = preg_replace_callback($linkPattern, function ($match) {
+		$disp = orNull($match[3]).orNull($match[9]).orNull($match[11]);
+		$disp = (strlen($disp) > 70) ? substr($disp, 0, 30).'…'.substr($disp, -20) : $disp;
+		return '<a href="'.orNull($match[0]).'" title="'.orNull($match[0]).'" target="_blanck">'.$disp.'</a>';
+	}, $comment);*/
 	return $text;
 }
 
@@ -75,9 +45,6 @@ function commentToHtmlFormat($comment){
 	$endBlockPattern = '#([\s\r\n ]*)?\[/quote\]([\s\r\n ]*)?#'.$modificateur;
 	$endBlockReplace = '</div>';
 	
-	$linkPattern = '#(http|ftp|https)://(\w+:{0,1}\w*@)?((\d+\.\d+\.\d+\.\d+)|(([\w-]+\.)+([a-z,A-Z][\w-]*)))(:[1-9][0-9]*)?(/([\w-./:%+@&=]+[\w- ./?:%+@&=]*)?)?(\#([^\s\.,;:)}\]]*))?#'.$modificateur;
-	$linkReplace = '<a href="$0" title="$0" target="_blanck">$3$9$11</a>';
-	
 	$endLinePattern = '#[\r\n]#'.$modificateur;
 	$endLineReplace = '<br />';
 	
@@ -95,11 +62,18 @@ function commentToHtmlFormat($comment){
 		}
 	}
 	
-	$comment = preg_replace($linkPattern, $linkReplace, $comment);
+	$comment = UrlToShortLink($comment);
 	
 	$comment = preg_replace($endLinePattern, $endLineReplace, $comment);
 	
 	return $comment;
+}
+
+// private
+function reduceLink($match){
+	$disp = orNull($match[3]).orNull($match[9]).orNull($match[11]);
+	$disp = (strlen($disp) > 70) ? substr($disp, 0, 30).'…'.substr($disp, -20) : $disp;
+	return '<a href="'.orNull($match[0]).'" title="'.orNull($match[0]).'" target="_blanck">'.$disp.'</a>';
 }
 
 

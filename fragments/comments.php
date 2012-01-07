@@ -17,6 +17,7 @@ function generateComment($comment, $rel_to_root = './'){
 	
 	if($comment['reported'] == 1){ $text = '<div class="reported"></div>'; }
 	else{ $text = commentToHtmlFormat($comment['comment']); }
+	UrlToShortLink('');
 	
 	if($comment['avis'] == "pour"){$avis = ' <span class="label light '.$comment['avis'].'">'.$comment['avis'].'</span> ';}
 	else if($comment['avis'] == "contre"){$avis = ' <span class="label light '.$comment['avis'].'">'.$comment['avis'].'</span> ';}
