@@ -57,6 +57,10 @@
 						<dt><a target="_blanck" href="http://paris.reelledemocratie.com/">paris.reelledemocratie.com</a></dt>
 						<dd>Le site des indignés de Paris. Organisation de <a target="_blanck" href="http://paris.reelledemocratie.com/agenda">nombreux évènements</a></dd>
 						
+						<dt><a target="_blanck" href="http://www.cafes-citoyens.fr/">cafes-citoyens.fr</a></dt>
+						<dd>Organisations de rencontres citoyennes avec pour objectif de "rétablir des lieux publics d'expression où tous les citoyens peuvent se retrouver pour discuter librement".
+						Ces Cafés Citoyens sont présents un peu partout en France.</dd>
+						
 						<dt><a target="_blanck" href="http://republiqueduweb.tumblr.com/">republiqueduweb.tumblr.com</a></dt>
 						<dd>La République Du Web organise des rencontres informelles autours d'un verre. 
 							La première est le 11 janvier, à Paris, au pub le Quigley’s Point, face à l’église Saint-Eustache, aux Halles, à Paris.
