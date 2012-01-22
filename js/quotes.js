@@ -258,7 +258,7 @@ function rem_quote_from_selection(html_quote, meth){
  * Local Storage Manipulation
 ************************************/
 function quote_is_selected(quote_id, localStorageKey){
-	if(localStorage){
+	if(isLocalStrorage()){
 		var selection = JSON.parse(localStorage.getItem(localStorageKey));
 		if(selection == null){
 			return false;
@@ -280,7 +280,7 @@ function quote_is_selected(quote_id, localStorageKey){
 function build_quote_ids(localStorageKey){
 	var ids = '';
 	
-	if(localStorage){
+	if(isLocalStrorage()){
 		var selection = JSON.parse(localStorage.getItem(localStorageKey));
 		if(selection != null){
 			for(var i=0; i<selection.quote.length; i++){
@@ -298,7 +298,7 @@ function build_quote_ids(localStorageKey){
 }
 
 function empty_selection(localStorageKey){
-	if(localStorage){
+	if(isLocalStrorage()){
 		localStorage.removeItem(localStorageKey);
 	}
 }
@@ -310,7 +310,7 @@ function quote_add_selection(html_quote){
 	var quote_id = eval(html_quote.find('.quote_header .quote_number a span').html());
 	var localStorageKey = "selection";
 	
-	if(localStorage){
+	if(isLocalStrorage()){
 		if(quote_is_selected(quote_id, localStorageKey) == false){
 			var selection = JSON.parse(localStorage.getItem(localStorageKey));
 			if(selection == null){
@@ -350,7 +350,7 @@ function quote_delete_selection(html_quote){
 	var quote_id = eval(html_quote.find('.quote_header .quote_number a span').html());
 	var localStorageKey = "selection";
 	
-	if(localStorage){
+	if(isLocalStrorage()){
 		if(quote_is_selected(quote_id, localStorageKey) == true){
 			var selection = JSON.parse(localStorage.getItem(localStorageKey));
 			var decale = false;
@@ -404,7 +404,7 @@ function change_to_unselected(html_quote){
 }
 
 function identify_selected_quotes(){
-	if(localStorage){
+	if(isLocalStrorage()){
 		var localStorageKey = "selection";
 		var selection = JSON.parse(localStorage.getItem(localStorageKey));
 		if(selection != null && selection.quote.length > 0){
@@ -446,7 +446,7 @@ function quote_add_to_favoris(html_quote){
 	var quote_id = eval(html_quote.find('.quote_header .quote_number a span').html());
 	var localStorageKey = "favoris";
 	
-	if(localStorage){
+	if(isLocalStrorage()){
 		if(quote_is_selected(quote_id, localStorageKey) == false){
 			var selection = JSON.parse(localStorage.getItem(localStorageKey));
 			if(selection == null){
@@ -486,7 +486,7 @@ function quote_delete_to_favoris(html_quote){
 	var quote_id = eval(html_quote.find('.quote_header .quote_number a span').html());
 	var localStorageKey = "favoris";
 	
-	if(localStorage){
+	if(isLocalStrorage()){
 		if(quote_is_selected(quote_id, localStorageKey) == true){
 			var selection = JSON.parse(localStorage.getItem(localStorageKey));
 			var decale = false;
@@ -537,7 +537,7 @@ function no_favoris(html_quote){
 }
 
 function identify_favoris_quotes(){
-	if(localStorage){
+	if(isLocalStrorage()){
 		var localStorageKey = "favoris";
 		var selection = JSON.parse(localStorage.getItem(localStorageKey));
 		if(selection != null && selection.quote.length > 0){

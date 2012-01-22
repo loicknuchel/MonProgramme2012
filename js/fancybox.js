@@ -7,7 +7,7 @@ function set_fancyboxes(rel_to_root){
 
 // fancybox onload à la première visite
 function welcome_fancybox(rel_to_root){
-	if(localStorage){
+	if(isLocalStrorage()){
 		var welcome = localStorage.getItem("welcome");
 		if(welcome != 1 && welcome_fancybox_enabled == true){
 			localStorage.setItem("welcome", 1);

@@ -79,6 +79,7 @@ function generateQuoteForm($usr, $postResult, $categories, $rel_to_root = './'){
 		<form method="POST" class="FV_quote">
 			'.$captchaError.'
 			<input type="hidden" name="antiSpam" value="'.$antiSpam['id'].'" />
+			<label class="placeholder_fb">Votre proposition * :</label>
 			<div class="textareaquote">
 				<textarea class="FV_required FV_length" name="quote" placeholder="Votre proposition" maxsize="'.$app['params']['size']['quote'].'">'.$quote.'</textarea>
 			</div>

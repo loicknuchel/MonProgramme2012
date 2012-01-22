@@ -1,4 +1,8 @@
+
 $(document).ready(function () {
+	//alert('localStorage: '+isLocalStrorage());
+	//alert('placeholder: '+isPlaceholder());
+	
 	
 	// gère les actions des différents formulaires
 	action_forms();
@@ -27,6 +31,7 @@ $(document).ready(function () {
 	
 	// affiche le formulaire d'envoi pour une nouvelle sélection (selection.js)
 	selection_actions();
+	
 	
 	// catch ajax errors
 	$('#info').ajaxError(function(e, jqxhr, settings, exception) {

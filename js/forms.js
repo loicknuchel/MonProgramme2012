@@ -9,6 +9,9 @@ function action_forms(){
 	);
 	
 	
+	// UI : masque les libellés si les placeholder fonctionnent
+	if(isPlaceholder()){ $('form .placeholder_fb').css('display', 'none'); }
+	
 	// UI : radio button set
 	$(".switch input").css('display', 'none');
 	$(".switch label").click(function(){
@@ -55,7 +58,7 @@ function action_forms(){
 }
 
 function fill_forms(){
-	if(localStorage){
+	if(isLocalStrorage()){
 		var formDatas = JSON.parse(localStorage.getItem('form_data'));
 		if(formDatas == null){ return false; }
 		

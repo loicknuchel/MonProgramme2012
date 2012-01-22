@@ -87,11 +87,11 @@ function generatePetitionForm($usr, $postResult, $actionPage, $anchor, $type, $i
 			<input type="hidden" name="type" value="'.$type.'" />
 			<input type="hidden" name="id" value="'.$id.'" />
 			
-			<input class="FV_required FV_length" 			type="text" name="prenom" 		placeholder="Prénom" 		value="'.$prenom.'" 		maxsize="'.$app['params']['size']['prenom'].'" 		/><br/>
-			<input class="FV_required FV_length" 			type="text" name="nom" 			placeholder="Nom" 			value="'.$nom.'" 			maxsize="'.$app['params']['size']['nom'].'" 		/><br/>
-			<input class="FV_required FV_mail FV_length" 	type="text" name="mail" 		placeholder="Mail" 			value="'.$mail.'" 			maxsize="'.$app['params']['size']['mail'].'" 		/><br/>
-			<input class="FV_length" 						type="text" name="site" 		placeholder="Site web" 		value="'.$site.'" 			maxsize="'.$app['params']['size']['site'].'" 		/><br/>
-			<input class="FV_length" 						type="text" name="profession" 	placeholder="Profession" 	value="'.$profession.'" 	maxsize="'.$app['params']['size']['profession'].'" 	/><br/>
+			<label class="placeholder_fb">Prénom * :</label><input class="FV_required FV_length" type="text" name="prenom" placeholder="Prénom" value="'.$prenom.'" maxsize="'.$app['params']['size']['prenom'].'" /><br/>
+			<label class="placeholder_fb">Nom * :</label><input class="FV_required FV_length" type="text" name="nom" placeholder="Nom" value="'.$nom.'" maxsize="'.$app['params']['size']['nom'].'" /><br/>
+			<label class="placeholder_fb">Mail * :</label><input class="FV_required FV_mail FV_length" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
+			<label class="placeholder_fb">Site web :</label><input class="FV_length" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>
+			<label class="placeholder_fb">Profession :</label><input class="FV_length" type="text" name="profession" placeholder="Profession" value="'.$profession.'" maxsize="'.$app['params']['size']['profession'].'" /><br/>
 			
 			<div class="show_more_datas">Données complémentaires</div>
 			<div class="more_datas">
@@ -108,9 +108,10 @@ function generatePetitionForm($usr, $postResult, $actionPage, $anchor, $type, $i
 					<option value="3"'; if($age == '3'){$html .= ' selected="selected"';} $html .= '>25 à 50 ans</option>
 					<option value="4"'; if($age == '4'){$html .= ' selected="selected"';} $html .= '>> à 50 ans</option>
 				</select><br/>
-				<input class="FV_length xsmall" type="text" name="zipcode" placeholder="Code postal" value="'.$zipcode.'" maxsize="'.$app['params']['size']['zipcode'].'" />
+				<label class="placeholder_fb">Code postal :</label><input class="FV_length xsmall" type="text" name="zipcode" placeholder="Code postal" value="'.$zipcode.'" maxsize="'.$app['params']['size']['zipcode'].'" />
 			</div>
 			
+			<label class="placeholder_fb">Un petit commentaire :</label>
 			<textarea class="FV_length" name="sign_message" placeholder="Un petit commentaire..." maxsize="'.$app['params']['size']['sign_message'].'">'.$sign_message.'</textarea>
 			
 			<div class="suivi">

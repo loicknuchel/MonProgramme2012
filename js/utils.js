@@ -15,6 +15,14 @@ function displayInfo(type, text){
 	}
 }
 
+function isLocalStrorage(){
+	return typeof localStorage != "undefined";
+}
+
+function isPlaceholder(){
+	return 'placeholder' in document.createElement('input');
+}
+
 function toggleBlock(idf_click, idf_block, text_hidden, text_display, callShow, callHide){
 	$(idf_click).toggle(
 		function() {$(this).html(text_display); $(idf_block).slideDown(300); callShow();},

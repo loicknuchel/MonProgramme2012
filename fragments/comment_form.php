@@ -73,9 +73,9 @@ function generateCommentForm($usr, $postResult, $actionPage, $anchor, $type, $id
 			<input type="hidden" name="type" value="'.$type.'" />
 			<input type="hidden" name="id" value="'.$id.'" />
 			<div class="meta_info">
-				<input class="FV_required FV_length" type="text" name="pseudo" placeholder="Pseudo" value="'.$pseudo.'" maxsize="'.$app['params']['size']['publisher'].'" /><br/>
-				<input class="FV_mail FV_length" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
-				<input class="FV_length" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>
+				<label class="placeholder_fb">Pseudo * :</label><input class="FV_required FV_length" type="text" name="pseudo" placeholder="Pseudo" value="'.$pseudo.'" maxsize="'.$app['params']['size']['publisher'].'" /><br/>
+				<label class="placeholder_fb">Mail :</label><input class="FV_mail FV_length" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
+				<label class="placeholder_fb">Site web :</label><input class="FV_length" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>
 			</div>
 			<div class="no_meta_info">
 				<div class="datas">
@@ -87,6 +87,7 @@ function generateCommentForm($usr, $postResult, $actionPage, $anchor, $type, $id
 				</div>
 				<div class="clear"></div>
 			</div>
+			<label class="placeholder_fb">Votre réaction * :</label>
 			<textarea class="FV_required FV_length expandable" name="comment" placeholder="Votre réaction" maxsize="'.$app['params']['size']['comment'].'">'.$comment.'</textarea>
 			<div class="switch">
 				<input type="radio" id="avis_sans" name="avis" value=""'; if($avis != 2 && $avis != 3){$html .= ' checked';} $html .= ' />

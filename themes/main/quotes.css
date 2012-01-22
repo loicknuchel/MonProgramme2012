@@ -128,6 +128,9 @@
 	font-size: 22px;
 	padding: 0px 10px 8px 10px;
 }
+.quote .quote_content .quote_text a.enter{
+	text-decoration: none;
+}
 .quote .quote_content .quote_desc{
 	line-height: 110%;
 	padding: 15px 10px 10px 10px;

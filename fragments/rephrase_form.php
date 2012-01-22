@@ -95,9 +95,9 @@ function generateRephraseForm($usr, $postResult, $result, $rel_to_root = './'){
 				<textarea class="FV_length expandable large" name="expl" placeholder="Reformulez l\'explication de la proposition ici" maxsize="'.$app['params']['size']['explanation'].'">'.$expl.'</textarea>
 			</div>
 			
-			<input class="FV_required FV_length" type="text" name="pseudo" placeholder="Pseudo" value="'.$pseudo.'" maxsize="'.$app['params']['size']['publisher'].'" /><br/>
-			<input class="FV_required FV_mail FV_length" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
-			<input class="FV_length" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>
+			<label class="placeholder_fb">Pseudo * :</label><input class="FV_required FV_length" type="text" name="pseudo" placeholder="Pseudo" value="'.$pseudo.'" maxsize="'.$app['params']['size']['publisher'].'" /><br/>
+			<label class="placeholder_fb">Mail * :</label><input class="FV_required FV_mail FV_length" type="text" name="mail" placeholder="Mail" value="'.$mail.'" maxsize="'.$app['params']['size']['mail'].'" /><br/>
+			<label class="placeholder_fb">Site web :</label><input class="FV_length" type="text" name="site" placeholder="Site web" value="'.$site.'" maxsize="'.$app['params']['size']['site'].'" /><br/>
 			
 			<div class="suivi">
 				<input type="checkbox" name="suivi" id="suivi" /><label for="suivi">Recevoir par email une notification pour les mises à jour de cette proposition</label>

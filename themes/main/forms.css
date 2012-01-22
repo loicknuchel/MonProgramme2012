@@ -18,6 +18,9 @@ form .FV_error::-webkit-input-placeholder {
 form .FV_error::-moz-placeholder {
     color:    #f66;
 }
+form .placeholder_fb {
+	display: block;
+}
 
 
 /****************************************/

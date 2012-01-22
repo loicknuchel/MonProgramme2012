@@ -2,10 +2,11 @@
 function generateQuoteBlock($quote, $style = ''){
 	
 	if($style == 'expanded'){
+		$actualQuote = nl2br(UrlToShortLink($quote['quote']));
 		$originalQuote = $quote['quote'] != $quote['origin_quote'] ? '<div class="original">'.nl2br(UrlToShortLink($quote['origin_quote'])).'</div>' : '';
 		$originalExpl = $quote['explanation'] != $quote['origin_explanation'] ? '<div class="original">'.nl2br(UrlToShortLink($quote['origin_explanation'])).'</div>' : '';
 	}
-	else{$originalQuote = ''; $originalExpl = '';}
+	else{$originalQuote = ''; $originalExpl = ''; $actualQuote = '<a href="quote.php?id='.$quote['id'].'" class="enter">'.nl2br($quote['quote']).'</a>';}
 	
 	if($style == 'selection'){ 	$remFromSelection = '<li><a href="#" class="selectRem">Supprimer de la sélection</a></li>'; }
 	else { 						$remFromSelection = ''; }
@@ -46,7 +47,7 @@ function generateQuoteBlock($quote, $style = ''){
 			</div>
 			<div class="quote_content">
 				<div class="quote_text">
-					'.nl2br(UrlToShortLink($quote['quote'])).'
+					'.$actualQuote.'
 					'.$originalQuote.'
 				</div>
 				'.$expl.'
