@@ -1,6 +1,5 @@
 
-//define(["bean/utils"], function(Utils) {
-//define(["bean/utils"], function() {
+define(["modules/Utils"], function(Utils) {
 	var Anchor = function(anchor){
 		var anchor = anchor;
 		
@@ -19,5 +18,5 @@
 			}
 		}
 	}
-	//return Anchor;
-//});
+	return Anchor;
+});

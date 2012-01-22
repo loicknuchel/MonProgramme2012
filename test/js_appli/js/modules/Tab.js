@@ -1,6 +1,5 @@
 
-//define(["libs/jquery-1.7.1.min", "bean/cell", "bean/anchor", "bean/utils"], function($, Cell, Anchor, Utils) {
-//define(["libs/jquery-1.7.1.min", "bean/cell", "bean/anchor", "bean/utils"], function() {
+define(["require_jquery", "modules/Cell", "modules/Anchor", "modules/Utils"], function($, Cell, Anchor, Utils) {
 	var Tab = function(anchor){
 		var tab = $(anchor);
 		var anchor = new Anchor(anchor);
@@ -75,5 +74,5 @@
 			disp: disp
 		}
 	}
-	//return Tab;
-//});
+	return Tab;
+});

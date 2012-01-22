@@ -1,6 +1,5 @@
 
-//define(["libs/jquery-1.7.1.min", "libs/shortcut", "bean/tab", "bean/cell", "bean/anchor"], function($, shortcut, Tab, Cell, Anchor) {
-//define(["libs/jquery-1.7.1.min", "libs/shortcut", "bean/tab", "bean/cell", "bean/anchor"], function() {
+define(["require_jquery", "shortcut", "modules/Tab", "modules/Cell", "modules/Anchor"], function($, shortcut, Tab, Cell, Anchor) {
 	var App = function(anchor){
 		var app = $(anchor);
 		var anchor = new Anchor(anchor);
@@ -72,5 +71,5 @@
 			startListeners: startListeners
 		}
 	}
-	//return App;
-//});
+	return App;
+});

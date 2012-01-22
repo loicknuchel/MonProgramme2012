@@ -1,10 +1,10 @@
 
+PROBLEMES :
+	- pas d'envoi de mail sur la signature d'une pétition !!!!
+	- signe € dans les propositions
+	- longueur (un é compte 2 char !!!)
 
 		
-MISE EN PROD :
-
-- PROBLEME : pas d'envoi de mail sur la signature d'une pétition !!!!
-- envoi de mails : rendre générique les mails (pour n'importe que site => ajouter le contenu des mails dans la bdd) !!!
 
 - PROBLEME : ne pas poster un commentaire sur un raffraichissement de page (vérifier si le commentaire n'existe pas déjà !)
 	* enregistrer dans une session le dernier envoi (avant d'appeler l'API : check si c'est pas déjà envoyé !) => possibilité de créer une signature sha1 de l'envoi (ex : sha1(pseudo+mail+site+comment))
@@ -14,6 +14,8 @@ MISE EN PROD :
 - rendre le site fonctionnel avec le JS désactivé
 
 - formulaires : créer boutton "Agrandir" sur les textarea (ceux qui ont la classe expend par exemple...)
+
+- envoi de mails : rendre générique les mails (pour n'importe que site => ajouter le contenu des mails dans la bdd) !!!
 
 - boutons pour partager les programmes (twitter, facebook et +1)
 - programmes : pouvoir ordonner ses propositions

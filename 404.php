@@ -1,12 +1,9 @@
 <?php
 	$rel_to_root = './';
-	include_once $rel_to_root.'fragments/head.php';
-	include_once $rel_to_root.'fragments/header.php';
-	include_once $rel_to_root.'fragments/footer.php';
-	include_once $rel_to_root.'fragments/scripts.php';
+	include_once $rel_to_root.'inc/server_link.php';
 ?>
 
-<?php echo generateHead('Erreur 404 !', ''); ?>
+<?php echo generateHead('Erreur 404 !', $jsEnv); ?>
 <body>
 	<?php echo generateHeader(null); ?>
 	

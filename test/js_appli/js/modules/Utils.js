@@ -1,6 +1,9 @@
 
-define(["jquery"], function($){
-	Utils = (function(){
+define([], function() {
+	var Utils = (function(){
+		// private
+		
+		// public
 		function output(level, text){
 			if(level == 'debug' || level == 'info' || level == 'warning' || level == 'error'){
 				console.log(text);
@@ -8,12 +11,12 @@ define(["jquery"], function($){
 					alert('!!! '+level+': '+text);
 				}
 			}
+			return this;
 		}
 		
 		return {
 			output: output
 		}
 	})();
-	
 	return Utils;
 });

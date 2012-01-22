@@ -1,6 +1,5 @@
 
-//define(["libs/jquery-1.7.1.min", "bean/utils"], function($, Utils) {
-//define(["libs/jquery-1.7.1.min", "bean/utils"], function() {
+define(["require_jquery", "modules/Utils"], function($, Utils) {
 	var Cell = (function(){
 		// private
 		
@@ -37,5 +36,5 @@
 			move: move
 		}
 	})();
-	//return Cell;
-//});
+	return Cell;
+});

@@ -36,7 +36,8 @@
 		$title .= $sel_name;
 	}
 	
-	echo generateHead($title, $jsEnv); 
+	$page_title = isset($p) ? ' | p'.$p : '';
+	echo generateHead($title.$page_title, $jsEnv); 
 ?>
 <body>
 	<?php echo generateHeader($usr); ?>
